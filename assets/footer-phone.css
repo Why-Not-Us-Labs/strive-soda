@@ -242,10 +242,26 @@
   }
 }
 
-/* Desktop: Hide on small screens if desired */
+/* Mobile phones - keep visible, just adjust sizing */
 @media (max-width: 480px) {
   .site-footer__phone {
-    display: none; /* Optional: hide on very small screens */
+    max-width: 320px;
+    margin: 30px auto;
+  }
+
+  .site-footer__icons {
+    gap: 10px;
+    max-width: 200px;
+  }
+
+  .site-footer__icons a {
+    width: 48px;
+    height: 48px;
+  }
+
+  .site-footer__icons svg {
+    width: 20px;
+    height: 20px;
   }
 }
 
