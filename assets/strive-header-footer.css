@@ -124,7 +124,7 @@
 
 
 /* ========== FOOTER STYLING ========== */
-/* Split-layout footer: Dark left / Light right with social */
+/* Split-layout footer: Dark left / Light right with phone widget */
 
 .main-footer footer {
     display: grid;
@@ -139,6 +139,31 @@
     display: contents;
 }
 
+/* Links section - Left column */
+.main-footer footer #f-links {
+    background: #1a1a1a;
+    color: #fff;
+    grid-column: 1;
+    grid-row: 1;
+    padding: clamp(40px, 6vw, 60px) clamp(30px, 5vw, 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* Phone widget - Right column, horizontally aligned */
+.main-footer footer #f-phone {
+    background: #1a1a1a;
+    color: #fff;
+    grid-column: 2;
+    grid-row: 1;
+    padding: clamp(40px, 6vw, 60px) clamp(30px, 5vw, 60px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Fallback for other footer cells */
 .main-footer footer x-cell:nth-child(1),
 .main-footer footer x-cell:nth-child(2),
 .main-footer footer x-cell:nth-child(3) {
@@ -148,7 +173,6 @@
     padding: clamp(40px, 6vw, 60px) clamp(30px, 5vw, 60px);
 }
 
-/* Combine all left-side content into one visual column */
 .main-footer footer x-cell:nth-child(1) {
     grid-row: 1;
     padding-bottom: 20px;
@@ -165,7 +189,7 @@
     padding-top: 0;
 }
 
-/* Right side - Light background with social */
+/* Right side - Light background with social (if used instead of phone) */
 .main-footer footer x-cell:nth-child(4),
 .main-footer footer #f-socials {
     background: #f5f1ed;
@@ -305,6 +329,13 @@
 @media (max-width: 1024px) {
     .main-footer footer {
         grid-template-columns: 1fr;
+    }
+
+    /* Stack links and phone widget vertically on mobile */
+    .main-footer footer #f-links,
+    .main-footer footer #f-phone {
+        grid-column: 1;
+        grid-row: auto;
     }
 
     .main-footer footer x-cell:nth-child(1),

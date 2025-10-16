@@ -1,0 +1,183 @@
+{% comment %}
+  Footer Phone Widget - Social Media Hub
+  Inspired by JuneShine's iPhone widget design
+
+  Accepts:
+  - image_1, image_2, image_3: image objects for slideshow
+  - autoplay_speed: slideshow speed in ms (default 6000)
+  - product_image: optional product image
+{% endcomment %}
+
+<div class="site-footer__phone">
+  <!-- iPhone Frame Overlay -->
+  <img
+    class="site-footer__phone-overlay"
+    src="{{ 'footer-phone.svg' | asset_url }}"
+    alt="Phone Frame"
+    width="360"
+    height="728"
+    loading="lazy"
+  >
+
+  <!-- Background Image Slideshow -->
+  <div class="site-footer__phone-background">
+    <div class="phone-slideshow" data-autoplay-speed="{{ autoplay_speed | default: 6000 }}">
+      <div class="phone-slideshow__wrapper">
+        {%- liquid
+          assign has_images = false
+          if image_1 != blank or image_2 != blank or image_3 != blank
+            assign has_images = true
+          endif
+        -%}
+
+        {% if has_images %}
+          {% if image_1 != blank %}
+            <div class="phone-slideshow__slide">
+              <div class="site-footer__phone-background-image">
+                <img
+                  srcset="{{ image_1 | image_url: width: 328 }} 1x, {{ image_1 | image_url: width: 656 }} 2x"
+                  src="{{ image_1 | image_url: width: 328 }}"
+                  alt="Strive Lifestyle"
+                  width="328"
+                  height="705"
+                  loading="lazy"
+                >
+              </div>
+            </div>
+          {% endif %}
+          {% if image_2 != blank %}
+            <div class="phone-slideshow__slide">
+              <div class="site-footer__phone-background-image">
+                <img
+                  srcset="{{ image_2 | image_url: width: 328 }} 1x, {{ image_2 | image_url: width: 656 }} 2x"
+                  src="{{ image_2 | image_url: width: 328 }}"
+                  alt="Strive Lifestyle"
+                  width="328"
+                  height="705"
+                  loading="lazy"
+                >
+              </div>
+            </div>
+          {% endif %}
+          {% if image_3 != blank %}
+            <div class="phone-slideshow__slide">
+              <div class="site-footer__phone-background-image">
+                <img
+                  srcset="{{ image_3 | image_url: width: 328 }} 1x, {{ image_3 | image_url: width: 656 }} 2x"
+                  src="{{ image_3 | image_url: width: 328 }}"
+                  alt="Strive Lifestyle"
+                  width="328"
+                  height="705"
+                  loading="lazy"
+                >
+              </div>
+            </div>
+          {% endif %}
+        {% else %}
+          <!-- Placeholder if no images set -->
+          <div class="phone-slideshow__slide">
+            <div class="site-footer__phone-background-image" style="background: linear-gradient(135deg, #0ABAB5 0%, #FF7A00 100%); height: 705px;"></div>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Phone Content: Social Icons + Brand Message -->
+  <div class="site-footer__phone-content">
+    <!-- Social Media Icons as "Apps" -->
+    <ul class="site-footer__icons">
+      {%- liquid
+        assign insta_url = instagram_link | default: settings.socialInstagram
+        assign fb_url = facebook_link | default: settings.socialFacebook
+        assign tw_url = twitter_link | default: settings.socialTwitter
+        assign tt_url = tiktok_link | default: settings.socialTiktok
+        assign yt_url = youtube_link | default: settings.socialYoutube
+        assign li_url = linkedin_link | default: settings.socialLinkedIn
+      -%}
+
+      {% if insta_url != blank %}
+        <li>
+          <a href="{{ insta_url }}" target="_blank" rel="noopener noreferrer" title="Follow us on Instagram">
+            <svg class="icon-instagram" width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M15 2.7C19 2.7 19.479 2.715 21.061 2.787C22.7196 2.73048 24.3357 3.3178 25.571 4.426C26.6792 5.6613 27.2665 7.27743 27.21 8.936C27.282 10.521 27.3 11 27.3 15C27.3 19 27.285 19.479 27.213 21.061C27.2695 22.7196 26.6822 24.3357 25.574 25.571C24.3388 26.6793 22.7226 27.2666 21.064 27.21C19.482 27.282 19.008 27.297 15.003 27.297C10.998 27.297 10.524 27.282 8.942 27.21C7.28343 27.2665 5.6673 26.6792 4.432 25.571C3.32371 24.3358 2.73637 22.7196 2.793 21.061C2.718 19.479 2.7 19.005 2.7 15C2.7 10.995 2.715 10.521 2.787 8.939C2.73048 7.28043 3.3178 5.6643 4.426 4.429C5.66205 3.32007 7.2794 2.73269 8.939 2.79C10.521 2.718 11 2.7 15 2.7ZM15 0C10.927 0 10.416 0.017 8.815 0.09C6.47914 0.0481083 4.21903 0.918791 2.515 2.517C0.916517 4.22086 0.0457901 6.48109 0.0880001 8.817C0.0170001 10.416 0 10.927 0 15C0 19.073 0.017 19.584 0.09 21.185C0.0481083 23.5209 0.918791 25.781 2.517 27.485C4.22086 29.0835 6.48109 29.9542 8.817 29.912C10.417 29.985 10.929 30.002 15.002 30.002C19.075 30.002 19.586 29.985 21.187 29.912C23.5229 29.9539 25.783 29.0832 27.487 27.485C29.0855 25.7811 29.9562 23.5209 29.914 21.185C29.987 19.585 30.004 19.073 30.004 15C30.004 10.927 29.987 10.416 29.914 8.815C29.9559 6.47914 29.0852 4.21903 27.487 2.515C25.7831 0.916517 23.5229 0.0457901 21.187 0.0880001C19.584 0.0170001 19.073 0 15 0Z" fill="#050506"/>
+              <path d="M15.0008 7.2998C13.4779 7.2998 11.9892 7.7514 10.7229 8.59749C9.45664 9.44358 8.46971 10.6462 7.88691 12.0531C7.30412 13.4601 7.15163 15.0083 7.44874 16.502C7.74584 17.9957 8.4792 19.3677 9.55606 20.4445C10.6329 21.5214 12.0049 22.2547 13.4986 22.5519C14.9922 22.849 16.5405 22.6965 17.9474 22.1137C19.3544 21.5309 20.557 20.544 21.4031 19.2777C22.2492 18.0114 22.7008 16.5227 22.7008 14.9998C22.7008 12.9576 21.8895 10.9991 20.4455 9.55508C19.0015 8.11105 17.043 7.2998 15.0008 7.2998ZM15.0008 19.9998C14.0119 19.9998 13.0452 19.7066 12.2229 19.1572C11.4007 18.6077 10.7598 17.8269 10.3814 16.9132C10.0029 15.9996 9.90393 14.9943 10.0969 14.0244C10.2898 13.0544 10.766 12.1635 11.4653 11.4643C12.1645 10.765 13.0554 10.2888 14.0253 10.0959C14.9952 9.90295 16.0006 10.002 16.9142 10.3804C17.8278 10.7588 18.6087 11.3997 19.1581 12.222C19.7075 13.0442 20.0008 14.0109 20.0008 14.9998C20.0008 16.3259 19.474 17.5977 18.5363 18.5353C17.5986 19.473 16.3269 19.9998 15.0008 19.9998Z" fill="#050506"/>
+              <path d="M23.007 8.79287C24.0011 8.79287 24.807 7.98698 24.807 6.99287C24.807 5.99876 24.0011 5.19287 23.007 5.19287C22.0129 5.19287 21.207 5.99876 21.207 6.99287C21.207 7.98698 22.0129 8.79287 23.007 8.79287Z" fill="#050506"/>
+            </svg>
+          </a>
+        </li>
+      {% endif %}
+
+      {% if tw_url != blank %}
+        <li>
+          <a href="{{ tw_url }}" target="_blank" rel="noopener noreferrer" title="Follow us on Twitter">
+            <svg class="icon-twitter" width="32" height="26" viewBox="0 0 32 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M31.9984 3.1C30.7984 3.6 29.5984 4 28.1984 4.1C29.5984 3.3 30.5984 2 31.0984 0.5C29.7984 1.3 28.3984 1.8 26.8984 2.1C25.6984 0.8 23.9984 0 22.1984 0C18.5984 0 15.5984 2.9 15.5984 6.6C15.5984 7.1 15.6984 7.6 15.7984 8.1C10.2984 7.8 5.49844 5.2 2.19844 1.2C1.59844 2.2 1.29844 3.3 1.29844 4.5C1.29844 6.8 2.49844 8.8 4.19844 10C3.09844 10 2.09844 9.7 1.19844 9.2V9.3C1.19844 12.5 3.49844 15.1 6.49844 15.7C5.89844 15.8 5.39844 15.9 4.79844 15.9C4.39844 15.9 3.99844 15.9 3.59844 15.8C4.39844 18.4 6.89844 20.3 9.69844 20.4C7.49844 22.2 4.59844 23.2 1.49844 23.2C0.998438 23.2 0.398438 23.2 -0.101562 23.1C2.89844 24.9 6.39844 26 10.0984 26C22.1984 26 28.7984 16 28.7984 7.3C28.7984 7 28.7984 6.7 28.7984 6.5C29.9984 5.5 31.0984 4.4 31.9984 3.1Z" fill="#050506"/>
+            </svg>
+          </a>
+        </li>
+      {% endif %}
+
+      {% if fb_url != blank %}
+        <li>
+          <a href="{{ fb_url }}" target="_blank" rel="noopener noreferrer" title="Follow us on Facebook">
+            <svg class="icon-facebook" width="16" height="30" viewBox="0 0 16 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M4.46218 30V17H0V11H4.46218V6.80998C4.46218 2.24577 7.35166 0 11.4233 0C13.3736 0 15.0498 0.1452 15.5383 0.21011V4.97998L12.7144 4.98126C10.5001 4.98127 10 6.0335 10 7.57757V11H16L14 17H10V30H4.46218Z" fill="#050506"/>
+            </svg>
+          </a>
+        </li>
+      {% endif %}
+
+      {% if tt_url != blank %}
+        <li>
+          <a href="{{ tt_url }}" target="_blank" rel="noopener noreferrer" title="Follow us on TikTok">
+            <svg class="icon-tiktok" width="28" height="32" viewBox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.5841 11.917V17.417C10.892 17.2345 10.1678 17.2096 9.46478 17.3441C8.76178 17.4787 8.09793 17.7693 7.52216 18.1945C6.94638 18.6197 6.47336 19.1687 6.13795 19.801C5.80253 20.4333 5.61328 21.1328 5.58413 21.848C5.54474 22.4638 5.63761 23.0809 5.85648 23.6578C6.07536 24.2347 6.41517 24.7581 6.85309 25.1928C7.291 25.6275 7.81688 25.9634 8.3954 26.178C8.97391 26.3926 9.59165 26.4809 10.2071 26.437C13.6231 26.437 14.8301 24.037 14.8301 21.786V0H20.2681C21.1931 5.753 24.0681 7.088 27.9221 7.705V13.217C27.9221 13.217 23.3501 12.892 20.4221 10.684V21.573C20.4191 26.5 17.4981 32 10.2481 32C3.52012 32 0.078125 26.3 0.078125 21.522C0.121024 20.1064 0.463532 18.7159 1.08306 17.4424C1.7026 16.1688 2.58507 15.041 3.67231 14.1334C4.75954 13.2258 6.02682 12.559 7.39059 12.177C8.75435 11.7949 10.1836 11.7063 11.5841 11.917Z" fill="#050506"/>
+            </svg>
+          </a>
+        </li>
+      {% endif %}
+
+      {% if yt_url != blank %}
+        <li>
+          <a href="{{ yt_url }}" target="_blank" rel="noopener noreferrer" title="Subscribe on YouTube">
+            <svg class="icon-youtube" width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M31.7 9.6002C31.7 9.6002 31.4 7.4002 30.4 6.4002C29.2 5.1002 27.8 5.1002 27.2 5.0002C22.7 4.7002 16 4.7002 16 4.7002C16 4.7002 9.3 4.7002 4.8 5.0002C4.2 5.1002 2.8 5.1002 1.6 6.4002C0.6 7.4002 0.3 9.6002 0.3 9.6002C0.3 9.6002 0 12.2002 0 14.8002V17.2002C0 19.8002 0.3 22.4002 0.3 22.4002C0.3 22.4002 0.6 24.6002 1.6 25.6002C2.8 26.9002 4.4 26.8002 5.1 27.0002C7.7 27.2002 16 27.3002 16 27.3002C16 27.3002 22.7 27.3002 27.2 27.0002C27.8 26.9002 29.2 26.9002 30.4 25.6002C31.4 24.6002 31.7 22.4002 31.7 22.4002C31.7 22.4002 32 19.8002 32 17.2002V14.8002C32 12.2002 31.7 9.6002 31.7 9.6002ZM12.7 20.2002V11.2002L21.3 15.7002L12.7 20.2002Z" fill="#050506"/>
+            </svg>
+          </a>
+        </li>
+      {% endif %}
+
+      {% if li_url != blank %}
+        <li>
+          <a href="{{ li_url }}" target="_blank" rel="noopener noreferrer" title="Connect on LinkedIn">
+            <svg class="icon-linkedin" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" fill="#050506"/>
+            </svg>
+          </a>
+        </li>
+      {% endif %}
+    </ul>
+
+    <!-- Brand Notification Message -->
+    <div class="site-footer__notification">
+      <div class="site-footer__notification-header">
+        <span class="notification-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="32" height="32" rx="4" fill="#0ABAB5"/>
+            <text x="16" y="22" font-family="Arial, sans-serif" font-size="20" font-weight="800" fill="white" text-anchor="middle">S</text>
+          </svg>
+        </span>
+        <h3 class="notification-brand">STRIVE</h3>
+      </div>
+      <p class="notification-message">Kick it with us on social</p>
+
+      {% comment %} Optional: Add small product image {% endcomment %}
+      {% if product_image != blank %}
+        <div class="notification-product">
+          <img src="{{ product_image | image_url: width: 88 }}" alt="Strive Soda" width="44" height="44" loading="lazy">
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</div>
