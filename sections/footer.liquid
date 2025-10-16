@@ -105,7 +105,13 @@
                             image_2: block.settings.image_2,
                             image_3: block.settings.image_3,
                             autoplay_speed: block.settings.autoplay_speed,
-                            product_image: block.settings.product_image
+                            product_image: block.settings.product_image,
+                            instagram_link: block.settings.instagram_url,
+                            twitter_link: block.settings.twitter_url,
+                            facebook_link: block.settings.facebook_url,
+                            tiktok_link: block.settings.tiktok_url,
+                            youtube_link: block.settings.youtube_url,
+                            linkedin_link: block.settings.linkedin_url
                         -%}
                     </x-cell>
             {%- endcase -%}
@@ -441,6 +447,44 @@
           "id": "product_image",
           "label": "Product Image",
           "info": "Small product image shown in notification area"
+        },
+        {
+          "type": "header",
+          "content": "Social Media Links"
+        },
+        {
+          "type": "paragraph",
+          "content": "Add social media URLs for the phone widget. If left blank, these will fall back to the links set in Theme Settings > Social Media."
+        },
+        {
+          "type": "url",
+          "id": "instagram_url",
+          "label": "Instagram URL"
+        },
+        {
+          "type": "url",
+          "id": "twitter_url",
+          "label": "Twitter URL"
+        },
+        {
+          "type": "url",
+          "id": "facebook_url",
+          "label": "Facebook URL"
+        },
+        {
+          "type": "url",
+          "id": "tiktok_url",
+          "label": "TikTok URL"
+        },
+        {
+          "type": "url",
+          "id": "youtube_url",
+          "label": "YouTube URL"
+        },
+        {
+          "type": "url",
+          "id": "linkedin_url",
+          "label": "LinkedIn URL"
         },
         {
           "type": "header",
