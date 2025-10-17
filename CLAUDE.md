@@ -280,3 +280,76 @@ All theme settings are accessible in Liquid via `settings.*`:
 - `assets/strive-header-footer.css` - Horizontal footer grid layout
 - `sections/footer.liquid` - Footer section with phone widget block
 - `snippets/footer-phone.liquid` - Phone widget component with social icons
+
+
+### October 17, 2025 - Navigation Cleanup & Hero Video Gap Fix
+
+**Completed Tasks:**
+
+1. **Moved FAQ from Header to Footer Navigation**
+   - Issue: FAQ link cluttered header navigation
+   - Solution: Removed FAQ from main-menu, added to footer legal links menu via Shopify admin
+   - Location: Now appears in footer alongside CONTACT, WHOLESALE, TERMS OF SERVICE, PRIVACY POLICY, RETURN & EXCHANGE POLICY
+   - Steps to update navigation menus:
+     1. Go to https://ab6dae-bb.myshopify.com/admin/menus
+     2. Edit "main-menu" → Remove FAQ link
+     3. Edit footer legal menu → Add FAQ link
+   - Result: Cleaner header navigation, FAQ accessible in footer on all devices (desktop, tablet, mobile)
+   - Files: Shopify admin navigation settings (not theme files)
+
+2. **Fixed Hero Video White Space Gap at Mobile/Tablet Breakpoints**
+   - Issue: White space gap appeared between teal content panel and video player at ≤777px
+   - Root cause: Custom `<video-player>` element behaved like inline element, inheriting spacing from container
+   - Solution implemented:
+     - **Mobile (≤777px):** Changed video-player positioning from `bottom: 0` to `top: 50%`
+     - Positions video to start exactly where teal panel ends (at 50% viewport mark)
+     - Added `font-size: 0` and `line-height: 0` to `.hero` container to eliminate inline element spacing
+     - Reset `font-size: initial` and `line-height: initial` on `.meta` panel for proper text display
+     - **Tablet (778px-1023px):** Applied same font-size/line-height fix
+     - Separated `video-player` and `video` element styling for better control
+   - Testing: Verified gap eliminated at 560px (mobile) and 778px-1023px (tablet) breakpoints
+   - Files: `sections/gs-hero.liquid` (lines 205-435)
+   - Commit: 9dcda05
+
+**Technical Details - Hero Video Gap Fix:**
+
+Key CSS changes:
+```css
+/* Mobile & Tablet: Eliminate inline element spacing */
+.hero[sid="{{ section.id }}"]{
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+.hero[sid="{{ section.id }}"] .meta{
+  font-size: initial;
+  line-height: initial;
+}
+
+/* Mobile: Position video flush against teal panel */
+.hero[sid="{{ section.id }}"] video-player{
+  position: absolute !important;
+  top: 50% !important; /* Changed from bottom: 0 */
+  width: 100% !important;
+  height: 50% !important;
+}
+```
+
+**Why This Fix Works:**
+- Custom elements like `<video-player>` are treated as inline elements by default
+- Inline elements inherit `font-size` and `line-height` from parent containers
+- This creates unwanted spacing between adjacent elements
+- Setting `font-size: 0` and `line-height: 0` on the container collapses this space
+- Using `top: 50%` instead of `bottom: 0` ensures precise positioning at the panel boundary
+
+**Future Reference:**
+If white space gaps appear between sections with custom elements:
+1. Check if element is inline or inline-block
+2. Add `font-size: 0; line-height: 0` to parent container
+3. Reset font-size/line-height on child content elements
+4. Consider using absolute positioning with `top` instead of `bottom` for precision
+
+**Deployment:**
+- Changes committed and pushed to repository
+- Live on production theme (#182679339300)
+- Local dev environment synced
