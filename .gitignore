@@ -33,3 +33,4 @@ tmp/
 # OS generated files
 Thumbs.db
 
+docs/meeting-notes/**/*.mp4
