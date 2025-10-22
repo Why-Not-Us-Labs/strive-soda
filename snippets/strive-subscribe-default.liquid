@@ -1,0 +1,57 @@
+{%- comment -%}
+  Auto-select Subscribe & Save option on product pages
+  This snippet ensures the subscription option is selected by default
+{%- endcomment -%}
+
+<script>
+  (function() {
+    'use strict';
+
+    // Function to select subscription option
+    function selectSubscriptionByDefault() {
+      // Wait for Appstle widget to load
+      const checkAppstle = setInterval(() => {
+        // Find all Appstle selling plan radio buttons
+        const allRadios = document.querySelectorAll('input[type="radio"][name="selling_plan"]');
+
+        if (allRadios.length >= 2) {
+          // First radio (empty value) is one-time purchase
+          // Second radio (with value) is subscription
+          let subscriptionRadio = null;
+
+          allRadios.forEach(radio => {
+            // The subscription radio has a non-empty value
+            if (radio.value && radio.value !== '') {
+              subscriptionRadio = radio;
+            }
+          });
+
+          if (subscriptionRadio && !subscriptionRadio.checked) {
+            // Click the subscription radio button
+            subscriptionRadio.click();
+
+            console.log('✅ Strive: Subscribe & Save selected by default');
+            clearInterval(checkAppstle);
+          }
+        }
+      }, 100);
+
+      // Stop checking after 10 seconds
+      setTimeout(() => {
+        clearInterval(checkAppstle);
+      }, 10000);
+    }
+
+    // Run when DOM is ready
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', selectSubscriptionByDefault);
+    } else {
+      selectSubscriptionByDefault();
+    }
+
+    // Also run after delays to catch late-loading widgets
+    setTimeout(selectSubscriptionByDefault, 500);
+    setTimeout(selectSubscriptionByDefault, 1000);
+    setTimeout(selectSubscriptionByDefault, 2000);
+  })();
+</script>

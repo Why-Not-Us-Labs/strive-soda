@@ -1,0 +1,1227 @@
+{%- paginate collection.products by 9 -%}
+
+<!-- ==========================================
+     SECTION 1: HERO SPLIT
+     Purpose: Display hero image + marketing copy
+     ========================================== -->
+<section class="strive-section strive-section--hero">
+  <div class="strive-hero-grid">
+    <div class="strive-hero-image">
+      <img 
+        src="https://cdn.shopify.com/s/files/1/0878/4170/2180/files/spirited-hive-1759985899211.png?v=1759985923" 
+        alt="{{ collection.title }} - Strive Hydration Soda"
+        class="hero-image-element"
+        loading="eager"
+      >
+    </div>
+    
+    <div class="strive-hero-content">
+      <div class="hero-content-wrapper">
+        <h1 class="hero-headline">FUEL YOUR MOVE</h1>
+        <p class="hero-subheadline">Two bold flavors. Zero compromises. Real hydration that tastes like you earned it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==========================================
+     SECTION 2: SECTION HEADER
+     Purpose: Introduce carousel section
+     ========================================== -->
+<section class="strive-section strive-section--header">
+  <div class="section-header-container">
+    <h2 class="section-header-title">CHOOSE YOUR VIBE</h2>
+  </div>
+</section>
+
+<!-- ==========================================
+     SECTION 3: PRODUCT CAROUSEL
+     Purpose: Display swipeable product cards
+     ========================================== -->
+<section class="strive-section strive-section--carousel">
+  <div class="carousel-container">
+    <div class="carousel-track">
+      {% for product in collection.products %}
+        <article class="carousel-card">
+          <a href="{{ product.url }}" class="carousel-card-link">
+            <div class="carousel-card-image-wrap">
+              {% if product.featured_image %}
+                {%- liquid
+                  assign hover_image = ''
+                  assign product_title_lower = product.title | downcase
+                  
+                  if product_title_lower contains 'peach'
+                    assign hover_image = 'https://cdn.shopify.com/s/files/1/0878/4170/2180/files/spirited-hive-1760026323261.png?v=1760046311'
+                  elsif product_title_lower contains 'tropical'
+                    assign hover_image = 'https://cdn.shopify.com/s/files/1/0878/4170/2180/files/spirited-hive-1760029089693.png?v=1760046289'
+                  elsif product_title_lower contains 'variety'
+                    assign hover_image = 'https://cdn.shopify.com/s/files/1/0878/4170/2180/files/spirited-hive-1759985899211.png?v=1759985923'
+                  endif
+                  
+                  assign primary_image_url = product.featured_image | image_url: width: 800
+                  
+                  if product_title_lower contains 'variety'
+                    assign primary_image_url = 'https://cdn.shopify.com/s/files/1/0878/4170/2180/files/Screenshot_2025-10-10_at_11.07.15_PM.png?v=1760152053'
+                  endif
+                -%}
+                
+                <img 
+                  src="{{ primary_image_url }}" 
+                  alt="{{ product.title | escape }}"
+                  loading="{% if forloop.index <= 3 %}eager{% else %}lazy{% endif %}"
+                  class="carousel-card-image carousel-card-image-primary"
+                >
+                
+                {% if hover_image != '' %}
+                  <img 
+                    src="{{ hover_image }}" 
+                    alt="{{ product.title | escape }} - Styled"
+                    loading="lazy"
+                    class="carousel-card-image carousel-card-image-hover"
+                  >
+                {% endif %}
+              {% endif %}
+            </div>
+            <div class="carousel-card-content">
+              <h3 class="carousel-card-title">{{ product.title }}</h3>
+              <p class="carousel-card-subtitle">Real hydration, real ingredients</p>
+              <p class="carousel-card-price">{{ product.price | money }}</p>
+            </div>
+          </a>
+          <button 
+            class="carousel-card-button" 
+            data-variant-id="{{ product.variants.first.id }}"
+            type="button"
+          >
+            ADD TO CART
+          </button>
+        </article>
+      {% endfor %}
+    </div>
+    
+    <nav class="carousel-indicators" aria-label="Product navigation">
+      {% for product in collection.products %}
+        <button 
+          class="carousel-indicator {% if forloop.index == 1 %}is-active{% endif %}" 
+          data-index="{{ forloop.index0 }}"
+          aria-label="Go to product {{ forloop.index }}"
+        ></button>
+      {% endfor %}
+    </nav>
+  </div>
+</section>
+
+{%- endpaginate -%}
+
+<!-- ==========================================
+     EDUCATION SECTIONS (MOVED TO SCIENCE PAGE)
+     Sections 5-7 moved to /pages/science-behind-strive
+     ========================================== -->
+
+<!-- SECTION 4: Built For Those Who Strive -->
+<section class="strive-section strive-section--built">
+  <div class="strive-built-container">
+    <div class="strive-built-grid">
+      <div class="strive-built-content">
+        <h2 class="strive-built-heading">Built for Those Who Strive</h2>
+        <div class="strive-built-text">
+          <p>Strive soda is crafted for the movers, the shakers, the doers—people who care about living with purpose, balance, and better-for-you choices.</p>
+          <p>Every sip delivers hydration, clean energy, and bold flavor without compromise.</p>
+        </div>
+      </div>
+      <div class="strive-built-image">
+        {%- if section.settings.lifestyle_image != blank -%}
+          <img
+            src="{{ section.settings.lifestyle_image | image_url: width: 1200 }}"
+            alt="{{ section.settings.lifestyle_image_alt | default: 'Active lifestyle with Strive' }}"
+            loading="lazy"
+          >
+        {%- else -%}
+          <img
+            src="https://cdn.shopify.com/s/files/1/0878/4170/2180/files/PLACEHOLDER-LIFESTYLE-IMAGE.jpg"
+            alt="Active lifestyle with Strive"
+            loading="lazy"
+          >
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</section>
+
+{%- comment -%}
+<!-- SECTION 5: Key Benefits - MOVED TO SCIENCE PAGE -->
+<!-- SECTION 6: Why Honey + Comparison - MOVED TO SCIENCE PAGE -->
+<!-- SECTION 7: Why Not Synthetic Sugars - MOVED TO SCIENCE PAGE -->
+<!-- SECTION 8: CTA - Now controlled via collection.json for proper ordering -->
+{%- endcomment -%}
+
+<style>
+/* ==========================================
+   GLOBAL VARIABLES
+   ========================================== */
+:root {
+  --color-tiffany: #0ABAB5;
+  --color-orange: #FF7A00;
+  --color-cream: #F5F1E8;
+  --color-black: #111111;
+  --color-white: #FFFFFF;
+  --color-gray-dark: #222222;
+  --color-gray-mid: #666666;
+}
+
+/* ==========================================
+   BASE SECTION STYLES
+   All sections share these properties
+   ========================================== */
+.strive-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.strive-section * {
+  box-sizing: border-box;
+}
+
+/* ==========================================
+   SECTION 1: HERO
+   ========================================== */
+.strive-section--hero {
+  background: var(--color-white);
+  isolation: isolate;
+}
+
+.strive-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 500px;
+  max-height: 85vh;
+  margin: 0;
+  padding: 0;
+}
+
+.strive-hero-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  background: var(--color-tiffany);
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-image-element {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.strive-hero-content {
+  background: var(--color-white);
+  padding: 60px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.hero-content-wrapper {
+  max-width: 600px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-headline {
+  font-size: clamp(48px, 9vw, 80px);
+  font-weight: 900;
+  line-height: 0.95;
+  color: var(--color-orange);
+  margin: 0 0 24px 0;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+}
+
+.hero-subheadline {
+  font-size: clamp(18px, 2.2vw, 24px);
+  line-height: 1.4;
+  color: var(--color-gray-dark);
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+}
+
+/* ==========================================
+   SECTION 2: SECTION HEADER
+   ========================================== */
+.strive-section--header {
+  background: var(--color-tiffany);
+  padding: 80px 0 0 0;
+}
+
+.section-header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.section-header-title {
+  font-size: clamp(36px, 5.5vw, 64px);
+  font-weight: 900;
+  color: var(--color-white);
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ==========================================
+   SECTION 3: CAROUSEL
+   ========================================== */
+.strive-section--carousel {
+  background: var(--color-tiffany);
+  padding: 80px 0 120px 0;
+}
+
+.carousel-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0 20px 48px;
+  margin: 0;
+  cursor: grab;
+}
+
+.carousel-track:active {
+  cursor: grabbing;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-card {
+  flex: 0 0 85%;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-white);
+  border-radius: 20px;
+  padding: 24px;
+  margin: 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+.carousel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18);
+}
+
+.carousel-card-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-card-image-wrap {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  background: var(--color-white);
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 0 0 20px 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.carousel-card-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: opacity 0.4s ease;
+}
+
+.carousel-card-image-primary {
+  opacity: 1;
+  z-index: 2;
+}
+
+.carousel-card-image-hover {
+  opacity: 0;
+  z-index: 1;
+}
+
+.carousel-card:hover .carousel-card-image-primary {
+  opacity: 0;
+}
+
+.carousel-card:hover .carousel-card-image-hover {
+  opacity: 1;
+}
+
+.carousel-card-content {
+  text-align: center;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+.carousel-card-title {
+  font-size: 22px;
+  font-weight: 900;
+  line-height: 1.2;
+  color: var(--color-black);
+  margin: 0 0 8px 0;
+  padding: 0;
+}
+
+.carousel-card-subtitle {
+  font-size: 15px;
+  line-height: 1.4;
+  color: var(--color-gray-mid);
+  font-weight: 500;
+  margin: 0 0 12px 0;
+  padding: 0;
+}
+
+.carousel-card-price {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-black);
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-card-button {
+  width: 100%;
+  padding: 18px 32px;
+  margin: 0;
+  background: var(--color-orange);
+  color: var(--color-white);
+  border: none;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(255, 122, 0, 0.25);
+}
+
+.carousel-card-button:hover {
+  background: var(--color-gray-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.carousel-card-button:active {
+  transform: translateY(0);
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 24px 0 0;
+  margin: 0;
+}
+
+.carousel-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-indicator.is-active {
+  width: 32px;
+  border-radius: 5px;
+  background: var(--color-white);
+}
+
+.carousel-indicator:hover {
+  background: var(--color-orange);
+  transform: scale(1.2);
+}
+
+/* ==========================================
+   SECTION 4: BUILT FOR THOSE WHO STRIVE
+   ========================================== */
+.strive-section--built {
+  background: var(--color-orange);
+  padding: clamp(80px, 10vw, 120px) 0;
+}
+
+.strive-built-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 60px);
+}
+
+.strive-built-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(40px, 6vw, 60px);
+  align-items: center;
+}
+
+.strive-built-heading {
+  font-size: clamp(36px, 5.5vw, 64px);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--color-white);
+  margin: 0 0 clamp(24px, 3vw, 32px) 0;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.strive-built-text {
+  font-size: clamp(17px, 1.8vw, 22px);
+  line-height: 1.5;
+  color: var(--color-white);
+  font-weight: 500;
+}
+
+.strive-built-text p {
+  margin: 0 0 20px 0;
+}
+
+.strive-built-text p:last-child {
+  margin-bottom: 0;
+}
+
+.strive-built-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.strive-built-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.strive-built-image:hover img {
+  transform: scale(1.05);
+}
+
+/* ==========================================
+   SECTION 5: KEY BENEFITS
+   ========================================== */
+.strive-section--benefits {
+  background: var(--color-cream);
+  padding: clamp(80px, 10vw, 120px) 0;
+}
+
+.strive-benefits-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 60px);
+}
+
+.strive-benefits-heading {
+  font-size: clamp(36px, 5.5vw, 64px);
+  font-weight: 900;
+  text-align: center;
+  color: var(--color-black);
+  margin: 0 0 16px 0;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.strive-benefits-intro {
+  font-size: clamp(17px, 1.8vw, 22px);
+  text-align: center;
+  color: var(--color-gray-dark);
+  margin: 0 0 clamp(56px, 7vw, 80px) 0;
+  font-weight: 600;
+}
+
+.strive-benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(20px, 3vw, 32px);
+  margin-bottom: clamp(56px, 7vw, 80px);
+}
+
+.strive-benefit-card {
+  background: var(--color-white);
+  padding: clamp(32px, 4vw, 40px);
+  border-radius: 20px;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+}
+
+.strive-benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+.strive-benefit-amount {
+  font-size: clamp(40px, 5vw, 56px);
+  font-weight: 900;
+  color: var(--color-tiffany);
+  margin: 0 0 8px 0;
+  line-height: 1;
+}
+
+.strive-benefit-amount span {
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.strive-benefit-name {
+  font-size: clamp(20px, 2.3vw, 26px);
+  font-weight: 800;
+  color: var(--color-black);
+  margin: 0 0 12px 0;
+}
+
+.strive-benefit-text {
+  font-size: clamp(14px, 1.5vw, 17px);
+  line-height: 1.5;
+  color: var(--color-gray-mid);
+  margin: 0;
+}
+
+.strive-benefits-summary {
+  font-size: clamp(16px, 1.7vw, 20px);
+  line-height: 1.6;
+  text-align: center;
+  color: var(--color-gray-dark);
+  max-width: 800px;
+  margin: 0 auto;
+  font-weight: 500;
+}
+
+/* ==========================================
+   SECTION 6: WHY HONEY
+   ========================================== */
+.strive-section--honey {
+  background: var(--color-white);
+  padding: clamp(80px, 10vw, 120px) 0;
+}
+
+.strive-honey-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 60px);
+}
+
+.strive-honey-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(40px, 6vw, 60px);
+  align-items: center;
+  margin-bottom: clamp(64px, 8vw, 100px);
+}
+
+.strive-honey-heading {
+  font-size: clamp(36px, 5.5vw, 64px);
+  font-weight: 900;
+  line-height: 1.05;
+  color: var(--color-black);
+  margin: 0 0 clamp(24px, 3vw, 32px) 0;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.strive-honey-description {
+  font-size: clamp(16px, 1.7vw, 20px);
+  line-height: 1.6;
+  color: var(--color-gray-dark);
+  margin: 0 0 clamp(32px, 4vw, 40px) 0;
+}
+
+.strive-honey-facts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.strive-honey-fact {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: clamp(18px, 2.5vw, 24px);
+  background: #FFF8E7;
+  border-radius: 16px;
+  border-left: 4px solid var(--color-orange);
+  transition: transform 0.3s ease;
+}
+
+.strive-honey-fact:hover {
+  transform: translateX(4px);
+}
+
+.strive-honey-emoji {
+  font-size: clamp(28px, 3.5vw, 36px);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.strive-honey-fact-text {
+  font-size: clamp(14px, 1.5vw, 17px);
+  line-height: 1.5;
+}
+
+.strive-honey-fact-text strong {
+  display: block;
+  font-weight: 700;
+  color: var(--color-black);
+  margin-bottom: 4px;
+}
+
+.strive-honey-fact-text span {
+  color: var(--color-gray-mid);
+}
+
+.strive-honey-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+
+.strive-honey-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.strive-honey-image:hover img {
+  transform: scale(1.05);
+}
+
+/* COMPARISON SECTION */
+.strive-comparison {
+  margin-top: clamp(64px, 8vw, 100px);
+}
+
+.strive-comparison-heading {
+  font-size: clamp(32px, 4.5vw, 48px);
+  font-weight: 900;
+  text-align: center;
+  color: var(--color-black);
+  margin: 0 0 clamp(48px, 6vw, 60px) 0;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.strive-comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(24px, 3vw, 32px);
+}
+
+.strive-comparison-card {
+  padding: clamp(32px, 4vw, 40px);
+  background: var(--color-white);
+  border-radius: 20px;
+  border: 3px solid #E5E5E5;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.strive-comparison-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.12);
+}
+
+.strive-comparison-winner {
+  border-color: var(--color-tiffany);
+  background: linear-gradient(135deg, rgba(10, 186, 181, 0.08) 0%, var(--color-white) 100%);
+}
+
+.strive-comparison-title {
+  font-size: clamp(20px, 2.3vw, 26px);
+  font-weight: 900;
+  color: var(--color-black);
+  margin: 0 0 clamp(20px, 2.5vw, 24px) 0;
+}
+
+.strive-comparison-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.strive-comparison-list li {
+  font-size: clamp(14px, 1.5vw, 17px);
+  line-height: 1.6;
+  color: var(--color-gray-dark);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.strive-comparison-list li:last-child {
+  margin-bottom: 0;
+}
+
+.strive-check {
+  color: var(--color-tiffany);
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.strive-cross {
+  color: #E53E3E;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+/* ==========================================
+   SECTION 7: WHY NOT SYNTHETIC
+   ========================================== */
+.strive-section--synthetic {
+  background: var(--color-cream);
+  padding: clamp(80px, 10vw, 120px) 0;
+}
+
+.strive-synthetic-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 60px);
+}
+
+.strive-synthetic-heading {
+  font-size: clamp(36px, 5.5vw, 64px);
+  font-weight: 900;
+  text-align: center;
+  color: var(--color-black);
+  margin: 0 0 clamp(32px, 4vw, 48px) 0;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.strive-synthetic-text {
+  font-size: clamp(16px, 1.7vw, 20px);
+  line-height: 1.6;
+  color: var(--color-gray-dark);
+  margin: 0 0 clamp(28px, 3.5vw, 36px) 0;
+}
+
+.strive-synthetic-warning {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: clamp(24px, 3vw, 32px);
+  background: #FFF5F5;
+  border-radius: 16px;
+  border-left: 4px solid #E53E3E;
+  font-size: clamp(15px, 1.6vw, 18px);
+  line-height: 1.6;
+  color: var(--color-gray-dark);
+}
+
+.strive-warning-emoji {
+  font-size: clamp(24px, 3vw, 32px);
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+.strive-warning-content strong {
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+/* ==========================================
+   SECTION 8: CTA
+   ========================================== */
+.strive-section--cta {
+  background: var(--color-tiffany);
+  padding: clamp(80px, 10vw, 120px) 0;
+  text-align: center;
+}
+
+.strive-cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 60px);
+}
+
+.strive-cta-heading {
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 900;
+  color: var(--color-white);
+  margin: 0 0 24px 0;
+  line-height: 1.1;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.strive-cta-description {
+  font-size: clamp(17px, 1.8vw, 22px);
+  line-height: 1.5;
+  color: var(--color-white);
+  margin: 0 0 clamp(40px, 5vw, 56px) 0;
+  opacity: 0.95;
+  font-weight: 500;
+}
+
+.strive-cta-button-wrap {
+  text-align: center;
+}
+
+.strive-cta-button {
+  display: inline-block;
+  padding: 18px 48px;
+  background: var(--color-white);
+  color: var(--color-tiffany);
+  font-size: clamp(16px, 1.7vw, 18px);
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.strive-cta-button:hover {
+  background: var(--color-orange);
+  color: var(--color-white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.strive-cta-button:active {
+  transform: translateY(0);
+}
+
+/* ==========================================
+   TABLET (768px+)
+   ========================================== */
+@media (min-width: 768px) {
+  /* Hero */
+  .strive-hero-grid {
+    grid-template-columns: 1fr 1fr;
+    height: 70vh;
+    min-height: 500px;
+    max-height: 700px;
+  }
+  
+  .strive-hero-image {
+    height: 100%;
+  }
+  
+  .strive-hero-content {
+    padding: 70px 48px;
+  }
+  
+  /* Section Header */
+  .strive-section--header {
+    padding: 100px 0 0 0;
+  }
+  
+  .section-header-container {
+    padding: 0 40px;
+  }
+  
+  /* Carousel */
+  .strive-section--carousel {
+    padding: 96px 0 140px 0;
+  }
+  
+  .carousel-track {
+    padding: 0 40px 48px;
+    gap: 32px;
+  }
+  
+  .carousel-card {
+    flex: 0 0 48%;
+    padding: 28px;
+  }
+  
+  .carousel-card-title {
+    font-size: 24px;
+  }
+  
+  .carousel-card-subtitle {
+    font-size: 16px;
+  }
+  
+  .carousel-card-price {
+    font-size: 22px;
+  }
+  
+  /* Education Sections */
+  .strive-built-grid,
+  .strive-honey-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  
+  .strive-benefits-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .strive-comparison-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ==========================================
+   DESKTOP (1024px+)
+   ========================================== */
+@media (min-width: 1024px) {
+  /* Hero */
+  .strive-hero-grid {
+    height: 75vh;
+    max-height: 800px;
+  }
+  
+  .strive-hero-content {
+    padding: 90px 60px;
+  }
+  
+  /* Section Header */
+  .strive-section--header {
+    padding: 120px 0 0 0;
+  }
+  
+  .section-header-container {
+    padding: 0 60px;
+  }
+  
+  /* Carousel */
+  .strive-section--carousel {
+    padding: 108px 0 160px 0;
+  }
+  
+  .carousel-track {
+    padding: 0 60px 48px;
+    gap: 40px;
+  }
+  
+  .carousel-card {
+    flex: 0 0 calc(33.333% - 27px);
+    padding: 32px;
+  }
+  
+  /* Benefits Grid */
+  .strive-benefits-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+</style>
+
+<script>
+(function() {
+  'use strict';
+  
+  const track = document.querySelector('.carousel-track');
+  const indicators = document.querySelectorAll('.carousel-indicator');
+  
+  if (!track) return;
+  
+  // Drag scroll
+  let isDragging = false;
+  let startX = 0;
+  let scrollLeft = 0;
+  
+  track.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    track.style.cursor = 'grabbing';
+    startX = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+  });
+  
+  track.addEventListener('mouseleave', () => {
+    isDragging = false;
+    track.style.cursor = 'grab';
+  });
+  
+  track.addEventListener('mouseup', () => {
+    isDragging = false;
+    track.style.cursor = 'grab';
+  });
+  
+  track.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 2;
+    track.scrollLeft = scrollLeft - walk;
+  });
+  
+  // Update indicator
+  track.addEventListener('scroll', () => {
+    const cards = track.querySelectorAll('.carousel-card');
+    const scrollPos = track.scrollLeft + track.offsetWidth / 2;
+    
+    cards.forEach((card, index) => {
+      const cardLeft = card.offsetLeft;
+      const cardRight = cardLeft + card.offsetWidth;
+      
+      if (scrollPos >= cardLeft && scrollPos < cardRight) {
+        indicators.forEach(ind => ind.classList.remove('is-active'));
+        if (indicators[index]) indicators[index].classList.add('is-active');
+      }
+    });
+  });
+  
+  // Indicator click
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      const cards = track.querySelectorAll('.carousel-card');
+      if (cards[index]) {
+        cards[index].scrollIntoView({ 
+          behavior: 'smooth', 
+          block: 'nearest', 
+          inline: 'center' 
+        });
+      }
+    });
+  });
+  
+  // Add to cart
+  const buttons = document.querySelectorAll('.carousel-card-button');
+  
+  buttons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+      
+      const variantId = this.dataset.variantId;
+      const originalText = this.textContent;
+      
+      this.disabled = true;
+      this.textContent = 'ADDING...';
+      
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({ 
+          items: [{ id: variantId, quantity: 1 }] 
+        })
+      })
+      .then(response => {
+        if (!response.ok) throw new Error('Network error');
+        return response.json();
+      })
+      .then(() => {
+        this.textContent = 'ADDED!';
+        this.style.background = 'var(--color-tiffany)';
+        document.dispatchEvent(new CustomEvent('cart:refresh'));
+        
+        setTimeout(() => {
+          this.textContent = originalText;
+          this.style.background = '';
+          this.disabled = false;
+        }, 2000);
+      })
+      .catch((error) => {
+        console.error('Add to cart error:', error);
+        this.textContent = 'ERROR';
+        
+        setTimeout(() => {
+          this.textContent = originalText;
+          this.disabled = false;
+        }, 3000);
+      });
+    });
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Collection",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Built For Those Who Strive Section"
+    },
+    {
+      "type": "image_picker",
+      "id": "lifestyle_image",
+      "label": "Lifestyle Image",
+      "info": "Recommended size: 1200x900px or larger"
+    },
+    {
+      "type": "text",
+      "id": "lifestyle_image_alt",
+      "label": "Lifestyle Image Alt Text",
+      "default": "Active lifestyle with Strive"
+    },
+    {
+      "type": "header",
+      "content": "Why Organic Honey Section"
+    },
+    {
+      "type": "image_picker",
+      "id": "honey_image",
+      "label": "Honey Image",
+      "info": "Recommended size: 1200x900px or larger"
+    },
+    {
+      "type": "text",
+      "id": "honey_image_alt",
+      "label": "Honey Image Alt Text",
+      "default": "Organic honey with Strive"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Page"
+    }
+  ]
+}
+{% endschema %}

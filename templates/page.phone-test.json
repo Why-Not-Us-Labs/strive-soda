@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "phone_widget_test": {
+      "type": "test-phone-widget",
+      "settings": {}
+    }
+  },
+  "order": [
+    "phone_widget_test"
+  ]
+}

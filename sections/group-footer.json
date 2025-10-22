@@ -1,0 +1,139 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "footer",
+  "name": "Footer",
+  "sections": {
+    "footer-backtop": {
+      "type": "footer-backtop",
+      "disabled": true,
+      "settings": {}
+    },
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "menu": {
+          "type": "menu",
+          "settings": {
+            "menu": "footer",
+            "alignment": "start",
+            "alignmentMobile": "start",
+            "multicolumn": true,
+            "fullwidth": false
+          }
+        },
+        "newsletter": {
+          "type": "newsletter",
+          "disabled": true,
+          "settings": {
+            "footerNewsletterTitle": "Get 10% off your next purchase. Subscribe to our newsletter.",
+            "fullwidth": false
+          }
+        },
+        "motto": {
+          "type": "motto",
+          "disabled": true,
+          "settings": {
+            "motto": "",
+            "fullwidth": false
+          }
+        },
+        "socials": {
+          "type": "socials",
+          "disabled": true,
+          "settings": {
+            "enable_follow_on_shop": false,
+            "alignment": "center",
+            "alignmentMobile": "start",
+            "fullwidth": true
+          }
+        },
+        "phone": {
+          "type": "phone",
+          "settings": {
+            "image_1": "shopify://shop_images/spirited-hive-1760482947126.png",
+            "image_2": "shopify://shop_images/Generated_Image_October_13_2025_-_12_38AM.png",
+            "image_3": "shopify://shop_images/Strive_Soda_staycation_381.jpg",
+            "autoplay_speed": 6000,
+            "product_image": "shopify://shop_images/spirited-hive-1760498694074.png",
+            "instagram_url": "https://www.instagram.com/strivesoda/",
+            "twitter_url": "",
+            "facebook_url": "https://www.facebook.com/strivesoda",
+            "tiktok_url": "https://www.tiktok.com/@strivesoda",
+            "youtube_url": "",
+            "linkedin_url": "https://www.linkedin.com/company/strivesoda/",
+            "fullwidth": true
+          }
+        }
+      },
+      "block_order": [
+        "menu",
+        "newsletter",
+        "motto",
+        "socials",
+        "phone"
+      ],
+      "settings": {}
+    },
+    "sub-footer": {
+      "type": "footer-bottom",
+      "blocks": {
+        "payments": {
+          "type": "payments",
+          "disabled": true,
+          "settings": {
+            "monochrome": false,
+            "alignment": "start",
+            "fullwidth": false
+          }
+        },
+        "selectors": {
+          "type": "selectors",
+          "disabled": true,
+          "settings": {
+            "country_name_format": "flag",
+            "show_country": true,
+            "show_language": true,
+            "alignment": "end",
+            "fullwidth": false
+          }
+        },
+        "copyright": {
+          "type": "copyright",
+          "settings": {
+            "copyright": "© 2025 STRIVE SODA. All rights reserved.",
+            "alignment": "start",
+            "fullwidth": true
+          }
+        },
+        "credits": {
+          "type": "credits",
+          "disabled": true,
+          "settings": {
+            "alignment": "end",
+            "fullwidth": false
+          }
+        }
+      },
+      "block_order": [
+        "payments",
+        "selectors",
+        "copyright",
+        "credits"
+      ],
+      "settings": {}
+    }
+  },
+  "order": [
+    "footer-backtop",
+    "footer",
+    "sub-footer"
+  ]
+}

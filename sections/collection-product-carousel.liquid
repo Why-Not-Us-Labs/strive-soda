@@ -1,0 +1,837 @@
+{%- comment -%}
+Collection Product Carousel
+- Swipeable/draggable product carousel
+- Customizable header, colors, and product display
+- Add-to-cart functionality
+- Responsive with touch support
+{%- endcomment -%}
+
+{%- paginate collection.products by 50 -%}
+
+{%- comment -%} Section Header {%- endcomment -%}
+{%- if section.settings.show_header -%}
+  <section class="carousel-section-header" style="background-color: {{ section.settings.header_bg_color }};">
+    <div class="carousel-header-container">
+      <h2 class="carousel-header-title" style="color: {{ section.settings.header_text_color }};">
+        {{ section.settings.header_text }}
+      </h2>
+    </div>
+  </section>
+{%- endif -%}
+
+{%- comment -%} Product Carousel {%- endcomment -%}
+<section class="carousel-section-main" style="background-color: {{ section.settings.carousel_bg_color }};">
+  <div class="carousel-main-container">
+    <div class="carousel-main-track" data-carousel-track>
+
+      {%- for product in collection.products -%}
+        <article class="carousel-main-card">
+          <a href="{{ product.url }}" class="carousel-main-link">
+
+            {%- comment -%} Product Images with Hover Effect {%- endcomment -%}
+            <div class="carousel-main-image-wrap">
+              {%- if product.featured_image -%}
+                {%- liquid
+                  assign hover_image = ''
+                  assign product_title_lower = product.title | downcase
+
+                  # Check for product-specific hover images via blocks
+                  for block in section.blocks
+                    if block.type == 'product_hover_image'
+                      assign block_product_lower = block.settings.product_keyword | downcase
+                      if product_title_lower contains block_product_lower and block.settings.hover_image != blank
+                        assign hover_image = block.settings.hover_image | image_url: width: 800
+                      endif
+                    endif
+                  endfor
+
+                  # Primary image logic
+                  assign primary_image_url = product.featured_image | image_url: width: 800
+
+                  # Check for product-specific primary images via blocks
+                  for block in section.blocks
+                    if block.type == 'product_primary_image'
+                      assign block_product_lower = block.settings.product_keyword | downcase
+                      if product_title_lower contains block_product_lower and block.settings.primary_image != blank
+                        assign primary_image_url = block.settings.primary_image | image_url: width: 800
+                      endif
+                    endif
+                  endfor
+                -%}
+
+                <img
+                  src="{{ primary_image_url }}"
+                  alt="{{ product.title | escape }}"
+                  loading="{% if forloop.index <= 3 %}eager{% else %}lazy{% endif %}"
+                  class="carousel-main-image carousel-main-image-primary"
+                >
+
+                {%- if hover_image != '' -%}
+                  <img
+                    src="{{ hover_image }}"
+                    alt="{{ product.title | escape }} - Styled"
+                    loading="lazy"
+                    class="carousel-main-image carousel-main-image-hover"
+                  >
+                {%- elsif product.media[1] -%}
+                  <img
+                    src="{{ product.media[1] | image_url: width: 800 }}"
+                    alt="{{ product.title | escape }} - Alternative view"
+                    loading="lazy"
+                    class="carousel-main-image carousel-main-image-hover"
+                  >
+                {%- endif -%}
+              {%- endif -%}
+            </div>
+
+            {%- comment -%} Product Info {%- endcomment -%}
+            <div class="carousel-main-content">
+              <h3 class="carousel-main-title">{{ product.title }}</h3>
+              {%- if section.settings.show_subtitle -%}
+                <p class="carousel-main-subtitle">{{ section.settings.product_subtitle }}</p>
+              {%- endif -%}
+              <p class="carousel-main-price">{{ product.price | money }}</p>
+            </div>
+          </a>
+
+          {%- comment -%} Add to Cart Button {%- endcomment -%}
+          {%- if section.settings.show_add_to_cart -%}
+            <button
+              class="carousel-main-button"
+              data-variant-id="{{ product.variants.first.id }}"
+              type="button"
+              style="background-color: {{ section.settings.button_bg_color }}; color: {{ section.settings.button_text_color }};"
+            >
+              {{ section.settings.button_text }}
+            </button>
+          {%- endif -%}
+        </article>
+      {%- endfor -%}
+
+    </div>
+
+    {%- comment -%} Carousel Indicators {%- endcomment -%}
+    {%- if section.settings.show_indicators -%}
+      <nav class="carousel-main-indicators" aria-label="Product navigation">
+        {%- for product in collection.products -%}
+          <button
+            class="carousel-main-indicator {% if forloop.index == 1 %}is-active{% endif %}"
+            data-index="{{ forloop.index0 }}"
+            aria-label="Go to product {{ forloop.index }}"
+          ></button>
+        {%- endfor -%}
+      </nav>
+    {%- endif -%}
+  </div>
+</section>
+
+{%- endpaginate -%}
+
+<style>
+/* CSS Variables */
+:root {
+  --carousel-card-radius: {{ section.settings.card_radius }}px;
+  --carousel-gap: {{ section.settings.card_gap }}px;
+}
+
+/* Reset */
+.carousel-section-header *,
+.carousel-section-main * {
+  box-sizing: border-box;
+}
+
+.carousel-section-header,
+.carousel-section-main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Header Section */
+.carousel-section-header {
+  padding: 80px 0 0 0;
+}
+
+.carousel-header-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.carousel-header-title {
+  font-size: clamp(36px, 5.5vw, 64px);
+  font-weight: 900;
+  margin: 0;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Carousel Section */
+.carousel-section-main {
+  padding: 80px 0 120px 0;
+}
+
+.carousel-main-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.carousel-main-track {
+  display: flex;
+  gap: var(--carousel-gap);
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 0 20px 48px;
+  margin: 0;
+  cursor: grab;
+}
+
+.carousel-main-track:active {
+  cursor: grabbing;
+}
+
+.carousel-main-track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Product Card */
+.carousel-main-card {
+  flex: 0 0 85%;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
+  display: flex;
+  flex-direction: column;
+  background: {{ section.settings.card_bg_color }};
+  border-radius: var(--carousel-card-radius);
+  padding: 24px;
+  margin: 0;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+}
+
+.carousel-main-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.18);
+}
+
+.carousel-main-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  flex: 1;
+  margin: 0;
+  padding: 0;
+}
+
+/* Product Image */
+.carousel-main-image-wrap {
+  position: relative;
+  aspect-ratio: {{ section.settings.image_ratio }};
+  background: {{ section.settings.image_bg_color }};
+  border-radius: calc(var(--carousel-card-radius) - 8px);
+  overflow: hidden;
+  margin: 0 0 20px 0;
+  padding: 0;
+  line-height: 0;
+}
+
+.carousel-main-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: {{ section.settings.image_fit }};
+  object-position: center;
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  user-select: none;
+  -webkit-user-drag: none;
+  transition: opacity 0.4s ease;
+}
+
+.carousel-main-image-primary {
+  opacity: 1;
+  z-index: 2;
+}
+
+.carousel-main-image-hover {
+  opacity: 0;
+  z-index: 1;
+}
+
+.carousel-main-card:hover .carousel-main-image-primary {
+  opacity: 0;
+}
+
+.carousel-main-card:hover .carousel-main-image-hover {
+  opacity: 1;
+}
+
+/* Product Content */
+.carousel-main-content {
+  text-align: center;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+.carousel-main-title {
+  font-size: {{ section.settings.title_size }}px;
+  font-weight: 900;
+  line-height: 1.2;
+  color: {{ section.settings.title_color }};
+  margin: 0 0 8px 0;
+  padding: 0;
+}
+
+.carousel-main-subtitle {
+  font-size: {{ section.settings.subtitle_size }}px;
+  line-height: 1.4;
+  color: {{ section.settings.subtitle_color }};
+  font-weight: 500;
+  margin: 0 0 12px 0;
+  padding: 0;
+}
+
+.carousel-main-price {
+  font-size: {{ section.settings.price_size }}px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: {{ section.settings.price_color }};
+  margin: 0;
+  padding: 0;
+}
+
+/* Add to Cart Button */
+.carousel-main-button {
+  width: 100%;
+  padding: 18px 32px;
+  margin: 0;
+  border: none;
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-main-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  opacity: 0.9;
+}
+
+.carousel-main-button:active {
+  transform: translateY(0);
+}
+
+.carousel-main-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Indicators */
+.carousel-main-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  padding: 24px 0 0;
+  margin: 0;
+}
+
+.carousel-main-indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: {{ section.settings.indicator_color }};
+  opacity: 0.4;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-main-indicator.is-active {
+  width: 32px;
+  border-radius: 5px;
+  background: {{ section.settings.indicator_active_color }};
+  opacity: 1;
+}
+
+.carousel-main-indicator:hover {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+  .carousel-section-header {
+    padding: 100px 0 0 0;
+  }
+
+  .carousel-header-container {
+    padding: 0 40px;
+  }
+
+  .carousel-section-main {
+    padding: 96px 0 140px 0;
+  }
+
+  .carousel-main-track {
+    padding: 0 40px 48px;
+    gap: 32px;
+  }
+
+  .carousel-main-card {
+    flex: 0 0 48%;
+    padding: 28px;
+  }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .carousel-section-header {
+    padding: 120px 0 0 0;
+  }
+
+  .carousel-header-container {
+    padding: 0 60px;
+  }
+
+  .carousel-section-main {
+    padding: 108px 0 160px 0;
+  }
+
+  .carousel-main-track {
+    padding: 0 60px 48px;
+    gap: 40px;
+  }
+
+  .carousel-main-card {
+    flex: 0 0 calc(33.333% - 27px);
+    padding: 32px;
+  }
+}
+</style>
+
+<script>
+(function() {
+  'use strict';
+
+  const track = document.querySelector('[data-carousel-track]');
+  const indicators = document.querySelectorAll('.carousel-main-indicator');
+
+  if (!track) return;
+
+  // Drag scroll functionality
+  let isDragging = false;
+  let startX = 0;
+  let scrollLeft = 0;
+
+  track.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    track.style.cursor = 'grabbing';
+    startX = e.pageX - track.offsetLeft;
+    scrollLeft = track.scrollLeft;
+  });
+
+  track.addEventListener('mouseleave', () => {
+    isDragging = false;
+    track.style.cursor = 'grab';
+  });
+
+  track.addEventListener('mouseup', () => {
+    isDragging = false;
+    track.style.cursor = 'grab';
+  });
+
+  track.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - track.offsetLeft;
+    const walk = (x - startX) * 2;
+    track.scrollLeft = scrollLeft - walk;
+  });
+
+  // Update active indicator on scroll
+  track.addEventListener('scroll', () => {
+    const cards = track.querySelectorAll('.carousel-main-card');
+    const scrollPos = track.scrollLeft + track.offsetWidth / 2;
+
+    cards.forEach((card, index) => {
+      const cardLeft = card.offsetLeft;
+      const cardRight = cardLeft + card.offsetWidth;
+
+      if (scrollPos >= cardLeft && scrollPos < cardRight) {
+        indicators.forEach(ind => ind.classList.remove('is-active'));
+        if (indicators[index]) indicators[index].classList.add('is-active');
+      }
+    });
+  });
+
+  // Indicator click navigation
+  indicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      const cards = track.querySelectorAll('.carousel-main-card');
+      if (cards[index]) {
+        cards[index].scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'center'
+        });
+      }
+    });
+  });
+
+  // Add to cart functionality
+  const buttons = document.querySelectorAll('.carousel-main-button');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', function(e) {
+      e.preventDefault();
+
+      const variantId = this.dataset.variantId;
+      const originalText = this.textContent;
+
+      this.disabled = true;
+      this.textContent = 'ADDING...';
+
+      fetch('/cart/add.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          items: [{ id: variantId, quantity: 1 }]
+        })
+      })
+      .then(response => {
+        if (!response.ok) throw new Error('Network error');
+        return response.json();
+      })
+      .then(() => {
+        this.textContent = 'ADDED!';
+        document.dispatchEvent(new CustomEvent('cart:refresh'));
+
+        setTimeout(() => {
+          this.textContent = originalText;
+          this.disabled = false;
+        }, 2000);
+      })
+      .catch((error) => {
+        console.error('Add to cart error:', error);
+        this.textContent = 'ERROR';
+
+        setTimeout(() => {
+          this.textContent = originalText;
+          this.disabled = false;
+        }, 3000);
+      });
+    });
+  });
+})();
+</script>
+
+{% schema %}
+{
+  "name": "Product Carousel",
+  "class": "collection-carousel-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Header"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_header",
+      "label": "Show section header",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "header_text",
+      "label": "Header text",
+      "default": "CHOOSE YOUR VIBE"
+    },
+    {
+      "type": "color",
+      "id": "header_bg_color",
+      "label": "Header background color",
+      "default": "#0ABAB5"
+    },
+    {
+      "type": "color",
+      "id": "header_text_color",
+      "label": "Header text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Carousel Settings"
+    },
+    {
+      "type": "color",
+      "id": "carousel_bg_color",
+      "label": "Carousel background color",
+      "default": "#0ABAB5"
+    },
+    {
+      "type": "range",
+      "id": "card_gap",
+      "label": "Gap between cards",
+      "min": 10,
+      "max": 60,
+      "step": 5,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Product Card Design"
+    },
+    {
+      "type": "color",
+      "id": "card_bg_color",
+      "label": "Card background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "label": "Card border radius",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Product Images"
+    },
+    {
+      "type": "select",
+      "id": "image_ratio",
+      "label": "Image aspect ratio",
+      "options": [
+        {
+          "value": "1 / 1",
+          "label": "Square (1:1)"
+        },
+        {
+          "value": "4 / 5",
+          "label": "Portrait (4:5)"
+        },
+        {
+          "value": "3 / 4",
+          "label": "Portrait (3:4)"
+        },
+        {
+          "value": "2 / 3",
+          "label": "Portrait (2:3)"
+        },
+        {
+          "value": "16 / 9",
+          "label": "Landscape (16:9)"
+        }
+      ],
+      "default": "3 / 4"
+    },
+    {
+      "type": "select",
+      "id": "image_fit",
+      "label": "Image fit",
+      "options": [
+        {
+          "value": "cover",
+          "label": "Cover (fill frame)"
+        },
+        {
+          "value": "contain",
+          "label": "Contain (fit within frame)"
+        }
+      ],
+      "default": "cover"
+    },
+    {
+      "type": "color",
+      "id": "image_bg_color",
+      "label": "Image background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Product Text"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "label": "Title font size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "default": 22,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#111111"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_subtitle",
+      "label": "Show subtitle",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "product_subtitle",
+      "label": "Product subtitle",
+      "default": "Real hydration, real ingredients"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "label": "Subtitle font size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "default": 15,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle color",
+      "default": "#666666"
+    },
+    {
+      "type": "range",
+      "id": "price_size",
+      "label": "Price font size",
+      "min": 14,
+      "max": 32,
+      "step": 2,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "color",
+      "id": "price_color",
+      "label": "Price color",
+      "default": "#111111"
+    },
+    {
+      "type": "header",
+      "content": "Add to Cart Button"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_add_to_cart",
+      "label": "Show add to cart button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "ADD TO CART"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button background color",
+      "default": "#FF7A00"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Carousel Indicators"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_indicators",
+      "label": "Show carousel indicators",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "indicator_color",
+      "label": "Indicator color (inactive)",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "indicator_active_color",
+      "label": "Indicator color (active)",
+      "default": "#FFFFFF"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "product_primary_image",
+      "name": "Primary Image",
+      "settings": [
+        {
+          "type": "text",
+          "id": "product_keyword",
+          "label": "Product keyword",
+          "info": "Enter a keyword from the product title (e.g., 'Peach', 'Tropical', 'Variety')"
+        },
+        {
+          "type": "image_picker",
+          "id": "primary_image",
+          "label": "Custom primary image",
+          "info": "This will override the product's featured image"
+        }
+      ]
+    },
+    {
+      "type": "product_hover_image",
+      "name": "Hover Image",
+      "settings": [
+        {
+          "type": "text",
+          "id": "product_keyword",
+          "label": "Product keyword",
+          "info": "Enter a keyword from the product title (e.g., 'Peach', 'Tropical', 'Variety')"
+        },
+        {
+          "type": "image_picker",
+          "id": "hover_image",
+          "label": "Hover image",
+          "info": "This image shows when hovering over the product card"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product Carousel"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,484 @@
+{%- comment -%}
+Why Strive Soda? - Electrolytes section
+- Desktop: Text left, boxes right (side by side)
+- Mobile: Centered, edge-to-edge like JuneShine, header visible in fold
+{%- endcomment -%}
+
+<section class="why-strive-section" id="science">
+  <div class="why-strive-container">
+    
+    <!-- Intro content -->
+    <div class="why-strive-intro">
+      {%- if section.settings.eyebrow != blank -%}
+        <h2 class="why-strive-eyebrow">{{ section.settings.eyebrow }}</h2>
+      {%- endif -%}
+      
+      {%- if section.settings.heading != blank -%}
+        <h3 class="why-strive-heading">{{ section.settings.heading }}</h3>
+      {%- endif -%}
+      
+      {%- if section.settings.description != blank -%}
+        <p class="why-strive-desc">{{ section.settings.description }}</p>
+      {%- endif -%}
+      
+      {%- if section.settings.cta_text != blank -%}
+        <a href="{{ section.settings.cta_link }}" class="science-cta">
+          {{ section.settings.cta_text }}
+        </a>
+      {%- endif -%}
+    </div>
+    
+    <!-- Electrolytes grid -->
+    <div class="electrolytes-grid">
+      
+      <!-- Sodium -->
+      <a href="{{ section.settings.sodium_link }}" class="electrolyte-box sodium">
+        <div class="electrolyte-content">
+          <span class="electrolyte-badge">Essential Electrolyte</span>
+          <h4 class="electrolyte-title">Sodium</h4>
+          <p class="electrolyte-desc">{{ section.settings.sodium_text }}</p>
+        </div>
+        <img 
+          src="{% if section.settings.sodium_image != blank %}{{ section.settings.sodium_image | image_url: width: 800 }}{% else %}https://cdn.shopify.com/s/files/1/0878/4170/2180/files/strive-sodium.png?v=1760060293{% endif %}" 
+          alt="Sodium - Runner with Strive" 
+          class="electrolyte-image"
+          loading="lazy"
+        >
+      </a>
+      
+      <!-- Potassium -->
+      <a href="{{ section.settings.potassium_link }}" class="electrolyte-box potassium">
+        <div class="electrolyte-content">
+          <span class="electrolyte-badge">Muscle Power</span>
+          <h4 class="electrolyte-title">Potassium</h4>
+          <p class="electrolyte-desc">{{ section.settings.potassium_text }}</p>
+        </div>
+        <img 
+          src="{% if section.settings.potassium_image != blank %}{{ section.settings.potassium_image | image_url: width: 800 }}{% else %}https://cdn.shopify.com/s/files/1/0878/4170/2180/files/spirited-hive-1760060230764.png?v=1760060294{% endif %}" 
+          alt="Potassium - Yoga Recovery with Strive" 
+          class="electrolyte-image"
+          loading="lazy"
+        >
+      </a>
+      
+      <!-- Magnesium -->
+      <a href="{{ section.settings.magnesium_link }}" class="electrolyte-box magnesium">
+        <div class="electrolyte-content">
+          <span class="electrolyte-badge">Energy Catalyst</span>
+          <h4 class="electrolyte-title">Magnesium</h4>
+          <p class="electrolyte-desc">{{ section.settings.magnesium_text }}</p>
+        </div>
+        <img 
+          src="{% if section.settings.magnesium_image != blank %}{{ section.settings.magnesium_image | image_url: width: 800 }}{% else %}https://cdn.shopify.com/s/files/1/0878/4170/2180/files/strive-magnesium.png?v=1760060294{% endif %}" 
+          alt="Magnesium - Marathon Recovery with Strive" 
+          class="electrolyte-image"
+          loading="lazy"
+        >
+      </a>
+      
+    </div>
+    
+  </div>
+</section>
+
+<style>
+  
+  :root {
+    --tiffany-blue: #0ABAB5;
+    --strive-orange: #FF7A00;
+    --gold-yellow: #FFD700;
+  }
+  
+  .why-strive-section {
+    scroll-margin-top: clamp(60px, 9vh, 120px);
+    background: #F5F1E8;
+    padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 60px);
+  }
+  
+  .why-strive-container {
+    max-width: 1600px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 380px 1fr;
+    gap: clamp(40px, 5vw, 80px);
+    align-items: center;
+  }
+  
+  .why-strive-intro {
+    /* Text stays on left */
+  }
+  
+  .why-strive-eyebrow {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(11px, 1vw, 13px);
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin: 0 0 12px;
+    color: #111;
+  }
+  
+  .why-strive-heading {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 900;
+    line-height: 1.05;
+    margin: 0 0 16px;
+    color: #111;
+  }
+  
+  .why-strive-desc {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(14px, 1.4vw, 18px);
+    line-height: 1.45;
+    color: #333;
+    margin: 0 0 28px;
+  }
+  
+  .science-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 14px 28px;
+    background: var(--strive-orange);
+    color: #fff !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--strive-orange);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .science-cta:hover {
+    background: var(--tiffany-blue);
+    color: #fff !important;
+    border-color: var(--tiffany-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(10,186,181,.25);
+  }
+  
+  .electrolytes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(16px, 2vw, 24px);
+  }
+  
+  .electrolyte-box {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 1 / 1;
+    border: 3px solid #111;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    text-decoration: none;
+    display: block;
+  }
+  
+  .electrolyte-box:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(0,0,0,.2);
+  }
+  
+  .electrolyte-box.sodium {
+    background: var(--gold-yellow);
+  }
+  
+  .electrolyte-box.potassium {
+    background: var(--tiffany-blue);
+  }
+  
+  .electrolyte-box.magnesium {
+    background: var(--strive-orange);
+  }
+  
+  .electrolyte-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(20px, 3vw, 32px);
+    text-align: center;
+    transition: opacity 0.4s ease;
+  }
+  
+  .electrolyte-box:hover .electrolyte-content {
+    opacity: 0;
+  }
+  
+  .electrolyte-badge {
+    display: inline-block;
+    padding: 6px 12px;
+    background: #fff;
+    border: 2px solid #111;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(8px, 0.75vw, 10px);
+    font-weight: 800;
+    letter-spacing: 0.8px;
+    text-transform: uppercase;
+    margin-bottom: clamp(10px, 1.5vw, 16px);
+    color: #111;
+    white-space: nowrap;
+  }
+  
+  .electrolyte-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(24px, 2.5vw, 34px);
+    font-weight: 900;
+    line-height: 1.1;
+    margin: 0 0 clamp(8px, 1.2vw, 14px);
+    color: #111;
+  }
+  
+  .electrolyte-desc {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(11px, 1.1vw, 14px);
+    line-height: 1.35;
+    color: #111;
+    margin: 0;
+    max-width: 85%;
+  }
+  
+  .electrolyte-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    object-fit: cover;
+    object-position: center;
+  }
+  
+  .electrolyte-box:hover .electrolyte-image {
+    opacity: 1;
+  }
+  
+  /* ===== MOBILE: JuneShine-style centered layout ===== */
+  @media (max-width: 768px) {
+    .why-strive-section {
+      padding: 0;
+      background: #F5F1E8;
+    }
+    
+    .why-strive-container {
+      grid-template-columns: 1fr;
+      gap: 0;
+      width: 100%;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .why-strive-intro {
+      text-align: center;
+      padding: 20px 16px 12px;
+      background: #F5F1E8;
+    }
+    
+    .why-strive-eyebrow {
+      font-size: 9px;
+      margin-bottom: 6px;
+      letter-spacing: 1px;
+    }
+    
+    .why-strive-heading {
+      font-size: 20px;
+      margin-bottom: 6px;
+      line-height: 1.05;
+    }
+    
+    .why-strive-desc {
+      font-size: 11px;
+      line-height: 1.3;
+      margin-bottom: 10px;
+    }
+    
+    .science-cta {
+      padding: 10px 20px;
+      font-size: 10px;
+      letter-spacing: 0.8px;
+      margin-bottom: 12px;
+    }
+    
+    .electrolytes-grid {
+      grid-template-columns: 1fr;
+      gap: 0;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .electrolyte-box {
+      aspect-ratio: 370 / 220;
+      border: 2px solid #111;
+      border-top: none;
+      border-radius: 0;
+      width: 100%;
+      margin: 0;
+    }
+    
+    .electrolyte-box:first-child {
+      border-top: 2px solid #111;
+    }
+    
+    .electrolyte-content {
+      padding: 16px 20px;
+    }
+    
+    .electrolyte-badge {
+      padding: 4px 10px;
+      font-size: 8px;
+      margin-bottom: 8px;
+      letter-spacing: 0.8px;
+    }
+    
+    .electrolyte-title {
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+    
+    .electrolyte-desc {
+      font-size: 10px;
+      line-height: 1.3;
+      max-width: 90%;
+    }
+    
+    /* Ensure hover images display properly on mobile */
+    .electrolyte-image {
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  
+  /* Extra small screens */
+  @media (max-width: 400px) {
+    .why-strive-heading {
+      font-size: 18px;
+    }
+    
+    .why-strive-desc {
+      font-size: 10px;
+    }
+    
+    .electrolyte-title {
+      font-size: 16px;
+    }
+    
+    .electrolyte-desc {
+      font-size: 9px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Why Strive Soda",
+  "disabled_on": { "groups": ["header", "footer", "aside"] },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Content"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "WHY STRIVE SODA?"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main heading",
+      "default": "What is Hydration Soda?"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Better-for-you hydration that fuels your day with bold flavor and essential electrolytes."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA button text",
+      "default": "THE SCIENCE BEHIND STRIVE"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA button link"
+    },
+    {
+      "type": "header",
+      "content": "Sodium Box"
+    },
+    {
+      "type": "text",
+      "id": "sodium_text",
+      "label": "Sodium description",
+      "default": "Replenishes what you sweat out to keep fluids balanced."
+    },
+    {
+      "type": "url",
+      "id": "sodium_link",
+      "label": "Sodium link"
+    },
+    {
+      "type": "image_picker",
+      "id": "sodium_image",
+      "label": "Sodium hover image"
+    },
+    {
+      "type": "header",
+      "content": "Potassium Box"
+    },
+    {
+      "type": "text",
+      "id": "potassium_text",
+      "label": "Potassium description",
+      "default": "Supports muscle and nerve function; balances sodium."
+    },
+    {
+      "type": "url",
+      "id": "potassium_link",
+      "label": "Potassium link"
+    },
+    {
+      "type": "image_picker",
+      "id": "potassium_image",
+      "label": "Potassium hover image"
+    },
+    {
+      "type": "header",
+      "content": "Magnesium Box"
+    },
+    {
+      "type": "text",
+      "id": "magnesium_text",
+      "label": "Magnesium description",
+      "default": "Aids energy and muscle function; helps prevent cramps."
+    },
+    {
+      "type": "url",
+      "id": "magnesium_link",
+      "label": "Magnesium link"
+    },
+    {
+      "type": "image_picker",
+      "id": "magnesium_image",
+      "label": "Magnesium hover image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Why Strive Soda"
+    }
+  ]
+}
+{% endschema %}

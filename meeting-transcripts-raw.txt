@@ -1,0 +1,687 @@
+# STRIVE SODA - COMPLETE MEETING TRANSCRIPTS AND NOTES
+
+This file contains all meeting notes and transcripts from meetings between Gavin (me) and Jack (Jespy) regarding the Strive Soda website project.
+
+================================================================================
+MEETING 1: Gav & Jack Dig into the Hive (website)
+Date: Mon, 29 Sept 25
+================================================================================
+
+### Personal Updates & Reconnection
+
+- Gavin played basketball with Joey and Tenny yesterday, legs extremely sore
+- Upcoming plans: Tech roast Wednesday (former Microsoft/Google employees as influencers), Datadog roundtable Thursday (6-8:30pm)
+- Jespy back from California on Long Island, available for couple weeks
+- Planning to meet up soon
+
+### Strive Soda Website Issues Identified
+
+- Pop-up form (10% discount) not working - phone input errors
+- Homepage lacks clear product explanation
+  - "Hydration soda" undefined for new visitors
+  - Images boring, just showing labels
+  - No compelling reason to buy or differentiation
+- Product section placement wrong
+  - Should move benefits section above products
+  - Need carousel for product images instead of full-page layout
+- Missing key product details
+  - Tropical: passion fruit + coconut + honey
+  - Peach Perfect: peach + lemon + honey
+  - Need flavor descriptions on product pages
+
+### Competitive Analysis & Inspiration
+
+- June Shine website review
+  - Good mobile experience but navigation confusing
+  - Individual product pages better than grid layout
+- Ben Stiller's "Stillers Soda" launch
+  - Effective "no fake stuff" messaging
+  - Intentionally retro video player aesthetic
+  - Good store locator integration (131 locations)
+- Roark website video approach
+  - Lifestyle focus without showing products
+  - Simple navigation structure preferred
+
+### Proposed Website Structure
+
+- Homepage flow: Video → What is hydration soda → Products
+- New "Science behind hydration soda" page
+  - Brief teaser on homepage with "learn more" link
+  - Dedicated page explaining benefits
+  - Differentiation from probiotic/prebiotic competitors
+- Key messaging updates needed:
+  - 160-170mg electrolytes (potassium, sodium, magnesium)
+  - 100% honey sweetened
+  - Target: movers, shakers, active lifestyle (not just surfers)
+  - Better-for-you soda positioning
+
+### AI-Generated Marketing Assets Demo
+
+- Created product images in real-time using AI tool
+  - Tropical: passion fruit, coconut, honey with tropical background
+  - Peach Perfect: peaches, lemons, honey with marketable background
+- Quality significantly better than ChatGPT for product imagery
+- Capability to add celebrity endorsements or lifestyle shots
+- Heat maps and user analytics integration available
+
+### Circle K Pitch Materials (Due Friday)
+
+- Need window clings for single-can sales
+- Two designs required:
+  - Core 3 flavors: vodka, tequila, gin
+    - Premium spirits, 100% organic wildflower honey
+    - $2.99, 7% ABV
+  - New spiked tea launch
+    - Vodka-based (not malt like Twisted Tea)
+    - 2 for $5, 4.5% ABV
+- Square format preferred over rectangle
+- AI tool can generate using existing brand assets
+
+### Next Steps
+
+- Gavin: Create website proposal within 24 hours including:
+  - Homepage redesign with new copy structure
+  - Science page mockup
+  - About Us page enhancement
+  - AI-generated product images
+  - Analytics/heat map integration
+- Meeting scheduled: Wednesday 2pm to review proposal
+- Jespy: Provide Shopify login credentials
+- Jespy: Send spiked tea graphics for cling design
+- Gavin: Create Circle K cling mockups before Friday deadline
+
+---
+
+MEETING 1 FULL TRANSCRIPT:
+
+Me: Mr. Espy.
+Them: Hello there, sir.
+Me: How we doing?
+Them: Dude. I'm good. How are you?
+Me: Great man. I ended up going over to Joey and Tenny's apartment yesterday. And played some B ball with the boys and. Oh, my God, dude, my legs. They feel like, you know when on Forrest Gump, when he takes off his leg braces and he's, like, shaking.
+Them: Yeah, that was you.
+Me: That's me right now.
+Them: Oh, damn. So you guys be balled it up a lot.
+Me: Dude, not even that much. I mean, like, maybe for, like, an hour, but, like, it just goes to show. Like me playing B ball in my. My driveway. Nice by myself. Thinking I'm really good. Compared.
+Them: Different than when you're balling with the boys.
+Me: Exactly. Balling with the boys is another level, dude. But it was so much fun.
+Them: Oh, that's good. How long is that drive from your house? To their apartment.
+Me: It's not too bad. It was, like, depends on the traffic, but, like, between, like, 45 minutes and, like, an hour.
+Them: Oh, that's not bad at all.
+Me: No. Yeah, it's pretty easy. And their place, like the parking, is just so, so convenient. And then, yeah, I'm actually going back out there. With on Wednesday. I'm gonna be crashing over. Kenny is gonna be heading back to Southampton. And I was gonna crash over on Graham's couch.
+Them: Yeah.
+Me: Because we're going to, like, a tech roast. Which is, like, a bunch of guys who worked at, like, Microsoft or Google that ended up becoming influencers. Quote, unquote. And they, like, make fun of the tech world. And so there's like. It's a real dude. It's hilarious. I'll send you some of their stuff. But Graham and I are going to that on Wednesday. And then Thursday, I was invited by a company called Datadog. Which, like, does a lot of web analytics. So I guess fairly big company to do a product roundtable. With some of their executives. And so Thursday, I'm going to be going into the city. From, like, six to, like, 8:30, talking about, like, new ventures, the changes of AI. In the workspace and how, you know, we can get ahead of the curve. And so. Yeah, dude. So things. Things are good. I'm starting to cook, you know.
+Them: Oh, that's awesome. I love that. That's awesome, dude. Heck, yeah.
+Me: Yeah. Well, dude, thanks for. For being able to sync up and, you know, reaching out about the site.
+Them: Oh, Gene, of course. Thank you. Yeah, because we were having some issues. I don't know if you've had a chance to take a look. At the Strive Soda website. I just shot you over kind of like some of the edits that I was thinking of making. To the site. And kind of where I'm at, and then I can kind of give you. I guess our inspiration as well.
+Me: Hell, yeah, dude. Nice.
+Them: But I'll put this in the chat.
+Me: Yeah, I just. I'm seeing the. So I was on. Okay, got it.
+Them: Here.
+Me: So I was looking at the Spirited Hive website before. And so now this.
+Them: Yeah. Spirit Hive. That one. I mean, that one's rock and rolling. I think that one.
+Me: Yeah, I was going to say that one's really good.
+Them: That one's awesome. I like what we're doing with that. I think that looks very good. The strive side, though, is just not. There yet. Here. I put in June Shine's website. That's what we're kind of trying to recreate, in a sense. But when you go to the Stripe Soto website, Let me throw that in the chat right now.
+Me: Is it? Strive soda dot com.
+Them: Yeah.
+Me: Drive. Dude, I'm so pumped to to try some of these.
+Them: Oh, I know, dude. You're going to love them.
+Me: Hell, yeah.
+Them: Because you're still sober, right?
+Me: Dude. Yeah.
+Them: How long have you been so. Has it been almost a year?
+Me: Almost a year. Yeah. October 27th will be a full year.
+Them: Dude, think about this. Wasn't it around this time last year, we were in Charleston.
+Me: Yeah.
+Them: Was that about right? Or was it. When was the. When did. When were we down there?
+Me: Dude, I think it was it. Was like, right at the. I feel like at the end of September, we're beginning of October. Time frame. And, yeah, dude, I was partying hard at that point.
+Them: Dude. That story of you, like, when I came back home. That one. Or when I came into the bedroom that next morning and you're sleeping on the floor. I was like, what happened?
+Me: Dude, honestly.
+Them: I was like, oh, no.
+Me: I've been. I've been told. Stories about me of that trip where I'm like, I. I didn't even know.
+Them: Well, I found out later because I never stay. I stayed out pretty late one night. I stayed out super late with everyone. And that was the night I think you ended up going back over to that guy's house.
+Me: Oh, my God, dude. Yeah. I forgot about that.
+Them: Yeah. And then I woke up, and then that was when you were sleeping on the floor the next morning. And I was like, what the. That was very good. But anyways, yeah, that was. That was funny. But, yes. You need to try strive? You need to try strive.
+Me: Dude. Absolutely, man. Yeah, it's. It's nice to, like, at this point, dude. Like, you know, being a year into it, like, I just went to. I was at, like, three or four weddings over the past, like, six weeks. And like, every single time, like, it's, you know, like, I. I go to one of these events. Like, in the beginning when I started to, like, I was like. Do I want to drink? But, like, I get used to it, but, like, having something that is like a. Like an alternative. Right. You know that is tasty. And then kind of can kind of just like, make you feel like you're still chilling. Dude is like, it's. It. It helps a lot.
+Them: Oh, dude, 100. What's your address?
+Me: My address is. You want me to text it to you?
+Them: Yeah. Texted to me.
+Me: Dude. All right, let's see. It was so good seeing little Pierce yesterday, too.
+Them: I know, dude, he. Is he not the cutest?
+Me: Dude, he is absolutely the cutest. And looks so like. Honestly, I see so much of you and Tenny in Lil Pierce.
+Them: Yeah. Isn't that crazy?
+Me: Yeah.
+Them: Did he? Yeah. He is so freaking cute, it's insane.
+Me: Dude, it's so good, too. Yeah.
+Them: Yeah, he's a good little kid. I'm just filming this out real quick.
+Me: He's a good. Little good little one, you know?
+Them: Just a little guy.
+Me: Yeah. It was great catching up with Tenny, too. Like, she's. I love Tiny so much. You know?
+Them: Yeah, she's the best, literally.
+Me: Yeah. She? Yeah, absolutely.
+Them: Let me just get this.
+Me: All right, so.
+Them: All right, so I just shot you over, so you should have the Strive Soto website.
+Me: Drive. Perfect.
+Them: I'm just gonna send this to you before I forget.
+Me: Yeah.
+Them: So that can be sipping on some high or strive this weekend.
+Me: You're the best man. Thank you.
+Them: Dude, of course.
+Me: Dude. All right, so one. One thing, too. Like, so I'm at Strive Soda right now, and if you want, I can share my screen and kind of, like, walk through it, and you can. We can walk through it together.
+Them: That would be great.
+Me: But. Yeah, like, the first thing that I just try to do, like, it. Like there was a pop up. Yeah, let me just pull it up. Okay? Let us see, let us see. All right. Are you still over in Cali?
+Them: No, dude, I'm back on long island. I got back. Last night. Pretty late. So I'm back. I'm on the same island as you right now.
+Me: Let's go, baby. I love.
+Them: So we got a hang. I think I'm going to be here. For at least a couple of weeks.
+Me: Oh, dude, absolutely. Then. Yeah, let's plan something out. And, you know, whatever it is, would love to just see you, you know? And just catch up. Dude, just. Our talks are just phenomenal.
+Them: Yeah, we should do it.
+Me: All right, you can see my screen.
+Them: Yeah, on the Hive website.
+Me: Oh, no. It should be the Strive soda, but let me see. Share. Oh, there we go. Share this tab instead.
+Them: Okay, here we go.
+Me: All right, so, like, the first thing I noticed, like, as soon as I came onto Strive Soda, There was a pop up that showed up and it was the 10%. And I put my phone number in and then there was right here. It says yes. Yes, please. I put in my phone number. Phone 681-61809. Let's see. Something went wrong. All right. And so.
+Them: That's good to know. Here, let me just. So let's say we end up working this all out and we can figure out something together. Would you be able to fix all this shit?
+Me: Yeah. Dude. This is my bread and butter right here.
+Them: Oh, huge. Okay?
+Me: Yeah. So I'm. I'm even just looking at it right now. Yeah. And I see some of the. Some of the errors that occurred. And. And nothing like this is. This could be, like, fairly easily, too. But I'm sure that this is nice because if, like, as soon as people come to the site, right? Like they are. This is a pop up. And if they.
+Them: Oh, that's huge to be missing.
+Me: 100%. And so, yeah, let me. I'm just gonna take a screenshot of this, and just then we can continue going through everything, but just wanted to call that out.
+Them: No, that's big.
+Me: Okay? And then I also have June. June canned cocktail open as well. And so do you want to start with. With that, or do you want to start with going through the. The Strive site?
+Them: Well, let's go through this drive site first. I think for me. And I sent you over just when you. Not right now, but look at it later. I sent over kind of what edits I was thinking of making just from copy, et cetera, because. You kind of scroll through here, and it doesn't give you too much information. Like, both of those images need to be subbed out. I think those images suck. It just is, like, super boring showing off the label. It needs to be fun and exciting.
+Me: Yeah.
+Them: One thing is, we're getting product photos taken.
+Me: 100%. Yeah.
+Them: But nothing jumps out of you. Of like, okay, it says hydration soda. But what is a hydration soda? There's nothing that details out like what a hydration soda is.
+Me: Exactly.
+Them: And I sent over.
+Me: Taste makers.
+Them: Yeah. So the next thing underneath that I was going to add is. What is a hydration soda. So before going straight into the products, hydration soda is a better fuse sparkling bedders that taste like soda, but goes beyond flavor. Unlike traditional sodas, literally with sugar and empty calories drives soda is designed to support hydration, deliver natural. Or support hydration. Keep ingredients clean, fit your lifestyle. And it's like, 100% sweet with honey.
+Me: And I love that, too. I think that's, like, such a big piece.
+Them: But yeah.
+Me: That, like, you know, and especially now, man, like, you know, with Aaron doing nutrition. Like she has, like, nine clients today. And, like, those are big things, right, that people are looking for. Like the. Yeah, so I see you editing it right now. Like the deliver natural energy.
+Them: Because this, and the only thing with this is. I put together all these notes and then put it into chat GPT to kind of organize. This is the only one because we don't want to put in anything around energy.
+Me: Absolutely.
+Them: So deliver. And I'm just going to highlight this for now because.
+Me: Perfect.
+Them: I don't want that to.
+Me: We want to prioritize that, Yeah.
+Them: Yeah, we want to. We want this to be. Changed to no energy, I guess.
+Me: Yep. Okay. Oh, okay. So.
+Them: Yeah.
+Me: So rather than. Yeah, it says deliver natural energy.
+Them: Yeah. So instead of, like, energy, we could do, like, you know, support hydration, keep ingredients clean, fit your lifestyle. And instead of that one, it could be, like.
+Me: Have it. So.
+Them: Like an organic sweetener or something like that, rather than sucralose, ascertain, et cetera. We could just update that, Yeah.
+Me: Perfect. All right, cool. And then. Let's see. I'm going through. So I have right now the layout of both. I have strive up and then I have your, your document. And so do we want to, like, go through the document and then look through the website at the same time?
+Them: Cool.
+Me: Or.
+Them: Whatever you think would be, like, the most helpful for you to kind of get understanding of, like, what I'm thinking. Just. I think maybe we go through the Strive website first fully.
+Me: Yeah.
+Them: I keep it all over the place, so that's my bad. But let's go through the stripe first.
+Me: No, dude. Not at all.
+Them: See what, like your gut check is on it?
+Me: Yeah.
+Them: And then we can kind of jump over to that other document.
+Me: 100%. Like the, the thing that, that I'm seeing, like, as soon as I go into strive. Right, like, let's see what it looks like in Mobile. Because I do like the video. I think the video is really cool. But let's change that to Chrome. X. Okay? So it actually does a decent job with it's being responsive. I was worried that the video is going to take out most of the page here. Yeah. So I think that, like, you know, in the hero section up here. Right. Like, really calling out what strive is all right, because that's going to be the first thing that people say. Which is. I don't. I don't think that it's going to be more than just a few tweaks. And we can take, like, a good thing about what, you know, I do is, like, we can go through multiple iterations of what you wanted to look like, but potentially, and then, you know, easily change it. And then, yeah, it kind of just drops right into the product, right? Where it's like, all right, so if you want to buy Strive, it's 32 99. And even there, like, it's like. I don't know if it really says, like, if it's like, if that's like, apac or if that's, you know.
+Them: Yeah, we need to update that. Like, 32, 99, 12 cans.
+Me: Yeah. 12 cans.
+Them: And all it says is tropical, like it needs to say.
+Me: Yeah.
+Them: What I think what needs to do is, like, when it gets to the product page and I have this on here. Like, I think how we could kind of lay it out, could be, you know, video, like, strive hydration soda, yada, yada, yada. What? Hydration soda is kind of like a block on, like, what a hydration soda is. Because I don't want to go and be like. Like, I hate when I get to a website, and it's like, sell, sell, sell. And that's how I'm. That's the vibe I'm getting right now is like, right when I go on, it's like, how to buy, and then it's like the flavors right underneath.
+Me: Yeah.
+Them: When it doesn't tell you what the product is. You know, like, if. If you were an outside person going in and didn't know what Strive was, you would be like, what's a hydration soda? Like, what did. Like, what is that? You know? And it doesn't really describe what the flavors are. So I think it should be like, video then, like, strive hydration soda. The delivers refreshing tropical flavors. Blah, blah, blah, blah, blah. And then it goes into like, what is a hydration soda. And then underneath that.
+Me: Yeah.
+Them: It could be like the different products and then on that sheet. To. Oh, you go ahead.
+Me: Oh, no. I was going to say too, like. Yeah, I absolutely agree. Right. Like the. You want it to be, you know, so simple that, like, as soon as someone comes here, they know. They know what it is. And then like, yeah, like, having, like, these. The different, like, you know, like, to me. I would even say, like this section here. Is pretty good. Like that should be moved up above. If that's something that you wanted to keep in here. And then have the products piece. It could be on the landing page. But it could also be right in, like, the, like, the drop down of, like, products, right where it's kind of like, all right, you're telling your story. For, like, the more of the marketing piece, and then it can go into those particular, like, how we can make some really good images. You know, at least for now, right? Like to put in here as placeholders until you have the other product stuff. That comes in.
+Them: Yeah.
+Me: And, and have a little bit more detail around what these. Like what the tropical recharge is. Right. Like what the peach perfect is. And see. Interesting. It says 12 pack here. Actually, it doesn't say it on. On the tropical one.
+Them: Yeah. No, that's interesting. And, like, I like those photos. I think those photos are cool, but it's just kind of like. Kind of like random, you know, like, just jumbled together at the bottom.
+Me: Yeah. And what we could do there.
+Them: You're good.
+Me: What we could do here is because the photos are pretty sick. Is put it into a carousel. Right. Where it's like it goes through each image, you know, rather than taking out more landscape. Because, like, this is, like a full page of images. On the. On the website. Right. If someone scrolls down.
+Them: Yeah.
+Me: You can have it. So it's actually, you know, highlighted into one focal point, and then. Every, like, one and a half seconds I usually like to do. I'll just go to the next image. And then you can have an action button. On it, too, right? It's like, you know, view like a. Like a. Like a nice button that's like, you know, view products, and then it'll just bring you right to the product page.
+Them: Yeah, that's cool. How does. I guess we went through this product page. I think what could be helpful is going to the June shine from a mobile standpoint.
+Me: Yeah.
+Them: And then kind of, you know, apples to apples on product page.
+Me: I love that. It's a great idea.
+Them: See, this is cool. Like, I like that. I think. Yeah. Me island cooler. Flavor Blaster throwback, Flavor P. Perfect with summer. Blah, blah, blah, blah, blah. Find near you. So they're trying to, you know, go. Drive you straight to where you can find it, which I really like.
+Me: Here. It's a little broken. But you know.
+Them: Yeah, a little fucked up there.
+Me: And this is where Strive is going to be just much better. On the mobile.
+Them: 's so much better right there. I like to hear.
+Me: Let's see it. So, yeah, like, from here, it's, like, fun near you. It put in Westport, Connecticut, but kind of close to Connecticut, I guess. But yeah, like, each one, like the variety pack. I was hoping that I can click it. It'll do more. Tasting rooms. Upcoming events. Join our team. Location, shipping. Pretty straightforward. How do you like the layout in regards to the. Let me go back to the. Find it in ariel. Oh, interesting. It's using. Okay. Like, going through the different. I guess in this, like, almost. It's almost like a thumbnail layout. For the products. Is this something that you would like?
+Them: Just for the like, find it near you page.
+Me: I'm just general, right? Like, for the. Like the product page.
+Them: Maybe. Here. Go to the. I want to see what it looks like on the shop page. Because that's something that. Because I don't know. I don't like this. I don't like how this looks right now. But, like, if you were to go, oh, because maybe you can't buy it online.
+Me: Yeah.
+Them: Can you buy it online?
+Me: Let's say. Yeah.
+Them: Oh, you would. No, it's all fine near me.
+Me: It's all fine near me.
+Them: Maybe go to Kombucha because they might sell the Kombucha online.
+Me: Okay?
+Them: No, they do find it near you.
+Me: Interesting, dude.
+Them: See, I think I would like it, like, click on. Maybe click on one of them.
+Me: Yeah. I'll click on. Oh by now. Interesting. It's pretty.
+Them: Like that looks good. But it's like a little barren. Like there's not much going on on this one.
+Me: Yeah. Like, I like how it takes the. Like, it kind of goes into a little bit of a description, right? Like, it gives it a little bit more of a. Rather than, like, it just, like, everything's sitting on a product page. Like, it get, like, has its own page, right? Like the strawberry dragon fruit. But, yeah, it's a little. It's a little plain. Right? Like, also.
+Them: Yeah.
+Me: Like I would. For me, like, if I was wanting to buy this. Potentially even see, like, reviews right here, too. Like, where, like, people are like, oh, yeah, like, this is great.
+Them: Yeah.
+Me: You know, alternative to xyz.
+Them: Is that something that you could. I know this, like, because we're still so small. And we haven't received any reviews yet on Strive. That's something that you could do through, like, AI, like, create reviews.
+Me: Absolutely.
+Them: Oh, wow, that's cool.
+Me: Yeah, dude, we can. There. There's so much that. That we can do. In regards to, like, the website itself. To integrating the reviews. Having auto generated reviews. Yeah. Definitely. Cuz those are like, if you think about it, like, even when, when I shop like in like Amazon or wherever, right? Like, I'm like, ah. Anything below four stars is like, I don't.
+Them: Yeah. No.
+Me: And, like, the number of reviews is important, too. It's, like, captivating, you know?
+Them: Oh, totally.
+Me: And so that's. That's something that's fairly straightforward to integrate. Into into the product pages.
+Them: Yeah, I'm trying to look because there was another website, too, that I really liked. It's not a beverage company.
+Me: Interesting.
+Them: But I guess it doesn't really matter.
+Me: Well, let's see.
+Them: Oh, that looks kind of cool.
+Me: Yeah. So this is nice, like the science. I think that's pretty sweet.
+Them: Well, that could be cool with, like, the science behind hydration soda.
+Me: Exactly. Like I would look for. I would look for something like this to better understand the problem.
+Them: That looks really good.
+Me: Yeah.
+Them: I think that could be really cool. On. Like, if it said at the like, that could be part of, like, on the landing page, it could have like, a brief thing of, like, you know, what is a hydration Soda gives, like, a little thing and then it says, like, learn more.
+Me: Exactly.
+Them: I could say the science or whatever. And you click on it, and then it brings you to, like, a page that is dedicated to, like, what hydration soda is.
+Me: Dude, I couldn't agree more. I'm. I'm working on another product. And, like, where we were talking about, like, the science behind, you know, it's. It's like a. Like a baby registry. But, like, the science behind, like, gift giving. And, like, having that be on the landing page, where it's, like, you get enough to, like, visually see, like, you know, it could be an image, or it could just be, like, you know, really good text and, you know, some. Some colors that kind of go along with your. Your brand, and it's captivating enough. For someone to go learn more. And then they go into it. And like. Like, straightforward, like, the benefits, you know, from doing, you know, from using this. Like that's. It's. You know you can't go wrong with that stuff.
+Them: Yeah, I think that. I think that. Well, because then it supports, like, a reason why to buy as well.
+Me: 100%.
+Them: You know? And that's what we don't have right now on the Strive site is a reason why to buy, you know, or what makes us different, you know?
+Me: Yeah. You know, And. And I think that's like. Like being. Maybe not, like, saying the reason why to buy, but, like, what makes you guys different. Like even calling that out. Just as like, you know, and that could be a A section, or it could be all about us. Right, and the about us page. Like those are things that people want to hear. From my experience.
+Them: Yeah.
+Me: You know, it's like.
+Them: Yeah, because, like, I think also something that. 's interesting is like, you know what I always tell people when I'm explaining the brand is like, oh, we're a hydration soda, so, you know, we're a better for you soda. That instead of being a probiotic prebiotic drink, like all those probiotic prebiotic sodas. You know, that don't really do much for your body because they're not really helping your gut. From a prebiotic standpoint, it's kind of more just. We are an actual hydration soda that is aiding in hydration from potassium, sodium, magnesium.
+Me: Yeah.
+Them: Et cetera. So I think that could even be interesting, like, what makes us different from the competitors? Out there, and the better for use out of space. Could be kind of interesting to have that, too.
+Me: I love that. And the mag. So there's magnesium in the. In the drinks, too.
+Them: Yep. So we have potassium, sodium, and magnesium. That makes up one SKU has 160 milligrams and one SKU has 170 milligrams milligrams of electrolytes.
+Me: Dude. I just knowing that right now, like, I know at least, like, five people that would be like, I. I need that. Just because like. Like, magnesium helps with so many things.
+Them: Yeah. And that's the point. Like you would have no idea. By just looking at our website right now.
+Me: Yeah. I mean, and, you know, it's. And. But you know what? Well, we're going to get it to get people to know.
+Them: Yeah. We're gonna get people to know, and I think also. Looking at our Strive site. Like the video, I think looks cool. But that's already, like, because we want to be for mover shakers. The surfers, the yoga people, the people who like to run, like the people that like movement.
+Me: Y.
+Them: But we don't want to, like, kind of put ourselves in a corner of just being for surfers. You know? So, I don't know, maybe we can keep that as, like, a placeholder for right now. That video, but we might. We want to create probably a better commercial than that at some point soon.
+Me: Dude. The end. And. And there's things that can be done too, like. Like this. Would take no time out of my. My day, really. But, like, where, if you want it, let's say that there is like five different, you know, categories of, of users at your age, or ones like runners. One's hikers. You know what, like, you know, the surfers, Yoga, like, easily can make a really good video, even with AI where it's, like, captivating and it could be, like, on a, you know, somewhat of a rotation, where it feels like it's one single video and it would be. It would be one single video, and it's realistic. But I could. I'll. I could show you what. What some of those look like at another time, you know?
+Them: Yeah, no, that'd be cool. Just to see kind of what it looks like. Because we definitely want to put together, like, a legit commercial. That.
+Me: Oh, yeah.
+Them: Like. Here, I'll show you a commercial. Another website I was going to send you was Roark. I don't know if you know that company.
+Me: I do.
+Them: Roark. But, oh, they already changed.
+Me: Or.
+Them: Their website. They already changed their video, but. Oh, this is like, literally, look at. I don't know if you're on their website. But.
+Me: I am. Let's see.
+Them: So. Like shows off surfing. Which looks great, you know, and then interruption.
+Me: The running. Yep.
+Them: And then we'd probably want to have, like, a hiker or something, and then maybe someone doing yoga. You know someone? Just some people. Always outside, you know.
+Me: People just being active, right? Like, just.
+Them: Being active. And, you know, maybe it's someone, like, on the go, like, leaving their house to get to work or something like that. You know something? That's always movement. Because our whole thing is, like, for the movers, for the shakers, for the doers kind of thing.
+Me: Move her shakers.
+Them: Like where the soda.
+Me: I love it. Yeah, dude. That sounds. Yeah, we can. You know, I. I'm sure that, you know, you have a, you know, solid, like, production where you could put something together, but. I could.
+Them: Yeah. I mean.
+Me: Like.
+Them: If you want to. If you want to take a stab at it, it would be cool to take a look at it because also, too like, this video doesn't show up any of their actual products.
+Me: Hell, yeah. Dude. No, it doesn't. This is just showing them. Yeah.
+Them: You know, like. Showing the lifestyle.
+Me: It's the lifestyle. Dove. What. What do you think of of that? Particular thing like, it's like this is the lifestyle. Is that? Would you. Or would you like to have it? So it's like, all right, someone's running. And like. Like is like, you know, drinking a strive.
+Them: I think at the end of the day, that's what we would want to have when we're doing like we'll shoot is, like, you know. A video of someone surfing, and then it's like a quick transition to them, like out of the water, like, with a strive in their hand, like, looking at the waves, like, with their board in their hand. And then the next one is like a trail runner, you know, and then like, taking a break, having a strive or. Like, you know, whatever it is, like people doing movement with a strive in hand or, you know, strive afterwards or something like that is what we would want.
+Me: Oh, yeah. Absolutely, dude. Yeah, let me. I'll take a stab at it. Just to see.
+Them: Yeah, it'd be called as me.
+Me: What? But, yeah, I like this.
+Them: And then when I come. Yeah, and then, like, click on. Like, click on one of their products. Like, that's kind of cool. I like that. Where, you know, for strive, obviously it would be like, what is Stripe Soda? Or like, what is hydration soda? And then it would be the products, but.
+Me: Yeah. Yeah.
+Them: Like this back end is kind of cool.
+Me: I like this a lot, actually. Because also it's. It's what? It doesn't feel salesy, but it is minimal. Clicks. To get to the product. As well.
+Them: Yeah, that's what we want. Yeah.
+Me: You know, the one thing about the. The. What was it? The June? Yeah, like that. I almost felt like I got lost in it. I was like, how do I get back? You know, like.
+Them: How do I get back? Yeah. I want it to be simple. Where it's like. Realistically, there's the homepage. Which can get you to anywhere. Like the homepage will get you to, you know, the product pages to the Science behind hydration soda to the About Us page. And then when you're on those pages, you can just go straight back to the homepage.
+Me: Always right. So, like, being. I'm hoping that Roark does the same thing where you click the. Like the header brings you back. I also like that they have this. Like the footer. It's almost like a. Yeah, it's like a toast message where you're able to. Because, yeah, if you're on your phone, like, clicking up top is going to be difficult.
+Them: At the bottom.
+Me: And then you got, like, the three things search. You got profile? Looks like. And then. Rejected by age capture. I get out of my. I don't like that. And then let me go back. And then shopping. Right.
+Them: Yeah.
+Me: But, yeah, these are. These are great examples. And so. And if you don't mind me asking for the. The initial website that, you know, you have up right now, Is that something that you. You built it, or is that.
+Them: We kind of did that in house. We were using this developer for a while, but he was, like, had all these issues and, like, didn't get back to us. And then we were like, what? The CMO and I just kind of cranked it out, and then my CMO just took it all the way home.
+Me: Yeah.
+Them: And we launched it with the idea of, like, hey, we're gonna come back to it. And it was kind of like, we'll come back to you in a week. And then now it's already been a month, and we're like, oh, shit, we need to, like, fix this. And he's like, a little reluctant. My cmo. He's a little reluctant because he's the one that did it. But I'm like, this is. Not. This isn't like I'm not. I'm. I'm happy with it in the sense that we got it up, but I'm not happy with it day to day, you know?
+Me: Yeah. And, and that's reasonable, right? And like, I think that, you know, when you're, when you're playing in the big leagues like this, right? Like with the, especially in the, the type of business that you're in. Like, showcasing, like, the benefits, who it's for. You know what's in it? Like and. And how to get it. Like, really, you know, go. It will go a long way. If you knock that out of the park.
+Them: Come on.
+Me: Or when we knock it out of the park, I like to say.
+Them: Yeah. Exactly. Exactly. Like there's another soda brand that just launched. Ben Stiller's soda brand. I don't know if you saw that.
+Me: No. What is it?
+Them: It's called stillers soda. Com.
+Me: Oh, my goodness. Oh, yeah. Let me share my this tab.
+Them: So I wonder how that looks on mobile.
+Me: Let me see.
+Them: Ooh, that looks good.
+Me: It looks good. The one it's like, on, you know, for me being, like, intact for so long. Immediately. I'm, like, biased. Like, I don't like how.
+Them: Yeah, it should fill the screen, you know?
+Me: The first fold like, to me, I really like when it's like the fold is filled. But that's just also me being nitpicky.
+Them: But this, you know, it says no fake stuff.
+Me: Yeah.
+Them: But. It doesn't give too much detail. On, like, what it is. Like, I like how it says no probiotic, no biotics. You know, like, that's kind of funny.
+Me: Yeah.
+Them: But it doesn't give too much detail on, like, what the product is. Like, I think they're kind of in the same place as us, where it's like, okay, it's a soda. But what makes you guys different other than no fake stuff, no probiotic. Like, what is it made with, you know? And it doesn't give too much detail.
+Me: Yeah.
+Them: But it looks good, and it's simple.
+Me: 100%. Right. Like, when I. When I think about users in general, right? Like the type of people that would be coming here. Like maybe no fake stuff. Works, right?
+Them: Yeah, true.
+Me: And then, like, also, like, I'm not sure if you guys have, like, user analytics set up. On the sites, but, like, you can see from, like, if that's something you're interested in. Like you can see where like there's drop off or like where some like more people are clicking.
+Them: Oh, total.
+Me: You can even have heat maps where someone can. So that you see where people are scrolling to the most and where they're stopping, dropping off. And like, to me, like, that's. That helps so much.
+Them: Very valuable. Yeah, because then we could run it and see, like, where people are dropping off and, like, what needs to be changed.
+Me: Exactly. Let's see. This is funny.
+Them: Oh, you got to watch. There he is.
+Me: Dude, is this a real video?
+Them: Yeah.
+Me: Dude.
+Them: Hi, I'm ben, and this is stillers. My new soda made with bubbles. I was gonna say natural ingredients. No bubbles. Just a flat soda. No, a lot of bubbles. Bubbles. I'm sorry. Okay, Maybe you shouldn't curse. Oh, I got it. No, it's not gonna happen again. It's a great tasting, healthier option. It's a great tasting, healthier option, and it comes in a. Yes, it does. If you love classic soda and none of that prebiotic bull. You have to stop swearing. Oh, what, are you gonna tell my mom? Ben, no Stillers. Seriously. Good. With a ton of bubbles.
+Me: That's so funny. I don't know if this is met. Like, they're. They're doing this intentionally. But.
+Them: I think they are to make it look like old school.
+Me: They. They must be, because this, like, the playback. This is like, not like early 2000s, like, video player.
+Them: Yeah.
+Me: And that's. That works, right? Like, if. If that. And maybe that also, like, for the people that they're going for. This is like, what people, like, maybe it's like an older generation. You know, like this works for them. You know, they're familiar with that. Putting classic soda back on the map. This is cool, too. I really like this.
+Them: We would want that. We 100% want something like that. I like how it looks like it's on your phone, too. Or like that outline, I think looks good.
+Me: 100%. Dude. Yeah. It's like. It's almost. Yeah, this is, like, almost full fold. Where you can. And this is I actually love doing this type of stuff where. Where you have, like, the map, you know, if they're. If you know, someone has locations enabled, they're able to, you know, for me, it's great. Like I could see 131 locations. On like a ton in the city. That's a little. Little messy, but, you know, you can't ask for the world. But then, yeah, I mean, like, being able to just navigate because. Yeah, like, if say that, like, you know. This drive is, you know, all over Brooklyn. Right. Like someone could easily be able to go right down the street. To, you know, pick up, you know, a 12 pack.
+Them: Yeah.
+Me: C town. Yeah. That's pretty cool. I do like how it's like a. It's like almost like elongated mobile experience.
+Them: It's almost too long.
+Me: It's a little. It's just a tad too.
+Them: But I found that the site is humorous. Like, if you scroll down a little bit more.
+Me: That's cool.
+Them: Maybe by 100% real human celebrity people. Yeah, obviously. Strive won't be funny.
+Me: Join the world. Yeah.
+Them: Do you think that's AI? That's got to be AI.
+Me: This? Absolutely. There's no downward mind.
+Them: Yeah.
+Me: This is AI. This is AI right here. This is using an integration with another company. Called stock list. And. This is probably AI. Oh, no, that's probably little Ben. The images here. I wouldn't be surprised if these were AI Actually, yeah, definitely AI. In this up here is definitely AI.
+Them: Well, I'm thinking what we could also do is, for the time being, kind of have some placeholders that shows off the can. And I think that's something that we could do with the product pages, because right now, those images suck. And we need to add in some images. Let me just go back to it.
+Me: 100%. Like, let's. Let's see. Like, so this particular image here. I'm just going to take a screenshot. And. Go to. Show this tab instead. Just for, like, playing around just for a second.
+Them: Yeah.
+Me: I want to see.
+Them: Because one thing we want to add is there's nothing around. To you. Someone that doesn't know tropical recharge, you would have no idea what the fuck the flavors are. Oh, tropical recharge. Like, it'd be cool to have palm trees and, like, a tropical vibe, maybe, but we want to show that it's made with passion fruit. And coconut.
+Me: Dude. 100%. Looks like my computer is freezing. But, yeah, like, those are the things that would. Make me understand what tropical recharge is.
+Them: Yeah. Rather than just like, well, what is that? You know what I mean.
+Me: Exactly. All right, so here we go. Come on, baby. Get a little love. All right. My computer is so slow right now. I could do this after. I wanted to, like, take one of the images and just see, like, get your, like. What would be something that you would like to change about this particular image right now if you could?
+Them: Yeah, I think we want it to, like. I just don't like. The I think that would be great for a secondary image, but not our main image for our site. I think it's great to show off the package design for nutritional information on the back.
+Me: Yeah.
+Them: But other than that. It shouldn't be our main image. I think what would be cool is to show it off. The actual can itself, maybe with, like, a cool background or whatever. Kind of like what Stillers has and also what June Shine has on some of theirs.
+Me: Absolutely. So it could be like, all right.
+Them: Like this right here. Oh, shit.
+Me: No. All good. Do you want to. Do you want to prompt it?
+Them: Let me share my screen.
+Me: Let me stop sharing mine.
+Them: Oh, sorry. Can you see this?
+Me: Let me. Now I can. Yep.
+Them: Like something like, that's cool.
+Me: That is cool.
+Them: And that would be great to have on the main site to show off, like the two flavors. Like tropical recharge and then peach. Perfect.
+Me: Yep.
+Them: And then I'm just trying, like, this is cool.
+Me: Yeah. That's okay. That's awesome. And so it's like it has, like, almost like the fruit around what it is.
+Them: Yeah, just to kind of show off, like, oh, this is what that flavor is.
+Me: What is the flavors that tropical recharge is made with?
+Them: So tropical recharge is passion fruit. And coconut. And obviously, honey.
+Me: Yep. And how many? Background. All right. So. One of the things I just wanted to check out is. Okay? Me share my screen real quick. And this is obviously just like, one shot. Let's see what happens. But this is one of the products that I've been working on. And, oh, and you can't see. The page properly.
+Them: Whoa.
+Me: Yeah.
+Them: That looks sick.
+Me: Isn't that dope?
+Them: That is very cool.
+Me: Yeah. So I said to, you know, this is. I. Obviously, I could have used better words, but, like passion fruit, coconut honey. Surround by the fruit with an awesome background that would be perfect for a product page. And, like, bam.
+Them: That looks sick. I think. I mean, obviously we can prompt it to be like, hey, make the passion fruits look a little bit more real, I guess, but other than that, looks super cool.
+Me: Yeah. Passion fruit. Let's make sure.
+Them: Wow, dude, that's cool.
+Me: Right. This is one of the. One of the things that, you know, Graham and I have been working on. Let's see if it actually made a change. Did it actually change anything? I don't know.
+Them: I don't know. Let's try that. Can we do the peach one real quick?
+Me: Hell, yeah. Dude. All right, let me. Start right now.
+Them: But it's so cool how it. Made, how it made the can rap. Like actual. Because I found that chat GPT does not do a good job. Of creating.
+Me: Yeah.
+Them: Does a shit job.
+Me: It's. It's poo poo. At least for it. Like, it's poo poo in regards to, like, being professional. You know? And, like, that's where GRA and I, we were like, dude, well, you need to make something that's fucking good. You know, so let's take. The. The. The peach. Perfect.
+Them: Yep. And. That's peach and lemon. And honey.
+Me: Peach laminate. Oh, it sounds so good.
+Them: You'll have some, hopefully in the next two days.
+Me: Dude, you're the best, Seriously.
+Them: No, thank you. I'm so glad you could help me out with this.
+Me: Dude, are you kidding, man? This is. I'd love to. Okay, so I'm gonna say. Or if. Do you. Do you want a prompt that I can actually do something where if you speak, I can capture what you wanted want to say, and then we can use that as the. The prompt.
+Them: Okay?
+Me: Ready.
+Them: Yep. Make a product image. With this can as a centerpiece. With peaches, lemons and honey. Surrounding the can. This is going to be a product image for a website.
+Me: Perfect. I caught it just a little bit before that. All right. Let's say I need to figure out how to make the image. A little bit more scrunchy on the page. Just because it takes up a lot of real estate.
+Them: Alex. Good. Maybe we do, because what did you prompt the tropical recharge with, like, a blank background? Maybe we just say make the background. More blank. Or make the not more blank, I mean.
+Me: Like. Like, don't, like, not have, like, a kitchen behind it, like, make it, like.
+Them: Yeah, make it more.
+Me: Marketable. Marketable.
+Them: Yeah. Yeah, more marketable, maybe with, like, somewhat of. Somewhat of a tropical vibe. See where that comes back with.
+Me: Okay, let's see.
+Them: Creating magic.
+Me: Let's create a magic baby that's what it's all about. There we go.
+Them: That might be a little too.
+Me: All right.
+Them: I like it, though.
+Me: Dude. And, like, this is just us, like, kind of messing around. Like, we can make, like, some serious. Like legit images and videos. You know that. Is a higher quality, in my opinion, than whatever anyone else has out there.
+Them: It looks great.
+Me: Like, we can. We can, like, continue this week where it's like,
+Them: I love it. That's so cool that you were able.
+Me: Right? Yeah. Dude, this is. You know, one of the things that we've been working on is just making really good marketing images. Where someone can take an image of something. And, like, it can really. Like, make it into something incredible. Like, also, like, if you wanted to add. Jalen Brunson, you know, or someone holding a stride like you could do that. You know, those are, like, all things that can. You know, obviously, there's probably, like, rights to doing things like that, but, like, it's really limitless with this technology that we have.
+Them: That's awesome.
+Me: Now we could save it. But yeah.
+Them: Well, cool. Why don't we. Why don't you do this? Why don't you put together, like, a little proposal for me and, like, look at kind of. Like the website. Look at those edits that I changed on, like, or the kind of. I put together that whole doc. Just take a look at that. On, like, the homepage, then, like, the science page that we were talking about. Beefy About Us page and then creating some of these images and all that. And, like, we can review that maybe later this week and then get off to the races.
+Me: Dude, that sounds perfect. Yeah. So I'll have that. I'll have that together. Probably within the next. 24 hours. I would say, and so I could send that over to you.
+Them: Cool.
+Me: And, dude, we're gonna. We're gonna get strived looking so good. On on the web. Dude.
+Them: So good. I love it. I love it.
+Me: Fuck yeah, dude.
+Them: Hell, yeah. Dude.
+Me: And thank you, dude. Thank you for coming this document over, too, because, like, this is really, really helpful.
+Them: What are you doing? Yeah. Yeah, I just wanted to have something because I just went through the website and I was just, like, outside perspective. Take notes on what is missing, what needs to be updated, and, like, what's confusing. And I just took all those notes, kind of put it into, like, hey, I want these edits to be made. And, like, do it as if, like, someone's coming in to create this website. So take a look at that. If you have any questions. I'm always free and available, so just let me know.
+Me: Okay?
+Them: But yeah. Dude pump to hopefully get something rocking and rolling.
+Me: Oh, we will, dude. It's. You know, that's. This is the one thing that. And I try not to sound cocky because there's still a lot of things that I can be better at. But. I love this stuff. Like, we'll stop, you know, and being able to work with you or, like, with, you know, my friends, to, like, help, like, it just gives me energy.
+Them: Good.
+Me: Like I feel like I got reenergized right now.
+Them: Yeah. No, dude, I love it. I'm glad we can. Yeah, like those other developer we were working with, I was like, oh, my God, he was so hard to fucking work with. I was like, this guy fucking sucks.
+Me: Dude.
+Them: And you definitely don't, so I love it.
+Me: Dude. It's funny, too. Like, so for me, coming from. And I know you're probably gonna have to jump in a minute, but, like, coming from product management, I had managed teams of engineers, right? And, like, the bottleneck was always on engineers, and they always would say, no, we can't do this. Or it's too hard to do this, or, like, in all these things. And, like, as a product manager, you're a visionary. And so it's like. Like if I can only just do this myself. Like, then I could prove that it could do it. And now we're at a place where, like, the, like, product managers are the bottleneck. And so we're past engineers, like, being that, like, full stop, like, like, now I come to the races and they're able to do these things, and it's. Like it just feels so much better.
+Them: Yeah. I love that. Question for you. Well, do you have a couple minutes, by chance?
+Me: Oh, yeah, absolutely.
+Them: Because I didn't know you could do all this design stuff so easily. Let me see. So we have to get this design made by Friday and want to get your thoughts.
+Me: All right.
+Them: Let me explain it to you real quick.
+Me: Yeah.
+Them: So we're pitching two circle K, which will be. This is for Hive. So circle K across the whole us. We're pitching them like single can use because they don't sell four packs.
+Me: Okay?
+Them: And we want to create these little window clings that are about this big. That kind of stick on the inside of the cooler. Like, when you open it up, it'll be like, oh, a little bit about Spirited High. They don't have, like, the logo. Maybe it'll say, like, 100% sweetened with organic wildflower honey. And then it'll show the three cans at the bottom, and it'll say, you know. 299 or something like that. Just, like, easy, quick, with kind of like a cool background. So it's just like, boom, right there. Is that something that you could create?
+Me: Absolutely.
+Them: Oh, easy.
+Me: Yeah. Dude. You know, obviously, like, if. If, like, I. If I create it, and you're like, ooh, that's not it. Like, dude, I'll figure it out. You know? And you, you see the quality of these images that we just made by just doing.
+Them: Yeah, well, that's what I was saying. I was like, whoa, this is awesome. This is so much.
+Me: Yeah.
+Them: Because I've thrown shit into ChatGPT and it's taken like it was more work to poke sit along than to just get a developer to create it. You know what I mean?
+Me: 100, dude, it's. It's like the. The thing that I'm trying to work on with why not us is like make, like make the. The agentic Photoshop that's like grandma proof. Like anyone could use it, you know?
+Them: No, I love it.
+Me: And it's like, best quality. And so do you happen to have like a. Is it like that marketing page for Friday is at a. Do you have an example or do you have any examples of the cans you want to use?
+Them: Yeah. So it would be. Let me go to the website. So if you're on the Spirited Hive website,
+Me: Y.
+Them: It would be those three cans.
+Me: All right, so I see. Oh, okay. Right there. So, like, in the. In the boxes?
+Them: Not in the boxes. Just the individual can.
+Me: Okay?
+Them: Photo.
+Me: Yep.
+Them: So it'll be those three. And then. It would have. And I can send you all of this. Then it would have. Like the Our Spirited Hive logo at the top left or something?
+Me: Yep.
+Them: And it would say, you know, premium spirits. 100% sweetened with organic wildflower honey. And then it would say, 299.
+Me: Perfect.
+Them: And then that would be it for one of them. And then I can send you the images for the other one, because that's for the Core three. And then we want to create one for. We're releasing a T. I don't know if I told you that. But we're releasing a spiked T in the.
+Me: I. I don't think you did. That sounds awesome.
+Them: Yeah. So we're releasing a spike T. Kind of like whatever that sweet tea is that everyone has. What's the name of it?
+Me: Twisty.
+Them: It's like twisted tea, but obviously vodka, not malt, and only sweet with honey.
+Me: Yeah.
+Them: And then one other thing that would actually be on the Core 3 would be 7% ABV. And then on this one. It would be. You know, same thing. Logo. Premium spirits, 100% sweetened with organic wildflower honey. Then it would show the vodka can. The T can, which I can send to you. And then it would say 2, 4, 5. So 2 for 5 by 2. Yeah, 2 for 5. And then it would say 4.5%.
+Me: Perfect. Two for five.
+Them: Alcohol because that one's lower.
+Me: Still not it. So and so we want to call out the 7% ABV in the 4.5.
+Them: On the core and then 4.5% on the other one, just so it doesn't. They don't get confused.
+Me: 100%. Yeah. And what is the. Do you know, like, what the. What it's called? Like the. Is it like a sticker? That.
+Them: Yeah. So here, let me find an example for you.
+Me: And, dude, we can take a swing at this right now, too, if you have a couple minutes.
+Them: Yeah. I do.
+Me: Okay, sweet.
+Them: Kind of find.
+Me: All right. Jack, would you be able to, when I. When I just say go, just, like, kind of give, like, the quick spiel again? Of like what? What? Where you want things?
+Them: Yeah.
+Me: And what you once had. And. All right, perfect. So. I'll do three. 2, 1. Go.
+Them: I want to create a cooler. Beverage cling. That has our three main beverages, our vodka. Our tequila. Our gin. Spirited hive. That shows off our logo. Says premium spirits. 100% organic wildflower honey. 299 per can 7% abv. And showed images of each one of our cans. Which is a regular background.
+Me: Perfect. All right. Let's hit it.
+Them: And see what it. Let's see what it does. So does it know how pull those images, though?
+Me: Yeah. Yeah. So the what. What we do differently than, like, chat GPT? Is chat GPT tries to. Recreate. The like pixel by pixel. The images. And so you. That's why you get things that are, like, a little wonky, right? Like a face will be off or like the can won't spell things, right? This is not. We take 100% of the pixels. That are from the original image, and then we adjust the things around it. If that makes sense. Yeah. So it's just like a different way of doing it.
+Them: That makes sense.
+Me: I'll show. Dude, I don't know if this is what you were looking for. But this is also just like the beauty of prompting. So.
+Them: Oh, that looks good. It's not quite what I was thinking. Here, I'll show you. I'll show. Let me show you.
+Me: It is pretty cool.
+Them: Maybe we can give.
+Me: Like the Quebec of the cooler, the premium spirits, 100% organic.
+Them: No, it looks really cool. How we could just create that and it has our right logo.
+Me: Yeah.
+Them: And it has those cans in the ice, like, that's insane.
+Me: Yeah.
+Them: Maybe we could say.
+Me: Yeah.
+Them: Wow, that looks really good. I'm trying to think because maybe what it needs to be. Let me find.
+Me: So it doesn't need to be in a cooler, right? Like, it's, like, make it like a. A sticker.
+Them: No. And I said cool. I said cooler. But I'm thinking here. Let me just. Let me. Let me just drop this in the chat real quick so you can take a look at this.
+Me: Alright. Let me get to the chat. Oh, dude, perfect.
+Them: Yeah. So it looks like, like. It shows off the cans. Then, like, it's, like, in a rectangle. And a cooler cling, meaning, like, it sticks on the inside of, like, one of those refrigerator coolers.
+Me: Yeah.
+Them: That you see at, like, a gas station. And it just calls out the three SKUs. So let me go to.
+Me: Perfect. Dude, this is great. So. What we can say. Let's see. Is this? What site is this? Dual co. Is this like.
+Them: You. I have. I have no idea what it was. I just found it on Google Images.
+Me: I love it. It's like, what's the. What is a cooler cling? Yeah, this is perfect. So use cooler click to promote. Okay, so let's do this.
+Them: Trying to find a better image, too.
+Me: Michael sharing this page. Okay? Let me.
+Them: Oh, here we go. Static clang.
+Me: Okay, so. So a static like.
+Them: Static. Yeah. Another way. Yeah. Another thing of saying it is a static. Clang.
+Me: Okay? Great. Static. Clang. Promote.
+Them: To promoting spirited hive.
+Me: Ready. I'm gonna. I'm gonna let you do the talking again. Just.
+Them: Okay?
+Me: Okay?
+Them: Create a static cling. To promote spirited hive inconvenience stores. Show off. The three main skus are vodka, articula, arjin. Have the logo. Say. Have it say premium spirits. 100% sweetened with organic wildflower honey. 7% abv. And the price is 2. 99.
+Me: Perfect. All right, so let me remove just the beginning again. All right.
+Them: This is super cool. I can't believe you created this. It's, like, unreal.
+Me: Dude. Yeah, it's. It. 's. You know, we're just one of the things that we've been working on, but, like, there's just so much that, like, we can do today. With some of this new technology for branding, marketing for businesses. That. It's like I want to make a very. Like, a unified place for anyone to be able to come. And, like, you know, put, like. Put things like this together, right? Okay, let's see. Looks like you doubled the cranberry lime.
+Them: The cranberry line, but that's better because that's like a static clang.
+Me: Okay? What about the. Like this over here? Like, is this. A little too plain.
+Them: It looks too plain. Yeah, I think so. Like, realistically, see how. It's like a big rectangle.
+Me: Yeah.
+Them: We want it to be like almost one square, where it has, like, the three cans and then just above it, or either overlapping. Talking about the call outs. You know, like premium sphere. It's 100% sweetened with organic wildflower honey. And then just the logo.
+Me: 100%. Okay, so this plan needs to be a square and. Has the three cans. Not too like you have here. And. Let's just see what happens.
+Them: I wonder if we could also just give it one of those images. Like of the design s. Of like other static clings.
+Me: Yeah.
+Them: And say, like, replicate or spirited hive. And here are the details.
+Me: Yeah, let's give that a shot.
+Them: Okay?
+Me: So. Dude, some of the videos you have on your site are pretty sick.
+Them: Thank you.
+Me: The one with the ginger lime and honey like that. It looks so good.
+Them: Yeah. And, like, I feel like your thing could create even, like, a better one of those.
+Me: Dude. And also, yeah, like, what we're getting into as well is just, like, the beginning of, like, all right, branding. But imagine now you are able to store the three cans that you have as like your products. And then, like, it saves those as consistent pieces of information. So when you prompt the next time. Like it already knows what to use.
+Them: It already knows exactly.
+Me: You know?
+Them: I just sent over that same dilco. And if you go to that and scroll down on what I just sent you, There's a couple of different examples. But there's one. That's the watermelon water. We could take that and say, You know? Recreate this buffer spirited hive and hear like the three call outs.
+Me: Okay? This is good.
+Them: Maybe that could do something.
+Me: Let's do it. Aisle on the page right now. Let me get back to. Another thing that I'm working on right now is getting the actual, like, the last product or image that you've generated to show up here so you can see it easily in your projects.
+Them: Oh, that's cool.
+Me: Yeah. Groo doing some coding on the back end right now. Let's see. Better not be breaking on.
+Them: I'm just gonna go to the bathroom real quick.
+Me: Yeah. Okay? All right. Let me. All right, let's see. Oh, bless you. Was that sneeze?
+Them: That was not. It was a grunt. There's a little grunt that I made.
+Me: We grunt.
+Them: Dude, it's so nice being back out on the East Coast. It's starting to feel, like, fall a little bit.
+Me: Dude, I. Oh. With the leaves falling, you know, the weather changing, it's not super humid.
+Them: But it's still pretty hot. I mean, it's like, what is it, like, 74 out right now? And it's five.
+Me: Y.
+Them: I can't wait for it to be, like, you know, crisp, like 55. That's nice.
+Me: All right, so. Not the biggest fan of this one. Can you see my screen? Oh, we can.
+Them: No.
+Me: Okay? So the one thing that I don't have yet in my features, which is something I'm going to be working on, And can easily add. Is being able to have a comparison image. And so. Yeah, this is what it came out with. With the gin.
+Them: Maybe. Ooh, the only. That looks amazing. I think the one edit that we can make is. You know, put instead of a lime as a background, put like a dark gold hexagon.
+Me: Put. Dark. Hexagon.
+Them: From the spirited hot logo.
+Me: Al. Let's see. The one thing I love, too, is, like, you know, at least at this point, It's pretty quick. That needs to be changed a little.
+Them: No, but it's like, it has, like, the right. Idea.
+Me: Yeah. It would be maybe what it could do.
+Them: Is just take that exact logo.
+Me: Is 100, right?
+Them: Yeah, like, if you were to take. I can just send it to you. Hold on, Let me find it.
+Me: What about font too? Like are we definitely change the font? On these.
+Them: Oh, yes. I want to. Let me. And this. Obviously, we're kind of just messing around right now, so, like, we don't have to. I know you probably have to go. But I could tell.
+Me: Yeah. I got, like, five minutes, but, dude. As you can see, dude, we can get it. You know?
+Them: Yeah, you. You know, your. I think it could be essentially that.
+Me: You did perfect.
+Them: And it has the font in there, too.
+Me: Oh, I love it. Did you text it?
+Them: I just texted it. I couldn't put it in the chat for some reason, but I know you got to go. But, yeah, why don't. Thank you for taking the time to just talk about all this.
+Me: Dude. Of course, man.
+Them: And yeah, if you want to put together a proposal the next, like, day or two, and then we can touch, sit down maybe on Thursday or Friday and just touch base and then make some edits and all that would be freaking huge.
+Me: Dude. Absolutely. And what I can do as well with this? You know this Clang. Let me just take a couple swings at it. I'll just send them over your way. And so you can see them, you know, between the next. You know, within that next day, too. You know, just for fun, you know?
+Them: Dude, that would be sick. That would be awesome. And I can send you over. The t graph ics just so you can see. What those look like.
+Me: Perfect. And dude, it would be awesome if we can sink in person too. Imagine doing like a. Like a. Like a real time jam. On some of this.
+Them: Dude, that'd be sick. Maybe I could come out. Come your way.
+Me: Dude, absolutely.
+Them: One of these days or something.
+Me: Dude. You're at any point, dude, unless if you want to meet up, we can go somewhere else, or you can come over and, you know, you can see. See the beat lab, you know?
+Them: Yeah. See the g lab. I love it. That'd be sick.
+Me: Fuck it. Oh. So what time on. On Thursday?
+Them: Let's plan it.
+Me: Works for you.
+Them: Let me see my schedule. Do you want to do?
+Me: Or you? You said Wednesday too, right?
+Them: Wednesday or Thursday.
+Me: All right.
+Them: Whichever day works better for you.
+Me: Either. I'm gonna be traveling a little bit. On Wednesday, but I should be good to sing like before. 5:00 on Wednesday. And then Thursday I'm good until six.
+Them: Okay? Why don't we do. Why don't we do 2 o'clock? On Wednesday.
+Me: Perfect. I love it. You want me to just set it up real quick?
+Them: Sure.
+Me: Awesome. All right, so.
+Them: That'd be great.
+Me: Brother man. Oh, yeah, this is. This is fantastic. And. Dude. Yeah, we're. We're gonna get the, you know, the Strive site, you know, looking pristine. And at a point, too, where it's like, let's just say this is one of the other things I just love doing. Is like, making sure it's built in a way that, like, when the time comes where it's like, I want to change this, this or this out. Like it's not going to be like a crazy left. Right, like, it's, like, straightforward.
+Them: Yeah. Yeah.
+Me: And so we're going to make. We're going to make it better than any of these other sides.
+Them: Heck, yeah. And I'll get all that login stuff for you for Shopify, because it's done on Shopify.
+Me: Perfect. Dude, I love that.
+Them: Yeah.
+Me: All right.
+Them: All right, muchacho. Well, it was great talking to you, and thank you for your time, as always.
+Me: Of course.
+Them: And look forward to talking to you later this week.
+Me: That sounds good, man. Much love. And, yeah, it's. It's good to see you on the east coast, you know? So stoked to see you soon.
+Them: Dude. Stoked to see you, too. All right, brother man. Well, hope you have a great rest of your week, and we will touch base Wednesday. Or great rest of your night.
+Me: Yeah, right. All right. Love you, man.
+Them: All right. See you later, brother.
+Me: Peace.
+Them: Peace. Love you.
+
+================================================================================
+MEETING 2: Strive Soda Website Proposal Review: Strive will be LIVE! 🕺
+Date: Thu, 02 Oct 25
+================================================================================
+
+[MEETING 2 CONTENT CONTINUES IN NEXT MESSAGE DUE TO LENGTH...]

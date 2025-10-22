@@ -1,0 +1,110 @@
+{%- comment -%}
+Science: Final CTA Section
+- Bold call to action to shop
+{%- endcomment -%}
+
+<section class="science-cta-section">
+  <div class="science-container">
+    <h2 class="cta-heading">{{ section.settings.heading }}</h2>
+    <p class="cta-desc">{{ section.settings.description }}</p>
+    <a href="{{ section.settings.cta_link }}" class="cta-button">
+      {{ section.settings.cta_text }}
+    </a>
+  </div>
+</section>
+
+<style>
+
+:root {
+  --strive-orange: #FF7A00;
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.science-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 60px);
+}
+
+.science-cta-section {
+  padding: clamp(60px, 8vw, 100px) 0;
+  background: var(--strive-orange);
+  text-align: center;
+  color: #fff;
+  font-family: var(--font-primary);
+}
+
+.cta-heading {
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 900;
+  margin: 0 0 16px;
+}
+
+.cta-desc {
+  font-size: clamp(16px, 1.8vw, 22px);
+  line-height: 1.5;
+  max-width: 700px;
+  margin: 0 auto 32px;
+  opacity: 0.95;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 40px;
+  background: #fff;
+  color: var(--strive-orange);
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 3px solid #fff;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cta-button:hover {
+  background: transparent;
+  color: #fff !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,.2);
+}
+</style>
+
+{% schema %}
+{
+  "name": "Science: CTA",
+  "disabled_on": { "groups": ["header", "footer", "aside"] },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Ready to Try Hydration Soda?"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Experience the perfect balance of flavor, hydration, and real ingredients."
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "Shop All Flavors"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Science: CTA"
+    }
+  ]
+}
+{% endschema %}

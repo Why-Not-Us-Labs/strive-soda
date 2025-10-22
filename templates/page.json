@@ -1,0 +1,168 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "t-page",
+      "disabled": true,
+      "settings": {
+        "pageType": "col-1-center",
+        "showHeading": true
+      }
+    },
+    "gs_image_text_cHU3Rc": {
+      "type": "gs-image-text",
+      "name": "Why Strive Soda",
+      "settings": {
+        "eyebrow": "THE SCIENCE BEHIND HYDRATION SODA",
+        "heading": "Over 75% of Adults Are Chronically Dehydrated",
+        "description": "Most people walk around slightly dehydrated throughout the day without realizing it, even before a workout or a long day at the office. Strive Soda was created to deliver hydration, clean sweetness, and bold flavor in a sparkling beverage you can enjoy anytime.",
+        "cta_text": "SHOP FLAVORS",
+        "cta_link": "/collections/all",
+        "sodium_text": "Replenishes what you sweat out to keep fluids balanced.",
+        "sodium_link": "",
+        "potassium_text": "Supports muscle and nerve function; balances sodium.",
+        "potassium_link": "",
+        "magnesium_text": "Aids energy and muscle function; helps prevent cramps.",
+        "magnesium_link": ""
+      }
+    },
+    "product_benefits_YnMUCE": {
+      "type": "product-benefits",
+      "name": "Product: Key Benefits",
+      "settings": {
+        "heading": "What Is a Hydration Soda?",
+        "description": "Hydration soda is a new category of sparkling beverage designed to do more than just quench your thirst.",
+        "show_electrolytes": true,
+        "electrolytes_title": "180mg Essential Electrolytes",
+        "electrolytes_text": "Sodium (100mg), Potassium (40mg), Magnesium (30mg), and Calcium (20mg) work together to help your body stay balanced throughout the day. That's roughly 1/3 the electrolytes of a typical sports drink—the perfect amount for everyday hydration.",
+        "show_honey": true,
+        "honey_title": "100% Organic Wildflower Honey",
+        "honey_text": "The world's first hydration soda sweetened entirely with organic honey. Natural energy without synthetic sugars or artificial sweeteners.",
+        "show_no_synthetics": true,
+        "no_synthetics_title": "No Synthetic Sugars. Ever.",
+        "no_synthetics_text": "No sucralose, no aspartame, no stevia, no high-fructose corn syrup. Just real ingredients that fuel your body naturally."
+      }
+    },
+    "science_honey_6xHci6": {
+      "type": "science-honey",
+      "name": "Science: Why Honey",
+      "settings": {
+        "heading": "Why Honey?",
+        "subtitle": "We use organic wildflower honey because it's the perfect natural and organic sweetener.",
+        "honey_image": "shopify://shop_images/spirited-hive-1760487483881.png",
+        "benefit1_title": "Rich in Antioxidants",
+        "benefit1_text": "Honey is packed with flavonoids and phenolic acids that provide antioxidant benefits, plus trace vitamins and minerals like B vitamins, calcium, magnesium, and potassium.",
+        "benefit2_title": "Natural Sweetness",
+        "benefit2_text": "Delivers just the right amount of sweetness without synthetic ingredients, supporting steady hydration and refreshment without sugar spikes or crashes.",
+        "benefit3_title": "Pure & Organic",
+        "benefit3_text": "Our organic wildflower honey is unprocessed, unfiltered, and sourced from sustainable beekeepers. Provides subtle nutritional support with every sip.",
+        "show_comparison": true
+      }
+    },
+    "home_honey_vs_synthetics_kUfcxL": {
+      "type": "home-honey-vs-synthetics",
+      "name": "Home: Honey vs Synthetics",
+      "settings": {
+        "heading": "Not All Sweeteners Are Created Equal",
+        "description": "We choose organic wildflower honey over synthetic sugars and artificial sweeteners because it works with your body, not against it.",
+        "honey_badge": "WHAT WE USE",
+        "honey_title": "100% Organic Wildflower Honey",
+        "honey_benefit1": "Natural antioxidants & minerals",
+        "honey_benefit2": "Sustained energy without crashes",
+        "honey_benefit3": "Supports gut health naturally",
+        "honey_benefit4": "No blood sugar spikes",
+        "synthetic_badge": "WHAT WE AVOID",
+        "synthetic_title": "Synthetic Sweeteners & HFCS",
+        "synthetic_issue1": "Sucralose, aspartame, stevia, ace-K",
+        "synthetic_issue2": "May disrupt gut microbiome",
+        "synthetic_issue3": "Potential long-term health risks",
+        "synthetic_issue4": "Zero nutritional benefits",
+        "show_cta": true,
+        "cta_text": "Shop Strive Soda",
+        "cta_link": "/collections/all"
+      }
+    },
+    "gs_image_text_pNQN46": {
+      "type": "gs-image-text",
+      "disabled": true,
+      "name": "Why Strive Soda",
+      "settings": {
+        "eyebrow": "WHY STRIVE SODA?",
+        "heading": "What is Hydration Soda?",
+        "description": "Better-for-you hydration that fuels your day with bold flavor and essential electrolytes.",
+        "cta_text": "THE SCIENCE BEHIND STRIVE",
+        "cta_link": "",
+        "sodium_text": "Replenishes what you sweat out to keep fluids balanced.",
+        "sodium_link": "",
+        "potassium_text": "Supports muscle and nerve function; balances sodium.",
+        "potassium_link": "",
+        "magnesium_text": "Aids energy and muscle function; helps prevent cramps.",
+        "magnesium_link": ""
+      }
+    },
+    "science_cta_jtifb8": {
+      "type": "science-cta",
+      "disabled": true,
+      "name": "Science: CTA",
+      "settings": {
+        "heading": "Ready to Try Hydration Soda?",
+        "description": "Experience the perfect balance of flavor, hydration, and real ingredients.",
+        "cta_text": "Shop All Flavors",
+        "cta_link": ""
+      }
+    },
+    "science_electrolytes_Fm94dL": {
+      "type": "science-electrolytes",
+      "disabled": true,
+      "name": "Science: Electrolytes",
+      "settings": {
+        "heading": "What is Hydration Soda?",
+        "description": "Hydration soda packs the three essential electrolytes your body needs to stay balanced, energized, and ready for anything.",
+        "sodium_tagline": "Replenishes what you sweat out to keep fluids balanced.",
+        "sodium_amount": "100",
+        "potassium_tagline": "Supports muscle and nerve function; balances sodium.",
+        "potassium_amount": "100",
+        "magnesium_tagline": "Aids energy and muscle function; helps prevent cramps.",
+        "magnesium_amount": "100",
+        "show_comparison": true,
+        "comp_soda_sodium": "50",
+        "comp_soda_potassium": "0",
+        "comp_soda_magnesium": "0",
+        "comp_soda_sweetener": "HFCS",
+        "comp_sports_sodium": "110",
+        "comp_sports_potassium": "30",
+        "comp_sports_magnesium": "0",
+        "comp_sports_sweetener": "Sugar"
+      }
+    },
+    "science_cta_mFtHKL": {
+      "type": "science-cta",
+      "name": "Science: CTA",
+      "settings": {
+        "heading": "Ready to Try Hydration Soda?",
+        "description": "Experience the perfect balance of flavor, hydration, and real ingredients.",
+        "cta_text": "Shop All Flavors",
+        "cta_link": ""
+      }
+    }
+  },
+  "order": [
+    "main",
+    "gs_image_text_cHU3Rc",
+    "product_benefits_YnMUCE",
+    "science_honey_6xHci6",
+    "home_honey_vs_synthetics_kUfcxL",
+    "gs_image_text_pNQN46",
+    "science_cta_jtifb8",
+    "science_electrolytes_Fm94dL",
+    "science_cta_mFtHKL"
+  ]
+}

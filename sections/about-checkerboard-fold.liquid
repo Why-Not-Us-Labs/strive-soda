@@ -1,0 +1,309 @@
+{{ 'science-page.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign fold_number = section.settings.fold_number
+  assign left_bg = section.settings.left_bg_color
+  assign right_bg = section.settings.right_bg_color
+
+  # Generate unique section ID
+  assign section_id = 'about-fold-' | append: fold_number
+-%}
+
+<section
+  id="{{ section_id }}"
+  class="science-checkerboard-fold about-checkerboard-fold"
+  data-fold="{{ fold_number }}"
+  style="--left-bg: {{ left_bg }}; --right-bg: {{ right_bg }};"
+>
+  <div class="science-fold-container">
+    <div class="science-fold-left">
+      {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+          {% if block.settings.column == 'left' %}
+            <div class="science-block" {{ block.shopify_attributes }}>
+              {% case block.type %}
+                {% when 'heading' %}
+                  <h2 class="science-heading" style="font-size: {{ block.settings.font_size }}px; color: {{ block.settings.text_color }};">
+                    {{ block.settings.heading }}
+                  </h2>
+
+                {% when 'text' %}
+                  <div class="science-text" style="font-size: {{ block.settings.font_size }}px; color: {{ block.settings.text_color }};">
+                    {{ block.settings.content }}
+                  </div>
+
+                {% when 'image' %}
+                  {% if block.settings.image != blank %}
+                    <div class="science-image">
+                      <img
+                        src="{{ block.settings.image | image_url: width: 800 }}"
+                        srcset="{{ block.settings.image | image_url: width: 400 }} 400w,
+                                {{ block.settings.image | image_url: width: 800 }} 800w,
+                                {{ block.settings.image | image_url: width: 1200 }} 1200w"
+                        sizes="(min-width: 768px) 50vw, 100vw"
+                        alt="{{ block.settings.image.alt | escape }}"
+                        width="{{ block.settings.image.width }}"
+                        height="{{ block.settings.image.height }}"
+                        loading="{% if fold_number == 1 %}eager{% else %}lazy{% endif %}"
+                      >
+                    </div>
+                  {% endif %}
+
+                {% when 'button' %}
+                  <a href="{{ block.settings.button_link }}" class="science-button">
+                    {{ block.settings.button_text }}
+                  </a>
+
+                {% when 'html' %}
+                  <div class="science-html">
+                    {{ block.settings.html_content }}
+                  </div>
+              {% endcase %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        {%- comment -%} Placeholder for empty state {%- endcomment -%}
+        <div class="science-placeholder">
+          <p>Left Column - Fold {{ fold_number }}</p>
+          <p style="font-size: 14px; opacity: 0.7;">Click "Add block" in the theme editor to add content</p>
+        </div>
+      {% endif %}
+    </div>
+
+    <div class="science-fold-right">
+      {% if section.blocks.size > 0 %}
+        {% for block in section.blocks %}
+          {% if block.settings.column == 'right' %}
+            <div class="science-block" {{ block.shopify_attributes }}>
+              {% case block.type %}
+                {% when 'heading' %}
+                  <h2 class="science-heading" style="font-size: {{ block.settings.font_size }}px; color: {{ block.settings.text_color }};">
+                    {{ block.settings.heading }}
+                  </h2>
+
+                {% when 'text' %}
+                  <div class="science-text" style="font-size: {{ block.settings.font_size }}px; color: {{ block.settings.text_color }};">
+                    {{ block.settings.content }}
+                  </div>
+
+                {% when 'image' %}
+                  {% if block.settings.image != blank %}
+                    <div class="science-image">
+                      <img
+                        src="{{ block.settings.image | image_url: width: 800 }}"
+                        srcset="{{ block.settings.image | image_url: width: 400 }} 400w,
+                                {{ block.settings.image | image_url: width: 800 }} 800w,
+                                {{ block.settings.image | image_url: width: 1200 }} 1200w"
+                        sizes="(min-width: 768px) 50vw, 100vw"
+                        alt="{{ block.settings.image.alt | escape }}"
+                        width="{{ block.settings.image.width }}"
+                        height="{{ block.settings.image.height }}"
+                        loading="{% if fold_number == 1 %}eager{% else %}lazy{% endif %}"
+                      >
+                    </div>
+                  {% endif %}
+
+                {% when 'button' %}
+                  <a href="{{ block.settings.button_link }}" class="science-button">
+                    {{ block.settings.button_text }}
+                  </a>
+
+                {% when 'html' %}
+                  <div class="science-html">
+                    {{ block.settings.html_content }}
+                  </div>
+              {% endcase %}
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% else %}
+        {%- comment -%} Placeholder for empty state {%- endcomment -%}
+        <div class="science-placeholder">
+          <p>Right Column - Fold {{ fold_number }}</p>
+          <p style="font-size: 14px; opacity: 0.7;">Click "Add block" in the theme editor to add content</p>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "About Checkerboard",
+  "settings": [
+    {
+      "type": "number",
+      "id": "fold_number",
+      "label": "Fold Number",
+      "default": 1,
+      "info": "Used for identification and analytics"
+    },
+    {
+      "type": "color",
+      "id": "left_bg_color",
+      "label": "Left Background Color",
+      "default": "#0ABAB5"
+    },
+    {
+      "type": "color",
+      "id": "right_bg_color",
+      "label": "Right Background Color",
+      "default": "#FF7A00"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "heading",
+      "name": "Heading",
+      "settings": [
+        {
+          "type": "select",
+          "id": "column",
+          "label": "Column",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading Text",
+          "default": "Heading"
+        },
+        {
+          "type": "range",
+          "id": "font_size",
+          "min": 16,
+          "max": 120,
+          "step": 2,
+          "unit": "px",
+          "label": "Font Size",
+          "default": 48
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "select",
+          "id": "column",
+          "label": "Column",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Text Content",
+          "default": "<p>Add your content here</p>"
+        },
+        {
+          "type": "range",
+          "id": "font_size",
+          "min": 14,
+          "max": 32,
+          "step": 1,
+          "unit": "px",
+          "label": "Font Size",
+          "default": 18
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#FFFFFF"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "select",
+          "id": "column",
+          "label": "Column",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "right"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "select",
+          "id": "column",
+          "label": "Column",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button Text",
+          "default": "Shop Now"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button Link"
+        }
+      ]
+    },
+    {
+      "type": "html",
+      "name": "Custom HTML",
+      "settings": [
+        {
+          "type": "select",
+          "id": "column",
+          "label": "Column",
+          "options": [
+            { "value": "left", "label": "Left" },
+            { "value": "right", "label": "Right" }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "html",
+          "id": "html_content",
+          "label": "HTML Content",
+          "info": "Use this for custom components"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Checkerboard"
+    }
+  ]
+}
+{% endschema %}

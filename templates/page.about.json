@@ -1,0 +1,146 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "science-checkerboard-fold",
+      "blocks": {
+        "hero_heading": {
+          "type": "heading",
+          "settings": {
+            "column": "left",
+            "heading": "WE STRIVE TOGETHER",
+            "font_size": 64,
+            "text_color": "#ffffff"
+          }
+        },
+        "hero_text": {
+          "type": "text",
+          "settings": {
+            "column": "left",
+            "content": "<p><strong>Empower Your Every Day.</strong></p><p>At Strive, we know every sip counts. That's why we've created drinks that deliver what you need: hydration and energy without compromise. Using organic wildflower honey and thoughtfully chosen ingredients, Strive is your partner in living a life full of purpose and balance.</p>",
+            "font_size": 18,
+            "text_color": "#ffffff"
+          }
+        },
+        "hero_image": {
+          "type": "image",
+          "settings": {
+            "column": "right",
+            "image": "shopify://shop_images/Screenshot_2025-10-11_at_12.53.08_PM.png"
+          }
+        }
+      },
+      "block_order": [
+        "hero_heading",
+        "hero_text",
+        "hero_image"
+      ],
+      "settings": {
+        "fold_number": 1,
+        "left_bg_color": "#0abab5",
+        "right_bg_color": "#ff7a00"
+      }
+    },
+    "founder_story": {
+      "type": "science-checkerboard-fold",
+      "blocks": {
+        "founder_image": {
+          "type": "image",
+          "settings": {
+            "column": "left"
+          }
+        },
+        "founder_heading": {
+          "type": "heading",
+          "settings": {
+            "column": "right",
+            "heading": "The Founder's Story",
+            "font_size": 56,
+            "text_color": "#ffffff"
+          }
+        },
+        "founder_text": {
+          "type": "text",
+          "settings": {
+            "column": "right",
+            "content": "<p>Through perseverance and a commitment to his vision, Jack overcame obstacles to create Strive's first product line. Each drink reflects his dedication to natural wellness and innovation, made possible by a team equally passionate about health and sustainability.</p><p>Born in San Diego, California, Strive is a hydration soda for the movers, the shakers, and the tastemakers.</p>",
+            "font_size": 18,
+            "text_color": "#ffffff"
+          }
+        }
+      },
+      "block_order": [
+        "founder_image",
+        "founder_heading",
+        "founder_text"
+      ],
+      "settings": {
+        "fold_number": 2,
+        "left_bg_color": "#ff7a00",
+        "right_bg_color": "#0abab5"
+      }
+    },
+    "mission": {
+      "type": "science-checkerboard-fold",
+      "blocks": {
+        "mission_heading": {
+          "type": "heading",
+          "settings": {
+            "column": "left",
+            "heading": "Our Mission",
+            "font_size": 56,
+            "text_color": "#ffffff"
+          }
+        },
+        "mission_text": {
+          "type": "text",
+          "settings": {
+            "column": "left",
+            "content": "<p>To create better for you beverages that keep you hydrated, energized, and ready for whatever life throws your way.</p><p>Our everyday essentials are flavor and hydration. Delivered through real ingredients you can trust.</p>",
+            "font_size": 18,
+            "text_color": "#ffffff"
+          }
+        },
+        "mission_image": {
+          "type": "image",
+          "settings": {
+            "column": "right"
+          }
+        }
+      },
+      "block_order": [
+        "mission_heading",
+        "mission_text",
+        "mission_image"
+      ],
+      "settings": {
+        "fold_number": 3,
+        "left_bg_color": "#0abab5",
+        "right_bg_color": "#ff7a00"
+      }
+    },
+    "cta": {
+      "type": "science-cta",
+      "settings": {
+        "heading": "Ready to Join the Strive Movement?",
+        "description": "Experience hydration soda that's designed for your active lifestyle.",
+        "cta_text": "Shop All Flavors",
+        "cta_link": "/collections/all"
+      }
+    }
+  },
+  "order": [
+    "hero",
+    "founder_story",
+    "mission",
+    "cta"
+  ]
+}

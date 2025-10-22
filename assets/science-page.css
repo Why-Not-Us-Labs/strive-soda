@@ -1,0 +1,238 @@
+/* ============================================
+   SCIENCE PAGE - CHECKERBOARD LAYOUT
+   ============================================ */
+
+/* Base section styles */
+.science-checkerboard-fold {
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport height for mobile Safari */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Container using CSS Grid for 50/50 split */
+.science-fold-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+  min-height: 100dvh;
+  width: 100%;
+}
+
+/* Left column */
+.science-fold-left {
+  background-color: var(--left-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 3rem;
+  position: relative;
+}
+
+/* Right column */
+.science-fold-right {
+  background-color: var(--right-bg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 3rem;
+  position: relative;
+}
+
+/* Block spacing */
+.science-block {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 2rem;
+}
+
+.science-block:last-child {
+  margin-bottom: 0;
+}
+
+/* Typography */
+.science-heading {
+  font-family: 'Polysans Standard', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+}
+
+.science-text {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.science-text p {
+  margin: 0 0 1rem 0;
+}
+
+.science-text p:last-child {
+  margin-bottom: 0;
+}
+
+/* Images */
+.science-image {
+  width: 100%;
+  margin: 0;
+}
+
+.science-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 8px;
+}
+
+/* Buttons */
+.science-button {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  background-color: white;
+  color: #000;
+  font-family: 'Polysans Standard', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  text-decoration: none;
+  text-align: center;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  border: 3px solid transparent;
+  cursor: pointer;
+}
+
+.science-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  border-color: currentColor;
+}
+
+/* Custom HTML container */
+.science-html {
+  width: 100%;
+}
+
+/* Placeholder styles (for development) */
+.science-placeholder {
+  text-align: center;
+  padding: 3rem;
+  opacity: 0.5;
+  font-family: monospace;
+  font-size: 14px;
+}
+
+/* ============================================
+   RESPONSIVE - MOBILE/TABLET
+   ============================================ */
+
+@media (max-width: 767px) {
+  /* Stack columns vertically on mobile */
+  .science-fold-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+  }
+
+  /* Each column takes half viewport on mobile */
+  .science-fold-left,
+  .science-fold-right {
+    min-height: 50vh;
+    min-height: 50dvh;
+    padding: 2.5rem 1.5rem;
+  }
+
+  /* Smaller heading on mobile */
+  .science-heading {
+    font-size: clamp(28px, 8vw, 48px);
+  }
+
+  /* Smaller text on mobile */
+  .science-text {
+    font-size: clamp(16px, 4vw, 18px);
+  }
+
+  /* Smaller buttons on mobile */
+  .science-button {
+    padding: 0.875rem 2rem;
+    font-size: 16px;
+  }
+}
+
+/* Tablet adjustments */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .science-fold-left,
+  .science-fold-right {
+    padding: 3rem 2rem;
+  }
+
+  .science-heading {
+    font-size: clamp(36px, 5vw, 64px);
+  }
+}
+
+/* Desktop large screens */
+@media (min-width: 1024px) {
+  .science-fold-left,
+  .science-fold-right {
+    padding: 5rem 4rem;
+  }
+
+  .science-block {
+    max-width: 700px;
+  }
+
+  .science-heading {
+    font-size: clamp(48px, 4vw, 80px);
+  }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1440px) {
+  .science-block {
+    max-width: 800px;
+  }
+}
+
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+/* Reduced motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  .science-button {
+    transition: none;
+  }
+
+  .science-button:hover {
+    transform: none;
+  }
+}
+
+/* Focus styles for keyboard navigation */
+.science-button:focus {
+  outline: 3px solid currentColor;
+  outline-offset: 4px;
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  .science-checkerboard-fold {
+    min-height: auto;
+    page-break-inside: avoid;
+  }
+
+  .science-fold-container {
+    min-height: auto;
+  }
+
+  .science-button {
+    display: none;
+  }
+}

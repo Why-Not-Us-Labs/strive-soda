@@ -1,0 +1,327 @@
+# STRIVE SODA - ADDITIONAL MEETING NOTES
+# October 10 & 13, 2025
+
+================================================================================
+MEETING: Web Review with Jack (Oct 10, 2:00 PM EDT)
+================================================================================
+
+ATTENDEES:
+- Gavin McNamara
+- Jack Espy (jack@strivesoda.com)
+
+MEETING SUMMARY:
+Web Review meeting focused on updating the Strive Soda website with refined product, science, and learning pages.
+- Agreed to revamp product pages with updated images, detailed hydration stats, and copy improvements
+- Reviewed and refined the science/learn page copy to encapsulate brand tone with "Built for those who strive"
+- Discussed fixes for shop page issues including image resolution, mobile header engagement
+- Integrating subscription flow with 10% discount (later changed to 15%)
+- Scheduled follow-up call for Monday morning around 10:00 to review progress
+
+KEY DECISIONS:
+
+1. PRODUCT PAGES
+   - Update with condensed scientific info and updated copy
+   - Add sections for science behind hydration soda (dehydration facts, benefits)
+   - Include detailed electrolyte info: 100mg sodium, 30mg magnesium, 30mg potassium, 20mg calcium
+   - Copy sections: "What is a hydration soda?", tropical recharge descriptions, organic honey benefits
+   - Add "when to drink" callouts
+   - Update nutritional panels and product benefits
+
+2. DESIGN & VISUALS
+   - Use high-quality visuals with updated font and cleaner design
+   - Swap out product images (variety pack, peach, tropical) to fix blurriness and inconsistent sizes
+   - Remove unwanted elements from images (e.g., cups)
+   - Consider adding background fruits and reflective effects
+   - Electrolytes constellation diagram concept
+   - Visuals of people striving (climbing, running, etc.)
+   - Remove dashes from copy outputs for refined tone
+
+3. BRANDING & MARKETING
+   - Highlight organic wildflower honey vs synthetic sugars/high fructose corn syrup
+   - Tagline brainstorm: "Built for those who strive", "Born to strive", "Designed to thrive"
+   - Subscription features: "subscribe and save" option (15% off - final decision)
+   - Auto-highlight subscribe & save during purchase
+   - Email/SMS tools: SendGrid and Twilio for marketing (avoid spammy content)
+
+4. HOMEPAGE & NAVIGATION
+   - Make header more engaging with dynamic text, social links, CTA
+   - Navigation structure: Home, Shop, Science (or Learn), About (dropdown: Our Story, FAQ)
+   - Consider store locator feature
+   - Enhance ambassador section → "stay connected" area
+   - Update footer design for visual appeal
+
+5. SITE STRUCTURE CHANGES
+   - Keep video fold and "What is hydration soda" section as-is
+   - Move products to third fold (after hydration explanation)
+   - Remove "Why Choose Strive" from homepage → move to science page
+   - Keep "Why Organic Honey" on homepage with action to science page
+   - Move "Honey vs Other Sweeteners" and "Why Not Synthetic Sugars" to science page
+   - Add Stevia box to comparison sections
+   - Update "When to Drink Strive" with new images (remove "after climbing", add "midday soda/anytime")
+   - Condense homepage scroll length
+
+6. SHOP PAGE UPDATES
+   - Fix variety pack image blurriness
+   - Keep "Why Choose Strive" styling as example for other sections
+   - Update hierarchy: always "soda first" (better-for-you soda that aids hydration)
+   - Subscribe & save: auto-checked, 15% discount
+   - Add spacing fixes between elements
+
+7. SCIENCE PAGE
+   - Consolidate copy from shared Google Doc
+   - Move detailed electrolyte breakdowns here
+   - Style similar to "Why Choose Strive" section
+   - Include "Strive vs Everyone" comparisons (honey, synthetic sugars, stevia)
+
+8. FAQ & OTHER PAGES
+   - Update subscription discount to 15% throughout
+   - Remove citric acid from ingredients
+   - Add "Strive Supplement Blend" (details to be provided by Jack)
+   - Update calorie count to 45 per can
+   - Fix email contact (support vs admin@strivesoda.com - TBD)
+
+9. PRODUCT PAGE SPECIFICS
+   - Add tropical recharge flavor description
+   - Ensure subscribe & save on all product pages
+   - Add AI-generated images with fruits (passion fruit, coconut, peaches, lemons, honey)
+   - Fix reviews not showing on some products (product group issue in app extension)
+   - Add social focus photos to image carousel
+   - Build unlimited photo catalog capability
+
+10. FUTURE PRIORITIES (Post-Monday review)
+    - About Us page enhancement (similar to Moonshine style) - Priority 3-4
+    - Wholesale form optimization
+    - SMS/email campaign strategy discussion
+    - Instagram ad boosting
+    - Click rate tracking
+    - Store locator
+    - Additional review integrations
+
+FOLLOW-UP SCHEDULE:
+- Gavin to work on updates over weekend (page by page)
+- Check-in: Monday morning 10:00-10:30 AM
+- Review progress before wider team feedback
+- Future: SMS/email/ads discussion (Monday or Tuesday following week)
+
+================================================================================
+MEETING: Product Page Review with Austin & Joe (Oct 13, 3:00 PM EDT)
+================================================================================
+
+ATTENDEES:
+- Gavin McNamara
+- Austin Clare (austin@strivesoda.com) - Head of Sales
+- Joseph Perry - Strive ECOM team
+
+MEETING SUMMARY:
+Focused meeting on product page conversion optimization based on previous site performance data.
+
+CRITICAL CONTEXT:
+- Old Shopify site (pre-redesign): Converted ~800 customers, wasn't perfect but worked
+- Chris's redesign: Performance dropped significantly ("went to s***")
+- Austin & Joe optimized product pages 5 months ago → 800 conversions on Meta
+- Current new design not converting as well as old version
+- GOAL: Keep what works from new design + restore what worked from old design
+
+AUSTIN & JOE'S PRODUCT PAGE REQUIREMENTS (PRIORITY 0):
+
+1. **REMOVE ALL SECTIONS THAT NAVIGATE AWAY**
+   - "Why Organic Honey" → Move to science page
+   - "Why Not Synthetic Sugars" → Remove entirely
+   - "Honey vs Other Sweeteners" → Rename to "STRIVE VS EVERYONE" (keep on product page)
+   - NO LINKS that take users off product page
+   - Users must get ALL information on product page itself
+   - Exception: Other pages (Science, About Us) can have external links
+
+2. **IMAGERY - MAKE IT BIGGER** (Top Priority)
+   - Main product image should take up almost ENTIRE first fold
+   - Carousel of images directly underneath main image
+   - Should be: Image → Carousel → Add to Cart (minimal scroll)
+   - Current imagery too small - can't see details
+   - Need lifestyle images of PEOPLE being active
+   - Add collage of lifestyle images somewhere on page
+   - Use old theme's lifestyle images (need to retrieve)
+
+3. **"WHY CHOOSE STRIVE" SECTION**
+   - This section is "10 out of 10" - KEEP IT
+   - Should be prominent on product page
+   - This is the best-performing content
+
+4. **"WHEN TO DRINK STRIVE" SECTION**
+   - Needs work from conversion standpoint
+   - Shorter copy needed
+   - MORE LIFESTYLE IMAGES (less text)
+   - Images of people being active with Strive
+
+5. **LABEL VISIBILITY** (Biggest Customer Service Issue)
+   - Current header is "ugly" and label not apparent
+   - Create dedicated section: "What's in Strive" or "Deep Dive into Label"
+   - Make label easy to find and read
+   - This is causing most customer service inquiries
+
+6. **MOBILE HEADER**
+   - Logo display needs updating
+   - Fix mobile header layout issues
+
+7. **WIDGET & SUBSCRIPTION**
+   - Widget placement is fine
+   - Keep subscribe & save functionality
+
+8. **FUTURE CONSIDERATION (Not P0)**
+   - Product navigation: ability to switch between products (Tropical → Peach → Variety) without going back to shop page
+   - Not priority but would improve UX
+
+AUSTIN'S PHILOSOPHY:
+- "We're spending money to get them to that page"
+- Giving users option to leave product page = losing conversions
+- See → Click → Buy → Get all info on product page
+- No navigation away until purchase complete
+
+TIMELINE:
+- Austin: "Should take you more than like 20 minutes" (because components already built)
+- Focus: Product pages ONLY for this round
+- Everything else on site is "amazing" - no changes needed
+
+FUTURE PLANS:
+- Competitor analysis in D2C space
+- Sandbox site testing for new concepts
+- Continuous optimization based on conversion data
+
+SITE HISTORY CONTEXT:
+- ~800 customers converted on previous optimized site
+- New redesign killed conversions
+- Austin & Joe's changes 5 months ago restored performance
+- Current goal: Restore that conversion rate with new design elements
+
+KEY QUOTE:
+"The new product pages didn't convert. The old ones did. Let's just go back to [what worked]."
+
+================================================================================
+COMBINED ACTION ITEMS FROM BOTH MEETINGS
+================================================================================
+
+HOMEPAGE:
+✓ Keep hero video (update later with lifestyle content)
+✓ Keep "What is hydration soda" section (update copy from Google Doc)
+✓ Move products to third fold
+✓ Remove "Why Choose Strive" → science page
+✓ Keep "Why Organic Honey" with link to science page
+✓ Remove "Honey vs Other Sweeteners" → science page
+✓ Remove "Why Not Synthetic Sugars" → science page
+✓ Update "When to Drink Strive" images (remove climbing, add midday/anytime)
+✓ Add phone mockup image in stay connected section
+✓ Condense overall scroll length
+
+SHOP PAGE:
+✓ Fix variety pack image blurriness
+✓ Update subscribe & save to 15% discount
+✓ Fix mobile header spacing
+✓ Ensure all products show "12 cans" in pricing
+
+PRODUCT PAGES (PRIORITY 0 - AUSTIN & JOE):
+✓ MAKE MAIN IMAGE HUGE - almost entire first fold
+✓ Carousel directly under main image
+✓ Keep "Why Choose Strive" section (10/10 content)
+✓ Remove ALL sections that navigate away:
+  - "Why Organic Honey" → science page
+  - "Why Not Synthetic Sugars" → DELETE entirely
+✓ Rename "Honey vs Other Sweeteners" → "STRIVE VS EVERYONE"
+✓ Update "When to Drink Strive": shorter copy + MORE LIFESTYLE IMAGES
+✓ Add dedicated "What's in Strive" label section (biggest CS issue)
+✓ Add lifestyle images throughout (people being active)
+✓ Add lifestyle image collage
+✓ Ensure subscribe & save on all products (15% off)
+✓ Add AI-generated product images with real ingredients
+✓ Fix reviews not showing on some products
+✓ Update Tropical Recharge description
+✓ NO LINKS that take users off product page
+
+SCIENCE PAGE:
+✓ Add "Why Organic Honey" section (moved from product page)
+✓ Add "Honey vs Other Sweeteners" section
+✓ Add "Why Not Synthetic Sugars" section
+✓ Add Stevia comparison section
+✓ Use "Why Choose Strive" styling as template
+✓ Consolidate electrolyte information (100mg Na, 30mg Mg, 30mg K, 20mg Ca)
+✓ Copy updates from Google Doc
+
+FAQ PAGE:
+✓ Update subscription discount to 15%
+✓ Remove citric acid
+✓ Add "Strive Supplement Blend"
+✓ Update calories to 45 per can
+✓ Fix email (support vs admin@strivesoda.com)
+
+ABOUT US PAGE:
+✓ Priority 3-4 (after product pages complete)
+✓ Style similar to Moonshine
+✓ Add team photos
+✓ Lifestyle focus
+
+DESIGN SYSTEM:
+✓ Brand hierarchy: "Soda first" (better-for-you soda that aids hydration)
+✓ Taglines: "Built for those who strive"
+✓ High-quality visuals, clean font
+✓ Remove dashes from copy
+✓ Lifestyle imagery throughout (active people)
+✓ Product images with ingredients visible
+
+FUTURE (Not Current Priority):
+- Store locator
+- Enhanced ambassador/stay connected section
+- Product-to-product navigation on product pages
+- Wholesale form optimization
+- SMS/email campaign strategy
+- Instagram ad boosting
+- Analytics & heat maps
+- Competitor D2C analysis
+- Sandbox testing
+
+================================================================================
+KEY METRICS & GOALS
+================================================================================
+
+CONVERSION FOCUS:
+- Old site: ~800 customers converted
+- New redesign: Significant drop
+- Goal: Restore conversion rate with improved design
+
+CUSTOMER SERVICE PAIN POINTS:
+1. Label not visible/clear (biggest issue)
+2. Users navigating away from product pages
+3. Information scattered across multiple pages
+
+PRIORITY HIERARCHY:
+- P0: Product pages (Austin & Joe requirements)
+- P1: Homepage, Shop page, Science page
+- P2: FAQ updates, subscription fixes
+- P3-4: About Us, Store locator, Ambassador section
+
+DISCOUNT STRUCTURE:
+- Subscribe & Save: 15% off (FINAL)
+- Bulk annual purchase: Consider 20% (like Costco)
+
+BRAND POSITIONING:
+- "Hydration soda" - not energy drink
+- Better-for-you SODA that aids hydration
+- Target: Movers, shakers, doers, active lifestyle
+- Differentiation: Real electrolytes (not probiotics/prebiotics)
+
+ELECTROLYTE BREAKDOWN:
+- 100mg Sodium
+- 30mg Magnesium
+- 30mg Potassium
+- 20mg Calcium
+- Total: 160-170mg per SKU
+
+INGREDIENTS:
+- 100% organic wildflower honey (sweetener)
+- NO synthetic sugars, HFCS, stevia, citric acid
+- Strive Supplement Blend (details TBD)
+- 45 calories per can
+
+FLAVORS:
+- Tropical Recharge: Passion fruit + Coconut + Honey
+- Peach Perfect: Peach + Lemon + Honey
+- Variety Pack: Mix of both
+
+================================================================================

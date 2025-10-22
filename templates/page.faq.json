@@ -1,0 +1,180 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "page-faq",
+      "blocks": {
+        "heading_product": {
+          "type": "heading",
+          "settings": {
+            "heading": "About Strive Soda"
+          }
+        },
+        "faq_what_is": {
+          "type": "question",
+          "settings": {
+            "title": "What is Strive Soda?",
+            "answer": "<p>Strive is the world's first hydration soda. A better for you beverage that combines refreshing flavor with functional hydration. Each can contains 180mg of essential electrolytes and is sweetened entirely with 100% organic wildflower honey. No synthetic sugars, no artificial sweeteners. Just real ingredients that fuel your active lifestyle.</p>",
+            "expandAnswer": true
+          }
+        },
+        "faq_flavors": {
+          "type": "question",
+          "settings": {
+            "title": "What flavors do you offer?",
+            "answer": "<p>We currently offer two delicious flavors:</p><ul><li><strong>Peach Perfect: </strong>Juicy summer peach with lemon coconut, perfectly powered by honey</li><li><strong>Tropical Recharge: </strong>Island vibes with coconut, passionfruit, and a hint of citrus</li></ul><p>You can also try our <strong>Variety Pack</strong> with 6 cans of each flavor to find your favorite!</p>",
+            "expandAnswer": false
+          }
+        },
+        "faq_sweetener": {
+          "type": "question",
+          "settings": {
+            "title": "Why do you use honey instead of sugar?",
+            "answer": "<p>Organic wildflower honey is nature's energy source. Unlike processed sugars and artificial sweeteners, honey provides:</p><ul><li>Natural antioxidants and minerals</li><li>Steady energy without the crash</li><li>Support for a healthy gut microbiome</li><li>No synthetic chemicals or artificial ingredients</li></ul><p>We skip sucralose, aspartame, high fructose corn syrup, and all synthetic sweeteners that offer zero nutritional value.</p>",
+            "expandAnswer": false
+          }
+        },
+        "faq_electrolytes": {
+          "type": "question",
+          "settings": {
+            "title": "What electrolytes are in Strive?",
+            "answer": "<p>Each can contains 180mg of essential electrolytes:</p><ul><li><strong>100mg Sodium: </strong>Maintains fluid balance and supports muscle function</li><li><strong>30mg Magnesium: </strong>Aids energy production and muscle relaxation</li><li><strong>30mg Potassium: </strong>Supports heart function and proper cell signaling</li><li><strong>20mg Calcium: </strong>Supports healthy muscle function and bone health</li></ul><p>These electrolytes help your body replenish what you lose naturally throughout your day.</p>",
+            "expandAnswer": false
+          }
+        },
+        "faq_when_drink": {
+          "type": "question",
+          "settings": {
+            "title": "When should I drink Strive?",
+            "answer": "<p>Strive is perfect for any moment you need refreshing hydration:</p><ul><li><strong>Before yoga or workouts: </strong>Hydrate before activity to stay balanced and energized</li><li><strong>During exercise: </strong>Replenish electrolytes during runs, hikes, or climbing sessions</li><li><strong>After workouts: </strong>Recover faster with natural energy and hydration</li><li><strong>Throughout your day: </strong>Stay hydrated while working, running errands, or relaxing</li></ul>",
+            "expandAnswer": false
+          }
+        },
+        "heading_ordering": {
+          "type": "heading",
+          "settings": {
+            "heading": "Ordering & Shipping"
+          }
+        },
+        "faq_shipping": {
+          "type": "question",
+          "settings": {
+            "title": "Do you offer free shipping?",
+            "answer": "<p>Yes! We offer free shipping on orders over $35 within the United States.</p>",
+            "expandAnswer": false
+          }
+        },
+        "faq_subscribe": {
+          "type": "question",
+          "settings": {
+            "title": "Can I subscribe for regular deliveries?",
+            "answer": "<p>Absolutely! Subscribe & Save gives you:</p><ul><li><strong>15% off</strong> every order</li><li><strong>Free shipping</strong> on every delivery</li><li><strong>Early access</strong> to new flavors</li><li><strong>Flexible scheduling</strong> - Cancel or edit anytime</li></ul><p>Choose your delivery frequency and never run out of your favorite flavor!</p>",
+            "expandAnswer": false
+          }
+        },
+        "faq_where_buy": {
+          "type": "question",
+          "settings": {
+            "title": "Where can I buy Strive Soda?",
+            "answer": "<p>You can purchase Strive directly from our website with nationwide shipping. We're also working on retail partnerships to bring Strive to stores near you. Follow us on social media for announcements about where to find us in stores!</p>",
+            "expandAnswer": false
+          }
+        },
+        "heading_product_info": {
+          "type": "heading",
+          "settings": {
+            "heading": "Product Information"
+          }
+        },
+        "faq_ingredients": {
+          "type": "question",
+          "settings": {
+            "title": "What are the ingredients?",
+            "answer": "<p>Strive is made with clean, simple ingredients:</p><ul><li>Carbonated water</li><li>100% organic wildflower honey</li><li>Natural fruit flavors</li><li>Essential electrolytes (sodium, potassium, magnesium, calcium)</li><li>Strive Supplement Blend</li></ul><p><strong>No artificial sweeteners. No synthetic sugars. No junk.</strong></p>",
+            "expandAnswer": false
+          }
+        },
+        "faq_calories": {
+          "type": "question",
+          "settings": {
+            "title": "How many calories are in each can?",
+            "answer": "<p>Each 12oz can contains 45 calories, all from natural organic honey. Zero calories from artificial sweeteners or synthetic ingredients.</p>",
+            "expandAnswer": false
+          }
+        },
+        "faq_caffeine": {
+          "type": "question",
+          "settings": {
+            "title": "Does Strive contain caffeine?",
+            "answer": "<p>No, Strive is caffeine-free. Our energy comes from organic honey and essential electrolytes. <strong>Natural fuel without the jitters or crash.</strong></p>",
+            "expandAnswer": false
+          }
+        },
+        "faq_vegan": {
+          "type": "question",
+          "settings": {
+            "title": "Is Strive vegan or gluten-free?",
+            "answer": "<p>Strive is <strong>gluten free</strong>, but it is <strong>not vegan</strong> because we use organic wildflower honey as our natural sweetener. Honey is a key ingredient that provides natural energy and functional benefits.</p>",
+            "expandAnswer": false
+          }
+        },
+        "heading_contact": {
+          "type": "heading",
+          "settings": {
+            "heading": "Contact & Support"
+          }
+        },
+        "faq_contact": {
+          "type": "question",
+          "settings": {
+            "title": "How can I contact customer support?",
+            "answer": "<p>We're here to help! You can reach us at:</p><ul><li><strong>Email:</strong> support@strivesoda.com</li><li><strong>Contact Form:</strong> <a href=\"/pages/contact\">Visit our Contact page</a></li></ul><p>We typically respond within 24 hours during business days.</p>",
+            "expandAnswer": false
+          }
+        },
+        "faq_returns": {
+          "type": "question",
+          "settings": {
+            "title": "What is your return policy?",
+            "answer": "<p>We want you to love Strive! If you're not satisfied with your purchase, please contact us within 30 days of delivery and we'll make it right. We stand behind our product 100%.</p>",
+            "expandAnswer": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_product",
+        "faq_what_is",
+        "faq_flavors",
+        "faq_sweetener",
+        "faq_electrolytes",
+        "faq_when_drink",
+        "heading_ordering",
+        "faq_shipping",
+        "faq_subscribe",
+        "faq_where_buy",
+        "heading_product_info",
+        "faq_ingredients",
+        "faq_calories",
+        "faq_caffeine",
+        "faq_vegan",
+        "heading_contact",
+        "faq_contact",
+        "faq_returns"
+      ],
+      "settings": {
+        "summary": false
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}

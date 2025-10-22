@@ -1,0 +1,113 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "science_test_visual": {
+      "type": "science-test-fold",
+      "settings": {
+        "heading": "There's a Better Way to Hydrate",
+        "subtext": "Introducing hydration soda—the first drink that combines real electrolytes with 100% organic honey. No synthetics. No compromises.",
+        "show_cta": false
+      }
+    },
+    "science_fold_1": {
+      "type": "science-checkerboard-fold",
+      "settings": {
+        "fold_number": 1,
+        "left_bg_color": "#0ABAB5",
+        "right_bg_color": "#FF7A00"
+      }
+    },
+    "science_fold_2": {
+      "type": "science-checkerboard-fold",
+      "settings": {
+        "fold_number": 2,
+        "left_bg_color": "#FF7A00",
+        "right_bg_color": "#0ABAB5"
+      }
+    },
+    "science_electrolytes": {
+      "type": "science-electrolytes",
+      "settings": {}
+    },
+    "science_honey": {
+      "type": "science-honey",
+      "settings": {}
+    },
+    "science_fold_3": {
+      "type": "science-checkerboard-fold",
+      "settings": {
+        "fold_number": 3,
+        "left_bg_color": "#0ABAB5",
+        "right_bg_color": "#FF7A00"
+      }
+    },
+    "science_fold_4": {
+      "type": "science-checkerboard-fold",
+      "settings": {
+        "fold_number": 4,
+        "left_bg_color": "#FF7A00",
+        "right_bg_color": "#0ABAB5"
+      }
+    },
+    "science_fold_5": {
+      "type": "science-checkerboard-fold",
+      "settings": {
+        "fold_number": 5,
+        "left_bg_color": "#0ABAB5",
+        "right_bg_color": "#FF7A00"
+      }
+    },
+    "strive_vs_everyone": {
+      "type": "strive-vs-everyone",
+      "settings": {
+        "heading": "Strive vs. Everyone Else",
+        "subheading": "See how hydration soda stacks up against traditional drinks. Spoiler: it's not even close.",
+        "strive_sugar": "15",
+        "strive_calories": "60",
+        "soda_sugar": "39",
+        "soda_calories": "140",
+        "sports_sugar": "21",
+        "sports_calories": "80",
+        "kombucha_sugar": "8",
+        "kombucha_calories": "30",
+        "cta_text": "Ready to experience the difference? Try Strive today.",
+        "cta_button_text": "Shop Now",
+        "cta_link": "/collections/all"
+      }
+    },
+    "about_us_cta": {
+      "type": "about-us-cta",
+      "settings": {
+        "left_heading": "Now You Know the Science",
+        "left_text": "You understand what makes hydration soda work. You've seen how Strive outperforms the competition.",
+        "right_heading": "Want to Know Our Story?",
+        "right_text": "Discover how Strive was born from a passion for adventure, sustainability, and making better choices.",
+        "preview_item_1": "Our Founder's Story",
+        "preview_item_2": "Sustainable Sourcing",
+        "preview_item_3": "Community & Mission",
+        "button_text": "Learn About Us",
+        "button_link": "/pages/about-us"
+      }
+    }
+  },
+  "order": [
+    "science_test_visual",
+    "science_fold_1",
+    "science_fold_2",
+    "science_electrolytes",
+    "science_honey",
+    "science_fold_3",
+    "science_fold_4",
+    "science_fold_5",
+    "strive_vs_everyone",
+    "about_us_cta"
+  ]
+}

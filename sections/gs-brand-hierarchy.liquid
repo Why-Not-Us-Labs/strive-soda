@@ -1,0 +1,617 @@
+{%- comment -%}
+Brand Hierarchy: 1-2-3 Framework from Chris Clark (CMO)
+1. IT'S A SODA (category)
+2. HYDRATION WITH ELECTROLYTES (benefit)
+3. SWEETENED WITH ORGANIC HONEY (differentiator)
+
+Fourth-grade language. Clear hierarchy. Better than JuneShine.
+{%- endcomment -%}
+
+<section class="brand-hierarchy-section" id="brand-hierarchy">
+  <div class="brand-hierarchy-container">
+
+    {%- comment -%} Intro Section {%- endcomment -%}
+    <div class="brand-hierarchy-intro">
+      {%- if section.settings.eyebrow != blank -%}
+        <p class="brand-hierarchy-eyebrow">{{ section.settings.eyebrow }}</p>
+      {%- endif -%}
+
+      {%- if section.settings.heading != blank -%}
+        <h2 class="brand-hierarchy-heading">{{ section.settings.heading }}</h2>
+      {%- endif -%}
+
+      {%- if section.settings.description != blank -%}
+        <div class="brand-hierarchy-desc">{{ section.settings.description }}</div>
+      {%- endif -%}
+
+      {%- if section.settings.cta_text != blank -%}
+        <a href="{{ section.settings.cta_link }}" class="brand-hierarchy-cta">
+          {{ section.settings.cta_text }}
+        </a>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} 1-2-3 Pillars Grid {%- endcomment -%}
+    <div class="brand-hierarchy-grid">
+
+      {%- comment -%} Pillar 1: IT'S A SODA {%- endcomment -%}
+      <div class="brand-pillar pillar-soda">
+        <div class="pillar-content">
+          <span class="pillar-number">1</span>
+          <div class="pillar-icon">
+            {%- if section.settings.pillar1_icon != blank -%}
+              {{ section.settings.pillar1_icon | image_url: width: 120 | image_tag:
+                loading: 'lazy',
+                alt: 'Soda Icon',
+                class: 'pillar-icon-img'
+              }}
+            {%- else -%}
+              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="40" cy="40" r="36" stroke="currentColor" stroke-width="4" fill="none"/>
+                <path d="M35 25 L45 25 L42 55 L38 55 Z" fill="currentColor"/>
+                <circle cx="40" cy="20" r="3" fill="currentColor"/>
+              </svg>
+            {%- endif -%}
+          </div>
+          <h3 class="pillar-title">{{ section.settings.pillar1_title | default: "It's a Soda" }}</h3>
+          <p class="pillar-tagline">{{ section.settings.pillar1_tagline | default: "Refreshing. Flavorful. It's soda." }}</p>
+          <p class="pillar-description">{{ section.settings.pillar1_desc | default: "Made for soda occasions—not the gym." }}</p>
+        </div>
+        {%- if section.settings.pillar1_image != blank -%}
+          <div class="pillar-image-wrapper">
+            {{ section.settings.pillar1_image | image_url: width: 800 | image_tag:
+              loading: 'lazy',
+              alt: section.settings.pillar1_title,
+              class: 'pillar-image'
+            }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} Pillar 2: HYDRATION {%- endcomment -%}
+      <div class="brand-pillar pillar-hydration">
+        <div class="pillar-content">
+          <span class="pillar-number">2</span>
+          <div class="pillar-icon">
+            {%- if section.settings.pillar2_icon != blank -%}
+              {{ section.settings.pillar2_icon | image_url: width: 120 | image_tag:
+                loading: 'lazy',
+                alt: 'Hydration Icon',
+                class: 'pillar-icon-img'
+              }}
+            {%- else -%}
+              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M40 15 L50 35 Q52 50 40 60 Q28 50 30 35 Z" stroke="currentColor" stroke-width="4" fill="none"/>
+                <path d="M35 40 Q38 35 42 40" stroke="currentColor" stroke-width="2" fill="none"/>
+              </svg>
+            {%- endif -%}
+          </div>
+          <h3 class="pillar-title">{{ section.settings.pillar2_title | default: "Hydration with Electrolytes" }}</h3>
+          <p class="pillar-tagline">{{ section.settings.pillar2_tagline | default: "Better for you. Built to hydrate." }}</p>
+          <p class="pillar-description">{{ section.settings.pillar2_desc | default: "180mg electrolytes keep you going." }}</p>
+        </div>
+        {%- if section.settings.pillar2_image != blank -%}
+          <div class="pillar-image-wrapper">
+            {{ section.settings.pillar2_image | image_url: width: 800 | image_tag:
+              loading: 'lazy',
+              alt: section.settings.pillar2_title,
+              class: 'pillar-image'
+            }}
+          </div>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} Pillar 3: HONEY {%- endcomment -%}
+      <div class="brand-pillar pillar-honey">
+        <div class="pillar-content">
+          <span class="pillar-number">3</span>
+          <div class="pillar-icon">
+            {%- if section.settings.pillar3_icon != blank -%}
+              {{ section.settings.pillar3_icon | image_url: width: 120 | image_tag:
+                loading: 'lazy',
+                alt: 'Honey Icon',
+                class: 'pillar-icon-img'
+              }}
+            {%- else -%}
+              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M40 25 L48 30 L48 40 L40 45 L32 40 L32 30 Z" stroke="currentColor" stroke-width="4" fill="none"/>
+                <path d="M40 15 L45 18 L43 23 L40 25 L37 23 L35 18 Z" fill="currentColor"/>
+                <circle cx="40" cy="12" r="2" fill="currentColor"/>
+              </svg>
+            {%- endif -%}
+          </div>
+          <h3 class="pillar-title">{{ section.settings.pillar3_title | default: "Sweetened with Organic Honey" }}</h3>
+          <p class="pillar-tagline">{{ section.settings.pillar3_tagline | default: "Naturally sweet. No artificial stuff." }}</p>
+          <p class="pillar-description">{{ section.settings.pillar3_desc | default: "100% organic wildflower honey." }}</p>
+        </div>
+        {%- if section.settings.pillar3_image != blank -%}
+          <div class="pillar-image-wrapper">
+            {{ section.settings.pillar3_image | image_url: width: 800 | image_tag:
+              loading: 'lazy',
+              alt: section.settings.pillar3_title,
+              class: 'pillar-image'
+            }}
+          </div>
+        {%- endif -%}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+  :root {
+    --tiffany-blue: #0ABAB5;
+    --strive-orange: #FF7A00;
+    --gold-yellow: #FFD700;
+  }
+
+  /* ===== SECTION WRAPPER ===== */
+  .brand-hierarchy-section {
+    scroll-margin-top: clamp(60px, 9vh, 120px);
+    background: #F5F1E8;
+    padding: clamp(60px, 8vw, 120px) clamp(20px, 4vw, 60px);
+    position: relative;
+  }
+
+  .brand-hierarchy-container {
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  /* ===== INTRO SECTION ===== */
+  .brand-hierarchy-intro {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto clamp(50px, 6vw, 80px);
+  }
+
+  .brand-hierarchy-eyebrow {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(11px, 1vw, 13px);
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--strive-orange);
+    margin: 0 0 clamp(12px, 1.5vw, 20px);
+  }
+
+  .brand-hierarchy-heading {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 800;
+    line-height: 1.05;
+    color: #111;
+    margin: 0 0 clamp(16px, 2vw, 24px);
+  }
+
+  .brand-hierarchy-desc {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(16px, 1.5vw, 20px);
+    line-height: 1.5;
+    color: #333;
+    margin: 0 0 clamp(28px, 3vw, 40px);
+  }
+
+  .brand-hierarchy-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(14px, 1.5vw, 18px) clamp(28px, 3vw, 40px);
+    background: var(--strive-orange);
+    color: #fff !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(11px, 1.1vw, 13px);
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 3px solid var(--strive-orange);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .brand-hierarchy-cta:hover {
+    background: var(--tiffany-blue);
+    border-color: var(--tiffany-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 16px 40px rgba(10,186,181,.3);
+  }
+
+  /* ===== 1-2-3 PILLARS GRID ===== */
+  .brand-hierarchy-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(20px, 3vw, 40px);
+  }
+
+  .brand-pillar {
+    position: relative;
+    background: #fff;
+    border: 4px solid #111;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    aspect-ratio: 1 / 1.15;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .brand-pillar:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 60px rgba(0,0,0,.15);
+  }
+
+  /* Individual pillar colors */
+  .pillar-soda {
+    background: linear-gradient(135deg, #fff 0%, #f8f8f8 100%);
+  }
+
+  .pillar-hydration {
+    background: linear-gradient(135deg, var(--tiffany-blue) 0%, #08a09c 100%);
+  }
+
+  .pillar-hydration .pillar-content * {
+    color: #fff;
+  }
+
+  .pillar-honey {
+    background: linear-gradient(135deg, var(--gold-yellow) 0%, #f4c430 100%);
+  }
+
+  /* ===== PILLAR CONTENT ===== */
+  .pillar-content {
+    position: relative;
+    z-index: 2;
+    padding: clamp(24px, 3vw, 40px);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: opacity 0.4s ease;
+  }
+
+  .brand-pillar:hover .pillar-content {
+    opacity: 0;
+  }
+
+  .pillar-number {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(48px, 6vw, 80px);
+    font-weight: 800;
+    line-height: 1;
+    color: var(--strive-orange);
+    margin: 0 0 clamp(12px, 1.5vw, 20px);
+  }
+
+  .pillar-hydration .pillar-number {
+    color: #fff;
+  }
+
+  .pillar-honey .pillar-number {
+    color: var(--strive-orange);
+  }
+
+  .pillar-icon {
+    width: clamp(60px, 7vw, 80px);
+    height: clamp(60px, 7vw, 80px);
+    margin: 0 0 clamp(16px, 2vw, 24px);
+    color: #111;
+  }
+
+  .pillar-hydration .pillar-icon {
+    color: #fff;
+  }
+
+  .pillar-icon svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .pillar-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .pillar-title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(18px, 2vw, 26px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: #111;
+    margin: 0 0 clamp(10px, 1.2vw, 14px);
+    text-transform: uppercase;
+  }
+
+  .pillar-hydration .pillar-title {
+    color: #fff;
+  }
+
+  .pillar-tagline {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(14px, 1.4vw, 18px);
+    font-weight: 600;
+    line-height: 1.3;
+    color: #111;
+    margin: 0 0 clamp(8px, 1vw, 12px);
+  }
+
+  .pillar-hydration .pillar-tagline {
+    color: #fff;
+  }
+
+  .pillar-description {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(12px, 1.2vw, 15px);
+    line-height: 1.4;
+    color: #333;
+    margin: 0;
+    flex-grow: 1;
+  }
+
+  .pillar-hydration .pillar-description {
+    color: rgba(255,255,255,0.9);
+  }
+
+  /* ===== HOVER IMAGES ===== */
+  .pillar-image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+  }
+
+  .brand-pillar:hover .pillar-image-wrapper {
+    opacity: 1;
+  }
+
+  .pillar-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  /* ===== TABLET (768px - 1024px) ===== */
+  @media (max-width: 1024px) {
+    .brand-hierarchy-grid {
+      gap: clamp(16px, 2.5vw, 24px);
+    }
+
+    .pillar-title {
+      font-size: clamp(16px, 2.2vw, 22px);
+    }
+
+    .pillar-tagline {
+      font-size: clamp(13px, 1.6vw, 16px);
+    }
+
+    .pillar-description {
+      font-size: clamp(11px, 1.3vw, 14px);
+    }
+  }
+
+  /* ===== MOBILE (< 768px) ===== */
+  @media (max-width: 768px) {
+    .brand-hierarchy-section {
+      padding: clamp(40px, 8vw, 60px) clamp(16px, 4vw, 24px);
+    }
+
+    .brand-hierarchy-intro {
+      margin-bottom: clamp(30px, 5vw, 40px);
+    }
+
+    .brand-hierarchy-grid {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+
+    .brand-pillar {
+      aspect-ratio: 16 / 9;
+      border-width: 3px;
+    }
+
+    .pillar-content {
+      padding: clamp(20px, 4vw, 28px);
+    }
+
+    .pillar-number {
+      font-size: clamp(40px, 10vw, 60px);
+      margin-bottom: 10px;
+    }
+
+    .pillar-icon {
+      width: clamp(50px, 12vw, 60px);
+      height: clamp(50px, 12vw, 60px);
+      margin-bottom: 12px;
+    }
+
+    .pillar-title {
+      font-size: clamp(16px, 4.5vw, 20px);
+      margin-bottom: 8px;
+    }
+
+    .pillar-tagline {
+      font-size: clamp(13px, 3.5vw, 15px);
+      margin-bottom: 6px;
+    }
+
+    .pillar-description {
+      font-size: clamp(11px, 3vw, 13px);
+    }
+
+    .brand-hierarchy-cta {
+      padding: 12px 24px;
+      font-size: 10px;
+      border-width: 2px;
+    }
+  }
+
+  /* ===== EXTRA SMALL (< 400px) ===== */
+  @media (max-width: 400px) {
+    .brand-hierarchy-heading {
+      font-size: clamp(28px, 8vw, 36px);
+    }
+
+    .pillar-number {
+      font-size: 36px;
+    }
+
+    .pillar-title {
+      font-size: 15px;
+    }
+
+    .pillar-tagline {
+      font-size: 12px;
+    }
+
+    .pillar-description {
+      font-size: 10px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Brand Hierarchy (1-2-3)",
+  "disabled_on": { "groups": ["header", "footer", "aside"] },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Intro"
+    },
+    {
+      "type": "text",
+      "id": "eyebrow",
+      "label": "Eyebrow text",
+      "default": "WHY STRIVE SODA?"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main heading",
+      "default": "The 1-2-3 of Hydration Soda"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Simple. Better-for-you soda that actually does something.</p>"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA button text",
+      "default": "LEARN THE SCIENCE"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA button link"
+    },
+    {
+      "type": "header",
+      "content": "Pillar 1: IT'S A SODA"
+    },
+    {
+      "type": "text",
+      "id": "pillar1_title",
+      "label": "Title",
+      "default": "It's a Soda"
+    },
+    {
+      "type": "text",
+      "id": "pillar1_tagline",
+      "label": "Tagline",
+      "default": "Refreshing. Flavorful. It's soda."
+    },
+    {
+      "type": "text",
+      "id": "pillar1_desc",
+      "label": "Description",
+      "default": "Made for soda occasions—not the gym."
+    },
+    {
+      "type": "image_picker",
+      "id": "pillar1_icon",
+      "label": "Custom icon (optional)"
+    },
+    {
+      "type": "image_picker",
+      "id": "pillar1_image",
+      "label": "Hover image"
+    },
+    {
+      "type": "header",
+      "content": "Pillar 2: HYDRATION"
+    },
+    {
+      "type": "text",
+      "id": "pillar2_title",
+      "label": "Title",
+      "default": "Hydration with Electrolytes"
+    },
+    {
+      "type": "text",
+      "id": "pillar2_tagline",
+      "label": "Tagline",
+      "default": "Better for you. Built to hydrate."
+    },
+    {
+      "type": "text",
+      "id": "pillar2_desc",
+      "label": "Description",
+      "default": "180mg electrolytes keep you going."
+    },
+    {
+      "type": "image_picker",
+      "id": "pillar2_icon",
+      "label": "Custom icon (optional)"
+    },
+    {
+      "type": "image_picker",
+      "id": "pillar2_image",
+      "label": "Hover image"
+    },
+    {
+      "type": "header",
+      "content": "Pillar 3: HONEY"
+    },
+    {
+      "type": "text",
+      "id": "pillar3_title",
+      "label": "Title",
+      "default": "Sweetened with Organic Honey"
+    },
+    {
+      "type": "text",
+      "id": "pillar3_tagline",
+      "label": "Tagline",
+      "default": "Naturally sweet. No artificial stuff."
+    },
+    {
+      "type": "text",
+      "id": "pillar3_desc",
+      "label": "Description",
+      "default": "100% organic wildflower honey."
+    },
+    {
+      "type": "image_picker",
+      "id": "pillar3_icon",
+      "label": "Custom icon (optional)"
+    },
+    {
+      "type": "image_picker",
+      "id": "pillar3_image",
+      "label": "Hover image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand Hierarchy (1-2-3)"
+    }
+  ]
+}
+{% endschema %}

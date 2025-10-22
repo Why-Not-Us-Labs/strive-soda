@@ -1,0 +1,459 @@
+{%- comment -%}
+Strive vs Everyone - Unified Comparison Section
+The "mic drop" moment showing how Strive dominates the competition
+{%- endcomment -%}
+
+<section class="strive-vs-everyone" id="comparison">
+  <div class="comparison-container">
+
+    <div class="comparison-intro">
+      <h2 class="comparison-heading">{{ section.settings.heading }}</h2>
+      <p class="comparison-subheading">{{ section.settings.subheading }}</p>
+    </div>
+
+    <div class="comparison-table-wrapper">
+      <table class="master-comparison-table">
+        <thead>
+          <tr>
+            <th class="product-col">Product</th>
+            <th>Electrolytes</th>
+            <th>Sweetener</th>
+            <th>Sugar</th>
+            <th>Calories</th>
+            <th>Taste</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Strive Row (The Winner) -->
+          <tr class="strive-winner-row">
+            <td class="product-name">
+              <strong>Strive Hydration Soda</strong>
+              <span class="winner-badge">🏆 The Winner</span>
+            </td>
+            <td class="highlight-cell">
+              <strong>180mg</strong>
+              <span class="cell-detail">Na, K, Mg</span>
+            </td>
+            <td class="highlight-cell">
+              <strong>Organic Honey</strong>
+              <span class="cell-detail">Unprocessed</span>
+            </td>
+            <td>{{ section.settings.strive_sugar }}g</td>
+            <td>{{ section.settings.strive_calories }}</td>
+            <td class="taste-cell">
+              <span class="stars">⭐⭐⭐⭐⭐</span>
+            </td>
+          </tr>
+
+          <!-- Traditional Soda -->
+          <tr>
+            <td class="product-name">Traditional Soda</td>
+            <td class="negative-cell">
+              <strong>~50mg</strong>
+              <span class="cell-detail">Sodium only</span>
+            </td>
+            <td class="negative-cell">
+              <strong>HFCS / Cane Sugar</strong>
+              <span class="cell-detail">Highly processed</span>
+            </td>
+            <td>{{ section.settings.soda_sugar }}g</td>
+            <td>{{ section.settings.soda_calories }}</td>
+            <td class="taste-cell">
+              <span class="stars">⭐⭐⭐</span>
+            </td>
+          </tr>
+
+          <!-- Sports Drinks -->
+          <tr>
+            <td class="product-name">Sports Drinks</td>
+            <td class="neutral-cell">
+              <strong>~110mg</strong>
+              <span class="cell-detail">Na, K only</span>
+            </td>
+            <td class="negative-cell">
+              <strong>Synthetic Sugars</strong>
+              <span class="cell-detail">Artificial dyes</span>
+            </td>
+            <td>{{ section.settings.sports_sugar }}g</td>
+            <td>{{ section.settings.sports_calories }}</td>
+            <td class="taste-cell">
+              <span class="stars">⭐⭐</span>
+            </td>
+          </tr>
+
+          <!-- Kombucha -->
+          <tr>
+            <td class="product-name">Kombucha</td>
+            <td class="negative-cell">
+              <strong>~20mg</strong>
+              <span class="cell-detail">Minimal</span>
+            </td>
+            <td class="neutral-cell">
+              <strong>Cane Sugar</strong>
+              <span class="cell-detail">Fermented</span>
+            </td>
+            <td>{{ section.settings.kombucha_sugar }}g</td>
+            <td>{{ section.settings.kombucha_calories }}</td>
+            <td class="taste-cell">
+              <span class="stars">⭐⭐⭐</span>
+            </td>
+          </tr>
+
+          <!-- Sparkling Water -->
+          <tr>
+            <td class="product-name">Sparkling Water</td>
+            <td class="negative-cell">
+              <strong>0mg</strong>
+              <span class="cell-detail">None</span>
+            </td>
+            <td class="neutral-cell">
+              <strong>None</strong>
+              <span class="cell-detail">Sugar-free</span>
+            </td>
+            <td>0g</td>
+            <td>0</td>
+            <td class="taste-cell">
+              <span class="stars">⭐⭐</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="comparison-cta">
+      <p class="cta-text">{{ section.settings.cta_text }}</p>
+      <a href="{{ section.settings.cta_link }}" class="cta-button">{{ section.settings.cta_button_text }}</a>
+    </div>
+
+  </div>
+</section>
+
+<style>
+:root {
+  --tiffany-blue: #0ABAB5;
+  --strive-orange: #FF7A00;
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.strive-vs-everyone {
+  padding: clamp(80px, 10vw, 140px) 0;
+  background: linear-gradient(180deg, #fff 0%, #F5F1E8 100%);
+  font-family: var(--font-primary);
+}
+
+.comparison-container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 60px);
+}
+
+.comparison-intro {
+  text-align: center;
+  margin-bottom: clamp(50px, 7vw, 80px);
+}
+
+.comparison-heading {
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 900;
+  line-height: 1.05;
+  margin: 0 0 16px;
+  color: #111;
+}
+
+.comparison-subheading {
+  font-size: clamp(18px, 2vw, 24px);
+  line-height: 1.4;
+  color: #333;
+  margin: 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.comparison-table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-bottom: clamp(40px, 6vw, 60px);
+  border: 3px solid #111;
+  background: #fff;
+}
+
+.master-comparison-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+  font-family: var(--font-primary);
+}
+
+.master-comparison-table th,
+.master-comparison-table td {
+  padding: clamp(16px, 2.5vw, 24px);
+  text-align: left;
+  border: 2px solid #ddd;
+  font-size: clamp(14px, 1.5vw, 17px);
+}
+
+.master-comparison-table th {
+  background: #111;
+  color: #fff;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: clamp(12px, 1.3vw, 15px);
+  letter-spacing: 0.5px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.product-col {
+  width: 20%;
+}
+
+.product-name {
+  font-weight: 700;
+  color: #111;
+  position: relative;
+}
+
+.winner-badge {
+  display: block;
+  font-size: 12px;
+  font-weight: 800;
+  color: var(--strive-orange);
+  margin-top: 4px;
+}
+
+/* Strive Winner Row */
+.strive-winner-row {
+  background: linear-gradient(135deg,
+    rgba(10, 186, 181, 0.12) 0%,
+    rgba(255, 122, 0, 0.08) 100%);
+  border-left: 5px solid var(--tiffany-blue);
+}
+
+.strive-winner-row td {
+  font-weight: 600;
+  border-color: var(--tiffany-blue);
+}
+
+.highlight-cell {
+  background: rgba(10, 186, 181, 0.08);
+}
+
+.highlight-cell strong {
+  display: block;
+  color: var(--tiffany-blue);
+  font-size: clamp(16px, 1.8vw, 20px);
+  margin-bottom: 2px;
+}
+
+.negative-cell {
+  background: rgba(220, 53, 69, 0.05);
+}
+
+.negative-cell strong {
+  display: block;
+  color: #dc3545;
+  margin-bottom: 2px;
+}
+
+.neutral-cell strong {
+  display: block;
+  margin-bottom: 2px;
+}
+
+.cell-detail {
+  display: block;
+  font-size: clamp(11px, 1.2vw, 13px);
+  color: #666;
+  font-weight: 500;
+  margin-top: 4px;
+}
+
+.taste-cell {
+  text-align: center;
+}
+
+.stars {
+  font-size: clamp(14px, 1.5vw, 18px);
+  letter-spacing: 2px;
+}
+
+/* CTA Section */
+.comparison-cta {
+  text-align: center;
+  padding: clamp(40px, 6vw, 60px);
+  background: linear-gradient(135deg, var(--tiffany-blue) 0%, var(--strive-orange) 100%);
+  border: 3px solid #111;
+  border-radius: 0;
+}
+
+.cta-text {
+  font-size: clamp(20px, 2.5vw, 28px);
+  font-weight: 800;
+  color: #fff;
+  margin: 0 0 24px;
+  line-height: 1.3;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 16px 40px;
+  background: #fff;
+  color: #111;
+  font-weight: 800;
+  font-size: clamp(16px, 1.6vw, 18px);
+  text-decoration: none;
+  border: 3px solid #111;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.cta-button:hover {
+  background: #111;
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .comparison-table-wrapper {
+    border-left: none;
+    border-right: none;
+  }
+
+  .master-comparison-table th,
+  .master-comparison-table td {
+    padding: 12px 8px;
+    font-size: 13px;
+  }
+
+  .master-comparison-table th {
+    font-size: 11px;
+  }
+
+  .cell-detail {
+    font-size: 10px;
+  }
+
+  .winner-badge {
+    font-size: 10px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Strive vs Everyone",
+  "disabled_on": { "groups": ["header", "footer", "aside"] },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main heading",
+      "default": "Strive vs. Everyone Else"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "See how hydration soda stacks up against traditional drinks. Spoiler: it's not even close."
+    },
+    {
+      "type": "header",
+      "content": "Strive Data"
+    },
+    {
+      "type": "text",
+      "id": "strive_sugar",
+      "label": "Strive Sugar (g)",
+      "default": "15"
+    },
+    {
+      "type": "text",
+      "id": "strive_calories",
+      "label": "Strive Calories",
+      "default": "60"
+    },
+    {
+      "type": "header",
+      "content": "Traditional Soda Data"
+    },
+    {
+      "type": "text",
+      "id": "soda_sugar",
+      "label": "Soda Sugar (g)",
+      "default": "39"
+    },
+    {
+      "type": "text",
+      "id": "soda_calories",
+      "label": "Soda Calories",
+      "default": "140"
+    },
+    {
+      "type": "header",
+      "content": "Sports Drink Data"
+    },
+    {
+      "type": "text",
+      "id": "sports_sugar",
+      "label": "Sports Sugar (g)",
+      "default": "21"
+    },
+    {
+      "type": "text",
+      "id": "sports_calories",
+      "label": "Sports Calories",
+      "default": "80"
+    },
+    {
+      "type": "header",
+      "content": "Kombucha Data"
+    },
+    {
+      "type": "text",
+      "id": "kombucha_sugar",
+      "label": "Kombucha Sugar (g)",
+      "default": "8"
+    },
+    {
+      "type": "text",
+      "id": "kombucha_calories",
+      "label": "Kombucha Calories",
+      "default": "30"
+    },
+    {
+      "type": "header",
+      "content": "CTA"
+    },
+    {
+      "type": "textarea",
+      "id": "cta_text",
+      "label": "CTA Text",
+      "default": "Ready to experience the difference? Try Strive today."
+    },
+    {
+      "type": "text",
+      "id": "cta_button_text",
+      "label": "Button Text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Strive vs Everyone"
+    }
+  ]
+}
+{% endschema %}

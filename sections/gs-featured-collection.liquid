@@ -1,0 +1,230 @@
+{%- liquid
+  # Source collection + meta
+  if section.settings.homeCollection != blank
+    assign sel_collection = collections[section.settings.homeCollection]
+    assign products       = sel_collection.products
+    assign collectionUrl  = sel_collection.url
+    assign totalProducts  = sel_collection.all_products_count | plus: 0
+    assign collectionTitle= sel_collection.title
+  else
+    assign products       = collections.all.products | sort: 'published_at' | reverse
+    assign collectionUrl  = routes.all_products_collection_url
+    assign totalProducts  = collections.all.all_products_count | plus: 0
+    assign collectionTitle= 'collection.featuredCollection' | t
+  endif
+
+  assign productLimit = section.settings.howmany | plus: 0
+-%}
+
+<section class="drinks-carousel-section">
+  {%- if section.settings.show_heading -%}
+  <div class="drinks-header">
+    <h3 class="drinks-heading">{{ collectionTitle }}</h3>
+    {%- if totalProducts > productLimit -%}
+      <a class="drinks-viewall" href="{{ collectionUrl }}">{{ 'collection.ViewAllProducts' | t }}</a>
+    {%- endif -%}
+  </div>
+  {%- endif -%}
+
+  <!-- Track -->
+  <div class="drinks-track">
+    {%- for product in products limit: productLimit -%}
+      <a class="drink-card" href="{{ product.url }}" aria-label="{{ product.title }}">
+        <div class="drink-image">
+          {{ product.featured_image | image_url: width: 1200 | image_tag:
+              alt: product.title, loading: 'lazy', sizes: '(max-width: 777px) 80vw, 420px',
+              class: 'drink-img' }}
+        </div>
+        <div class="drink-meta">
+          <h4 class="drink-title">{{ product.title }}</h4>
+          <div class="drink-price">{{ product.price | money }}</div>
+          <span class="drink-cta">Shop Now</span>
+        </div>
+      </a>
+    {%- else -%}
+      {%- for i in (1..2) -%}
+      <div class="drink-card placeholder">
+        <div class="drink-image placeholder-box"></div>
+        <div class="drink-meta">
+          <h4 class="drink-title">Coming soon</h4>
+          <div class="drink-price">$—</div>
+          <span class="drink-cta">Shop Now</span>
+        </div>
+      </div>
+      {%- endfor -%}
+    {%- endfor -%}
+  </div>
+</section>
+
+<style>
+/* Import brand font */
+
+:root {
+  --tiffany-blue: #0ABAB5;
+  --strive-orange: #FF7A00;
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ===== Section frame ===== */
+.drinks-carousel-section{
+  width:min(1200px, 96%);
+  margin: 0 auto;
+  padding: 28px 0 12px;
+  font-family: var(--font-primary);
+}
+.drinks-header{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; margin-bottom:16px;
+}
+.drinks-heading{
+  margin:0; 
+  font-size:clamp(18px, 2.2vw, 28px); 
+  font-weight:900; 
+  letter-spacing:.3px;
+  font-family: var(--font-primary);
+  text-transform: uppercase;
+}
+.drinks-viewall{ 
+  text-decoration:none; 
+  font-weight:700;
+  font-family: var(--font-primary);
+  color: var(--strive-orange);
+  transition: color 0.2s ease;
+}
+.drinks-viewall:hover {
+  color: var(--tiffany-blue);
+}
+
+/* ===== Mobile: horizontal carousel ===== */
+@media (max-width: 777px){
+  .drinks-track{
+    display:flex; gap:16px;
+    overflow-x:auto; -webkit-overflow-scrolling:touch;
+    scroll-snap-type:x mandatory;
+    padding: 4px 12px 8px;
+  }
+  .drinks-track::-webkit-scrollbar{ display:none; }
+
+  .drink-card{
+    flex:0 0 80vw;
+    scroll-snap-align:center;
+    border-radius:20px;
+    background:#fff;
+    box-shadow: 0 8px 24px rgba(0,0,0,.08);
+    text-decoration:none; color:inherit;
+    display:flex; flex-direction:column; overflow:hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .drink-card:active {
+    transform: scale(0.98);
+  }
+  .drink-image{ width:100%; aspect-ratio:3/4; background:#f6f6f6; }
+  .drink-img{ width:100%; height:100%; object-fit:contain; }
+
+  .drink-meta{ 
+    padding:14px 16px 16px; 
+    display:flex; 
+    flex-direction:column; 
+    gap:8px;
+    font-family: var(--font-primary);
+  }
+  .drink-title{ 
+    margin:0; 
+    font-size:18px; 
+    font-weight:900; 
+    line-height:1.2;
+    font-family: var(--font-primary);
+  }
+  .drink-price{ 
+    font-weight:700; 
+    opacity:.9;
+    font-family: var(--font-primary);
+  }
+  .drink-cta{
+    margin-top:4px; align-self:flex-start;
+    display:inline-block; padding:10px 16px; border-radius:999px;
+    background: var(--strive-orange); 
+    color:#fff; 
+    font-weight:800; 
+    text-transform:uppercase; 
+    letter-spacing:.5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.12);
+    font-family: var(--font-primary);
+    font-size: 12px;
+  }
+}
+
+/* ===== Desktop/Tablet: grid ===== */
+@media (min-width: 778px){
+  .drinks-track{
+    display:grid;
+    grid-template-columns: repeat( auto-fit, minmax(320px, 1fr) );
+    gap:24px;
+  }
+  .drink-card{
+    border-radius:20px; text-decoration:none; color:inherit;
+    background:#fff; box-shadow: 0 6px 20px rgba(0,0,0,.06);
+    overflow:hidden; display:flex; flex-direction:column;
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .drink-card:hover{ 
+    transform: translateY(-4px); 
+    box-shadow:0 12px 32px rgba(0,0,0,.12); 
+  }
+  .drink-image{ width:100%; aspect-ratio:4/5; background:#f6f6f6; }
+  .drink-img{ width:100%; height:100%; object-fit:contain; }
+  .drink-meta{ 
+    padding:16px 18px 20px; 
+    display:flex; 
+    flex-direction:column; 
+    gap:10px;
+    font-family: var(--font-primary);
+  }
+  .drink-title{ 
+    margin:0; 
+    font-size:20px; 
+    font-weight:900;
+    font-family: var(--font-primary);
+  }
+  .drink-price{ 
+    font-weight:700; 
+    opacity:.9;
+    font-family: var(--font-primary);
+  }
+  .drink-cta{
+    align-self:flex-start; margin-top:6px;
+    padding:12px 20px; border-radius:999px;
+    background: var(--strive-orange); 
+    color:#fff; 
+    font-weight:800; 
+    text-transform:uppercase; 
+    letter-spacing:.5px;
+    font-family: var(--font-primary);
+    font-size: 13px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  .drink-cta:hover {
+    background: var(--tiffany-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(10,186,181,.25);
+  }
+}
+
+/* Placeholders */
+.placeholder-box{ width:100%; height:100%; background:linear-gradient(90deg,#f1f1f1,#f7f7f7,#f1f1f1); }
+</style>
+
+{% schema %}
+{
+  "name": "Featured carousel",
+  "disabled_on": { "groups": ["header", "footer", "aside"] },
+  "presets": [
+    { "name": "Featured carousel" }
+  ],
+  "settings": [
+    { "type": "collection", "id": "homeCollection", "label": "Featured collection", "info": "Pick the collection that includes your flavors." },
+    { "type": "checkbox", "id": "show_heading", "label": "Show heading", "default": true },
+    { "type": "range", "id": "howmany", "min": 2, "max": 12, "step": 1, "default": 2, "label": "Number of products to display" }
+  ]
+}
+{% endschema %}

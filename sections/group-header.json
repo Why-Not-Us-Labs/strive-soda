@@ -1,0 +1,86 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "type": "header",
+  "name": "Header",
+  "sections": {
+    "header_marquee_MVrUaT": {
+      "type": "header-marquee",
+      "name": "Announcement bar",
+      "settings": {
+        "homeOnly": true,
+        "marqueeMarquee": false,
+        "notice": "FREE SHIPPING ON ORDERS OVER $100",
+        "link": "",
+        "marqueeDirection": "false",
+        "marqueeSpeeds": 40,
+        "marqueePause": true,
+        "marqueeBg": "#81d8d0",
+        "marqueeColor": "#ffffff"
+      }
+    },
+    "header": {
+      "type": "header",
+      "blocks": {
+        "logo": {
+          "type": "logo",
+          "settings": {
+            "logoImage": "{{ shop.brand.logo }}",
+            "logoImageSize": 30,
+            "logoName": "",
+            "logoFont": "helvetica_n4",
+            "logoFontSize": 15,
+            "logoAlignment": "start"
+          }
+        },
+        "menu": {
+          "type": "menuLinks",
+          "settings": {
+            "main_linklist": "main-menu",
+            "navigationAlignment": "center",
+            "navigationDropdownAlignment": "auto"
+          }
+        },
+        "accounts": {
+          "type": "accounts",
+          "settings": {
+            "accountLink": true,
+            "searchBar": true,
+            "show_country": false,
+            "show_language": false,
+            "accountsAlignment": "flex-end"
+          }
+        }
+      },
+      "block_order": [
+        "logo",
+        "menu",
+        "accounts"
+      ],
+      "settings": {
+        "headerPosition": true,
+        "hasBorder": false,
+        "outlinedLinks": false,
+        "openOnHover": false,
+        "hasIcons": true,
+        "accountLinkMob": true,
+        "homeOverlay": true,
+        "bgFill": "solid",
+        "overlayBgColor": "#ffffff",
+        "overlayTextColor": "#000000",
+        "overlayBorderColor": "#000000"
+      }
+    }
+  },
+  "order": [
+    "header_marquee_MVrUaT",
+    "header"
+  ]
+}

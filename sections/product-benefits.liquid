@@ -1,0 +1,342 @@
+{%- comment -%}
+Product: Key Benefits Section
+- Highlights main benefits: electrolytes, honey, no synthetics
+- Icon + text card layout
+- Full-width section for product pages
+{%- endcomment -%}
+
+<section class="product-benefits-section">
+  <div class="benefits-wrapper">
+
+    {%- comment -%} Left side: Lifestyle Image {%- endcomment -%}
+    <div class="benefits-image-side">
+      <div class="benefits-image-container">
+        <img
+          src="https://cdn.shopify.com/s/files/1/0878/4170/2180/files/spirited-hive-1759798701482_bce74db2-b00a-4fe5-8e1c-073f38911853.png?v=1760330738"
+          alt="Strive Soda Lifestyle"
+          loading="lazy"
+          class="benefits-lifestyle-img">
+      </div>
+    </div>
+
+    {%- comment -%} Right side: Benefits Content {%- endcomment -%}
+    <div class="benefits-content-side">
+      <div class="benefits-intro">
+        <h2 class="benefits-title">{{ section.settings.heading }}</h2>
+        {%- if section.settings.description != blank -%}
+          <p class="benefits-desc">{{ section.settings.description }}</p>
+        {%- endif -%}
+      </div>
+
+      <div class="benefits-grid">
+
+      {%- if section.settings.show_electrolytes -%}
+      <div class="benefit-card electrolytes-card">
+        <div class="benefit-icon">⚡</div>
+        <h3 class="benefit-heading">{{ section.settings.electrolytes_title }}</h3>
+        <p class="benefit-text">{{ section.settings.electrolytes_text }}</p>
+        <div class="benefit-stats">
+          <span class="stat-item">100mg Sodium</span>
+          <span class="stat-item">30mg Potassium</span>
+          <span class="stat-item">30mg Magnesium</span>
+          <span class="stat-item">20mg Calcium</span>
+        </div>
+      </div>
+      {%- endif -%}
+
+      {%- if section.settings.show_honey -%}
+      <div class="benefit-card honey-card">
+        <div class="benefit-icon">🍯</div>
+        <h3 class="benefit-heading">{{ section.settings.honey_title }}</h3>
+        <p class="benefit-text">{{ section.settings.honey_text }}</p>
+      </div>
+      {%- endif -%}
+
+      {%- if section.settings.show_no_synthetics -%}
+      <div class="benefit-card no-synthetics-card">
+        <div class="benefit-icon">🚫</div>
+        <h3 class="benefit-heading">{{ section.settings.no_synthetics_title }}</h3>
+        <p class="benefit-text">{{ section.settings.no_synthetics_text }}</p>
+      </div>
+      {%- endif -%}
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+
+:root {
+  --tiffany-blue: #0ABAB5;
+  --strive-orange: #FF7A00;
+  --gold-yellow: #FFD700;
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.product-benefits-section {
+  padding: 0;
+  background: #fff;
+  font-family: var(--font-primary);
+}
+
+.benefits-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 600px;
+}
+
+/* LEFT SIDE - Lifestyle Image */
+.benefits-image-side {
+  background: linear-gradient(135deg, #FFB88C 0%, #FF9A6C 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(40px, 6vw, 80px);
+}
+
+.benefits-image-container {
+  width: 100%;
+  max-width: 600px;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border: 4px solid #111;
+  border-radius: 8px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.benefits-lifestyle-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* RIGHT SIDE - Benefits Content */
+.benefits-content-side {
+  background: #F5F1E8;
+  padding: clamp(60px, 8vw, 100px) clamp(40px, 6vw, 80px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.benefits-intro {
+  text-align: left;
+  margin-bottom: clamp(30px, 5vw, 48px);
+}
+
+.benefits-title {
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 16px;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.benefits-desc {
+  font-size: clamp(14px, 1.5vw, 18px);
+  line-height: 1.6;
+  margin: 0;
+  color: #333;
+}
+
+.benefits-grid {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 32px);
+}
+
+.benefit-card {
+  padding: 0;
+  border: none;
+  text-align: left;
+  background: transparent;
+  transition: transform 0.2s ease;
+}
+
+.benefit-card:hover {
+  transform: translateX(4px);
+}
+
+.electrolytes-card {
+  background: transparent;
+}
+
+.honey-card {
+  background: transparent;
+}
+
+.no-synthetics-card {
+  background: transparent;
+}
+
+.benefit-icon {
+  display: none;
+}
+
+.benefit-heading {
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 800;
+  margin: 0 0 8px;
+  color: var(--strive-orange);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.benefit-text {
+  font-size: clamp(13px, 1.4vw, 16px);
+  line-height: 1.6;
+  margin: 0;
+  color: #111;
+  font-weight: 400;
+}
+
+.benefit-stats {
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 2px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: flex-start;
+}
+
+.stat-item {
+  padding: 8px 14px;
+  background: #fff;
+  color: var(--strive-orange);
+  font-size: clamp(11px, 1.2vw, 13px);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  border-radius: 4px;
+  border: 2px solid var(--strive-orange);
+}
+
+@media (max-width: 1024px) {
+  .benefits-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .benefits-image-side {
+    padding: clamp(40px, 6vw, 60px);
+  }
+
+  .benefits-image-container {
+    max-width: 500px;
+    aspect-ratio: 1 / 1;
+  }
+
+  .benefits-intro {
+    text-align: center;
+  }
+
+  .benefit-card {
+    text-align: center;
+  }
+
+  .benefit-stats {
+    justify-content: center;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Product: Key Benefits",
+  "disabled_on": { "groups": ["header", "footer", "aside"] },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main heading",
+      "default": "Why Choose Strive?"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description (optional)",
+      "default": "Better-for-you hydration with real ingredients that work."
+    },
+    {
+      "type": "header",
+      "content": "Electrolytes Card"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_electrolytes",
+      "label": "Show electrolytes card",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "electrolytes_title",
+      "label": "Electrolytes title",
+      "default": "180mg Essential Electrolytes"
+    },
+    {
+      "type": "textarea",
+      "id": "electrolytes_text",
+      "label": "Electrolytes description",
+      "default": "Sodium, potassium, magnesium, and calcium work together to keep you hydrated, balanced, and ready for anything."
+    },
+    {
+      "type": "header",
+      "content": "Honey Card"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_honey",
+      "label": "Show honey card",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "honey_title",
+      "label": "Honey title",
+      "default": "100% Organic Wildflower Honey"
+    },
+    {
+      "type": "textarea",
+      "id": "honey_text",
+      "label": "Honey description",
+      "default": "The world's first hydration soda sweetened entirely with organic honey. Natural energy without synthetic sugars or artificial sweeteners."
+    },
+    {
+      "type": "header",
+      "content": "No Synthetics Card"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_no_synthetics",
+      "label": "Show no synthetics card",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "no_synthetics_title",
+      "label": "No synthetics title",
+      "default": "No Synthetic Sugars. Ever."
+    },
+    {
+      "type": "textarea",
+      "id": "no_synthetics_text",
+      "label": "No synthetics description",
+      "default": "No sucralose, no aspartame, no high-fructose corn syrup. Just real ingredients that fuel your body naturally."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product: Key Benefits"
+    }
+  ]
+}
+{% endschema %}

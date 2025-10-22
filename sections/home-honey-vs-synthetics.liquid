@@ -1,0 +1,417 @@
+{%- comment -%}
+Homepage: Why Honey vs Synthetic Sugars
+- Side-by-side comparison highlight
+- Shows benefits of honey vs dangers of synthetics
+- Bold visual contrast
+{%- endcomment -%}
+
+<section class="honey-vs-synthetics-section">
+  <div class="comparison-container">
+
+    <div class="comparison-intro">
+      <h2 class="comparison-main-title">{{ section.settings.heading }}</h2>
+      {%- if section.settings.description != blank -%}
+        <p class="comparison-desc">{{ section.settings.description }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="comparison-grid">
+
+      <!-- Honey Side (Winner) -->
+      <div class="comparison-side honey-side">
+        <div class="side-badge winner-badge">{{ section.settings.honey_badge }}</div>
+        <h3 class="side-title">{{ section.settings.honey_title }}</h3>
+        <ul class="side-list">
+          <li class="list-item positive">
+            <span class="item-icon">✓</span>
+            <span class="item-text">{{ section.settings.honey_benefit1 }}</span>
+          </li>
+          <li class="list-item positive">
+            <span class="item-icon">✓</span>
+            <span class="item-text">{{ section.settings.honey_benefit2 }}</span>
+          </li>
+          <li class="list-item positive">
+            <span class="item-icon">✓</span>
+            <span class="item-text">{{ section.settings.honey_benefit3 }}</span>
+          </li>
+          <li class="list-item positive">
+            <span class="item-icon">✓</span>
+            <span class="item-text">{{ section.settings.honey_benefit4 }}</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- VS Divider -->
+      <div class="vs-divider">
+        <span class="vs-text">VS</span>
+      </div>
+
+      <!-- Synthetic Side -->
+      <div class="comparison-side synthetic-side">
+        <div class="side-badge">{{ section.settings.synthetic_badge }}</div>
+        <h3 class="side-title">{{ section.settings.synthetic_title }}</h3>
+        <ul class="side-list">
+          <li class="list-item negative">
+            <span class="item-icon">✗</span>
+            <span class="item-text">{{ section.settings.synthetic_issue1 }}</span>
+          </li>
+          <li class="list-item negative">
+            <span class="item-icon">✗</span>
+            <span class="item-text">{{ section.settings.synthetic_issue2 }}</span>
+          </li>
+          <li class="list-item negative">
+            <span class="item-icon">✗</span>
+            <span class="item-text">{{ section.settings.synthetic_issue3 }}</span>
+          </li>
+          <li class="list-item negative">
+            <span class="item-icon">✗</span>
+            <span class="item-text">{{ section.settings.synthetic_issue4 }}</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    {%- if section.settings.show_cta -%}
+    <div class="comparison-cta">
+      <a href="{{ section.settings.cta_link }}" class="learn-more-btn">
+        {{ section.settings.cta_text }}
+      </a>
+    </div>
+    {%- endif -%}
+
+  </div>
+</section>
+
+<style>
+
+:root {
+  --tiffany-blue: #0ABAB5;
+  --strive-orange: #FF7A00;
+  --gold-yellow: #FFD700;
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.honey-vs-synthetics-section {
+  padding: clamp(60px, 8vw, 120px) 0;
+  background: #fff;
+  font-family: var(--font-primary);
+}
+
+.comparison-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 60px);
+}
+
+.comparison-intro {
+  text-align: center;
+  margin-bottom: clamp(40px, 6vw, 60px);
+}
+
+.comparison-main-title {
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 16px;
+  color: #111;
+}
+
+.comparison-desc {
+  font-size: clamp(16px, 1.8vw, 22px);
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #333;
+}
+
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: clamp(20px, 4vw, 40px);
+  align-items: center;
+  margin-bottom: clamp(40px, 6vw, 60px);
+}
+
+.comparison-side {
+  padding: clamp(32px, 5vw, 48px);
+  border: 3px solid #111;
+  min-height: 400px;
+  display: flex;
+  flex-direction: column;
+}
+
+.honey-side {
+  background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(245, 241, 232, 0.9));
+  border-color: var(--gold-yellow);
+}
+
+.synthetic-side {
+  background: linear-gradient(135deg, rgba(200, 200, 200, 0.2), rgba(230, 230, 230, 0.5));
+  border-color: #999;
+}
+
+.side-badge {
+  display: inline-block;
+  padding: 6px 16px;
+  background: #111;
+  color: #fff;
+  font-size: clamp(10px, 1.1vw, 12px);
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  align-self: flex-start;
+  border-radius: 4px;
+}
+
+.winner-badge {
+  background: var(--gold-yellow);
+  color: #111;
+}
+
+.side-title {
+  font-size: clamp(22px, 2.8vw, 32px);
+  font-weight: 900;
+  margin: 0 0 24px;
+  color: #111;
+}
+
+.side-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: clamp(14px, 1.5vw, 17px);
+  line-height: 1.5;
+}
+
+.item-icon {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.positive .item-icon {
+  color: var(--tiffany-blue);
+}
+
+.negative .item-icon {
+  color: #d32f2f;
+}
+
+.item-text {
+  color: #333;
+}
+
+.vs-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 clamp(12px, 2vw, 20px);
+}
+
+.vs-text {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 900;
+  color: #111;
+  background: var(--strive-orange);
+  color: #fff;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 3px solid #111;
+}
+
+.comparison-cta {
+  text-align: center;
+}
+
+.learn-more-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 40px;
+  background: var(--tiffany-blue);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 3px solid var(--tiffany-blue);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.learn-more-btn:hover {
+  background: #fff;
+  color: var(--tiffany-blue) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(10, 186, 181, 0.3);
+}
+
+@media (max-width: 768px) {
+  .comparison-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .vs-divider {
+    padding: 12px 0;
+  }
+
+  .vs-text {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Home: Honey vs Synthetics",
+  "disabled_on": { "groups": ["header", "footer", "aside"] },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main heading",
+      "default": "Not All Sweeteners Are Created Equal"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description (optional)",
+      "default": "We choose organic wildflower honey over synthetic sugars because it works with your body, not against it."
+    },
+    {
+      "type": "header",
+      "content": "Honey Side (Left)"
+    },
+    {
+      "type": "text",
+      "id": "honey_badge",
+      "label": "Badge text",
+      "default": "WHAT WE USE"
+    },
+    {
+      "type": "text",
+      "id": "honey_title",
+      "label": "Title",
+      "default": "100% Organic Wildflower Honey"
+    },
+    {
+      "type": "text",
+      "id": "honey_benefit1",
+      "label": "Benefit 1",
+      "default": "Natural antioxidants & minerals"
+    },
+    {
+      "type": "text",
+      "id": "honey_benefit2",
+      "label": "Benefit 2",
+      "default": "Sustained energy without crashes"
+    },
+    {
+      "type": "text",
+      "id": "honey_benefit3",
+      "label": "Benefit 3",
+      "default": "Supports gut health naturally"
+    },
+    {
+      "type": "text",
+      "id": "honey_benefit4",
+      "label": "Benefit 4",
+      "default": "No blood sugar spikes"
+    },
+    {
+      "type": "header",
+      "content": "Synthetic Side (Right)"
+    },
+    {
+      "type": "text",
+      "id": "synthetic_badge",
+      "label": "Badge text",
+      "default": "WHAT WE AVOID"
+    },
+    {
+      "type": "text",
+      "id": "synthetic_title",
+      "label": "Title",
+      "default": "Synthetic Sugars & Chemicals"
+    },
+    {
+      "type": "text",
+      "id": "synthetic_issue1",
+      "label": "Issue 1",
+      "default": "Sucralose, aspartame, ace-K"
+    },
+    {
+      "type": "text",
+      "id": "synthetic_issue2",
+      "label": "Issue 2",
+      "default": "Blood sugar crashes & cravings"
+    },
+    {
+      "type": "text",
+      "id": "synthetic_issue3",
+      "label": "Issue 3",
+      "default": "Linked to inflammation"
+    },
+    {
+      "type": "text",
+      "id": "synthetic_issue4",
+      "label": "Issue 4",
+      "default": "Zero nutritional value"
+    },
+    {
+      "type": "header",
+      "content": "Call to Action"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta",
+      "label": "Show CTA button",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Button text",
+      "default": "Learn About Our Ingredients"
+    },
+    {
+      "type": "text",
+      "id": "cta_link",
+      "label": "Button link",
+      "default": "/pages/science-behind-strive"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Home: Honey vs Synthetics"
+    }
+  ]
+}
+{% endschema %}

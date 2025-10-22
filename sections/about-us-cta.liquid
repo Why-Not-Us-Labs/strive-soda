@@ -1,0 +1,291 @@
+{%- comment -%}
+About Us Transition CTA
+Smooth handoff from science page to brand story
+{%- endcomment -%}
+
+<section class="about-us-cta" id="our-story">
+  <div class="about-cta-container">
+
+    <div class="cta-split">
+      <!-- Left: Science Complete -->
+      <div class="cta-left">
+        <div class="checkmark-icon">✓</div>
+        <h3 class="left-heading">{{ section.settings.left_heading }}</h3>
+        <p class="left-text">{{ section.settings.left_text }}</p>
+      </div>
+
+      <!-- Right: Learn About Us -->
+      <div class="cta-right">
+        <h2 class="right-heading">{{ section.settings.right_heading }}</h2>
+        <p class="right-text">{{ section.settings.right_text }}</p>
+
+        <div class="about-preview-list">
+          {% if section.settings.preview_item_1 != blank %}
+            <div class="preview-item">
+              <span class="preview-icon">🏔️</span>
+              <span>{{ section.settings.preview_item_1 }}</span>
+            </div>
+          {% endif %}
+          {% if section.settings.preview_item_2 != blank %}
+            <div class="preview-item">
+              <span class="preview-icon">🐝</span>
+              <span>{{ section.settings.preview_item_2 }}</span>
+            </div>
+          {% endif %}
+          {% if section.settings.preview_item_3 != blank %}
+            <div class="preview-item">
+              <span class="preview-icon">🌱</span>
+              <span>{{ section.settings.preview_item_3 }}</span>
+            </div>
+          {% endif %}
+        </div>
+
+        <a href="{{ section.settings.button_link }}" class="about-cta-button">
+          {{ section.settings.button_text }}
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+:root {
+  --tiffany-blue: #0ABAB5;
+  --strive-orange: #FF7A00;
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.about-us-cta {
+  padding: clamp(80px, 10vw, 140px) 0;
+  background: #111;
+  font-family: var(--font-primary);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-us-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg,
+    rgba(10, 186, 181, 0.1) 0%,
+    rgba(255, 122, 0, 0.1) 100%);
+  pointer-events: none;
+}
+
+.about-cta-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 60px);
+  position: relative;
+  z-index: 1;
+}
+
+.cta-split {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: center;
+}
+
+/* Left Side: Science Complete */
+.cta-left {
+  text-align: center;
+  padding: clamp(30px, 5vw, 60px);
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.checkmark-icon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  background: linear-gradient(135deg, var(--tiffany-blue) 0%, var(--strive-orange) 100%);
+  border: 3px solid #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: 900;
+  color: #fff;
+}
+
+.left-heading {
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 900;
+  color: #fff;
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+.left-text {
+  font-size: clamp(15px, 1.6vw, 18px);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+}
+
+/* Right Side: About Us Invitation */
+.cta-right {
+  padding: clamp(30px, 5vw, 60px);
+  background: linear-gradient(135deg,
+    rgba(10, 186, 181, 0.15) 0%,
+    rgba(255, 122, 0, 0.15) 100%);
+  border: 3px solid rgba(255, 255, 255, 0.3);
+}
+
+.right-heading {
+  font-size: clamp(32px, 4vw, 52px);
+  font-weight: 900;
+  color: #fff;
+  margin: 0 0 16px;
+  line-height: 1.1;
+}
+
+.right-text {
+  font-size: clamp(16px, 1.8vw, 20px);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0 0 32px;
+}
+
+.about-preview-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 32px;
+}
+
+.preview-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: clamp(15px, 1.6vw, 18px);
+  font-weight: 600;
+  color: #fff;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.preview-icon {
+  font-size: 24px;
+}
+
+.about-cta-button {
+  display: inline-block;
+  padding: 18px 48px;
+  background: linear-gradient(135deg, var(--tiffany-blue) 0%, var(--strive-orange) 100%);
+  color: #fff;
+  font-weight: 800;
+  font-size: clamp(16px, 1.7vw, 20px);
+  text-decoration: none;
+  border: 3px solid #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.about-cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, var(--strive-orange) 0%, var(--tiffany-blue) 100%);
+}
+
+/* Mobile Responsive */
+@media (max-width: 968px) {
+  .cta-split {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .cta-left {
+    order: 1;
+  }
+
+  .cta-right {
+    order: 2;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "About Us CTA",
+  "disabled_on": { "groups": ["header", "footer", "aside"] },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Left Side (Science Complete)"
+    },
+    {
+      "type": "text",
+      "id": "left_heading",
+      "label": "Left heading",
+      "default": "Now You Know the Science"
+    },
+    {
+      "type": "textarea",
+      "id": "left_text",
+      "label": "Left text",
+      "default": "You understand what makes hydration soda work. You've seen how Strive outperforms the competition."
+    },
+    {
+      "type": "header",
+      "content": "Right Side (About Us Invitation)"
+    },
+    {
+      "type": "text",
+      "id": "right_heading",
+      "label": "Right heading",
+      "default": "Want to Know Our Story?"
+    },
+    {
+      "type": "textarea",
+      "id": "right_text",
+      "label": "Right text",
+      "default": "Discover how Strive was born from a passion for adventure, sustainability, and making better choices."
+    },
+    {
+      "type": "text",
+      "id": "preview_item_1",
+      "label": "Preview Item 1",
+      "default": "Our Founder's Story"
+    },
+    {
+      "type": "text",
+      "id": "preview_item_2",
+      "label": "Preview Item 2",
+      "default": "Sustainable Sourcing"
+    },
+    {
+      "type": "text",
+      "id": "preview_item_3",
+      "label": "Preview Item 3",
+      "default": "Community & Mission"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Learn About Us"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Us CTA"
+    }
+  ]
+}
+{% endschema %}

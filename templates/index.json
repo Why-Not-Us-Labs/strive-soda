@@ -1,0 +1,160 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "hero": {
+      "type": "gs-hero",
+      "blocks": {
+        "video_3tHmKM": {
+          "type": "video",
+          "settings": {
+            "video": "shopify://files/videos/2025_0913 Strive_Solento_web.mp4",
+            "videoLoop": false,
+            "videoMute": true,
+            "videoAutoplay": true,
+            "clickToPlay": true,
+            "playPause": false
+          }
+        },
+        "image": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Strive_Soda_staycation_123-2.jpg",
+            "imgClickable": true
+          }
+        }
+      },
+      "block_order": [
+        "video_3tHmKM",
+        "image"
+      ],
+      "settings": {
+        "heroHeight": "var(--heroHeight-f)",
+        "cropVideo": false,
+        "title": "",
+        "content": "",
+        "headline_mobile": "MEET THE SODA FOR MOVERS, SHAKERS, DOERS",
+        "subhead_mobile": "Better-for-you soda. Built to hydrate.",
+        "cta": "SHOP FLAVORS",
+        "url": "shopify://collections/all",
+        "cta2": "What is hydration soda?",
+        "url2": "shopify://pages/science-behind-strive",
+        "contentPosition": "bottom center",
+        "contentDirection": "row",
+        "textAlignment": "center",
+        "contentPositionMob": "center",
+        "contentDirectionMob": "column",
+        "textAlignmentMob": "center",
+        "heroMetaH1Bg": "#0abab5",
+        "heroMetaH1Color": "#ffffff",
+        "heroMetaH1hasBg": false
+      }
+    },
+    "gs_brand_hierarchy_new": {
+      "type": "gs-brand-hierarchy",
+      "name": "Brand Hierarchy (1-2-3)",
+      "settings": {
+        "eyebrow": "WHY STRIVE SODA?",
+        "heading": "The 1-2-3 of Hydration Soda",
+        "description": "<p>Simple. Better-for-you soda that actually does something.</p>",
+        "cta_text": "LEARN THE SCIENCE",
+        "cta_link": "shopify://pages/science-behind-strive",
+        "pillar1_title": "It's a Soda",
+        "pillar1_tagline": "Refreshing. Flavorful. It's soda.",
+        "pillar1_desc": "Made for soda occasions—not the gym.",
+        "pillar2_title": "Hydration with Electrolytes",
+        "pillar2_tagline": "Better for you. Built to hydrate.",
+        "pillar2_desc": "180mg electrolytes keep you going.",
+        "pillar3_title": "Sweetened with Organic Honey",
+        "pillar3_tagline": "Naturally sweet. No artificial stuff.",
+        "pillar3_desc": "100% organic wildflower honey."
+      }
+    },
+    "gs_featured_collection_PVBnqW": {
+      "type": "gs-featured-collection",
+      "custom_css": [
+        ".drinks-carousel-section .drink-image {background: var(--tiffany-blue, #0abab5) !important;}"
+      ],
+      "name": "Featured carousel",
+      "settings": {
+        "homeCollection": "",
+        "show_heading": true,
+        "howmany": 2
+      }
+    },
+    "gs_hero_double_bN69TF": {
+      "type": "gs-hero-double",
+      "blocks": {
+        "image_dqqyNN": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Strive_Soda_staycation_839-2.jpg",
+            "title": "",
+            "url": "",
+            "contentPosition": "top left",
+            "heroColor": "#000000",
+            "heroBg": "#ffffff",
+            "heroHasBg": false
+          }
+        },
+        "image_rjYMrQ": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Strive_Soda_staycation_461.jpg",
+            "title": "",
+            "url": "",
+            "contentPosition": "top left",
+            "heroColor": "#000000",
+            "heroBg": "#ffffff",
+            "heroHasBg": false
+          }
+        },
+        "image_3bF3Di": {
+          "type": "image",
+          "disabled": true,
+          "settings": {
+            "image": "shopify://shop_images/Strive_Soda_staycation_219.jpg",
+            "title": "",
+            "url": "",
+            "contentPosition": "top left",
+            "heroColor": "#000000",
+            "heroBg": "#ffffff",
+            "heroHasBg": false
+          }
+        }
+      },
+      "block_order": [
+        "image_dqqyNN",
+        "image_rjYMrQ",
+        "image_3bF3Di"
+      ],
+      "name": "Hero multicolumn",
+      "settings": {
+        "perRow": "3",
+        "perRowMob": "1",
+        "uniformMedia": true
+      }
+    },
+    "gs_reviews_mHx8cH": {
+      "type": "gs-reviews",
+      "name": "Testimonials",
+      "settings": {}
+    }
+  },
+  "order": [
+    "hero",
+    "gs_brand_hierarchy_new",
+    "gs_featured_collection_PVBnqW",
+    "gs_hero_double_bN69TF",
+    "gs_reviews_mHx8cH"
+  ]
+}

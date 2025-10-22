@@ -1,0 +1,237 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "t-product",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {}
+        },
+        "description_HAiQ7V": {
+          "type": "description",
+          "settings": {
+            "heading": "",
+            "collapsibleDesc": false,
+            "checked": false
+          }
+        },
+        "appstle_subscription_appstle_subscription_product_page_widget_a8WE83": {
+          "type": "shopify://apps/appstle-subscription/blocks/appstle-subscription-product-page-widget/fe257d39-6f88-4f35-ab08-bd437e3aa94e",
+          "settings": {}
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "none",
+            "show_text": false,
+            "size_chart": ""
+          }
+        },
+        "judge_me_reviews_preview_badge_y9txHg": {
+          "type": "shopify://apps/judge-me-reviews/blocks/preview_badge/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {}
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+            "hidePriceSold": false
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "floatButtonShow": false,
+            "floatButtonShowPrice": false,
+            "show_dynamic_checkout": true,
+            "show_addtocart_as_primary": true,
+            "show_pickup_availability": true,
+            "show_gift_card_recipient": false
+          }
+        },
+        "paymenticons_tPdRQG": {
+          "type": "paymenticons",
+          "settings": {
+            "heading": "Secure payments:",
+            "monoPaymentIcons": false
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "description_HAiQ7V",
+        "appstle_subscription_appstle_subscription_product_page_widget_a8WE83",
+        "variant_picker",
+        "judge_me_reviews_preview_badge_y9txHg",
+        "price",
+        "buy_buttons",
+        "paymenticons_tPdRQG"
+      ],
+      "settings": {
+        "pinSection": "none",
+        "mobileTitle": true,
+        "mediaColumnWidth": "large",
+        "mediaPosition": "3",
+        "mediaLayout": "slider",
+        "mediaLayoutMob": "slider",
+        "showThumbnailSlider": true,
+        "showSlideCounter": true,
+        "imageZoom": true,
+        "hideVariants": false,
+        "enable_video_autoplay": false,
+        "enable_video_looping": false,
+        "enable_video_controls": false
+      }
+    },
+    "product_nutrition_label_custom": {
+      "type": "product-nutrition-label",
+      "settings": {
+        "heading": "What's in Strive?",
+        "description": "Real ingredients, real benefits. See exactly what goes into every can.",
+        "calories": "45",
+        "carbs": "11",
+        "sugars": "18",
+        "sodium": "100",
+        "potassium": "40",
+        "magnesium": "30",
+        "calcium": "20",
+        "show_ingredients": true,
+        "ingredients_text": "Carbonated Water, Organic Wildflower Honey, Natural Flavors, Strive Supplement Blend, Sea Salt (Sodium Chloride), Magnesium Chloride, Potassium Citrate, Calcium Lactate.",
+        "show_honey_callout": true,
+        "honey_title": "100% Organic Honey",
+        "honey_text": "Sweetened entirely with organic wildflower honey. No refined sugars, no synthetic sweeteners.",
+        "show_electrolytes_callout": true,
+        "electrolytes_title": "180mg Essential Electrolytes",
+        "electrolytes_text": "Sodium, potassium, magnesium, and calcium work together to keep you hydrated, balanced, and energized.",
+        "show_no_synthetics_callout": true,
+        "no_synthetics_title": "No Synthetic Sugars. Ever.",
+        "no_synthetics_text": "Zero sucralose, aspartame, or high-fructose corn syrup. Just real, recognizable ingredients."
+      }
+    },
+    "product_benefits_custom": {
+      "type": "product-benefits",
+      "settings": {
+        "heading": "Why Choose Strive?",
+        "description": "Better-for-you hydration with real ingredients that work.",
+        "show_electrolytes": true,
+        "electrolytes_title": "180mg Essential Electrolytes",
+        "electrolytes_text": "Sodium, potassium, magnesium, and calcium work together to keep you hydrated, balanced, and ready for anything.",
+        "show_honey": true,
+        "honey_title": "100% Organic Wildflower Honey",
+        "honey_text": "The world's first hydration soda sweetened entirely with organic honey. Natural energy without synthetic sugars or artificial sweeteners.",
+        "show_no_synthetics": true,
+        "no_synthetics_title": "No Synthetic Sugars. Ever.",
+        "no_synthetics_text": "No sucralose, no aspartame, no high-fructose corn syrup. Just real ingredients that fuel your body naturally."
+      }
+    },
+    "honey_vs_synthetics_custom": {
+      "type": "home-honey-vs-synthetics",
+      "settings": {
+        "heading": "Strive vs Everyone",
+        "description": "See why organic honey beats synthetic sugars, artificial sweeteners, and everything else.",
+        "honey_badge": "WHAT WE USE",
+        "honey_title": "100% Organic Wildflower Honey",
+        "honey_benefit1": "Natural antioxidants & minerals",
+        "honey_benefit2": "Sustained energy without crashes",
+        "honey_benefit3": "Supports gut health naturally",
+        "honey_benefit4": "No blood sugar spikes",
+        "synthetic_badge": "WHAT WE AVOID",
+        "synthetic_title": "Synthetic Sugars & Chemicals",
+        "synthetic_issue1": "Sucralose, aspartame, ace-K",
+        "synthetic_issue2": "Blood sugar crashes & cravings",
+        "synthetic_issue3": "Linked to inflammation",
+        "synthetic_issue4": "Zero nutritional value",
+        "show_cta": false,
+        "cta_text": "Learn About Our Ingredients",
+        "cta_link": "/pages/science-behind-strive"
+      }
+    },
+    "1751425215787fb857": {
+      "type": "apps",
+      "blocks": {
+        "judge_me_reviews_review_widget_U3RWma": {
+          "type": "shopify://apps/judge-me-reviews/blocks/review_widget/61ccd3b1-a9f2-4160-9fe9-4fec8413e5d8",
+          "settings": {
+            "review_data": "sample_data",
+            "show_shop_reviews": false,
+            "empty_state": "empty_widget",
+            "max_width": 1200
+          }
+        }
+      },
+      "block_order": [
+        "judge_me_reviews_review_widget_U3RWma"
+      ],
+      "settings": {}
+    },
+    "gs_hero_double_BUNrPj": {
+      "type": "gs-hero-double",
+      "blocks": {
+        "image_AaAawb": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/StriveLaunch-182.jpg",
+            "title": "",
+            "url": "",
+            "contentPosition": "top left",
+            "heroColor": "#000000",
+            "heroBg": "#ffffff",
+            "heroHasBg": false
+          }
+        },
+        "image_DY4ekX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/L1020851.jpg",
+            "title": "",
+            "url": "",
+            "contentPosition": "top left",
+            "heroColor": "#000000",
+            "heroBg": "#ffffff",
+            "heroHasBg": false
+          }
+        },
+        "image_4mqtTY": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Strive_Soda_staycation_091.jpg",
+            "title": "",
+            "url": "",
+            "contentPosition": "top left",
+            "heroColor": "#000000",
+            "heroBg": "#ffffff",
+            "heroHasBg": false
+          }
+        }
+      },
+      "block_order": [
+        "image_AaAawb",
+        "image_DY4ekX",
+        "image_4mqtTY"
+      ],
+      "name": "Hero multicolumn",
+      "settings": {
+        "perRow": "3",
+        "perRowMob": "1",
+        "uniformMedia": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "product_nutrition_label_custom",
+    "product_benefits_custom",
+    "honey_vs_synthetics_custom",
+    "1751425215787fb857",
+    "gs_hero_double_BUNrPj"
+  ]
+}

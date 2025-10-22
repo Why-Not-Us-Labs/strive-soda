@@ -1,0 +1,107 @@
+{{ 'footer-phone.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'footer-phone.js' | asset_url }}" defer></script>
+
+<div style="min-height: 100vh; background: #f5f5f5; padding: 40px 0;">
+  <div style="text-align: center; margin-bottom: 40px;">
+    <h1>Phone Widget Test Page</h1>
+    <p>This is how the footer phone widget will look on your site!</p>
+  </div>
+
+  {%- render 'footer-phone',
+      image_1: section.settings.image_1,
+      image_2: section.settings.image_2,
+      image_3: section.settings.image_3,
+      autoplay_speed: section.settings.autoplay_speed,
+      product_image: section.settings.product_image,
+      instagram_link: section.settings.instagram_link,
+      facebook_link: section.settings.facebook_link,
+      twitter_link: section.settings.twitter_link,
+      tiktok_link: section.settings.tiktok_link,
+      youtube_link: section.settings.youtube_link,
+      linkedin_link: section.settings.linkedin_link
+  -%}
+</div>
+
+{% schema %}
+{
+  "name": "Phone Widget Test",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Background Images"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_1",
+      "label": "Image 1"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_2",
+      "label": "Image 2"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_3",
+      "label": "Image 3"
+    },
+    {
+      "type": "range",
+      "id": "autoplay_speed",
+      "label": "Slideshow Speed (ms)",
+      "min": 3000,
+      "max": 9000,
+      "step": 1000,
+      "default": 6000
+    },
+    {
+      "type": "header",
+      "content": "Social Media Links"
+    },
+    {
+      "type": "url",
+      "id": "instagram_link",
+      "label": "Instagram URL"
+    },
+    {
+      "type": "url",
+      "id": "facebook_link",
+      "label": "Facebook URL"
+    },
+    {
+      "type": "url",
+      "id": "twitter_link",
+      "label": "Twitter/X URL"
+    },
+    {
+      "type": "url",
+      "id": "tiktok_link",
+      "label": "TikTok URL"
+    },
+    {
+      "type": "url",
+      "id": "youtube_link",
+      "label": "YouTube URL"
+    },
+    {
+      "type": "url",
+      "id": "linkedin_link",
+      "label": "LinkedIn URL"
+    },
+    {
+      "type": "header",
+      "content": "Optional Product Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image",
+      "label": "Product Image"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Phone Widget Test"
+    }
+  ]
+}
+{% endschema %}

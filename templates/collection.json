@@ -1,0 +1,196 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "collection_hero": {
+      "type": "collection-hero-custom",
+      "settings": {
+        "image_position": "left",
+        "hero_image": "shopify://shop_images/spirited-hive-1759985899211.png",
+        "hero_image_alt": "Strive Hydration Soda",
+        "placeholder_emoji": "🥤",
+        "image_bg_color": "#0abab5",
+        "headline": "FUEL YOUR MOVE",
+        "headline_color": "#ff7a00",
+        "subheadline": "Two bold flavors. Zero compromises. Real hydration that tastes like you earned it.",
+        "subheadline_color": "#222222",
+        "show_button": false,
+        "button_text": "Shop Now",
+        "button_link": "",
+        "button_bg_color": "#0abab5",
+        "button_text_color": "#ffffff",
+        "background_color": "#ffffff",
+        "content_bg_color": "#ffffff"
+      }
+    },
+    "collection_carousel": {
+      "type": "collection-product-carousel",
+      "blocks": {
+        "peach_primary": {
+          "type": "product_primary_image",
+          "settings": {
+            "product_keyword": "Peach"
+          }
+        },
+        "peach_hover": {
+          "type": "product_hover_image",
+          "settings": {
+            "product_keyword": "Peach",
+            "hover_image": "shopify://shop_images/spirited-hive-1760026323261.png"
+          }
+        },
+        "tropical_hover": {
+          "type": "product_hover_image",
+          "settings": {
+            "product_keyword": "Tropical",
+            "hover_image": "shopify://shop_images/spirited-hive-1760029089693.png"
+          }
+        },
+        "variety_primary": {
+          "type": "product_primary_image",
+          "settings": {
+            "product_keyword": "Variety",
+            "primary_image": "shopify://shop_images/Screenshot_2025-10-10_at_11.07.15_PM.png"
+          }
+        },
+        "variety_hover": {
+          "type": "product_hover_image",
+          "settings": {
+            "product_keyword": "Variety",
+            "hover_image": "shopify://shop_images/spirited-hive-1759985899211.png"
+          }
+        }
+      },
+      "block_order": [
+        "peach_primary",
+        "peach_hover",
+        "tropical_hover",
+        "variety_primary",
+        "variety_hover"
+      ],
+      "settings": {
+        "show_header": true,
+        "header_text": "CHOOSE YOUR VIBE",
+        "header_bg_color": "#0abab5",
+        "header_text_color": "#ffffff",
+        "carousel_bg_color": "#0abab5",
+        "card_gap": 20,
+        "card_bg_color": "#ffffff",
+        "card_radius": 20,
+        "image_ratio": "3 / 4",
+        "image_fit": "cover",
+        "image_bg_color": "#ffffff",
+        "title_size": 22,
+        "title_color": "#111111",
+        "show_subtitle": true,
+        "product_subtitle": "Real hydration, real ingredients",
+        "subtitle_size": 15,
+        "subtitle_color": "#666666",
+        "price_size": 20,
+        "price_color": "#111111",
+        "show_add_to_cart": true,
+        "button_text": "ADD TO CART",
+        "button_bg_color": "#ff7a00",
+        "button_text_color": "#ffffff",
+        "show_indicators": true,
+        "indicator_color": "#ffffff",
+        "indicator_active_color": "#ffffff"
+      }
+    },
+    "collection_lifestyle": {
+      "type": "collection-lifestyle",
+      "settings": {
+        "image_position": "right",
+        "section_padding": 110,
+        "heading": "Built for Those Who Strive",
+        "heading_color": "#ffffff",
+        "text_content": "<p>Strive soda is crafted for the movers, the shakers, the doers, people who care about living with purpose, balance, and better for you choices.</p><p>Every sip delivers hydration, clean energy, and bold flavor without compromise.</p>",
+        "text_color": "#ffffff",
+        "show_button": false,
+        "button_text": "Learn More",
+        "button_link": "",
+        "button_bg_color": "#ffffff",
+        "button_text_color": "#ff7a00",
+        "lifestyle_image": "shopify://shop_images/spirited-hive-1760498694074.png",
+        "image_alt": "Active lifestyle with Strive",
+        "placeholder_emoji": "🏃",
+        "image_radius": 20,
+        "background_color": "#ff7a00"
+      }
+    },
+    "when_to_drink_shop": {
+      "type": "product-when-to-drink",
+      "blocks": {
+        "use_case_1": {
+          "type": "use_case",
+          "settings": {
+            "image": "shopify://shop_images/spirited-hive-1760482947126.png",
+            "placeholder_emoji": "",
+            "title": "Before Yoga",
+            "description": "Stay balanced and energized throughout your practice."
+          }
+        },
+        "use_case_2": {
+          "type": "use_case",
+          "settings": {
+            "image": "shopify://shop_images/spirited-hive-1760483240832.png",
+            "placeholder_emoji": "",
+            "title": "After a Run",
+            "description": "Recover and replenish what you sweat out with essential electrolytes."
+          }
+        },
+        "use_case_3": {
+          "type": "use_case",
+          "settings": {
+            "image": "shopify://shop_images/spirited-hive-1760491447391.png",
+            "placeholder_emoji": "",
+            "title": "Midday Refresh",
+            "description": "Better-for-you soda whenever you need it most."
+          }
+        },
+        "use_case_4": {
+          "type": "use_case",
+          "settings": {
+            "image": "shopify://shop_images/spirited-hive-1760492896794.png",
+            "placeholder_emoji": "",
+            "title": "On the Trail",
+            "description": "Tastes as good as it makes you feel."
+          }
+        }
+      },
+      "block_order": [
+        "use_case_1",
+        "use_case_2",
+        "use_case_3",
+        "use_case_4"
+      ],
+      "settings": {
+        "heading": "When to Drink Strive",
+        "description": "Strive keeps you hydrated through workouts, adventures, and everyday moments."
+      }
+    },
+    "science_cta_shop": {
+      "type": "science-cta",
+      "settings": {
+        "heading": "Want to Learn More About Hydration Soda?",
+        "description": "Dive deeper into the science behind Strive and discover why hydration soda is the better choice for your active lifestyle.",
+        "cta_text": "Learn More About Hydration Soda",
+        "cta_link": "/pages/science-behind-strive"
+      }
+    }
+  },
+  "order": [
+    "collection_hero",
+    "collection_carousel",
+    "collection_lifestyle",
+    "when_to_drink_shop",
+    "science_cta_shop"
+  ]
+}

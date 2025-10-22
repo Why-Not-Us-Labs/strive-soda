@@ -1,0 +1,223 @@
+<section class="science-test-fold">
+  <div class="science-test-container">
+    <div class="science-test-left">
+      <div class="problem-stack">
+        <div class="problem-item">
+          <div class="problem-icon">⚠️</div>
+          <div class="problem-text">
+            <strong>75%</strong>
+            <span>of adults are chronically dehydrated</span>
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">🥤</div>
+          <div class="problem-text">
+            <strong>Traditional Sodas</strong>
+            <span>Zero electrolytes, synthetic sugars</span>
+          </div>
+        </div>
+        <div class="problem-item">
+          <div class="problem-icon">⚡</div>
+          <div class="problem-text">
+            <strong>Sports Drinks</strong>
+            <span>Artificial dyes, incomplete minerals</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="science-test-right">
+      <h2>{{ section.settings.heading }}</h2>
+      <p class="hero-subtext">{{ section.settings.subtext }}</p>
+      {% if section.settings.show_cta %}
+        <a href="{{ section.settings.cta_link }}" class="hero-cta-button">
+          {{ section.settings.cta_text }}
+        </a>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+  .science-test-fold {
+    background: linear-gradient(135deg, #0ABAB5 0%, #0ABAB5 50%, #FF7A00 100%);
+    padding: 0;
+    margin: 0;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  .science-test-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    width: 100%;
+    max-width: 1600px;
+    min-height: 70vh;
+  }
+
+  .science-test-left {
+    background: rgba(0, 0, 0, 0.15);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(30px, 5vw, 60px);
+  }
+
+  .problem-stack {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 3vw, 32px);
+    max-width: 500px;
+    width: 100%;
+  }
+
+  .problem-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    padding: clamp(20px, 3vw, 28px);
+    background: rgba(255, 255, 255, 0.12);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+  }
+
+  .problem-icon {
+    font-size: clamp(32px, 4vw, 48px);
+    flex-shrink: 0;
+  }
+
+  .problem-text {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: #fff;
+  }
+
+  .problem-text strong {
+    font-size: clamp(18px, 2vw, 24px);
+    font-weight: 900;
+    line-height: 1.2;
+  }
+
+  .problem-text span {
+    font-size: clamp(14px, 1.5vw, 17px);
+    font-weight: 500;
+    opacity: 0.95;
+    line-height: 1.4;
+  }
+
+  .science-test-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    padding: clamp(40px, 6vw, 80px);
+    gap: clamp(20px, 3vw, 32px);
+  }
+
+  .science-test-right h2 {
+    font-size: clamp(36px, 5vw, 72px);
+    font-weight: 900;
+    line-height: 1;
+    color: #fff;
+    margin: 0;
+  }
+
+  .hero-subtext {
+    font-size: clamp(18px, 2vw, 26px);
+    line-height: 1.4;
+    color: rgba(255, 255, 255, 0.95);
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .hero-cta-button {
+    display: inline-block;
+    padding: 16px 40px;
+    background: #fff;
+    color: #111;
+    font-weight: 800;
+    font-size: clamp(16px, 1.6vw, 18px);
+    text-decoration: none;
+    border: 3px solid #111;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+
+  .hero-cta-button:hover {
+    background: #111;
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+  }
+
+  @media (max-width: 968px) {
+    .science-test-container {
+      grid-template-columns: 1fr;
+    }
+
+    .science-test-left {
+      min-height: 40vh;
+    }
+
+    .science-test-right {
+      padding: 40px 20px;
+    }
+
+    .problem-stack {
+      gap: 16px;
+    }
+
+    .problem-item {
+      padding: 16px;
+      gap: 12px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Science Hero",
+  "disabled_on": { "groups": ["header", "footer", "aside"] },
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main Heading",
+      "default": "There's a Better Way to Hydrate"
+    },
+    {
+      "type": "textarea",
+      "id": "subtext",
+      "label": "Subtext",
+      "default": "Introducing hydration soda—the first drink that combines real electrolytes with 100% organic honey. No synthetics. No compromises."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_cta",
+      "label": "Show CTA Button",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA Button Text",
+      "default": "Shop Strive"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA Button Link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Science Hero"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,353 @@
+{%- comment -%}
+Collection Lifestyle Section
+- Two-column layout with text and image
+- "Built For Those Who Strive" messaging
+- Fully customizable colors, text, and layout
+{%- endcomment -%}
+
+<section class="lifestyle-section" style="background-color: {{ section.settings.background_color }}; padding: {{ section.settings.section_padding }}px 0;">
+  <div class="lifestyle-container">
+    <div class="lifestyle-grid {% if section.settings.image_position == 'left' %}lifestyle-reverse{% endif %}">
+
+      {%- comment -%} Content Side {%- endcomment -%}
+      <div class="lifestyle-content">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="lifestyle-heading" style="color: {{ section.settings.heading_color }};">
+            {{ section.settings.heading }}
+          </h2>
+        {%- endif -%}
+
+        {%- if section.settings.text_content != blank -%}
+          <div class="lifestyle-text" style="color: {{ section.settings.text_color }};">
+            {{ section.settings.text_content }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.show_button -%}
+          <a
+            href="{{ section.settings.button_link }}"
+            class="lifestyle-button"
+            style="background-color: {{ section.settings.button_bg_color }}; color: {{ section.settings.button_text_color }};"
+          >
+            {{ section.settings.button_text }}
+          </a>
+        {%- endif -%}
+      </div>
+
+      {%- comment -%} Image Side {%- endcomment -%}
+      <div class="lifestyle-image">
+        {%- if section.settings.lifestyle_image != blank -%}
+          <img
+            src="{{ section.settings.lifestyle_image | image_url: width: 1200 }}"
+            alt="{{ section.settings.image_alt | default: section.settings.heading | escape }}"
+            loading="lazy"
+            class="lifestyle-img"
+          >
+        {%- else -%}
+          <div class="lifestyle-placeholder">
+            <span class="placeholder-icon">{{ section.settings.placeholder_emoji }}</span>
+            <p class="placeholder-text">Add lifestyle image in theme editor</p>
+          </div>
+        {%- endif -%}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+/* Reset */
+.lifestyle-section * {
+  box-sizing: border-box;
+}
+
+.lifestyle-section {
+  width: 100%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.lifestyle-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 4vw, 60px);
+}
+
+/* Grid Layout */
+.lifestyle-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(40px, 6vw, 60px);
+  align-items: center;
+}
+
+/* Content Side */
+.lifestyle-content {
+  padding: 0;
+}
+
+.lifestyle-heading {
+  font-size: clamp(36px, 5.5vw, 64px);
+  font-weight: 900;
+  line-height: 1.05;
+  margin: 0 0 clamp(24px, 3vw, 32px) 0;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.lifestyle-text {
+  font-size: clamp(17px, 1.8vw, 22px);
+  line-height: 1.5;
+  font-weight: 500;
+  margin: 0 0 clamp(32px, 4vw, 40px) 0;
+}
+
+.lifestyle-text p {
+  margin: 0 0 20px 0;
+}
+
+.lifestyle-text p:last-child {
+  margin-bottom: 0;
+}
+
+.lifestyle-button {
+  display: inline-block;
+  padding: 18px 48px;
+  font-size: clamp(15px, 1.6vw, 18px);
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.lifestyle-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  opacity: 0.9;
+}
+
+.lifestyle-button:active {
+  transform: translateY(0);
+}
+
+/* Image Side */
+.lifestyle-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: {{ section.settings.image_radius }}px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  position: relative;
+}
+
+.lifestyle-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.lifestyle-image:hover .lifestyle-img {
+  transform: scale(1.05);
+}
+
+.lifestyle-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, rgba(10, 186, 181, 0.1), rgba(255, 122, 0, 0.1));
+  gap: 12px;
+}
+
+.placeholder-icon {
+  font-size: clamp(56px, 8vw, 80px);
+  opacity: 0.4;
+}
+
+.placeholder-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+  .lifestyle-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .lifestyle-reverse {
+    direction: rtl;
+  }
+
+  .lifestyle-reverse > * {
+    direction: ltr;
+  }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .lifestyle-image {
+    aspect-ratio: 4 / 3;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Collection Lifestyle",
+  "class": "collection-lifestyle-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "right",
+          "label": "Right"
+        },
+        {
+          "value": "left",
+          "label": "Left"
+        }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "range",
+      "id": "section_padding",
+      "label": "Section padding (top/bottom)",
+      "min": 40,
+      "max": 160,
+      "step": 10,
+      "default": 100,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Built for Those Who Strive"
+    },
+    {
+      "type": "color",
+      "id": "heading_color",
+      "label": "Heading color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "html",
+      "id": "text_content",
+      "label": "Text content",
+      "default": "<p>Strive soda is crafted for the movers, the shakers, the doers—people who care about living with purpose, balance, and better-for-you choices.</p><p>Every sip delivers hydration, clean energy, and bold flavor without compromise.</p>"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Button (Optional)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show button",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Learn More"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#FF7A00"
+    },
+    {
+      "type": "header",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "lifestyle_image",
+      "label": "Lifestyle image",
+      "info": "Recommended: 1200x900px or larger"
+    },
+    {
+      "type": "text",
+      "id": "image_alt",
+      "label": "Image alt text",
+      "default": "Active lifestyle with Strive"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_emoji",
+      "label": "Placeholder emoji (if no image)",
+      "default": "🏃"
+    },
+    {
+      "type": "range",
+      "id": "image_radius",
+      "label": "Image border radius",
+      "min": 0,
+      "max": 40,
+      "step": 4,
+      "default": 20,
+      "unit": "px"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#FF7A00"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Lifestyle"
+    }
+  ]
+}
+{% endschema %}

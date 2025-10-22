@@ -1,0 +1,377 @@
+{%- comment -%}
+Collection Hero - Custom Split
+- Fully editable hero section for collection pages
+- Split layout with image on one side, text on the other
+- Customizable colors, text, image, and layout direction
+{%- endcomment -%}
+
+<section class="collection-hero-custom" style="background-color: {{ section.settings.background_color }};">
+  <div class="hero-custom-grid {% if section.settings.image_position == 'right' %}hero-reverse{% endif %}">
+
+    {%- comment -%} Image Side {%- endcomment -%}
+    <div class="hero-custom-image" style="background-color: {{ section.settings.image_bg_color }};">
+      {%- if section.settings.hero_image != blank -%}
+        <img
+          src="{{ section.settings.hero_image | image_url: width: 1200 }}"
+          alt="{{ section.settings.hero_image_alt | default: collection.title | escape }}"
+          class="hero-custom-img"
+          loading="eager"
+        >
+      {%- elsif collection.image -%}
+        <img
+          src="{{ collection.image | image_url: width: 1200 }}"
+          alt="{{ collection.title | escape }}"
+          class="hero-custom-img"
+          loading="eager"
+        >
+      {%- else -%}
+        <div class="hero-custom-placeholder">
+          <span class="placeholder-icon">{{ section.settings.placeholder_emoji }}</span>
+          <p class="placeholder-text">Add hero image in theme editor</p>
+        </div>
+      {%- endif -%}
+    </div>
+
+    {%- comment -%} Content Side {%- endcomment -%}
+    <div class="hero-custom-content" style="background-color: {{ section.settings.content_bg_color }};">
+      <div class="hero-custom-wrapper">
+        {%- if section.settings.headline != blank -%}
+          <h1 class="hero-custom-headline" style="color: {{ section.settings.headline_color }};">
+            {{ section.settings.headline }}
+          </h1>
+        {%- else -%}
+          <h1 class="hero-custom-headline" style="color: {{ section.settings.headline_color }};">
+            {{ collection.title }}
+          </h1>
+        {%- endif -%}
+
+        {%- if section.settings.subheadline != blank -%}
+          <p class="hero-custom-subheadline" style="color: {{ section.settings.subheadline_color }};">
+            {{ section.settings.subheadline }}
+          </p>
+        {%- elsif collection.description != blank -%}
+          <div class="hero-custom-subheadline" style="color: {{ section.settings.subheadline_color }};">
+            {{ collection.description }}
+          </div>
+        {%- endif -%}
+
+        {%- if section.settings.show_button -%}
+          <a href="{{ section.settings.button_link }}" class="hero-custom-button" style="background-color: {{ section.settings.button_bg_color }}; color: {{ section.settings.button_text_color }};">
+            {{ section.settings.button_text }}
+          </a>
+        {%- endif -%}
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* Reset */
+.collection-hero-custom * {
+  box-sizing: border-box;
+}
+
+.collection-hero-custom {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Grid Layout */
+.hero-custom-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 500px;
+  max-height: 85vh;
+  margin: 0;
+  padding: 0;
+}
+
+.hero-reverse {
+  direction: ltr;
+}
+
+/* Image Side */
+.hero-custom-image {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+  position: relative;
+}
+
+.hero-custom-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.hero-custom-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.placeholder-icon {
+  font-size: clamp(56px, 8vw, 80px);
+  opacity: 0.4;
+}
+
+.placeholder-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin: 0;
+}
+
+/* Content Side */
+.hero-custom-content {
+  padding: 60px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+.hero-custom-wrapper {
+  max-width: 700px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.hero-custom-headline {
+  font-size: clamp(48px, 9vw, 80px);
+  font-weight: 900;
+  line-height: 0.95;
+  margin: 0 0 24px 0;
+  padding: 0;
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+}
+
+.hero-custom-subheadline {
+  font-size: clamp(18px, 2.2vw, 24px);
+  line-height: 1.4;
+  margin: 0 0 32px 0;
+  padding: 0;
+  font-weight: 600;
+}
+
+.hero-custom-button {
+  display: inline-block;
+  padding: 18px 48px;
+  font-size: clamp(15px, 1.6vw, 18px);
+  font-weight: 800;
+  text-decoration: none;
+  border-radius: 999px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+}
+
+.hero-custom-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  opacity: 0.9;
+}
+
+.hero-custom-button:active {
+  transform: translateY(0);
+}
+
+/* Tablet (768px+) */
+@media (min-width: 768px) {
+  .hero-custom-grid {
+    grid-template-columns: 1fr 1fr;
+    height: 70vh;
+    min-height: 500px;
+    max-height: 700px;
+  }
+
+  .hero-reverse {
+    direction: rtl;
+  }
+
+  .hero-reverse > * {
+    direction: ltr;
+  }
+
+  .hero-custom-image {
+    height: 100%;
+  }
+
+  .hero-custom-content {
+    padding: 70px 48px;
+  }
+}
+
+/* Desktop (1024px+) */
+@media (min-width: 1024px) {
+  .hero-custom-grid {
+    height: 75vh;
+    max-height: 800px;
+  }
+
+  .hero-custom-content {
+    padding: 90px 60px;
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Collection Hero - Custom",
+  "class": "collection-hero-custom-section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Image Settings"
+    },
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero image",
+      "info": "Recommended: 1200x900px or larger. Defaults to collection image if not set."
+    },
+    {
+      "type": "text",
+      "id": "hero_image_alt",
+      "label": "Image alt text",
+      "info": "Describe the image for SEO and accessibility"
+    },
+    {
+      "type": "text",
+      "id": "placeholder_emoji",
+      "label": "Placeholder emoji (if no image)",
+      "default": "🥤"
+    },
+    {
+      "type": "color",
+      "id": "image_bg_color",
+      "label": "Image background color",
+      "default": "#0ABAB5"
+    },
+    {
+      "type": "header",
+      "content": "Text Content"
+    },
+    {
+      "type": "text",
+      "id": "headline",
+      "label": "Headline",
+      "default": "FUEL YOUR MOVE",
+      "info": "Leave blank to use collection title"
+    },
+    {
+      "type": "color",
+      "id": "headline_color",
+      "label": "Headline color",
+      "default": "#FF7A00"
+    },
+    {
+      "type": "textarea",
+      "id": "subheadline",
+      "label": "Subheadline",
+      "default": "Two bold flavors. Zero compromises. Real hydration that tastes like you earned it.",
+      "info": "Leave blank to use collection description"
+    },
+    {
+      "type": "color",
+      "id": "subheadline_color",
+      "label": "Subheadline color",
+      "default": "#222222"
+    },
+    {
+      "type": "header",
+      "content": "Button (Optional)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_button",
+      "label": "Show button",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop Now"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "color",
+      "id": "button_bg_color",
+      "label": "Button background color",
+      "default": "#0ABAB5"
+    },
+    {
+      "type": "color",
+      "id": "button_text_color",
+      "label": "Button text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Section background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "content_bg_color",
+      "label": "Content side background color",
+      "default": "#FFFFFF"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Hero - Custom"
+    }
+  ]
+}
+{% endschema %}

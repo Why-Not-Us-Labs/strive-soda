@@ -1,0 +1,526 @@
+{%- comment -%}
+Product: What's in Strive - Nutrition Label
+- Prominently displays nutrition facts and ingredient breakdown
+- Solves Austin's #1 customer service issue: "The label is not clear or easy to find"
+- Clean, readable format with brand styling
+{%- endcomment -%}
+
+<section class="nutrition-label-section">
+  <div class="nutrition-container">
+
+    <div class="nutrition-intro">
+      <h2 class="nutrition-title">{{ section.settings.heading }}</h2>
+      {%- if section.settings.description != blank -%}
+        <p class="nutrition-desc">{{ section.settings.description }}</p>
+      {%- endif -%}
+    </div>
+
+    <div class="nutrition-content-wrapper">
+
+      {%- comment -%} Left Side: Nutrition Facts Label {%- endcomment -%}
+      <div class="nutrition-facts-panel">
+        <div class="facts-label">
+          <div class="facts-header">
+            <h3 class="facts-title">Nutrition Facts</h3>
+            <p class="serving-size">Serving Size: 1 Can (12 fl oz / 355mL)</p>
+          </div>
+
+          <div class="facts-divider facts-divider-thick"></div>
+
+          <div class="facts-row facts-row-major">
+            <span class="facts-label-text">Calories</span>
+            <span class="facts-value">{{ section.settings.calories }}</span>
+          </div>
+
+          <div class="facts-divider facts-divider-thin"></div>
+
+          <div class="facts-row">
+            <span class="facts-label-text">Total Carbohydrate</span>
+            <span class="facts-value">{{ section.settings.carbs }}g</span>
+          </div>
+
+          <div class="facts-row facts-indent">
+            <span class="facts-label-text">Total Sugars</span>
+            <span class="facts-value">{{ section.settings.sugars }}g</span>
+          </div>
+
+          <div class="facts-divider facts-divider-thin"></div>
+
+          {%- comment -%} Electrolytes Breakdown {%- endcomment -%}
+          <div class="facts-section-header">
+            <h4 class="section-title">Essential Electrolytes (180mg)</h4>
+          </div>
+
+          <div class="facts-row facts-highlight">
+            <span class="facts-label-text">Sodium</span>
+            <span class="facts-value">{{ section.settings.sodium }}mg</span>
+          </div>
+
+          <div class="facts-row facts-highlight">
+            <span class="facts-label-text">Potassium</span>
+            <span class="facts-value">{{ section.settings.potassium }}mg</span>
+          </div>
+
+          <div class="facts-row facts-highlight">
+            <span class="facts-label-text">Magnesium</span>
+            <span class="facts-value">{{ section.settings.magnesium }}mg</span>
+          </div>
+
+          <div class="facts-row facts-highlight">
+            <span class="facts-label-text">Calcium</span>
+            <span class="facts-value">{{ section.settings.calcium }}mg</span>
+          </div>
+
+          <div class="facts-divider facts-divider-thick"></div>
+
+          {%- comment -%} Ingredients List {%- endcomment -%}
+          {%- if section.settings.show_ingredients -%}
+            <div class="ingredients-section">
+              <h4 class="ingredients-title">Ingredients</h4>
+              <p class="ingredients-list">{{ section.settings.ingredients_text }}</p>
+            </div>
+          {%- endif -%}
+
+        </div>
+      </div>
+
+      {%- comment -%} Right Side: What Makes Strive Different {%- endcomment -%}
+      <div class="nutrition-highlights">
+
+        {%- if section.settings.show_honey_callout -%}
+        <div class="highlight-card honey-highlight">
+          <div class="highlight-icon">🍯</div>
+          <h4 class="highlight-title">{{ section.settings.honey_title }}</h4>
+          <p class="highlight-text">{{ section.settings.honey_text }}</p>
+        </div>
+        {%- endif -%}
+
+        {%- if section.settings.show_electrolytes_callout -%}
+        <div class="highlight-card electrolytes-highlight">
+          <div class="highlight-icon">⚡</div>
+          <h4 class="highlight-title">{{ section.settings.electrolytes_title }}</h4>
+          <p class="highlight-text">{{ section.settings.electrolytes_text }}</p>
+        </div>
+        {%- endif -%}
+
+        {%- if section.settings.show_no_synthetics_callout -%}
+        <div class="highlight-card clean-highlight">
+          <div class="highlight-icon">✓</div>
+          <h4 class="highlight-title">{{ section.settings.no_synthetics_title }}</h4>
+          <p class="highlight-text">{{ section.settings.no_synthetics_text }}</p>
+        </div>
+        {%- endif -%}
+
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<style>
+:root {
+  --tiffany-blue: #0ABAB5;
+  --strive-orange: #FF7A00;
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.nutrition-label-section {
+  padding: clamp(60px, 8vw, 100px) 0;
+  background: #fff;
+  font-family: var(--font-primary);
+}
+
+.nutrition-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 clamp(20px, 5vw, 60px);
+}
+
+.nutrition-intro {
+  text-align: center;
+  margin-bottom: clamp(40px, 6vw, 60px);
+}
+
+.nutrition-title {
+  font-size: clamp(32px, 4.5vw, 56px);
+  font-weight: 900;
+  line-height: 1.1;
+  margin: 0 0 16px;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+.nutrition-desc {
+  font-size: clamp(16px, 1.8vw, 22px);
+  line-height: 1.5;
+  max-width: 800px;
+  margin: 0 auto;
+  color: #333;
+}
+
+.nutrition-content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(40px, 6vw, 80px);
+  align-items: start;
+}
+
+/* LEFT SIDE - Nutrition Facts Label */
+.nutrition-facts-panel {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.facts-label {
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  border: 4px solid #111;
+  padding: clamp(20px, 3vw, 32px);
+  font-family: var(--font-primary);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.facts-header {
+  margin-bottom: 8px;
+}
+
+.facts-title {
+  font-size: clamp(28px, 3.5vw, 40px);
+  font-weight: 900;
+  margin: 0 0 8px;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+}
+
+.serving-size {
+  font-size: clamp(12px, 1.2vw, 14px);
+  margin: 0;
+  color: #111;
+  font-weight: 600;
+}
+
+.facts-divider {
+  width: 100%;
+  border: none;
+  background: #111;
+  margin: 8px 0;
+}
+
+.facts-divider-thick {
+  height: 8px;
+}
+
+.facts-divider-thin {
+  height: 1px;
+}
+
+.facts-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 6px 0;
+  font-size: clamp(13px, 1.4vw, 16px);
+  color: #111;
+}
+
+.facts-row-major {
+  font-size: clamp(16px, 1.8vw, 20px);
+  font-weight: 800;
+  padding: 8px 0;
+}
+
+.facts-indent {
+  padding-left: 20px;
+}
+
+.facts-label-text {
+  font-weight: 600;
+}
+
+.facts-value {
+  font-weight: 800;
+  color: #111;
+}
+
+.facts-section-header {
+  margin: 12px 0 8px;
+}
+
+.section-title {
+  font-size: clamp(15px, 1.6vw, 18px);
+  font-weight: 800;
+  margin: 0;
+  color: var(--strive-orange);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.facts-highlight {
+  background: linear-gradient(90deg, rgba(10, 186, 181, 0.1) 0%, rgba(255, 122, 0, 0.1) 100%);
+  padding: 8px 12px;
+  margin: 4px -12px;
+  border-left: 4px solid var(--tiffany-blue);
+}
+
+.ingredients-section {
+  margin-top: 16px;
+}
+
+.ingredients-title {
+  font-size: clamp(14px, 1.5vw, 16px);
+  font-weight: 800;
+  margin: 0 0 8px;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.ingredients-list {
+  font-size: clamp(12px, 1.3vw, 14px);
+  line-height: 1.6;
+  margin: 0;
+  color: #333;
+  font-weight: 500;
+}
+
+/* RIGHT SIDE - Nutrition Highlights */
+.nutrition-highlights {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(20px, 3vw, 32px);
+}
+
+.highlight-card {
+  padding: clamp(24px, 4vw, 36px);
+  border: 3px solid #111;
+  background: #F5F1E8;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.highlight-card:hover {
+  transform: translateY(-4px);
+}
+
+.honey-highlight {
+  background: linear-gradient(135deg, #FFF9E6 0%, #FFE4B3 100%);
+}
+
+.electrolytes-highlight {
+  background: linear-gradient(135deg, #E0F7FA 0%, #B2EBF2 100%);
+}
+
+.clean-highlight {
+  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+}
+
+.highlight-icon {
+  font-size: clamp(32px, 4vw, 48px);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.highlight-title {
+  font-size: clamp(18px, 2vw, 24px);
+  font-weight: 900;
+  margin: 0 0 12px;
+  color: #111;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.highlight-text {
+  font-size: clamp(14px, 1.5vw, 16px);
+  line-height: 1.6;
+  margin: 0;
+  color: #333;
+  font-weight: 500;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 1024px) {
+  .nutrition-content-wrapper {
+    grid-template-columns: 1fr;
+    gap: clamp(32px, 5vw, 48px);
+  }
+
+  .facts-label {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .nutrition-intro {
+    text-align: left;
+  }
+
+  .nutrition-desc {
+    text-align: left;
+  }
+
+  .facts-label {
+    padding: clamp(16px, 4vw, 24px);
+  }
+
+  .highlight-card {
+    padding: clamp(20px, 4vw, 28px);
+  }
+}
+</style>
+
+{% schema %}
+{
+  "name": "Product: What's in Strive",
+  "disabled_on": { "groups": ["header", "footer", "aside"] },
+  "settings": [
+    {
+      "type": "header",
+      "content": "Section Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Main heading",
+      "default": "What's in Strive?"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description (optional)",
+      "default": "Real ingredients, real benefits. See exactly what goes into every can."
+    },
+    {
+      "type": "header",
+      "content": "Nutrition Facts - Basic Info"
+    },
+    {
+      "type": "text",
+      "id": "calories",
+      "label": "Calories per serving",
+      "default": "45"
+    },
+    {
+      "type": "text",
+      "id": "carbs",
+      "label": "Total Carbohydrates (g)",
+      "default": "11"
+    },
+    {
+      "type": "text",
+      "id": "sugars",
+      "label": "Total Sugars (g)",
+      "default": "18"
+    },
+    {
+      "type": "header",
+      "content": "Electrolytes (Essential Minerals)"
+    },
+    {
+      "type": "text",
+      "id": "sodium",
+      "label": "Sodium (mg)",
+      "default": "100"
+    },
+    {
+      "type": "text",
+      "id": "potassium",
+      "label": "Potassium (mg)",
+      "default": "40"
+    },
+    {
+      "type": "text",
+      "id": "magnesium",
+      "label": "Magnesium (mg)",
+      "default": "30"
+    },
+    {
+      "type": "text",
+      "id": "calcium",
+      "label": "Calcium (mg)",
+      "default": "20"
+    },
+    {
+      "type": "header",
+      "content": "Ingredients List"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_ingredients",
+      "label": "Show ingredients list",
+      "default": true
+    },
+    {
+      "type": "textarea",
+      "id": "ingredients_text",
+      "label": "Ingredients",
+      "default": "Carbonated Water, Organic Wildflower Honey, Natural Flavors, Strive Supplement Blend, Sea Salt (Sodium Chloride), Magnesium Chloride, Potassium Citrate, Calcium Lactate."
+    },
+    {
+      "type": "header",
+      "content": "Highlight Cards"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_honey_callout",
+      "label": "Show honey highlight",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "honey_title",
+      "label": "Honey highlight title",
+      "default": "100% Organic Honey"
+    },
+    {
+      "type": "textarea",
+      "id": "honey_text",
+      "label": "Honey highlight text",
+      "default": "Sweetened entirely with organic wildflower honey. No refined sugars, no synthetic sweeteners."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_electrolytes_callout",
+      "label": "Show electrolytes highlight",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "electrolytes_title",
+      "label": "Electrolytes highlight title",
+      "default": "180mg Essential Electrolytes"
+    },
+    {
+      "type": "textarea",
+      "id": "electrolytes_text",
+      "label": "Electrolytes highlight text",
+      "default": "Sodium, potassium, magnesium, and calcium work together to keep you hydrated, balanced, and energized."
+    },
+    {
+      "type": "checkbox",
+      "id": "show_no_synthetics_callout",
+      "label": "Show clean ingredients highlight",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "no_synthetics_title",
+      "label": "Clean ingredients title",
+      "default": "No Synthetic Sugars. Ever."
+    },
+    {
+      "type": "textarea",
+      "id": "no_synthetics_text",
+      "label": "Clean ingredients text",
+      "default": "Zero sucralose, aspartame, or high-fructose corn syrup. Just real, recognizable ingredients."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product: What's in Strive"
+    }
+  ]
+}
+{% endschema %}
