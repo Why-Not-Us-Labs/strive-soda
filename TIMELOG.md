@@ -86,6 +86,53 @@
 
 ---
 
+#### Session 4: Layout Fixes & Three-Pillar Redesign
+**Time:** 4:13 PM - 4:26 PM (13 minutes)
+**Tasks:**
+- Fixed header width constraint (boxed layout override for full-width header)
+- Fixed hero section width constraint (edge-to-edge teal panel on desktop)
+- Redesigned three-pillar section (Brand Hierarchy 1-2-3) with enhanced visual polish
+
+**Git Commits:**
+- "Fix header width to span full screen edge-to-edge" (SHA: e24eb31)
+- "Fix hero section to span full width edge-to-edge on desktop" (SHA: 09cdf8e)
+- "Redesign three-pillar section with enhanced visual polish" (SHA: dca5aff)
+
+**Shopify Changes:**
+- None (local changes only, not yet pushed to production)
+
+**Notes:**
+- Fixed user-reported issue: header and hero section not spanning full width
+- Redesigned three-pillar section per Chris and Jack's feedback to be "much sexier"
+- Enhanced with rounded corners, better hover effects, improved typography, zoom-out image reveal
+- Changes visible on dev server (http://127.0.0.1:9292)
+
+---
+
+#### Session 5: P0 Critical Fixes - Responsiveness & UI Polish (PENDING)
+**Time:** [Not Started]
+**Tasks:**
+- [ ] Fix product page scroll bug (cannot scroll to top)
+- [ ] Fix peach image height issue on product page
+- [ ] Fix homepage video white space (desktop resize)
+- [ ] Fix homepage video white space (mobile)
+- [ ] Standardize button corner radius across site
+- [ ] Fix font weight & size consistency across pages
+- [ ] Import and apply Poly Sans Mono brand font
+
+**Git Commits:**
+- (pending)
+
+**Shopify Changes:**
+- (will push to production after testing)
+
+**Notes:**
+- P0 fixes critical for UX before content updates
+- Will test each fix on dev server before committing
+- Small atomic commits for each bug fix
+
+---
+
 ## Time Tracking Template
 
 Copy this template for each new session:
@@ -113,10 +160,10 @@ Copy this template for each new session:
 
 ## Billing Summary
 
-**October 2025 Total:** 0.8 hours (48 minutes)
+**October 2025 Total:** 1.02 hours (61 minutes)
 
 ### Breakdown by Date:
-- Oct 27: 0.8 hours (Session 1: 22 min + Session 2: 8 min + Session 3: 18 min)
+- Oct 27: 1.02 hours (Session 1: 22 min + Session 2: 8 min + Session 3: 18 min + Session 4: 13 min)
 
 ---
 
