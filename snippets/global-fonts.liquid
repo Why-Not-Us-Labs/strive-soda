@@ -1,25 +1,22 @@
 {%- comment -%}
-	# Add here your custom fonts.
-	# Follow the step by step guide: https://docs.openthinking.net/themes/bullet/kb/fonts/
-
-	# The code below has to be modified in order to work with your custom font.
-	# Use our Font Face Generator to generate the needed code for you: https://openthinking.app/x/font-face-generator/
+	# Custom Fonts for Strive Soda
+	#
+	# Primary: Inter (loaded via Shopify theme settings)
+	# Monospace: Roboto Mono (for nutrition labels, science content)
+	#
+	# TODO: Replace Roboto Mono with Poly Sans Mono when font files available
+	# Font files should be uploaded to assets/ and loaded via @font-face
 {%- endcomment -%}
 
-<style>
-@font-face {
-	font-family: "Your-Font-Name";
-	font-weight: 100;
-	font-style: normal;
-	font-display: swap;
-	src: url("font-URL-eot") format("embedded-opentype"),
-		 url("font-URL-ttf") format("truetype"),
-		 url("font-URL-woff") format("woff"),
-		 url("font-URL-woff2") format("woff2");
-}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
 
-:root { 
-	--fontFamily: "Your-Font-Name"; /* Body font */
-	--hFontFamily: "Your-Font-Name"; /* Headings font */
+<style>
+:root {
+	/* Monospace font for nutrition labels and science content */
+	/* TODO: Replace with Poly Sans Mono when available */
+	--font-mono: 'Roboto Mono', 'Courier New', monospace;
+	--font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 </style>
