@@ -55,7 +55,8 @@
         "founder_image": {
           "type": "image",
           "settings": {
-            "column": "left"
+            "column": "left",
+            "image": "shopify://shop_images/IMG_6130.jpg"
           }
         },
         "founder_heading": {
@@ -112,7 +113,8 @@
         "mission_image": {
           "type": "image",
           "settings": {
-            "column": "right"
+            "column": "right",
+            "image": "shopify://shop_images/StriveLaunch-182.jpg"
           }
         }
       },
