@@ -221,32 +221,40 @@ Fourth-grade language. Clear hierarchy. Better than JuneShine.
   .brand-hierarchy-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: clamp(20px, 3vw, 40px);
+    gap: clamp(24px, 3vw, 48px);
   }
 
   .brand-pillar {
     position: relative;
     background: #fff;
-    border: 4px solid #111;
+    border: 5px solid #111;
+    border-radius: 24px;
     overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-    aspect-ratio: 1 / 1.15;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    aspect-ratio: 1 / 1.2;
     display: flex;
     flex-direction: column;
+    cursor: pointer;
+    box-shadow: 0 4px 20px rgba(0,0,0,.08);
   }
 
   .brand-pillar:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 20px 60px rgba(0,0,0,.15);
+    transform: translateY(-16px) scale(1.02);
+    box-shadow: 0 32px 80px rgba(0,0,0,.2);
+    border-color: var(--tiffany-blue);
   }
 
-  /* Individual pillar colors */
+  /* Individual pillar colors - CLEANER, MORE VIBRANT */
   .pillar-soda {
-    background: linear-gradient(135deg, #fff 0%, #f8f8f8 100%);
+    background: linear-gradient(135deg, #ffffff 0%, #f9f9f9 50%, #fff 100%);
+  }
+
+  .pillar-soda:hover {
+    border-color: var(--strive-orange);
   }
 
   .pillar-hydration {
-    background: linear-gradient(135deg, var(--tiffany-blue) 0%, #08a09c 100%);
+    background: linear-gradient(135deg, var(--tiffany-blue) 0%, #09c4be 50%, var(--tiffany-blue) 100%);
   }
 
   .pillar-hydration .pillar-content * {
@@ -254,39 +262,47 @@ Fourth-grade language. Clear hierarchy. Better than JuneShine.
   }
 
   .pillar-honey {
-    background: linear-gradient(135deg, var(--gold-yellow) 0%, #f4c430 100%);
+    background: linear-gradient(135deg, #FFD93D 0%, #FFC700 50%, #FFD93D 100%);
+  }
+
+  .pillar-honey:hover {
+    border-color: #FF7A00;
   }
 
   /* ===== PILLAR CONTENT ===== */
   .pillar-content {
     position: relative;
     z-index: 2;
-    padding: clamp(24px, 3vw, 40px);
+    padding: clamp(28px, 3.5vw, 48px);
     display: flex;
     flex-direction: column;
     height: 100%;
-    transition: opacity 0.4s ease;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .brand-pillar:hover .pillar-content {
     opacity: 0;
+    transform: scale(0.95);
   }
 
   .pillar-number {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: clamp(48px, 6vw, 80px);
-    font-weight: 800;
-    line-height: 1;
+    font-size: clamp(56px, 7vw, 96px);
+    font-weight: 900;
+    line-height: 0.9;
     color: var(--strive-orange);
-    margin: 0 0 clamp(12px, 1.5vw, 20px);
+    margin: 0 0 clamp(16px, 2vw, 28px);
+    text-shadow: 0 4px 12px rgba(0,0,0,.1);
   }
 
   .pillar-hydration .pillar-number {
-    color: #fff;
+    color: rgba(255,255,255,0.95);
+    text-shadow: 0 4px 16px rgba(0,0,0,.15);
   }
 
   .pillar-honey .pillar-number {
     color: var(--strive-orange);
+    text-shadow: 0 4px 12px rgba(255,122,0,.2);
   }
 
   .pillar-icon {
@@ -313,12 +329,13 @@ Fourth-grade language. Clear hierarchy. Better than JuneShine.
 
   .pillar-title {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: clamp(18px, 2vw, 26px);
-    font-weight: 800;
-    line-height: 1.1;
+    font-size: clamp(20px, 2.2vw, 30px);
+    font-weight: 900;
+    line-height: 1.05;
     color: #111;
-    margin: 0 0 clamp(10px, 1.2vw, 14px);
+    margin: 0 0 clamp(12px, 1.5vw, 18px);
     text-transform: uppercase;
+    letter-spacing: -0.02em;
   }
 
   .pillar-hydration .pillar-title {
@@ -327,28 +344,29 @@ Fourth-grade language. Clear hierarchy. Better than JuneShine.
 
   .pillar-tagline {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: clamp(14px, 1.4vw, 18px);
-    font-weight: 600;
-    line-height: 1.3;
+    font-size: clamp(15px, 1.6vw, 20px);
+    font-weight: 700;
+    line-height: 1.25;
     color: #111;
-    margin: 0 0 clamp(8px, 1vw, 12px);
+    margin: 0 0 clamp(10px, 1.2vw, 16px);
   }
 
   .pillar-hydration .pillar-tagline {
-    color: #fff;
+    color: rgba(255,255,255,0.95);
   }
 
   .pillar-description {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: clamp(12px, 1.2vw, 15px);
-    line-height: 1.4;
-    color: #333;
+    font-size: clamp(13px, 1.3vw, 17px);
+    line-height: 1.45;
+    color: #555;
     margin: 0;
     flex-grow: 1;
+    font-weight: 500;
   }
 
   .pillar-hydration .pillar-description {
-    color: rgba(255,255,255,0.9);
+    color: rgba(255,255,255,0.85);
   }
 
   /* ===== HOVER IMAGES ===== */
@@ -360,7 +378,8 @@ Fourth-grade language. Clear hierarchy. Better than JuneShine.
     height: 100%;
     z-index: 1;
     opacity: 0;
-    transition: opacity 0.4s ease;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    overflow: hidden;
   }
 
   .brand-pillar:hover .pillar-image-wrapper {
@@ -372,6 +391,12 @@ Fourth-grade language. Clear hierarchy. Better than JuneShine.
     height: 100%;
     object-fit: cover;
     object-position: center;
+    transform: scale(1.05);
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .brand-pillar:hover .pillar-image {
+    transform: scale(1);
   }
 
   /* ===== TABLET (768px - 1024px) ===== */
