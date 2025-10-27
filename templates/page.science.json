@@ -19,6 +19,59 @@
     },
     "science_fold_1": {
       "type": "science-checkerboard-fold",
+      "blocks": {
+        "dehydration_heading": {
+          "type": "heading",
+          "settings": {
+            "column": "left",
+            "heading": "Over 75% of Adults Are Chronically Dehydrated",
+            "font_size": 56,
+            "text_color": "#ffffff"
+          }
+        },
+        "dehydration_text": {
+          "type": "text",
+          "settings": {
+            "column": "left",
+            "content": "<p>Most people walk around slightly dehydrated throughout the day without realizing it — even before a workout or on a hot day.</p><p>Dehydration drains your energy, slows your focus, and makes every task feel harder. Your body is constantly losing water, and most drinks either don't hydrate you properly or load you up with sugar and artificial ingredients.</p>",
+            "font_size": 18,
+            "text_color": "#ffffff"
+          }
+        },
+        "solution_heading": {
+          "type": "heading",
+          "settings": {
+            "column": "right",
+            "heading": "This Is Why You Choose Strive",
+            "font_size": 56,
+            "text_color": "#ffffff"
+          }
+        },
+        "solution_text": {
+          "type": "text",
+          "settings": {
+            "column": "right",
+            "content": "<p>Strive Soda is the first hydration soda — designed to keep you refreshed with real electrolytes and clean ingredients.</p><p>We combine <strong>180mg of electrolytes</strong> (sodium, potassium, magnesium) with <strong>100% organic wildflower honey</strong> for natural sweetness. No synthetic sugars. No artificial ingredients. Just delicious flavor that actually helps you stay hydrated.</p><p><strong>It's the soda you want to drink that happens to hydrate you.</strong></p>",
+            "font_size": 18,
+            "text_color": "#ffffff"
+          }
+        },
+        "solution_cta": {
+          "type": "button",
+          "settings": {
+            "column": "right",
+            "button_text": "Shop Strive Soda",
+            "button_link": "/collections/all"
+          }
+        }
+      },
+      "block_order": [
+        "dehydration_heading",
+        "dehydration_text",
+        "solution_heading",
+        "solution_text",
+        "solution_cta"
+      ],
       "settings": {
         "fold_number": 1,
         "left_bg_color": "#0ABAB5",
