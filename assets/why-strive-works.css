@@ -1,0 +1,217 @@
+/* Why Strive Works Section */
+.why-strive-works {
+  padding: 100px 20px;
+  width: 100%;
+}
+
+.why-strive-works .container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header */
+.wsw-header {
+  text-align: center;
+  margin: 0 0 64px 0;
+}
+
+.wsw-heading {
+  font-family: var(--headingFont, 'Polysans', sans-serif);
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 16px 0;
+  color: inherit;
+}
+
+.wsw-subheading {
+  font-family: var(--headingFont, 'Polysans', sans-serif);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0;
+  color: inherit;
+  opacity: 0.9;
+}
+
+/* Benefits Grid */
+.wsw-benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin: 0 0 64px 0;
+}
+
+.wsw-benefit-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 48px 36px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wsw-benefit-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.wsw-icon {
+  font-size: 64px;
+  line-height: 1;
+  margin: 0 0 24px 0;
+}
+
+.wsw-title {
+  font-family: var(--headingFont, 'Polysans', sans-serif);
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 16px 0;
+  color: inherit;
+}
+
+.wsw-description {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0;
+  color: inherit;
+  opacity: 0.95;
+}
+
+/* CTA */
+.wsw-cta-wrapper {
+  text-align: center;
+}
+
+.wsw-cta-button {
+  display: inline-block;
+  background-color: #ffffff;
+  color: var(--tiffany-blue, #0ABAB5);
+  font-family: var(--headingFont, 'Polysans', sans-serif);
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 18px 56px;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+}
+
+.wsw-cta-button:hover {
+  background-color: var(--orange, #FF7A00);
+  color: #ffffff;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(255, 122, 0, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .why-strive-works {
+    padding: 80px 20px;
+  }
+
+  .wsw-heading {
+    font-size: 44px;
+  }
+
+  .wsw-subheading {
+    font-size: 20px;
+  }
+
+  .wsw-benefits-grid {
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+
+  .wsw-benefit-card {
+    padding: 40px 28px;
+  }
+
+  .wsw-icon {
+    font-size: 56px;
+  }
+
+  .wsw-title {
+    font-size: 24px;
+  }
+
+  .wsw-description {
+    font-size: 17px;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-strive-works {
+    padding: 60px 20px;
+  }
+
+  .wsw-header {
+    margin-bottom: 48px;
+  }
+
+  .wsw-heading {
+    font-size: 36px;
+    margin-bottom: 12px;
+  }
+
+  .wsw-subheading {
+    font-size: 18px;
+  }
+
+  .wsw-benefits-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+  }
+
+  .wsw-benefit-card {
+    padding: 36px 24px;
+  }
+
+  .wsw-icon {
+    font-size: 48px;
+    margin-bottom: 20px;
+  }
+
+  .wsw-title {
+    font-size: 22px;
+    margin-bottom: 12px;
+  }
+
+  .wsw-description {
+    font-size: 16px;
+  }
+
+  .wsw-cta-button {
+    font-size: 16px;
+    padding: 16px 48px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wsw-heading {
+    font-size: 32px;
+  }
+
+  .wsw-subheading {
+    font-size: 16px;
+  }
+
+  .wsw-icon {
+    font-size: 44px;
+  }
+
+  .wsw-title {
+    font-size: 20px;
+  }
+
+  .wsw-description {
+    font-size: 15px;
+  }
+}

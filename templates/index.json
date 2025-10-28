@@ -40,8 +40,8 @@
         "cropVideo": false,
         "title": "",
         "content": "",
-        "headline_mobile": "MEET THE SODA FOR MOVERS, SHAKERS, DOERS",
-        "subhead_mobile": "Better-for-you soda. Built to hydrate.",
+        "headline_mobile": "Soda That Tastes Amazing and Keeps You Hydrated",
+        "subhead_mobile": "Strive Soda combines bold flavor, clean ingredients, and natural hydration so you can enjoy your favorite soda—without compromise.",
         "cta": "SHOP FLAVORS",
         "url": "shopify://collections/all",
         "cta2": "What is hydration soda?",
@@ -56,6 +56,57 @@
         "heroMetaH1Color": "#ffffff",
         "heroMetaH1hasBg": false
       }
+    },
+    "what_is_hydration_soda": {
+      "type": "what-is-hydration-soda",
+      "settings": {
+        "heading": "What Is a Hydration Soda?",
+        "description": "<p>Hydration soda is a better-for-you sparkling beverage that tastes like soda but goes beyond flavor.</p><p>Unlike traditional sodas loaded with sugar and empty calories, Strive Soda is designed to:</p>",
+        "cta_text": "Learn More About Hydration Soda",
+        "cta_link": "shopify://pages/science-behind-strive",
+        "bg_color": "#f8f8f8",
+        "text_color": "#000000"
+      },
+      "blocks": {
+        "benefit_1": {
+          "type": "benefit",
+          "settings": {
+            "icon": "💧",
+            "title": "Support Hydration",
+            "description": "Infused with balanced electrolytes like sodium, potassium, and magnesium to help your body stay refreshed"
+          }
+        },
+        "benefit_2": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🍯",
+            "title": "Deliver Natural Energy",
+            "description": "Sweetened with organic wildflower honey for smooth, steady energy, plus antioxidants, trace vitamins, and minerals"
+          }
+        },
+        "benefit_3": {
+          "type": "benefit",
+          "settings": {
+            "icon": "✨",
+            "title": "Keep Ingredients Clean",
+            "description": "Free from artificial flavors, colors, and preservatives"
+          }
+        },
+        "benefit_4": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🎯",
+            "title": "Fit Your Lifestyle",
+            "description": "Perfect for long days, travel, or anytime you want a flavorful, refreshing drink"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_1",
+        "benefit_2",
+        "benefit_3",
+        "benefit_4"
+      ]
     },
     "gs_brand_hierarchy_new": {
       "type": "gs-brand-hierarchy",
@@ -79,6 +130,57 @@
         "pillar3_desc": "100% organic wildflower honey.",
         "pillar3_image": "shopify://shop_images/Generated_Image_October_13_2025_-_12_38AM.png"
       }
+    },
+    "why_strive_works": {
+      "type": "why-strive-works",
+      "settings": {
+        "heading": "Why Strive Works",
+        "subheading": "Refreshment you can feel good about",
+        "cta_text": "Shop Flavors",
+        "cta_link": "shopify://collections/all",
+        "bg_color": "#0ABAB5",
+        "text_color": "#ffffff"
+      },
+      "blocks": {
+        "benefit_hydration": {
+          "type": "benefit",
+          "settings": {
+            "icon": "💧",
+            "title": "Hydration Redefined",
+            "description": "Electrolytes for balance and refreshment"
+          }
+        },
+        "benefit_sweetness": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🍯",
+            "title": "Clean, Natural Sweetness",
+            "description": "Organic honey instead of refined sugar"
+          }
+        },
+        "benefit_better": {
+          "type": "benefit",
+          "settings": {
+            "icon": "✨",
+            "title": "Better-for-You",
+            "description": "Low sugar, natural, indulgent flavor"
+          }
+        },
+        "benefit_ingredients": {
+          "type": "benefit",
+          "settings": {
+            "icon": "🌱",
+            "title": "Feel Good Ingredients",
+            "description": "Free from artificial flavors, colors, and preservatives"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_hydration",
+        "benefit_sweetness",
+        "benefit_better",
+        "benefit_ingredients"
+      ]
     },
     "gs_featured_collection_PVBnqW": {
       "type": "gs-featured-collection",
@@ -155,7 +257,9 @@
   },
   "order": [
     "hero",
+    "what_is_hydration_soda",
     "gs_brand_hierarchy_new",
+    "why_strive_works",
     "gs_featured_collection_PVBnqW",
     "gs_hero_double_bN69TF",
     "gs_reviews_mHx8cH"

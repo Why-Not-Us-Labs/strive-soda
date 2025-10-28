@@ -1,0 +1,183 @@
+/* Remove Shopify section wrapper spacing */
+.shopify-section.section-what-is-hydration-soda {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* What Is Hydration Soda Section */
+.what-is-hydration-soda {
+  padding: 80px 20px;
+  width: 100%;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.what-is-hydration-soda .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wihs-content {
+  text-align: center;
+}
+
+.wihs-heading {
+  font-family: var(--headingFont, 'Polysans', sans-serif);
+  font-size: 48px;
+  font-weight: 800;
+  line-height: 1.2;
+  margin: 0 0 24px 0;
+  color: inherit;
+}
+
+.wihs-description {
+  font-size: 18px;
+  line-height: 1.6;
+  margin: 0 auto 48px auto;
+  max-width: 800px;
+  color: inherit;
+}
+
+.wihs-description p {
+  margin: 0 0 16px 0;
+}
+
+.wihs-description p:last-child {
+  margin-bottom: 0;
+}
+
+/* Benefits Grid */
+.wihs-benefits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 32px;
+  margin: 0 0 48px 0;
+}
+
+.wihs-benefit-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 32px 24px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wihs-benefit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.wihs-benefit-icon {
+  font-size: 48px;
+  margin: 0 0 16px 0;
+  line-height: 1;
+}
+
+.wihs-benefit-title {
+  font-family: var(--headingFont, 'Polysans', sans-serif);
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0 0 12px 0;
+  color: inherit;
+}
+
+.wihs-benefit-description {
+  font-size: 16px;
+  line-height: 1.5;
+  margin: 0;
+  color: inherit;
+  opacity: 0.9;
+}
+
+/* CTA */
+.wihs-cta {
+  margin: 48px 0 0 0;
+}
+
+.wihs-cta-button {
+  display: inline-block;
+  background-color: var(--orange, #FF7A00);
+  color: #ffffff;
+  font-family: var(--headingFont, 'Polysans', sans-serif);
+  font-size: 18px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 16px 48px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.wihs-cta-button:hover {
+  background-color: #FF8A1A;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 122, 0, 0.3);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .what-is-hydration-soda {
+    padding: 60px 20px;
+  }
+
+  .wihs-heading {
+    font-size: 36px;
+    margin-bottom: 20px;
+  }
+
+  .wihs-description {
+    font-size: 16px;
+    margin-bottom: 32px;
+  }
+
+  .wihs-benefits {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
+
+  .wihs-benefit-card {
+    padding: 24px 20px;
+  }
+
+  .wihs-benefit-icon {
+    font-size: 40px;
+  }
+
+  .wihs-benefit-title {
+    font-size: 20px;
+  }
+
+  .wihs-benefit-description {
+    font-size: 15px;
+  }
+
+  .wihs-cta {
+    margin-top: 32px;
+  }
+
+  .wihs-cta-button {
+    font-size: 16px;
+    padding: 14px 36px;
+  }
+}
+
+@media (max-width: 480px) {
+  .wihs-heading {
+    font-size: 28px;
+  }
+
+  .wihs-description {
+    font-size: 15px;
+  }
+
+  .wihs-benefit-icon {
+    font-size: 36px;
+  }
+
+  .wihs-benefit-title {
+    font-size: 18px;
+  }
+}
