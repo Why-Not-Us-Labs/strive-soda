@@ -183,29 +183,25 @@
     max-width: 380px;
     text-align: center;
   }
-  .btn-orange{ 
-    background:var(--strive-orange); 
-    color:#fff; 
-    border:2px solid var(--strive-orange); 
+  .btn-orange{
+    background:transparent;
+    color:var(--strive-orange);
+    border:2px solid var(--strive-orange);
   }
-  .btn-orange:hover{ 
-    background:transparent; 
-    color:var(--strive-orange); 
+  .btn-orange:hover{
+    background:var(--strive-orange);
+    color:#fff;
     border-color:var(--strive-orange);
-    transform: translateY(-2px);
-    box-shadow:0 12px 32px rgba(255,122,0,.25);
   }
-  .btn-teal{ 
-    background:var(--tiffany-blue); 
-    color:#fff; 
-    border:2px solid var(--tiffany-blue); 
+  .btn-teal{
+    background:transparent;
+    color:#000;
+    border:2px solid #000;
   }
-  .btn-teal:hover{ 
-    background:transparent; 
-    color:var(--tiffany-blue);
-    border-color:var(--tiffany-blue);
-    transform: translateY(-2px);
-    box-shadow:0 12px 32px rgba(10,186,181,.25);
+  .btn-teal:hover{
+    background:#000;
+    color:#fff;
+    border-color:#000;
   }
 
   /* CTA wrapper - consistent across breakpoints */
@@ -239,19 +235,10 @@
       line-height: 0 !important;
     }
 
-    /* For STICKY header: add padding to push hero below header (no overlap) */
-    body.hpsticky .hero[sid="{{ section.id }}"]{
+    /* ALWAYS add padding to push hero content below header (prevent overlap on ALL header types) */
+    .hero[sid="{{ section.id }}"]{
       padding-top: var(--headerGroupHeight, 0px) !important;
       box-sizing: border-box !important;
-    }
-
-    /* On mobile with fixed/absolute header, adjust height calculation (homepage overlay - no padding) */
-    body.hpfixed .hero[sid="{{ section.id }}"],
-    body.hpabsolute .hero[sid="{{ section.id }}"]{
-      min-height: 100dvh !important;
-      height: 100dvh !important;
-      max-height: 100dvh !important;
-      padding-top: 0 !important;
     }
 
     /* Teal panel - ORDER 1 (takes top 50%, flush with header) */
@@ -321,10 +308,10 @@
     .hero-h1--mobile, .hero-sub--mobile{ display:block; }
 
     .hero-h1--mobile{
-      margin: 0 0 8px; 
-      font-size: clamp(26px, 5.5vw, 34px); 
-      line-height: 1.05; 
-      font-weight: 900; 
+      margin: 0 0 8px;
+      font-size: clamp(26px, 5.5vw, 34px);
+      line-height: 1.05;
+      font-weight: 400;
       text-transform: uppercase;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       letter-spacing: -0.01em;
@@ -401,15 +388,9 @@
       box-sizing: border-box !important;
     }
 
-    /* For STICKY header: add padding to push hero below header (no overlap) */
-    body.hpsticky .hero[sid="{{ section.id }}"]{
+    /* ALWAYS add padding to push hero content below header (prevent overlap on ALL header types) */
+    .hero[sid="{{ section.id }}"]{
       padding-top: var(--headerGroupHeight, 0px) !important;
-    }
-
-    /* For fixed/absolute headers: full viewport height (homepage overlay - no padding) */
-    body.hpfixed .hero[sid="{{ section.id }}"],
-    body.hpabsolute .hero[sid="{{ section.id }}"]{
-      padding-top: 0 !important;
     }
 
     /* Teal content panel - ORDER 1 (appears first visually, flush with header) */
@@ -451,18 +432,18 @@
     .hero-h1--mobile, .hero-sub--mobile{ display:block; }
 
     .hero-h1--mobile{
-      font-size: clamp(32px, 4.5vw, 44px);
-      line-height: 1.1;
-      font-weight: 900;
+      font-size: clamp(28px, 3.8vw, 38px);
+      line-height: 1.05;
+      font-weight: 400;
       text-transform: uppercase;
-      margin: 0 0 12px;
+      margin: 0 0 10px;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       letter-spacing: -0.01em;
     }
 
     .hero-sub--mobile{
-      font-size: clamp(15px, 2vw, 18px);
-      line-height: 1.4;
+      font-size: clamp(14px, 1.8vw, 16px);
+      line-height: 1.35;
       opacity: .95;
       margin: 0;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
@@ -531,17 +512,10 @@
       box-sizing: border-box !important;
     }
 
-    /* For STICKY header: add padding to push hero below header (no overlap) */
-    body.hpsticky .hero[sid="{{ section.id }}"]{
+    /* ALWAYS add padding to push hero content below header (prevent overlap on ALL header types) */
+    .hero[sid="{{ section.id }}"]{
       padding-top: var(--headerGroupHeight, 0px) !important;
       grid-template-rows: calc(100vh - var(--headerGroupHeight, 0px));
-    }
-
-    /* With fixed/absolute header, full viewport height (homepage overlay - no padding) */
-    body.hpfixed .hero[sid="{{ section.id }}"],
-    body.hpabsolute .hero[sid="{{ section.id }}"]{
-      grid-template-rows: 100vh;
-      padding-top: 0;
     }
 
     /* Constrain clickable link to media area only - prevents blocking header */
@@ -596,13 +570,13 @@
     }
     
     .hero[sid="{{ section.id }}"] .hero-h1--mobile{
-      display: block; 
-      color: #fff; 
+      display: block;
+      color: #fff;
       text-align: left;
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       font-size: clamp(36px, 4.5vw, 64px);
       line-height: 1.05;
-      font-weight: 900;
+      font-weight: 400;
       text-transform: uppercase;
       letter-spacing: -0.02em;
       margin: 0 0 clamp(16px, 2vw, 24px);
