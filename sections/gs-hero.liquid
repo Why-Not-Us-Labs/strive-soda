@@ -588,6 +588,16 @@
 
   /* ===== DESKTOP (>=1280px): full-bleed horizontal split ===== */
   @media (min-width: 1280px){
+    /* CRITICAL: Override global app.css .hero .meta rules */
+    .hero[sid="{{ section.id }}"] .meta {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      position: static !important; /* Override app.css absolute positioning */
+      top: auto !important;
+      left: auto !important;
+    }
+
     /* Section wrapper - ensure it sits below header with NO GAPS and fills viewport */
     #shopify-section-{{ section.id }} {
       position: relative;
