@@ -48,7 +48,7 @@ Product: What's in Strive - Nutrition Label
 
           {%- comment -%} Electrolytes Breakdown {%- endcomment -%}
           <div class="facts-section-header">
-            <h4 class="section-title">Essential Electrolytes (180mg)</h4>
+            <h4 class="section-title">Essential Electrolytes (170mg)</h4>
           </div>
 
           <div class="facts-row facts-highlight">
@@ -64,11 +64,6 @@ Product: What's in Strive - Nutrition Label
           <div class="facts-row facts-highlight">
             <span class="facts-label-text">Magnesium</span>
             <span class="facts-value">{{ section.settings.magnesium }}mg</span>
-          </div>
-
-          <div class="facts-row facts-highlight">
-            <span class="facts-label-text">Calcium</span>
-            <span class="facts-value">{{ section.settings.calcium }}mg</span>
           </div>
 
           <div class="facts-divider facts-divider-thick"></div>
@@ -121,17 +116,17 @@ Product: What's in Strive - Nutrition Label
 :root {
   --tiffany-blue: #0ABAB5;
   --strive-orange: #FF7A00;
-  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .nutrition-label-section {
   padding: clamp(60px, 8vw, 100px) 0;
   background: #fff;
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-family: var(--fontFamily, 'Inter', -apple-system, BlinkMacSystemFont, sans-serif);
+  color: #111;
 }
 
 .nutrition-container {
-  max-width: 1400px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 0 clamp(20px, 5vw, 60px);
 }
@@ -142,21 +137,20 @@ Product: What's in Strive - Nutrition Label
 }
 
 .nutrition-title {
-  font-size: clamp(32px, 4.5vw, 56px);
-  font-weight: 900;
-  line-height: 1.1;
+  font-size: clamp(32px, 4.5vw, 54px);
+  font-weight: 500;
+  line-height: 1.05;
   margin: 0 0 16px;
-  color: #111;
-  text-transform: uppercase;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.015em;
+  text-transform: none;
 }
 
 .nutrition-desc {
-  font-size: clamp(16px, 1.8vw, 22px);
-  line-height: 1.5;
-  max-width: 800px;
+  font-size: clamp(16px, 1.8vw, 21px);
+  line-height: 1.55;
+  max-width: 760px;
   margin: 0 auto;
-  color: #333;
+  color: #3a3a3a;
 }
 
 .nutrition-content-wrapper {
@@ -166,21 +160,19 @@ Product: What's in Strive - Nutrition Label
   align-items: start;
 }
 
-/* LEFT SIDE - Nutrition Facts Label */
 .nutrition-facts-panel {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
 }
 
 .facts-label {
   width: 100%;
-  max-width: 500px;
+  max-width: 460px;
   background: #fff;
-  border: 4px solid #111;
-  padding: clamp(20px, 3vw, 32px);
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  border: 2px solid #111;
+  border-radius: 4px;
+  padding: clamp(20px, 3vw, 30px);
+  font-family: var(--font-mono, 'Poly Sans Mono', 'Roboto Mono', 'Courier New', monospace); /* Poly Sans Mono for nutrition panel */
 }
 
 .facts-header {
@@ -188,19 +180,18 @@ Product: What's in Strive - Nutrition Label
 }
 
 .facts-title {
-  font-size: clamp(28px, 3.5vw, 40px);
-  font-weight: 900;
-  margin: 0 0 8px;
-  color: #111;
-  text-transform: uppercase;
+  font-size: clamp(28px, 3.4vw, 38px);
+  font-weight: 500;
+  margin: 0 0 6px;
   letter-spacing: -0.01em;
+  text-transform: none;
 }
 
 .serving-size {
   font-size: clamp(12px, 1.2vw, 14px);
   margin: 0;
-  color: #111;
-  font-weight: 600;
+  font-weight: 500;
+  letter-spacing: 0;
 }
 
 .facts-divider {
@@ -211,7 +202,7 @@ Product: What's in Strive - Nutrition Label
 }
 
 .facts-divider-thick {
-  height: 8px;
+  height: 6px;
 }
 
 .facts-divider-thin {
@@ -224,13 +215,12 @@ Product: What's in Strive - Nutrition Label
   align-items: baseline;
   padding: 6px 0;
   font-size: clamp(13px, 1.4vw, 16px);
-  color: #111;
 }
 
 .facts-row-major {
-  font-size: clamp(16px, 1.8vw, 20px);
-  font-weight: 800;
-  padding: 8px 0;
+  font-size: clamp(18px, 1.9vw, 22px);
+  font-weight: 500;
+  padding: 10px 0;
 }
 
 .facts-indent {
@@ -242,105 +232,97 @@ Product: What's in Strive - Nutrition Label
 }
 
 .facts-value {
-  font-weight: 800;
-  color: #111;
+  font-weight: 500;
 }
 
 .facts-section-header {
-  margin: 12px 0 8px;
+  margin: 16px 0 10px;
 }
 
 .section-title {
   font-size: clamp(15px, 1.6vw, 18px);
-  font-weight: 800;
+  font-weight: 500;
   margin: 0;
-  color: var(--strive-orange);
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  color: #111;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .facts-highlight {
-  background: linear-gradient(90deg, rgba(10, 186, 181, 0.1) 0%, rgba(255, 122, 0, 0.1) 100%);
-  padding: 8px 12px;
-  margin: 4px -12px;
-  border-left: 4px solid var(--tiffany-blue);
+  background: rgba(10, 186, 181, 0.08);
+  padding: 10px 14px;
+  margin: 6px 0;
+  border-left: 3px solid var(--tiffany-blue);
+  border-radius: 4px;
 }
 
 .ingredients-section {
-  margin-top: 16px;
+  margin-top: 20px;
 }
 
 .ingredients-title {
   font-size: clamp(14px, 1.5vw, 16px);
-  font-weight: 800;
-  margin: 0 0 8px;
-  color: #111;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-weight: 500;
+  margin: 0 0 6px;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .ingredients-list {
   font-size: clamp(12px, 1.3vw, 14px);
   line-height: 1.6;
   margin: 0;
-  color: #333;
-  font-weight: 500;
+  color: #3a3a3a;
+  font-weight: 400;
 }
 
-/* RIGHT SIDE - Nutrition Highlights */
 .nutrition-highlights {
   display: flex;
   flex-direction: column;
-  gap: clamp(20px, 3vw, 32px);
+  gap: clamp(18px, 3vw, 28px);
 }
 
 .highlight-card {
-  padding: clamp(24px, 4vw, 36px);
-  border: 3px solid #111;
-  background: #F5F1E8;
-  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.highlight-card:hover {
-  transform: translateY(-4px);
-}
-
-.honey-highlight {
-  background: linear-gradient(135deg, #FFF9E6 0%, #FFE4B3 100%);
-}
-
-.electrolytes-highlight {
-  background: linear-gradient(135deg, #E0F7FA 0%, #B2EBF2 100%);
-}
-
-.clean-highlight {
-  background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);
+  padding: clamp(20px, 4vw, 28px);
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  background: #fff;
 }
 
 .highlight-icon {
-  font-size: clamp(32px, 4vw, 48px);
+  font-size: clamp(28px, 3.6vw, 42px);
   margin-bottom: 12px;
   display: block;
 }
 
 .highlight-title {
-  font-size: clamp(18px, 2vw, 24px);
-  font-weight: 900;
-  margin: 0 0 12px;
-  color: #111;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  font-size: clamp(18px, 2vw, 22px);
+  font-weight: 500;
+  margin: 0 0 10px;
+  letter-spacing: -0.01em;
+  text-transform: none;
 }
 
 .highlight-text {
   font-size: clamp(14px, 1.5vw, 16px);
-  line-height: 1.6;
+  line-height: 1.55;
   margin: 0;
-  color: #333;
-  font-weight: 500;
+  color: #3a3a3a;
+  font-weight: 400;
 }
 
-/* MOBILE RESPONSIVE */
+.honey-highlight {
+  border-top: 4px solid var(--strive-orange);
+}
+
+.electrolytes-highlight {
+  border-top: 4px solid var(--tiffany-blue);
+}
+
+.clean-highlight {
+  border-top: 4px solid #2d8f5b;
+}
+
 @media (max-width: 1024px) {
   .nutrition-content-wrapper {
     grid-template-columns: 1fr;
@@ -363,10 +345,6 @@ Product: What's in Strive - Nutrition Label
 
   .facts-label {
     padding: clamp(16px, 4vw, 24px);
-  }
-
-  .highlight-card {
-    padding: clamp(20px, 4vw, 28px);
   }
 }
 </style>
@@ -406,13 +384,13 @@ Product: What's in Strive - Nutrition Label
       "type": "text",
       "id": "carbs",
       "label": "Total Carbohydrates (g)",
-      "default": "11"
+      "default": "10"
     },
     {
       "type": "text",
       "id": "sugars",
       "label": "Total Sugars (g)",
-      "default": "18"
+      "default": "8"
     },
     {
       "type": "header",

@@ -20,24 +20,15 @@ body.overflow-hidden { overflow: hidden }
 
 /*** Content */
 .product-page .bullet-product-content {
-    padding-top: calc(var(--padding) / 2);
+    padding-top: 0;
     z-index: 1;
 }
 
 .product-page .bullet-product-media {
-    padding: var(--padding);
+    padding: 0;
 }
 
-/* Ensure media and content don't overlap */
-@media (min-width: 778px) {
-    .product-page .bullet-product-media {
-        padding-right: calc(var(--padding) * 1.5);
-    }
-
-    .product-page .bullet-product-content {
-        padding-left: calc(var(--padding) * 1.5);
-    }
-}
+/* Grid layout handles spacing via gap property in t-product.liquid */
 
 .product-page details .dropdown-caret { outline: none; padding-inline: var(--padding); text-transform: uppercase; font-weight: var(--hWeight)}
 .product-page details[open] .text { border-block-start: var(--globalBorder); margin-top: var(--padding); padding: var(--padding) var(--padding) 0 }
@@ -559,7 +550,7 @@ html.js [id^="Slider-Thumbnails-template"] { -ms-overflow-style: none; scrollbar
     width: 60px;
     height: 60px;
     background: #ffffff;
-    border-radius: 12px;
+    border-radius: 4px;
     transition: all 0.3s ease;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
     cursor: pointer;
@@ -578,7 +569,7 @@ html.js [id^="Slider-Thumbnails-template"] { -ms-overflow-style: none; scrollbar
 .product-page .slider-buttons button:hover {
     background: #81d8d0;
     transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(129, 216, 208, 0.4);
+    
 }
 
 .product-page .slider-buttons button:hover svg {
@@ -596,11 +587,11 @@ html.js [id^="Slider-Thumbnails-template"] { -ms-overflow-style: none; scrollbar
     background: #81d8d0;
     color: #000;
     padding: 0.75rem 1.5rem;
-    border-radius: 24px;
+    border-radius: 4px;
     font-weight: 700;
     font-size: 1rem;
     border: none;
-    box-shadow: 0 2px 8px rgba(129, 216, 208, 0.3);
+    
     min-width: 80px;
     text-align: center;
 }
@@ -618,7 +609,7 @@ html.js [id^="Slider-Thumbnails-template"] { -ms-overflow-style: none; scrollbar
 /*** Thumbnail slider - Enhanced and More Prominent */
 .product-page slider-component.thumbnail-slider {
     border: 2px solid #e8e8e8;
-    border-radius: 12px;
+    border-radius: 4px;
     overflow: hidden;
     margin-top: 1.5rem;
     margin-bottom: 0;
@@ -633,7 +624,7 @@ html.js [id^="Slider-Thumbnails-template"] { -ms-overflow-style: none; scrollbar
     z-index: 2;
     background: rgba(255, 255, 255, 0.95);
     border: 2px solid #81d8d0;
-    border-radius: 8px;
+    border-radius: 4px;
     transition: all 0.3s ease;
 }
 
@@ -665,20 +656,20 @@ html.js [id^="Slider-Thumbnails-template"] { -ms-overflow-style: none; scrollbar
     scroll-snap-align: start;
     cursor: pointer;
     transition: all 0.3s ease;
-    border-radius: 12px;
+    border-radius: 4px;
     overflow: hidden;
     border: 3px solid transparent;
 }
 
 .product-page slider-component.thumbnail-slider .thumbnail-slider__slide:hover {
     transform: translateY(-4px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    
     border-color: rgba(129, 216, 208, 0.5);
 }
 
 .product-page slider-component.thumbnail-slider .thumbnail-slider__slide.is-active {
     border: 3px solid #81d8d0;
-    box-shadow: 0 4px 12px rgba(129, 216, 208, 0.3);
+    
     transform: translateY(-2px);
 }
 
@@ -771,15 +762,17 @@ html.js [id^="Slider-Thumbnails-template"] { -ms-overflow-style: none; scrollbar
     }
 
     .product-page [id^="Slider-Gallery"] {
-        border-radius: 16px;
+        border-radius: 4px;
         overflow: hidden;
         background: #f9f9f9;
     }
 
     .product-page .slider__slide img {
-        border-radius: 16px;
+        border-radius: 4px;
         width: 100%;
         height: auto;
+        min-height: 400px; /* Ensure minimum height for proper display */
+        object-fit: contain;
     }
 
     /* Thumbnail strip - BELOW main image, horizontal */
@@ -813,7 +806,7 @@ html.js [id^="Slider-Thumbnails-template"] { -ms-overflow-style: none; scrollbar
     .product-page slider-component.thumbnail-slider .thumbnail-slider__slide {
         flex-shrink: 0;
         border: 3px solid #e8e8e8;
-        border-radius: 12px;
+        border-radius: 4px;
         transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         background: #fff;
         overflow: hidden;
@@ -832,21 +825,21 @@ html.js [id^="Slider-Thumbnails-template"] { -ms-overflow-style: none; scrollbar
         width: 100px;
         object-fit: cover;
         display: block;
-        border-radius: 8px;
+        border-radius: 4px;
     }
 
     /* Hover state */
     .product-page slider-component.thumbnail-slider .thumbnail-slider__slide:hover {
         border-color: #0ABAB5;
         transform: translateY(-4px);
-        box-shadow: 0 6px 16px rgba(10, 186, 181, 0.2);
+        
     }
 
     /* Active/selected state - Tiffany Blue border */
     .product-page slider-component.thumbnail-slider .thumbnail-slider__slide.is-active {
         border-color: #FF7A00;
         border-width: 4px;
-        box-shadow: 0 4px 12px rgba(255, 122, 0, 0.3);
+        
     }
 
     /* Right side - Product details */
@@ -1186,7 +1179,7 @@ div.pswp__img--placeholder, .pswp__img--with-bg { background: var(--pswp-placeho
 .strive-tagline h3 {
     margin-bottom: 2rem;
     font-size: 3rem;
-    font-weight: 800;
+    font-weight: 400;
     letter-spacing: -0.02em;
     color: #fff;
     text-transform: uppercase;
@@ -1206,7 +1199,7 @@ div.pswp__img--placeholder, .pswp__img--with-bg { background: var(--pswp-placeho
     display: block;
     margin-top: 2rem;
     font-size: 1.4rem;
-    font-weight: 800;
+    font-weight: 400;
     font-family: var(--font-primary);
 }
 
@@ -1265,7 +1258,7 @@ div.pswp__img--placeholder, .pswp__img--with-bg { background: var(--pswp-placeho
 .strive-benefits h3 {
     margin-bottom: 2rem;
     font-size: 2.5rem;
-    font-weight: 800;
+    font-weight: 400;
     letter-spacing: -0.02em;
     color: #2C2C2C;
     font-family: var(--font-primary);
@@ -1275,7 +1268,7 @@ div.pswp__img--placeholder, .pswp__img--with-bg { background: var(--pswp-placeho
 .strive-benefits .benefit-item h4 {
     margin: 1.5rem 0 1rem 0;
     font-size: 1.3rem;
-    font-weight: 800;
+    font-weight: 400;
     color: var(--strive-orange);
     font-family: var(--font-primary);
 }
@@ -1285,7 +1278,7 @@ div.pswp__img--placeholder, .pswp__img--with-bg { background: var(--pswp-placeho
     padding: 0;
     margin: 1.5rem 0;
     background: rgba(255, 255, 255, 0.6);
-    border-radius: 12px;
+    border-radius: 4px;
     padding: 1.5rem;
 }
 
@@ -1303,7 +1296,7 @@ div.pswp__img--placeholder, .pswp__img--with-bg { background: var(--pswp-placeho
 
 .strive-benefits li strong {
     color: var(--strive-orange);
-    font-weight: 800;
+    font-weight: 400;
     font-family: var(--font-primary);
 }
 
@@ -1338,7 +1331,7 @@ div.pswp__img--placeholder, .pswp__img--with-bg { background: var(--pswp-placeho
 .strive-honey h3 {
     margin-bottom: 2rem;
     font-size: 2.5rem;
-    font-weight: 800;
+    font-weight: 400;
     letter-spacing: -0.02em;
     color: #2C2C2C;
     font-family: var(--font-primary);
@@ -1376,7 +1369,7 @@ div.pswp__img--placeholder, .pswp__img--with-bg { background: var(--pswp-placeho
 .strive-no-synthetic h3 {
     margin-bottom: 2rem;
     font-size: 2.5rem;
-    font-weight: 800;
+    font-weight: 400;
     letter-spacing: -0.02em;
     color: #2C2C2C;
     font-family: var(--font-primary);
@@ -1442,7 +1435,7 @@ div.pswp__img--placeholder, .pswp__img--with-bg { background: var(--pswp-placeho
 .strive-learn-more .button {
     padding: 18px 40px;
     font-size: 16px;
-    font-weight: 800;
+    font-weight: 400;
     letter-spacing: .5px;
     text-transform: uppercase;
     background: var(--tiffany-blue);
@@ -1450,7 +1443,7 @@ div.pswp__img--placeholder, .pswp__img--with-bg { background: var(--pswp-placeho
     border-radius: 999px;
     transition: all .3s cubic-bezier(0.4, 0, 0.2, 1);
     border: 2px solid var(--tiffany-blue);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, .15);
+    
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -1465,7 +1458,7 @@ div.pswp__img--placeholder, .pswp__img--with-bg { background: var(--pswp-placeho
     background: #089590;
     border-color: #089590;
     transform: translateY(-2px);
-    box-shadow: 0 12px 32px rgba(10, 186, 181, 0.3);
+    
 }
 
 @media (max-width: 777px) {
@@ -1579,6 +1572,7 @@ div.pswp__img--placeholder, .pswp__img--with-bg { background: var(--pswp-placeho
 
     .product-page .slider__slide img,
     .product-page .slider__slide video {
+        height: 100% !important;
         max-height: 70vh !important;
         width: auto;
         max-width: 100%;
@@ -1686,7 +1680,7 @@ div.pswp__img--placeholder, .pswp__img--with-bg { background: var(--pswp-placeho
     .product-page slider-component.thumbnail-slider .thumbnail-slider__slide.is-active {
         border-color: #0ABAB5;
         border-width: 3px;
-        box-shadow: 0 2px 8px rgba(10, 186, 181, 0.3);
+        
     }
 
     .product-page slider-component.thumbnail-slider button.thumbnail {
@@ -1746,4 +1740,27 @@ div.pswp__img--placeholder, .pswp__img--with-bg { background: var(--pswp-placeho
 /* Ensure layout works for all Strive product pages */
 .product-page {
     scroll-behavior: smooth;
+}
+/* Product Title - Responsive Font Sizing (prevent cutoff) */
+.product-page .title h1 {
+    font-size: clamp(28px, 4vw, 48px);
+    line-height: 1.1;
+    font-weight: 400;
+    margin: 0 0 1rem;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+@media (max-width: 777px) {
+    .product-page .title h1 {
+        font-size: clamp(24px, 6vw, 32px);
+        line-height: 1.05;
+    }
+}
+
+@media (min-width: 778px) and (max-width: 1024px) {
+    .product-page .title h1 {
+        font-size: clamp(28px, 4.5vw, 38px);
+        line-height: 1.08;
+    }
 }

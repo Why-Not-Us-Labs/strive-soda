@@ -53,13 +53,15 @@
   margin-bottom: 0;
 }
 
-/* Typography */
+/* Typography - Match 75% dehydration heading template */
 .science-heading {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 800;
-  line-height: 1.1;
+  font-weight: 500 !important; /* Match template */
+  line-height: 1.05 !important; /* Match template */
   margin: 0 0 1.5rem 0;
   text-align: center;
+  /* font-size set inline from Shopify settings, but ensure minimum matches template */
+  font-size: clamp(32px, 4vw, 52px);
 }
 
 .science-text {
@@ -86,30 +88,29 @@
   width: 100%;
   height: auto;
   display: block;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
-/* Buttons */
+/* Buttons - Outlined style (no-fill, like nutrition panel) */
 .science-button {
   display: inline-block;
   padding: 1rem 2.5rem;
-  background-color: white;
+  background-color: transparent;
   color: #000;
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  font-weight: 800;
+  font-weight: 400;
   font-size: 18px;
   text-decoration: none;
   text-align: center;
-  border-radius: 50px;
+  border-radius: 4px;
   transition: all 0.3s ease;
-  border: 3px solid transparent;
+  border: 2px solid #000;
   cursor: pointer;
 }
 
 .science-button:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  border-color: currentColor;
+  background-color: #000;
+  color: #fff;
 }
 
 /* Custom HTML container */

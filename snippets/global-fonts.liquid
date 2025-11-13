@@ -1,22 +1,57 @@
 {%- comment -%}
 	# Custom Fonts for Strive Soda
 	#
-	# Primary: Inter (loaded via Shopify theme settings)
-	# Monospace: Roboto Mono (for nutrition labels, science content)
+	# Primary: Poly Sans / Inter (loaded via Shopify theme settings)
+	# Monospace: Poly Sans Mono (for nutrition labels, science content)
 	#
-	# TODO: Replace Roboto Mono with Poly Sans Mono when font files available
-	# Font files should be uploaded to assets/ and loaded via @font-face
+	# Font files from Drive Soda Toolkit should be uploaded to assets/ folder:
+	# - PolySansMono-Regular.woff2
+	# - PolySansMono-Medium.woff2  
+	# - PolySansMono-Bold.woff2
+	#
+	# Once uploaded, update @font-face paths below
 {%- endcomment -%}
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+<link href="https://fonts.cdnfonts.com/css/poly-sans" rel="stylesheet">
 
 <style>
+/* Poly Sans Mono - @font-face declarations */
+/* TODO: Update paths once font files are uploaded to assets/ folder */
+@font-face {
+    font-family: 'Poly Sans Mono';
+    src: url('{{ "PolySansMono-Regular.woff2" | asset_url }}') format('woff2'),
+         url('{{ "PolySansMono-Regular.woff" | asset_url }}') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poly Sans Mono';
+    src: url('{{ "PolySansMono-Medium.woff2" | asset_url }}') format('woff2'),
+         url('{{ "PolySansMono-Medium.woff" | asset_url }}') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Poly Sans Mono';
+    src: url('{{ "PolySansMono-Bold.woff2" | asset_url }}') format('woff2'),
+         url('{{ "PolySansMono-Bold.woff" | asset_url }}') format('woff');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 :root {
-	/* Monospace font for nutrition labels and science content */
-	/* TODO: Replace with Poly Sans Mono when available */
-	--font-mono: 'Roboto Mono', 'Courier New', monospace;
-	--font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* Brand typography system */
+    --font-primary: 'Poly Sans', 'Poly Sans Neutral', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --font-headings: 'Poly Sans', 'Poly Sans Neutral', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    /* Poly Sans Mono for nutrition panels and science content */
+    --font-mono: 'Poly Sans Mono', 'Roboto Mono', 'Courier New', monospace;
 }
 </style>
