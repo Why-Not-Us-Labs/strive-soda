@@ -644,10 +644,40 @@ coretex-cart .cart-items > * { outline: var(--globalBorder) }
 html.js-ajax-cart-processing coretex-cart .cart-items { opacity: 0.5 }
 
 coretex-cart .meta { gap: clamp(0.75rem, 1.5vw, 1rem) } /* Increased spacing between meta elements */
-coretex-cart .image { display: block; padding: 0 }
-coretex-cart .title { display: block; text-align: start; overflow: clip; text-overflow: ellipsis; line-height: 1.5; margin-bottom: clamp(0.5rem, 1vw, 0.75rem) } /* Increased line-height and margin */
+coretex-cart .image { 
+    display: block; 
+    padding: 0;
+    border-radius: var(--buttonRadius, 8px);
+    overflow: hidden;
+    background: #f8f8f8;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+coretex-cart cart-item:hover .image {
+    transform: scale(1.03);
+}
+coretex-cart .image img {
+    border-radius: var(--buttonRadius, 8px);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+coretex-cart cart-item:hover .image img {
+    transform: scale(1.05);
+}
+coretex-cart .title { 
+    display: block; 
+    text-align: start; 
+    overflow: clip; 
+    text-overflow: ellipsis; 
+    line-height: 1.5; 
+    margin-bottom: clamp(0.5rem, 1vw, 0.75rem);
+    transition: color 0.2s ease;
+} /* Increased line-height and margin */
 coretex-cart :where(.vendor,.title) a { display: contents }
-coretex-cart .actions { padding: clamp(0.5rem, 1vw, 0.75rem) 0 } /* Added padding around actions */
+coretex-cart .actions { 
+    padding: clamp(0.5rem, 1vw, 0.75rem) 0;
+    display: flex;
+    align-items: center;
+    gap: clamp(0.5rem, 1vw, 0.75rem);
+} /* Added padding around actions */
 
 coretex-cart .properties :where(dt, dd) { margin: 0; display: inline-block }
 
@@ -657,31 +687,58 @@ coretex-cart .button:where(.plus, .minus, .trash) {
     user-select: none;
     font-size: 1.25rem;
     padding: 0.5rem;
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: var(--buttonRadius, 8px); /* Use consistent button radius */
-    border: 1px solid rgba(0, 0, 0, 0.1);
-    background: transparent;
+    border: 1.5px solid rgba(0, 0, 0, 0.12);
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
     color: #222;
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.75rem; /* Slightly larger */
+    height: 2.75rem; /* Slightly larger */
     display: flex;
     align-items: center;
     justify-content: center;
     box-shadow: none; /* Removed drop shadow */
+    position: relative;
+    overflow: hidden;
+}
+
+coretex-cart .button:where(.plus, .minus, .trash)::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(10, 186, 181, 0.1);
+    transform: translate(-50%, -50%);
+    transition: width 0.3s ease, height 0.3s ease;
 }
 
 coretex-cart .button:where(.plus, .minus):hover {
-    background: #0ABAB5;
+    background: linear-gradient(135deg, #0ABAB5 0%, #0DD4CF 100%);
     color: #FFFFFF;
     border-color: #0ABAB5;
-    transform: translateY(-1px);
+    transform: translateY(-2px) scale(1.05);
+}
+
+coretex-cart .button:where(.plus, .minus):hover::before {
+    width: 100px;
+    height: 100px;
 }
 
 coretex-cart .button.trash:hover {
-    background: #FF7A00;
+    background: linear-gradient(135deg, #FF7A00 0%, #FF8A1A 100%);
     color: #FFFFFF;
     border-color: #FF7A00;
-    transform: translateY(-1px);
+    transform: translateY(-2px) scale(1.05);
+}
+
+coretex-cart .button.trash:hover::before {
+    background: rgba(255, 122, 0, 0.1);
+    width: 100px;
+    height: 100px;
 }
 
 coretex-cart .qtyinput {
@@ -690,22 +747,31 @@ coretex-cart .qtyinput {
     place-items: center;
     border-radius: var(--buttonRadius, 8px); /* Use consistent button radius */
     font-size: clamp(1rem, 1.5vw, 1.1rem);
-    font-weight: 500 !important; /* Match template */
-    width: 3rem;
-    height: 2.5rem;
-    border: 1px solid rgba(0, 0, 0, 0.15);
-    background: #FFFFFF;
+    font-weight: 600 !important; /* Bolder for emphasis */
+    width: 3.5rem; /* Slightly wider */
+    height: 2.75rem; /* Slightly taller to match buttons */
+    border: 1.5px solid rgba(10, 186, 181, 0.2);
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px);
     color: #222;
     padding: 0;
     text-align: center;
-    transition: all 0.2s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     box-shadow: none; /* Removed drop shadow */
+}
+
+coretex-cart .qtyinput:hover {
+    border-color: rgba(10, 186, 181, 0.4);
+    background: #FFFFFF;
+    transform: scale(1.02);
 }
 
 coretex-cart .qtyinput:focus {
     outline: none;
-    border-color: #FF7A00;
-    box-shadow: 0 0 0 2px rgba(255, 122, 0, 0.1); /* Reduced shadow intensity */
+    border-color: #0ABAB5;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(10, 186, 181, 0.15);
+    transform: scale(1.03);
 }
 
 coretex-cart .gocheckout { position: sticky; top: 0px; gap: clamp(1rem, 2vw, 1.5rem); padding: clamp(1rem, 2vw, 1.5rem) 0 } /* Increased gap and added padding */
@@ -1003,17 +1069,37 @@ coretex-dialog#cartBox header button[data-close]:hover {
     transform: rotate(90deg);
 }
 
-/* Cart Item Visual Enhancements - Modernized */
+/* Cart Item Visual Enhancements - Sexier Design */
 coretex-cart cart-item {
-    transition: all 0.2s ease;
-    border-radius: var(--radius, 4px);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: var(--buttonRadius, 8px); /* More rounded for modern feel */
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    background: linear-gradient(to bottom, #ffffff 0%, rgba(250, 250, 250, 0.5) 100%);
     box-shadow: none; /* Removed drop shadow */
+    overflow: hidden;
+    position: relative;
+}
+
+coretex-cart cart-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #0ABAB5 0%, #0DD4CF 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
 
 coretex-cart cart-item:hover {
-    background: rgba(10, 186, 181, 0.02);
-    border-color: rgba(10, 186, 181, 0.15);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(10, 186, 181, 0.03) 100%);
+    border-color: rgba(10, 186, 181, 0.2);
+    transform: translateY(-2px);
+}
+
+coretex-cart cart-item:hover::before {
+    opacity: 1;
 }
 
 coretex-cart .cart-items {
@@ -1025,32 +1111,39 @@ coretex-cart .cart-items {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* Cart Item Title and Price Styling - Modernized */
+/* Cart Item Title and Price Styling - Sexier Design */
 coretex-cart .title {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 500 !important; /* Match Chris's heading template */
+    font-weight: 600 !important; /* Bolder for better hierarchy */
     font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-    color: #222;
+    color: #111;
     line-height: 1.5; /* Increased line-height for better readability */
     margin-bottom: clamp(0.5rem, 1vw, 0.75rem); /* Increased margin */
+    letter-spacing: -0.01em; /* Tighter letter spacing for modern feel */
 }
 
 coretex-cart .title a {
     color: inherit;
     text-decoration: none;
-    transition: color 0.2s ease;
+    transition: all 0.2s ease;
+    display: inline-block;
 }
 
 coretex-cart .title a:hover {
     color: #0ABAB5;
+    transform: translateX(2px);
 }
 
 coretex-cart .price {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: clamp(1rem, 1.5vw, 1.15rem);
-    font-weight: 500 !important; /* Consistent weight */
-    color: #222;
+    font-weight: 600 !important; /* Slightly bolder for emphasis */
+    color: #0ABAB5; /* Brand color for price */
     line-height: 1.4;
+    transition: color 0.2s ease;
+}
+coretex-cart cart-item:hover .price {
+    color: #0DD4CF; /* Lighter teal on hover */
 }
 
 coretex-cart .old-price {
