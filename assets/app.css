@@ -1430,6 +1430,8 @@ bullet-marquee[bullet-reverse="true"] .projectile { animation-direction: reverse
     background: var(--cardBg);
     position: relative; 
     outline: var(--globalBorder); /* The outline creates the border */
+    border-radius: var(--radius, 4px); /* Rounded product cards */
+    overflow: hidden; /* Ensure content respects border-radius */
     z-index: 1; /* original z-index */ 
 }
 

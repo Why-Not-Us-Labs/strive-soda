@@ -38,21 +38,6 @@ Fourth-grade language. Clear hierarchy. Better than JuneShine.
       <div class="brand-pillar pillar-soda">
         <div class="pillar-content">
           <span class="pillar-number">1</span>
-          <div class="pillar-icon">
-            {%- if section.settings.pillar1_icon != blank -%}
-              {{ section.settings.pillar1_icon | image_url: width: 120 | image_tag:
-                loading: 'lazy',
-                alt: 'Soda Icon',
-                class: 'pillar-icon-img'
-              }}
-            {%- else -%}
-              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="40" cy="40" r="36" stroke="currentColor" stroke-width="4" fill="none"/>
-                <path d="M35 25 L45 25 L42 55 L38 55 Z" fill="currentColor"/>
-                <circle cx="40" cy="20" r="3" fill="currentColor"/>
-              </svg>
-            {%- endif -%}
-          </div>
           <h3 class="pillar-title">{{ section.settings.pillar1_title | default: "It's a Soda" }}</h3>
           <p class="pillar-tagline">{{ section.settings.pillar1_tagline | default: "Refreshing. Flavorful. It's soda." }}</p>
           <p class="pillar-description">{{ section.settings.pillar1_desc | default: "Made for soda occasions—not the gym." }}</p>
@@ -72,20 +57,6 @@ Fourth-grade language. Clear hierarchy. Better than JuneShine.
       <div class="brand-pillar pillar-hydration">
         <div class="pillar-content">
           <span class="pillar-number">2</span>
-          <div class="pillar-icon">
-            {%- if section.settings.pillar2_icon != blank -%}
-              {{ section.settings.pillar2_icon | image_url: width: 120 | image_tag:
-                loading: 'lazy',
-                alt: 'Hydration Icon',
-                class: 'pillar-icon-img'
-              }}
-            {%- else -%}
-              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M40 15 L50 35 Q52 50 40 60 Q28 50 30 35 Z" stroke="currentColor" stroke-width="4" fill="none"/>
-                <path d="M35 40 Q38 35 42 40" stroke="currentColor" stroke-width="2" fill="none"/>
-              </svg>
-            {%- endif -%}
-          </div>
           <h3 class="pillar-title">{{ section.settings.pillar2_title | default: "Hydration with Electrolytes" }}</h3>
           <p class="pillar-tagline">{{ section.settings.pillar2_tagline | default: "Better for you. Built to hydrate." }}</p>
           <p class="pillar-description">{{ section.settings.pillar2_desc | default: "180mg electrolytes keep you going." }}</p>
@@ -105,21 +76,6 @@ Fourth-grade language. Clear hierarchy. Better than JuneShine.
       <div class="brand-pillar pillar-honey">
         <div class="pillar-content">
           <span class="pillar-number">3</span>
-          <div class="pillar-icon">
-            {%- if section.settings.pillar3_icon != blank -%}
-              {{ section.settings.pillar3_icon | image_url: width: 120 | image_tag:
-                loading: 'lazy',
-                alt: 'Honey Icon',
-                class: 'pillar-icon-img'
-              }}
-            {%- else -%}
-              <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M40 25 L48 30 L48 40 L40 45 L32 40 L32 30 Z" stroke="currentColor" stroke-width="4" fill="none"/>
-                <path d="M40 15 L45 18 L43 23 L40 25 L37 23 L35 18 Z" fill="currentColor"/>
-                <circle cx="40" cy="12" r="2" fill="currentColor"/>
-              </svg>
-            {%- endif -%}
-          </div>
           <h3 class="pillar-title">{{ section.settings.pillar3_title | default: "Sweetened with Organic Honey" }}</h3>
           <p class="pillar-tagline">{{ section.settings.pillar3_tagline | default: "Naturally sweet. No artificial stuff." }}</p>
           <p class="pillar-description">{{ section.settings.pillar3_desc | default: "100% organic wildflower honey." }}</p>
@@ -178,8 +134,8 @@ Fourth-grade language. Clear hierarchy. Better than JuneShine.
 
   .brand-hierarchy-heading {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: clamp(36px, 5vw, 64px);
-    font-weight: 800;
+    font-size: clamp(32px, 4vw, 52px); /* Match 75% dehydration heading template */
+    font-weight: 500 !important; /* Match template */
     line-height: 1.05;
     color: #111;
     margin: 0 0 clamp(16px, 2vw, 24px);
@@ -273,11 +229,12 @@ Fourth-grade language. Clear hierarchy. Better than JuneShine.
   .pillar-content {
     position: relative;
     z-index: 2;
-    padding: clamp(28px, 3.5vw, 48px);
+    padding: clamp(24px, 2.8vw, 36px);
     display: flex;
     flex-direction: column;
     height: 100%;
     transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    justify-content: flex-start;
   }
 
   .brand-pillar:hover .pillar-content {
@@ -287,11 +244,11 @@ Fourth-grade language. Clear hierarchy. Better than JuneShine.
 
   .pillar-number {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: clamp(56px, 7vw, 96px);
+    font-size: clamp(48px, 6vw, 72px);
     font-weight: 900;
     line-height: 0.9;
     color: var(--strive-orange);
-    margin: 0 0 clamp(16px, 2vw, 28px);
+    margin: 0 0 clamp(12px, 1.5vw, 20px);
     text-shadow: 0 4px 12px rgba(0,0,0,.1);
   }
 
@@ -305,35 +262,14 @@ Fourth-grade language. Clear hierarchy. Better than JuneShine.
     text-shadow: 0 4px 12px rgba(255,122,0,.2);
   }
 
-  .pillar-icon {
-    width: clamp(60px, 7vw, 80px);
-    height: clamp(60px, 7vw, 80px);
-    margin: 0 0 clamp(16px, 2vw, 24px);
-    color: #111;
-  }
-
-  .pillar-hydration .pillar-icon {
-    color: #fff;
-  }
-
-  .pillar-icon svg {
-    width: 100%;
-    height: 100%;
-  }
-
-  .pillar-icon-img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-  }
 
   .pillar-title {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: clamp(20px, 2.2vw, 30px);
+    font-size: clamp(18px, 2vw, 26px);
     font-weight: 900;
-    line-height: 1.05;
+    line-height: 1.1;
     color: #111;
-    margin: 0 0 clamp(12px, 1.5vw, 18px);
+    margin: 0 0 clamp(10px, 1.2vw, 14px);
     text-transform: uppercase;
     letter-spacing: -0.02em;
     word-wrap: break-word;
@@ -347,11 +283,11 @@ Fourth-grade language. Clear hierarchy. Better than JuneShine.
 
   .pillar-tagline {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: clamp(15px, 1.6vw, 20px);
+    font-size: clamp(14px, 1.5vw, 18px);
     font-weight: 700;
-    line-height: 1.25;
+    line-height: 1.3;
     color: #111;
-    margin: 0 0 clamp(10px, 1.2vw, 16px);
+    margin: 0 0 clamp(8px, 1vw, 12px);
     word-wrap: break-word;
     overflow-wrap: break-word;
   }
@@ -362,11 +298,10 @@ Fourth-grade language. Clear hierarchy. Better than JuneShine.
 
   .pillar-description {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-size: clamp(13px, 1.3vw, 17px);
-    line-height: 1.45;
+    font-size: clamp(12px, 1.25vw, 15px);
+    line-height: 1.4;
     color: #555;
     margin: 0;
-    flex-grow: 1;
     font-weight: 500;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -425,11 +360,6 @@ Fourth-grade language. Clear hierarchy. Better than JuneShine.
       margin-bottom: clamp(12px, 1.5vw, 20px);
     }
 
-    .pillar-icon {
-      width: clamp(56px, 6vw, 70px);
-      height: clamp(56px, 6vw, 70px);
-      margin-bottom: clamp(14px, 1.8vw, 20px);
-    }
 
     .pillar-title {
       font-size: clamp(17px, 2vw, 24px);
@@ -480,11 +410,6 @@ Fourth-grade language. Clear hierarchy. Better than JuneShine.
       margin-bottom: clamp(12px, 2vw, 16px);
     }
 
-    .pillar-icon {
-      width: clamp(52px, 10vw, 64px);
-      height: clamp(52px, 10vw, 64px);
-      margin-bottom: clamp(14px, 2.5vw, 18px);
-    }
 
     .pillar-title {
       font-size: clamp(17px, 4.2vw, 22px);
@@ -539,11 +464,6 @@ Fourth-grade language. Clear hierarchy. Better than JuneShine.
       margin-bottom: 10px;
     }
 
-    .pillar-icon {
-      width: clamp(44px, 9vw, 52px);
-      height: clamp(44px, 9vw, 52px);
-      margin-bottom: 12px;
-    }
 
     .pillar-title {
       font-size: clamp(15px, 3.8vw, 18px);
