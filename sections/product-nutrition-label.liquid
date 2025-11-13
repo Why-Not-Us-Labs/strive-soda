@@ -47,8 +47,14 @@ Product: What's in Strive - Nutrition Label
           <div class="facts-divider facts-divider-thin"></div>
 
           {%- comment -%} Electrolytes Breakdown {%- endcomment -%}
+          {%- liquid
+            assign sodium_val = section.settings.sodium | plus: 0
+            assign potassium_val = section.settings.potassium | plus: 0
+            assign magnesium_val = section.settings.magnesium | plus: 0
+            assign total_electrolytes = sodium_val | plus: potassium_val | plus: magnesium_val
+          -%}
           <div class="facts-section-header">
-            <h4 class="section-title">Essential Electrolytes (170mg)</h4>
+            <h4 class="section-title">Essential Electrolytes ({{ total_electrolytes }}mg)</h4>
           </div>
 
           <div class="facts-row facts-highlight">
@@ -415,12 +421,6 @@ Product: What's in Strive - Nutrition Label
       "default": "30"
     },
     {
-      "type": "text",
-      "id": "calcium",
-      "label": "Calcium (mg)",
-      "default": "20"
-    },
-    {
       "type": "header",
       "content": "Ingredients List"
     },
@@ -468,13 +468,13 @@ Product: What's in Strive - Nutrition Label
       "type": "text",
       "id": "electrolytes_title",
       "label": "Electrolytes highlight title",
-      "default": "180mg Essential Electrolytes"
+      "default": "170mg Essential Electrolytes"
     },
     {
       "type": "textarea",
       "id": "electrolytes_text",
       "label": "Electrolytes highlight text",
-      "default": "Sodium, potassium, magnesium, and calcium work together to keep you hydrated, balanced, and energized."
+      "default": "Sodium, potassium, and magnesium work together to keep you hydrated, balanced, and energized."
     },
     {
       "type": "checkbox",
