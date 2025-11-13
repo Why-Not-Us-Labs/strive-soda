@@ -39,6 +39,8 @@
 {%- comment -%} Menu links {%- endcomment -%}
 <x-grid columns="1" class="bordi menus">
 {%- for link in linklists[linklist].links -%}
+    {%- assign normalized_title = link.title | strip | downcase -%}
+    {%- if normalized_title == 'home' or normalized_title == 'about us' -%}{% continue %}{%- endif -%}
 	<x-cell>
 	<ul class="no-style">
 	{% if link.links == blank %}
@@ -86,6 +88,11 @@
 	</ul>
 	</x-cell>
 {%- endfor -%}
+<x-cell>
+	<ul class="no-style">
+		<li><a href="/pages/store-locator" class="no-style lv1l" data-name="Store Locator">STORE LOCATOR</a></li>
+	</ul>
+</x-cell>
 </x-grid>
 </nav>
 </div>

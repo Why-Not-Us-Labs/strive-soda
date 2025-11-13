@@ -6,15 +6,17 @@
 
 /* What Is Hydration Soda Section */
 .what-is-hydration-soda {
-  padding: 80px 20px;
+  padding: 0 20px 80px 20px;
   width: 100%;
   margin-top: 0 !important;
   margin-bottom: 0 !important;
+  padding-top: 0 !important;
 }
 
 .what-is-hydration-soda .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding-top: 80px;
 }
 
 .wihs-content {
@@ -24,7 +26,7 @@
 .wihs-heading {
   font-family: var(--headingFont, 'Polysans', sans-serif);
   font-size: 48px;
-  font-weight: 800;
+  font-weight: 400;
   line-height: 1.2;
   margin: 0 0 24px 0;
   color: inherit;
@@ -56,7 +58,7 @@
 
 .wihs-benefit-card {
   background: rgba(255, 255, 255, 0.05);
-  border-radius: 16px;
+  border-radius: 4px;
   padding: 32px 24px;
   text-align: center;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -66,7 +68,7 @@
 
 .wihs-benefit-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  
 }
 
 /* Hover Image Background */
@@ -146,7 +148,7 @@
   font-weight: 700;
   text-decoration: none;
   padding: 16px 48px;
-  border-radius: 8px;
+  border-radius: 4px;
   transition: all 0.3s ease;
   text-transform: uppercase;
   letter-spacing: 0.5px;
@@ -155,7 +157,7 @@
 .wihs-cta-button:hover {
   background-color: #FF8A1A;
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(255, 122, 0, 0.3);
+  
 }
 
 /* Responsive Design */

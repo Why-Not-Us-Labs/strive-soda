@@ -12,6 +12,7 @@ out/
 .env
 .env.local
 .env.*.local
+.env.shopify
 
 # IDE and editor files
 .vscode/

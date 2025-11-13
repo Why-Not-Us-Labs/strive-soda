@@ -4,7 +4,7 @@ Why Strive Soda? - Electrolytes section
 - Mobile: Everything fits in single viewport
 {%- endcomment -%}
 
-<section class="why-strive-section" id="science">
+<section class="why-strive-section science-hero-section" id="science" data-section-id="{{ section.id }}">
   <div class="why-strive-container">
     
     <!-- Intro content -->
@@ -95,11 +95,65 @@ Why Strive Soda? - Electrolytes section
     --gold-yellow: #FFD700;
   }
   
+  /* Ensure main element doesn't add spacing */
+  main#mainContent {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* CRITICAL: Override global app.css rules that add padding-top to first sections */
+  /* Global CSS targets sections without "hero" in ID - we need to override it */
+  body.hpsticky main > .shopify-section:first-of-type:has(.why-strive-section),
+  body.hpfixed main > .shopify-section:first-of-type:has(.why-strive-section),
+  body.hpsticky main > .shopify-section:first-of-type:has(.science-hero-section),
+  body.hpfixed main > .shopify-section:first-of-type:has(.science-hero-section),
+  #shopify-section-group-header ~ .shopify-section:first-of-type:has(.why-strive-section),
+  #shopify-section-group-header ~ .shopify-section:first-of-type:has(.science-hero-section),
+  main > div:first-child > .shopify-section:first-of-type:has(.why-strive-section),
+  main > div:first-child > .shopify-section:first-of-type:has(.science-hero-section) {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Section wrapper - starts at top of viewport, acts as positioning context */
+  /* Target section wrapper using multiple selectors for reliability */
+  #shopify-section-{{ section.id }},
+  .shopify-section:has(.science-hero-section),
+  main > .shopify-section:first-of-type:has(.why-strive-section) {
+    padding: 0 !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    display: block;
+    width: 100%;
+    height: 100vh;
+    min-height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+    background: transparent;
+    border: none;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  /* Section fills ENTIRE wrapper - 100% height, fills wrapper completely */
   .why-strive-section {
     scroll-margin-top: clamp(60px, 9vh, 120px);
     background: #F5F1E8;
-    /* REMOVED TOP PADDING - sections touch seamlessly */
-    padding: 0 clamp(20px, 4vw, 60px) clamp(40px, 6vw, 80px);
+    padding: 0 clamp(20px, 4vw, 60px);
+    width: 100% !important;
+    height: 100% !important;
+    min-height: 100% !important;
+    max-height: 100% !important;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    margin: 0 !important;
+    position: absolute;
+    top: 0 !important;
+    left: 0;
+    right: 0;
+    bottom: 0;
   }
   
   .why-strive-container {
@@ -109,8 +163,11 @@ Why Strive Soda? - Electrolytes section
     grid-template-columns: 380px 1fr;
     gap: clamp(40px, 5vw, 80px);
     align-items: center;
-    /* Add padding back inside container */
-    padding-top: clamp(40px, 6vw, 80px);
+    width: 100%;
+    height: 100%;
+    padding-top: var(--headerGroupHeight, 0px);
+    padding-bottom: 0;
+    box-sizing: border-box;
   }
   
   .why-strive-intro {
@@ -130,7 +187,7 @@ Why Strive Soda? - Electrolytes section
   .why-strive-heading {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: clamp(32px, 4vw, 52px);
-    font-weight: 900;
+    font-weight: 500 !important;
     line-height: 1.05;
     margin: 0 0 16px;
     color: #111;
@@ -267,11 +324,52 @@ Why Strive Soda? - Electrolytes section
     opacity: 1;
   }
   
+  /* ===== TABLET: Fill viewport ===== */
+  @media (min-width: 769px) and (max-width: 1279px) {
+    /* Section wrapper - full viewport height on tablet */
+    #shopify-section-{{ section.id }},
+    .shopify-section:has(.science-hero-section),
+    main > .shopify-section:first-of-type:has(.why-strive-section) {
+      padding: 0 !important;
+      margin: 0 !important;
+      height: 100vh;
+      min-height: 100vh;
+      background: transparent;
+    }
+
+    /* Section fills ENTIRE wrapper on tablet - 100% height */
+    .why-strive-section {
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 100% !important;
+      max-height: 100% !important;
+      top: 0 !important;
+      bottom: 0;
+    }
+  }
+
   /* ===== MOBILE: Single viewport fit ===== */
   @media (max-width: 768px) {
+    /* Section wrapper - full viewport height on mobile */
+    #shopify-section-{{ section.id }},
+    .shopify-section:has(.science-hero-section),
+    main > .shopify-section:first-of-type:has(.why-strive-section) {
+      padding: 0 !important;
+      margin: 0 !important;
+      height: 100dvh;
+      min-height: 100dvh;
+      background: transparent;
+    }
+
+    /* Section fills ENTIRE wrapper on mobile - 100% height */
     .why-strive-section {
-      padding: 0 16px 16px;
-      min-height: 100vh;
+      padding: 0 16px;
+      width: 100% !important;
+      height: 100% !important;
+      min-height: 100% !important;
+      max-height: 100% !important;
+      top: 0 !important;
+      bottom: 0;
       display: flex;
       align-items: center;
     }
@@ -280,7 +378,9 @@ Why Strive Soda? - Electrolytes section
       grid-template-columns: 1fr;
       gap: 20px;
       width: 100%;
-      padding-top: 20px;
+      height: 100%;
+      padding-top: 0;
+      padding-bottom: 0;
     }
     
     .why-strive-intro {

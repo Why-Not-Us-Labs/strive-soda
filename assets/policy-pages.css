@@ -1,0 +1,284 @@
+/**
+ * STRIVE SODA - POLICY PAGES STYLING
+ * Styles for Terms of Service, Privacy Policy, and Refund Policy pages
+ * Brand colors: Tiffany Blue (#0ABAB5), Orange (#FF7A00)
+ */
+
+/* Policy page container */
+.shopify-policy__container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 40px);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.7;
+    color: #1a1a1a;
+}
+
+/* Policy page title */
+.shopify-policy__title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 800;
+    font-size: clamp(32px, 5vw, 48px);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: #0ABAB5; /* Tiffany Blue */
+    margin-bottom: clamp(30px, 4vw, 50px);
+    padding-bottom: 20px;
+    border-bottom: 3px solid #0ABAB5;
+    text-align: left;
+}
+
+/* Policy body content */
+.shopify-policy__body {
+    font-size: clamp(15px, 1.6vw, 17px);
+    color: #1a1a1a;
+}
+
+/* Headings in policy content */
+.shopify-policy__body h1,
+.shopify-policy__body h2,
+.shopify-policy__body h3,
+.shopify-policy__body h4 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: #0ABAB5;
+    margin-top: clamp(30px, 4vw, 50px);
+    margin-bottom: clamp(15px, 2vw, 20px);
+    line-height: 1.2;
+}
+
+.shopify-policy__body h1 {
+    font-size: clamp(28px, 4vw, 40px);
+    border-bottom: 2px solid #0ABAB5;
+    padding-bottom: 15px;
+}
+
+.shopify-policy__body h2 {
+    font-size: clamp(24px, 3.5vw, 32px);
+    color: #FF7A00; /* Orange for h2 */
+}
+
+.shopify-policy__body h3 {
+    font-size: clamp(20px, 2.5vw, 26px);
+    color: #0ABAB5;
+}
+
+.shopify-policy__body h4 {
+    font-size: clamp(17px, 2vw, 20px);
+    color: #1a1a1a;
+    font-weight: 700;
+}
+
+/* Paragraphs */
+.shopify-policy__body p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+/* Lists */
+.shopify-policy__body ul,
+.shopify-policy__body ol {
+    margin: 20px 0 20px 30px;
+    line-height: 1.8;
+}
+
+.shopify-policy__body li {
+    margin-bottom: 12px;
+    padding-left: 10px;
+}
+
+.shopify-policy__body ul li::marker {
+    color: #0ABAB5;
+    font-weight: bold;
+}
+
+.shopify-policy__body ol li::marker {
+    color: #0ABAB5;
+    font-weight: bold;
+}
+
+/* Strong/bold text */
+.shopify-policy__body strong,
+.shopify-policy__body b {
+    font-weight: 700;
+    color: #0ABAB5;
+}
+
+/* Links */
+.shopify-policy__body a {
+    color: #FF7A00; /* Orange for links */
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.shopify-policy__body a:hover {
+    color: #0ABAB5;
+    text-decoration: none;
+}
+
+/* Horizontal rules */
+.shopify-policy__body hr {
+    border: none;
+    border-top: 2px solid #0ABAB5;
+    margin: clamp(30px, 4vw, 50px) 0;
+    opacity: 0.3;
+}
+
+/* Blockquotes/callouts */
+.shopify-policy__body blockquote {
+    border-left: 4px solid #0ABAB5;
+    background: rgba(10, 186, 181, 0.05);
+    padding: 20px 30px;
+    margin: 30px 0;
+    font-style: italic;
+    color: #1a1a1a;
+}
+
+/* Tables (if any) */
+.shopify-policy__body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+}
+
+.shopify-policy__body th {
+    background: #0ABAB5;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 15px;
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.shopify-policy__body td {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.shopify-policy__body tr:nth-child(even) {
+    background: rgba(10, 186, 181, 0.03);
+}
+
+/* Code blocks (if any) */
+.shopify-policy__body code {
+    background: rgba(10, 186, 181, 0.1);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: #0ABAB5;
+}
+
+.shopify-policy__body pre {
+    background: #1a1a1a;
+    color: #0ABAB5;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+.shopify-policy__body pre code {
+    background: none;
+    padding: 0;
+    color: #0ABAB5;
+}
+
+/* Effective date / last updated */
+.shopify-policy__body p:first-of-type {
+    font-weight: 600;
+    color: #666;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 30px;
+}
+
+/* Contact section styling */
+.shopify-policy__body p:has(a[href*="mailto"]),
+.shopify-policy__body p:has(a[href*="contact"]) {
+    background: rgba(255, 122, 0, 0.05);
+    border-left: 4px solid #FF7A00;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 777px) {
+    .shopify-policy__container {
+        padding: 30px 20px;
+    }
+
+    .shopify-policy__title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .shopify-policy__body {
+        font-size: 15px;
+    }
+
+    .shopify-policy__body h1 {
+        font-size: 24px;
+    }
+
+    .shopify-policy__body h2 {
+        font-size: 20px;
+    }
+
+    .shopify-policy__body h3 {
+        font-size: 18px;
+    }
+
+    .shopify-policy__body ul,
+    .shopify-policy__body ol {
+        margin-left: 20px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .shopify-policy__container {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .shopify-policy__title {
+        color: #000;
+        border-bottom-color: #000;
+    }
+
+    .shopify-policy__body h1,
+    .shopify-policy__body h2,
+    .shopify-policy__body h3 {
+        color: #000;
+        page-break-after: avoid;
+    }
+
+    .shopify-policy__body a {
+        color: #000;
+        text-decoration: underline;
+    }
+}
+
+/* Accessibility improvements */
+.shopify-policy__body :focus {
+    outline: 2px solid #0ABAB5;
+    outline-offset: 2px;
+}
+
+/* Selection color */
+.shopify-policy__body ::selection {
+    background: rgba(10, 186, 181, 0.2);
+    color: #1a1a1a;
+}
+
+.shopify-policy__body ::-moz-selection {
+    background: rgba(10, 186, 181, 0.2);
+    color: #1a1a1a;
+}
