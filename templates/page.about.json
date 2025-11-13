@@ -25,7 +25,7 @@
           "type": "text",
           "settings": {
             "column": "left",
-            "content": "<p><strong>Strive Soda is the first hydration soda — made for the movers, the shakers, and the tastemakers — delivering refreshing flavor and easy hydration.</strong></p><p>Born in San Diego, Strive blends clean ingredients with electrolytes to keep you refreshed through life's endless adventure. It's not a performance drink or a sugar bomb. Strive proves you don't have to choose between great flavor and feeling great.</p><p><em>Inspired by our California playground; From the beaches to the boardroom.</em></p>",
+            "content": "<p>Strive Soda is the first hydration soda — made for the movers, the shakers, and the tastemakers — delivering refreshing flavor and easy hydration.</p><p>Born in San Diego, Strive blends clean ingredients with electrolytes to keep you refreshed through life's endless adventure. It's not a performance drink or a sugar bomb. Strive proves you don't have to choose between great flavor and feeling great.</p><p>Inspired by our California playground; From the beaches to the boardroom.</p>",
             "font_size": 18,
             "text_color": "#ffffff"
           }
@@ -72,7 +72,7 @@
           "type": "text",
           "settings": {
             "column": "right",
-            "content": "<p>Strive Soda started with a simple question from founder, Jack Espy: <strong>Why can't soda taste great and feel great?</strong></p><p>Jack, like many of us, grew up loving soda — the flavor, the fizz, the fun. With a lifestyle built around movement — the drinks he loved no longer fit the lifestyle. Most people walk around dehydrated and reaching for drinks that don't actually help.</p><p>The first hydration soda was born. A drink that puts flavor first and adds a subtle boost of electrolytes for easy hydration through the day. Made with clean ingredients like organic honey, it's proof that soda can be both refreshing and better for you, without losing what makes it fun.</p><p>Born in San Diego, California, Strive was made for the movers, the shakers, the doers, and the everyday strivers chasing what's next.</p>",
+            "content": "<p>Strive Soda started with a simple question from founder, Jack Espy: Why can't soda taste great and feel great?</p><p>Jack, like many of us, grew up loving soda — the flavor, the fizz, the fun. With a lifestyle built around movement — the drinks he loved no longer fit the lifestyle. Most people walk around dehydrated and reaching for drinks that don't actually help.</p><p>The first hydration soda was born. A drink that puts flavor first and adds a subtle boost of electrolytes for easy hydration through the day. Made with clean ingredients like organic honey, it's proof that soda can be both refreshing and better for you, without losing what makes it fun.</p><p>Born in San Diego, California, Strive was made for the movers, the shakers, the doers, and the everyday strivers chasing what's next.</p>",
             "font_size": 18,
             "text_color": "#ffffff"
           }
@@ -105,7 +105,7 @@
           "type": "text",
           "settings": {
             "column": "left",
-            "content": "<p>To craft drinks that keep you hydrated, fueled, and feeling alive — no compromises, ingredients that work as hard as you do.</p><p>Because when you're out there chasing your dream, you deserve a soda that shows up for you.</p>",
+            "content": "<p>To craft drinks that keep you hydrated, fueled, and feeling alive — no compromises, ingredients that work as hard as you do.</p><p>Because when you're striving toward what's next, you deserve a soda that shows up for you.</p>",
             "font_size": 18,
             "text_color": "#ffffff"
           }
