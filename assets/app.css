@@ -20,7 +20,76 @@ picture{display: block }
 x-flex.even > * { width: 100% }
 blockquote { margin: var(--padding) auto }
 
-h1,h2,h3,h4,h5,h6 { text-transform: var(--hTxTransform); margin: 0; padding: 0 }
+body { font-family: var(--fontFamily, var(--font-primary)); font-weight: var(--fontWeight, 400); letter-spacing: 0; }
+
+h1,h2,h3,h4,h5,h6 { font-family: var(--hFontFamily, var(--font-headings)); font-weight: var(--hWeight, 400); text-transform: none; letter-spacing: -0.01em; margin: 0; padding: 0 }
+
+/* CRITICAL: Product pages - MAIN ELEMENT COMPLETELY REMOVED FROM HTML */
+/* Main wrapper does not exist on product pages - sections render directly in component-loader */
+/* No CSS needed - main element is not in the DOM for product pages */
+
+/* CRITICAL: Product pages - NO padding-top on any sections (they sit flush below header) */
+body.t-product component-loader#app > .shopify-section:not([class*="group-header"]) {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* P0 FIX: Prevent header from cutting off content on all pages */
+/* Universal fix: All sections get padding-top when header is sticky/fixed */
+/* EXCEPT product pages - they handle their own spacing */
+body.hpsticky:not(.t-product) main > .shopify-section:first-of-type:not([id*="hero"]),
+body.hpfixed:not(.t-product) main > .shopify-section:first-of-type:not([id*="hero"]),
+body.hpsticky:not(.t-product) main > section:first-of-type:not([id*="hero"]),
+body.hpfixed:not(.t-product) main > section:first-of-type:not([id*="hero"]) {
+  padding-top: var(--headerGroupHeight, 0px) !important;
+  margin-top: 0 !important;
+}
+
+/* Also target sections that come immediately after header group */
+body:not(.t-product) #shopify-section-group-header ~ .shopify-section:first-of-type:not([id*="hero"]) {
+  padding-top: var(--headerGroupHeight, 0px) !important;
+}
+
+/* Ensure page templates with first section get padding */
+body:not(.t-product) main > div:first-child > .shopify-section:first-of-type:not([id*="hero"]) {
+  padding-top: var(--headerGroupHeight, 0px) !important;
+}
+
+/* P0 FIX: Consistent typography - all headings use same font, weight, and size scale */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6,
+[class*="heading"],
+[class*="title"],
+[class*="headline"],
+.shopify-section h1,
+.shopify-section h2,
+.shopify-section h3,
+.shopify-section h4,
+.shopify-section h5,
+.shopify-section h6 {
+  font-family: var(--hFontFamily, var(--font-headings)) !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+  letter-spacing: -0.01em !important;
+}
+
+/* Override section-specific heading styles */
+.shopify-section [class*="heading"],
+.shopify-section [class*="title"],
+.shopify-section [class*="headline"] {
+  font-family: var(--hFontFamily, var(--font-headings)) !important;
+  font-weight: 500 !important;
+  text-transform: none !important;
+}
+
+/* Heading size scale - consistent across site */
+h1, .h1, .shopify-section h1 { font-size: clamp(36px, 5vw, 64px) !important; line-height: 1.05 !important; }
+h2, .h2, .shopify-section h2 { font-size: clamp(32px, 4.5vw, 56px) !important; line-height: 1.05 !important; }
+h3, .h3, .shopify-section h3 { font-size: clamp(28px, 4vw, 48px) !important; line-height: 1.1 !important; }
+h4, .h4, .shopify-section h4 { font-size: clamp(24px, 3.5vw, 40px) !important; line-height: 1.15 !important; }
+h5, .h5, .shopify-section h5 { font-size: clamp(20px, 3vw, 32px) !important; line-height: 1.2 !important; }
+h6, .h6, .shopify-section h6 { font-size: clamp(18px, 2.5vw, 24px) !important; line-height: 1.25 !important; }
+
 a :where(h1,h2,h3,h4,h5,h6) { color: var(--linkColor) }
 a:hover :where(h1,h2,h3,h4,h5,h6) { color: var(--linkHover) }
 li { list-style-position: inside }
@@ -611,7 +680,7 @@ coretex-cart .button.trash:hover {
 coretex-cart .qtyinput {
     display: grid;
     place-items: center;
-    border-radius: 8px;
+    border-radius: 4px;
     font-size: 1.1rem;
     font-weight: 700;
     width: 3rem;
@@ -662,7 +731,7 @@ coretex-cart[empty="true"] .empty { text-align: center; margin: var(--padding) }
 
 .empty-cart-title {
     font-size: clamp(1.5rem, 4vw, 2rem);
-    font-weight: 800;
+    font-weight: 400;
     color: #222;
     margin: 0;
     letter-spacing: -0.02em;
@@ -677,24 +746,22 @@ coretex-cart[empty="true"] .empty { text-align: center; margin: var(--padding) }
 }
 
 .empty-cart-cta {
-    background: linear-gradient(135deg, #FF7A00 0%, #FF9500 100%);
-    color: #FFFFFF;
-    font-weight: 800;
+    background: transparent;
+    color: #FF7A00;
+    font-weight: 400;
     font-size: 0.95rem;
     letter-spacing: 0.5px;
     padding: 1rem 2rem;
-    border-radius: 50px;
+    border-radius: 4px;
     text-transform: uppercase;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 14px rgba(255, 122, 0, 0.3);
-    border: none;
+    border: 2px solid #FF7A00;
     margin-top: 0.5rem;
 }
 
 .empty-cart-cta:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 122, 0, 0.4);
-    background: linear-gradient(135deg, #FF8500 0%, #FFA500 100%);
+    background: #FF7A00;
+    color: #FFFFFF;
 }
 
 
@@ -810,12 +877,12 @@ coretex-cart cart-shipping {
     padding: 1rem 1.5rem;
     text-align: center;
     background: linear-gradient(135deg, rgba(10, 186, 181, 0.08) 0%, rgba(10, 186, 181, 0.04) 100%);
-    border-radius: 12px;
+    border-radius: 4px;
     margin: 0.75rem 0;
 }
 
 coretex-cart cart-shipping .awayAmount {
-    font-weight: 800;
+    font-weight: 400;
     color: #0ABAB5;
 }
 
@@ -850,28 +917,26 @@ coretex-cart cart-shipping progress[value]::-moz-progress-bar {
     transition: width 0.3s ease;
 }
 
-/* Enhanced Checkout Button */
+/* Enhanced Checkout Button - Outlined style */
 coretex-cart button[name="checkout"],
 coretex-cart button#checkout {
-    background: linear-gradient(135deg, #FF7A00 0%, #FF9500 100%);
-    color: #FFFFFF;
-    font-weight: 800;
+    background: transparent;
+    color: #FF7A00;
+    font-weight: 400;
     font-size: 1.1rem;
     letter-spacing: 0.5px;
     padding: 1.125rem 2.5rem;
-    border-radius: 50px;
+    border-radius: 4px;
     text-transform: uppercase;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 4px 14px rgba(255, 122, 0, 0.3);
-    border: none;
+    border: 2px solid #FF7A00;
     cursor: pointer;
 }
 
 coretex-cart button[name="checkout"]:hover:not(:disabled),
 coretex-cart button#checkout:hover:not(:disabled) {
-    transform: translateY(-2px);
-    box-shadow: 0 6px 20px rgba(255, 122, 0, 0.4);
-    background: linear-gradient(135deg, #FF8500 0%, #FFA500 100%);
+    background: #FF7A00;
+    color: #FFFFFF;
 }
 
 coretex-cart button[name="checkout"]:active:not(:disabled),
@@ -895,7 +960,7 @@ coretex-dialog#cartBox header {
 
 coretex-dialog#cartBox header .headingTitle {
     color: #FFFFFF;
-    font-weight: 800;
+    font-weight: 400;
     font-size: 1.5rem;
     letter-spacing: -0.02em;
     margin: 0;
@@ -922,7 +987,7 @@ coretex-dialog#cartBox header button[data-close]:hover {
 /* Cart Item Visual Enhancements */
 coretex-cart cart-item {
     transition: all 0.2s ease;
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 coretex-cart cart-item:hover {
@@ -972,7 +1037,7 @@ coretex-cart .subtotal {
     font-size: 1.15rem;
     padding: 1.25rem var(--margin);
     background: rgba(10, 186, 181, 0.04);
-    border-radius: 8px;
+    border-radius: 4px;
 }
 
 coretex-cart .subtotal strong {
@@ -1801,7 +1866,7 @@ comments-section .acomment x-flex { margin-top: var(--padding) }
 /* Section headings */
 .faq-page h2 {
     font-size: clamp(28px, 3.5vw, 42px);
-    font-weight: 800;
+    font-weight: 400;
     color: #000;
     margin: clamp(50px, 7vw, 70px) 0 clamp(30px, 4vw, 40px);
     text-align: left;
@@ -1817,7 +1882,7 @@ comments-section .acomment x-flex { margin-top: var(--padding) }
     margin-bottom: 16px;
     background: #fff;
     border: 1px solid #e8e8e8;
-    border-radius: 8px;
+    border-radius: 4px;
     padding: 24px 28px;
     transition: all 0.25s ease;
     margin-inline-start: 0;
@@ -2166,3 +2231,337 @@ section.faq x-cell:nth-child(3n) {
 /* RTL fixes */
 [dir="rtl"] .disclosure__list { right: initial; left: 0 }
 [dir="rtl"] select { padding-inline-start: 53px }
+
+/* ========================================
+   POLICY PAGES STYLING
+   ======================================== */
+/* Styles for Terms of Service, Privacy Policy, and Refund Policy pages */
+/* Brand colors: Tiffany Blue (#0ABAB5), Orange (#FF7A00) */
+
+/* Policy page container */
+.shopify-policy__container {
+    max-width: 900px;
+    margin: 0 auto !important;
+    padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 40px);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.7;
+    color: #1a1a1a;
+    display: block;
+    width: 100%;
+}
+
+/* Policy page title */
+.shopify-policy__title {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 800;
+    font-size: clamp(32px, 5vw, 48px);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: #0ABAB5; /* Tiffany Blue */
+    margin-bottom: clamp(30px, 4vw, 50px);
+    padding-bottom: 20px;
+    border-bottom: 3px solid #0ABAB5;
+    text-align: center;
+}
+
+/* Policy body content */
+.shopify-policy__body {
+    font-size: clamp(15px, 1.6vw, 17px);
+    color: #1a1a1a;
+}
+
+/* Override Shopify's .rte class to center all content */
+.shopify-policy__body .rte {
+    text-align: center !important;
+}
+
+.shopify-policy__body .rte > * {
+    text-align: center !important;
+}
+
+/* Headings in policy content */
+.shopify-policy__body h1,
+.shopify-policy__body h2,
+.shopify-policy__body h3,
+.shopify-policy__body h4 {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: -0.01em;
+    color: #0ABAB5;
+    margin-top: clamp(30px, 4vw, 50px);
+    margin-bottom: clamp(15px, 2vw, 20px);
+    line-height: 1.2;
+    text-align: center;
+}
+
+.shopify-policy__body h1 {
+    font-size: clamp(28px, 4vw, 40px);
+    border-bottom: 2px solid #0ABAB5;
+    padding-bottom: 15px;
+}
+
+.shopify-policy__body h2 {
+    font-size: clamp(24px, 3.5vw, 32px);
+    color: #FF7A00; /* Orange for h2 */
+}
+
+.shopify-policy__body h3 {
+    font-size: clamp(20px, 2.5vw, 26px);
+    color: #0ABAB5;
+}
+
+.shopify-policy__body h4 {
+    font-size: clamp(17px, 2vw, 20px);
+    color: #1a1a1a;
+    font-weight: 700;
+}
+
+/* Paragraphs */
+.shopify-policy__body p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* Lists */
+.shopify-policy__body ul,
+.shopify-policy__body ol {
+    margin: 20px auto;
+    line-height: 1.8;
+    max-width: 700px;
+    text-align: left;
+}
+
+.shopify-policy__body li {
+    margin-bottom: 12px;
+    padding-left: 10px;
+}
+
+.shopify-policy__body ul li::marker {
+    color: #0ABAB5;
+    font-weight: bold;
+}
+
+.shopify-policy__body ol li::marker {
+    color: #0ABAB5;
+    font-weight: bold;
+}
+
+/* Strong/bold text */
+.shopify-policy__body strong,
+.shopify-policy__body b {
+    font-weight: 700;
+    color: #0ABAB5;
+}
+
+/* Links */
+.shopify-policy__body a {
+    color: #FF7A00; /* Orange for links */
+    text-decoration: underline;
+    transition: color 0.2s ease;
+}
+
+.shopify-policy__body a:hover {
+    color: #0ABAB5;
+    text-decoration: none;
+}
+
+/* Horizontal rules */
+.shopify-policy__body hr {
+    border: none;
+    border-top: 2px solid #0ABAB5;
+    margin: clamp(30px, 4vw, 50px) 0;
+    opacity: 0.3;
+}
+
+/* Blockquotes/callouts */
+.shopify-policy__body blockquote {
+    border-left: 4px solid #0ABAB5;
+    background: rgba(10, 186, 181, 0.05);
+    padding: 20px 30px;
+    margin: 30px 0;
+    font-style: italic;
+    color: #1a1a1a;
+}
+
+/* Tables (if any) */
+.shopify-policy__body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 30px 0;
+}
+
+.shopify-policy__body th {
+    background: #0ABAB5;
+    color: #fff;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: 15px;
+    text-align: left;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+}
+
+.shopify-policy__body td {
+    padding: 15px;
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.shopify-policy__body tr:nth-child(even) {
+    background: rgba(10, 186, 181, 0.03);
+}
+
+/* Code blocks (if any) */
+.shopify-policy__body code {
+    background: rgba(10, 186, 181, 0.1);
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9em;
+    color: #0ABAB5;
+}
+
+.shopify-policy__body pre {
+    background: #1a1a1a;
+    color: #0ABAB5;
+    padding: 20px;
+    border-radius: 8px;
+    overflow-x: auto;
+    margin: 20px 0;
+}
+
+.shopify-policy__body pre code {
+    background: none;
+    padding: 0;
+    color: #0ABAB5;
+}
+
+/* Effective date / last updated */
+.shopify-policy__body p:first-of-type {
+    font-weight: 600;
+    color: #666;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 30px;
+}
+
+/* Contact section styling */
+.shopify-policy__body p:has(a[href*="mailto"]),
+.shopify-policy__body p:has(a[href*="contact"]) {
+    background: rgba(255, 122, 0, 0.05);
+    border-left: 4px solid #FF7A00;
+    padding: 20px;
+    margin: 30px 0;
+    border-radius: 4px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 777px) {
+    .shopify-policy__container {
+        padding: 30px 20px;
+    }
+
+    .shopify-policy__title {
+        font-size: 28px;
+        margin-bottom: 30px;
+    }
+
+    .shopify-policy__body {
+        font-size: 15px;
+    }
+
+    .shopify-policy__body h1 {
+        font-size: 24px;
+    }
+
+    .shopify-policy__body h2 {
+        font-size: 20px;
+    }
+
+    .shopify-policy__body h3 {
+        font-size: 18px;
+    }
+
+    .shopify-policy__body ul,
+    .shopify-policy__body ol {
+        margin-left: 20px;
+    }
+}
+
+/* Print styles */
+@media print {
+    .shopify-policy__container {
+        max-width: 100%;
+        padding: 20px;
+    }
+
+    .shopify-policy__title {
+        color: #000;
+        border-bottom-color: #000;
+    }
+
+    .shopify-policy__body h1,
+    .shopify-policy__body h2,
+    .shopify-policy__body h3 {
+        color: #000;
+        page-break-after: avoid;
+    }
+
+    .shopify-policy__body a {
+        color: #000;
+        text-decoration: underline;
+    }
+}
+
+/* Accessibility improvements */
+.shopify-policy__body :focus {
+    outline: 2px solid #0ABAB5;
+    outline-offset: 2px;
+}
+
+/* Selection color */
+.shopify-policy__body ::selection {
+    background: rgba(10, 186, 181, 0.2);
+    color: #1a1a1a;
+}
+
+.shopify-policy__body ::-moz-selection {
+    background: rgba(10, 186, 181, 0.2);
+    color: #1a1a1a;
+}
+
+:is(button,.button) {
+    font-family: var(--hFontFamily, var(--font-headings));
+    font-weight: var(--buttonWeight, 500);
+    text-transform: var(--buttonTransform, none);
+    border-radius: var(--buttonRadius, 4px);
+    border: 1px solid currentColor;
+    background: var(--buttonBgColor, transparent);
+    color: var(--buttonColor, currentColor);
+    box-shadow: none;
+    transition: background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+
+:is(button,.button):hover,
+:is(button,.button):focus-visible {
+    background-color: currentColor;
+    color: #fff;
+    border-color: currentColor;
+    box-shadow: none;
+}
+
+:is(button,.button)[disabled],
+:is(button,.button):disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    background: transparent;
+    color: currentColor;
+    box-shadow: none;
+}
+
+:where(.button, .button:hover, .button:focus-visible, button, button:hover, button:focus-visible, [class*="card"], [class*="tile"], [class*="panel"], .cta-block, .cta-card) {
+    box-shadow: none !important;
+}
+

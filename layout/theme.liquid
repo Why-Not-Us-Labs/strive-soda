@@ -39,6 +39,11 @@
 
         echo 'app.css' | asset_url | stylesheet_tag
         echo 'strive-header-footer.css' | asset_url | stylesheet_tag
+
+        # Load policy page styles for Terms, Privacy, Refund pages
+        if template == 'policy'
+            echo 'policy-pages.css' | asset_url | stylesheet_tag
+        endif
     -%}
     {% # theme-check-disable %}
     {%- if settings.css != blank -%}<style id="bUserCSS">{{ settings.css | replace: '<style>' '' | replace: '</style>' '' }}</style>{%- endif -%}
@@ -48,10 +53,17 @@
 <a href="#mainContent" class="skip-to-content button is-primary visually-hidden">{{ "general.accessibility.skip_to_text" | t }}</a>
     <component-loader id="app">
         {%- sections 'group-header' -%}
-        <main id="mainContent">
+        {%- if template.name == 'product' -%}
+            {%- comment -%} Product pages: NO main wrapper - sections render directly {%- endcomment -%}
             {%- render 'global-breadcrumbs' -%}
             {{ content_for_layout }}
-        </main>
+        {%- else -%}
+            {%- comment -%} All other pages: Use main wrapper {%- endcomment -%}
+            <main id="mainContent">
+                {%- render 'global-breadcrumbs' -%}
+                {{ content_for_layout }}
+            </main>
+        {%- endif -%}
         {%- liquid
             sections 'group-footer'
             sections 'group-overlay'

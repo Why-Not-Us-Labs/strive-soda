@@ -22,15 +22,17 @@
     assign pfid = 'product-form-' | append: section.id
 -%}
 
-<product-info
-    class="product-page"
-    id="MainProduct-{{ section.id }}"
-    data-section="{{ section.id }}"
-    data-product-id="{{ product.id }}"
-    data-update-url="true"
-    data-url="{{ product.url }}"
->
-    <x-grid columns="{{ cols }}" columns-s="1f" pin-section="{{ pinSection }}" {{ fullMediaWidth }}>
+<x-grid columns="1" columns-s="1" class="product-page-grid">
+    <x-cell span="row">
+        <product-info
+            class="product-page"
+            id="MainProduct-{{ section.id }}"
+            data-section="{{ section.id }}"
+            data-product-id="{{ product.id }}"
+            data-update-url="true"
+            data-url="{{ product.url }}"
+        >
+            <x-grid columns="{{ cols }}" columns-s="1f" pin-section="{{ pinSection }}" {{ fullMediaWidth }}>
     {%- comment -%} ---------- [ Product mobile info bar ] ----------- {%- endcomment -%}
         {%- if section.settings.mobileTitle -%}
         <x-cell class="bullet-mobile-meta small-only" order-s="1" span-s="row">
@@ -108,7 +110,301 @@
 
     {%- comment -%} --- [ Strive: Auto-select Subscribe & Save ] --- {%- endcomment -%}
     {%- render 'strive-subscribe-default' -%}
-</product-info>
+        </product-info>
+    </x-cell>
+</x-grid>
+
+<style>
+  /* PROFESSIONAL FIX: Content sits FLUSH below header - NO OVERLAP EVER */
+  
+  /* Step 1: Main element doesn't exist on product pages - no need to override main rules */
+
+  /* Step 2: Main element COMPLETELY REMOVED from HTML for product pages */
+  /* Sections are now direct children of component-loader (same level as header) */
+  /* No main wrapper exists - sections render directly */
+
+  /* Step 3: Section wrapper - clean, no spacing, NO overflow hidden, NO top padding */
+  body.t-product #shopify-section-{{ section.id }},
+  body.t-product .shopify-section:has(.product-page) {
+    padding: 0 !important;
+    padding-top: 0 !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    background: transparent;
+    position: relative;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+  }
+
+  /* Step 4: Outer x-grid wrapper - NO top spacing */
+  body.t-product .product-page-grid {
+    padding: 0 !important;
+    padding-top: 0 !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+    width: 100%;
+    display: grid;
+  }
+
+  /* Step 5: x-cell containing product-info - NO top spacing */
+  body.t-product .product-page-grid > x-cell {
+    padding: 0 !important;
+    padding-top: 0 !important;
+    margin: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Step 6: Product-info - simple block element, NO height constraints */
+  product-info.product-page {
+    display: block;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    overflow: visible !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    z-index: auto !important;
+  }
+
+  /* Step 7: Inner grid - standard padding EXCEPT top (top is 0) */
+  product-info.product-page > x-grid {
+    display: grid;
+    width: 100%;
+    padding: 0 var(--padding) var(--padding) var(--padding);
+    padding-top: 0 !important;
+    margin: 0;
+    align-items: start;
+    gap: var(--padding);
+  }
+
+  /* Step 6: Content column - ZERO top spacing, NO height constraints, NO overflow clipping */
+  product-info.product-page .bullet-product-content {
+    align-self: start;
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    /* CRITICAL: Remove max-height and overflow constraints that cut off content */
+    max-height: none !important;
+    min-height: auto !important;
+    height: auto !important;
+    overflow: visible !important;
+    overflow-y: visible !important;
+    overflow-x: visible !important;
+    position: static !important; /* Remove sticky positioning that causes clipping */
+  }
+
+  /* Step 7: Product-content flex container - ZERO top spacing, NO overflow clipping */
+  product-info.product-page .bullet-product-content > product-content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    padding-block-start: 0 !important;
+    margin-block-start: 0 !important;
+    gap: 0 !important;
+    row-gap: 0 !important;
+    /* CRITICAL: Ensure all content is visible */
+    overflow: visible !important;
+    overflow-y: visible !important;
+    overflow-x: visible !important;
+    max-height: none !important;
+    min-height: auto !important;
+    height: auto !important;
+  }
+
+  /* Step 8: CRITICAL - Override product.css line 44 overflow:clip and padding-block on ALL sections */
+  product-info.product-page .bullet-product-content > product-content section {
+    padding-block: 0 !important;
+    padding-block-start: 0 !important;
+    padding-block-end: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    margin-top: 0 !important;
+    margin-block-start: 0 !important;
+    /* CRITICAL: Remove overflow:clip that cuts off content */
+    overflow: visible !important;
+    overflow-y: visible !important;
+    overflow-x: visible !important;
+    max-width: 100% !important; /* Allow content to flow naturally */
+  }
+
+  /* Step 9: Title section - ZERO spacing */
+  product-info.product-page section.title,
+  product-info.product-page #xtitle {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    margin-block-start: 0 !important;
+    padding-block-start: 0 !important;
+    padding-block: 0 !important;
+  }
+
+  /* Step 10: Description section - ZERO spacing (override product.css line 48) */
+  product-info.product-page section.description {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    margin-block-start: 0 !important;
+    padding-block-start: 0 !important;
+    padding-block: 0 !important;
+    padding-block-end: 0 !important;
+  }
+
+  /* Step 11: Description text container - ZERO spacing, NO overflow clipping */
+  product-info.product-page section.description .text,
+  product-info.product-page section.description .rte,
+  product-info.product-page section .text,
+  product-info.product-page section .rte {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    /* CRITICAL: Ensure text content is fully visible */
+    overflow: visible !important;
+    overflow-y: visible !important;
+    overflow-x: visible !important;
+    max-height: none !important;
+    height: auto !important;
+    word-wrap: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  /* Step 12: Title heading - ZERO spacing */
+  product-info.product-page section.title h1,
+  product-info.product-page section.title h2,
+  product-info.product-page #xtitle h1,
+  product-info.product-page #xtitle h2 {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+    margin-block-start: 0 !important;
+    padding-block-start: 0 !important;
+  }
+
+  /* Step 13: CRITICAL - Ensure x-grid and x-cell containers don't clip content */
+  body.t-product .product-page-grid,
+  body.t-product .product-page-grid > x-cell {
+    overflow: visible !important;
+    overflow-y: visible !important;
+    overflow-x: visible !important;
+    max-height: none !important;
+    height: auto !important;
+  }
+
+  /* Step 14: CRITICAL - Sections are direct children of component-loader (main removed from HTML) */
+  /* First content section (after header) - NO padding, sits FLUSH below header */
+  body.t-product component-loader#app > .shopify-section:not(:has(header)):first-of-type,
+  body.t-product component-loader#app > .shopify-section:not([id*="header"]):first-of-type {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+    overflow: visible !important;
+    max-height: none !important;
+    height: auto !important;
+  }
+  
+  /* Ensure header group sections don't add unwanted padding */
+  body.t-product [class*="group-header"] {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+  
+  /* All sections flow naturally - NO main wrapper exists, NO top padding */
+  body.t-product component-loader#app > .shopify-section {
+    overflow: visible !important;
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+    position: relative !important;
+    z-index: auto !important;
+    display: block !important;
+  }
+  
+  /* CRITICAL: Override ANY padding-top on product page sections */
+  body.t-product .shopify-section:has(.product-page),
+  body.t-product #shopify-section-{{ section.id }} {
+    padding-top: 0 !important;
+    margin-top: 0 !important;
+  }
+
+  /* Ensure product-info section doesn't overlap sections below */
+  body.t-product product-info.product-page {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* CRITICAL: Media query overrides - Ensure NO content clipping at ANY breakpoint */
+  /* Override product.css desktop rules (line 844-852) that add max-height and overflow-y */
+  @media (min-width: 778px) {
+    product-info.product-page .bullet-product-content {
+      max-height: none !important;
+      overflow-y: visible !important;
+      overflow: visible !important;
+      position: static !important; /* Remove sticky that causes clipping */
+      height: auto !important;
+      min-height: auto !important;
+    }
+    
+    product-info.product-page .bullet-product-content > product-content {
+      overflow: visible !important;
+      overflow-y: visible !important;
+      max-height: none !important;
+      height: auto !important;
+    }
+    
+    product-info.product-page .bullet-product-content > product-content section {
+      overflow: visible !important;
+      overflow-y: visible !important;
+      overflow-x: visible !important;
+    }
+  }
+
+  /* Override product.css tablet rules */
+  @media (min-width: 778px) and (max-width: 1024px) {
+    product-info.product-page .bullet-product-content {
+      max-height: none !important;
+      overflow-y: visible !important;
+      overflow: visible !important;
+      position: static !important;
+      height: auto !important;
+    }
+  }
+
+  /* Override product.css mobile rules */
+  @media (max-width: 777px) {
+    product-info.product-page .bullet-product-content {
+      max-height: none !important;
+      overflow-y: visible !important;
+      overflow: visible !important;
+      height: auto !important;
+    }
+    
+    product-info.product-page .bullet-product-content > product-content {
+      overflow: visible !important;
+      max-height: none !important;
+      height: auto !important;
+    }
+  }
+
+  /* CRITICAL: Ensure ALL content containers are visible - no clipping anywhere */
+  /* Target all containers that might clip content, but allow images/videos to have their own sizing */
+  product-info.product-page .bullet-product-content,
+  product-info.product-page product-content,
+  product-info.product-page section,
+  product-info.product-page section .text,
+  product-info.product-page section .rte,
+  product-info.product-page .text,
+  product-info.product-page .rte,
+  product-info.product-page x-cell,
+  product-info.product-page x-grid {
+    max-height: none !important;
+    overflow: visible !important;
+    overflow-y: visible !important;
+    overflow-x: visible !important;
+  }
+  
+  /* Exception: Images/videos can have max-height for responsive sizing */
+  product-info.product-page img,
+  product-info.product-page video,
+  product-info.product-page picture {
+    max-height: revert;
+  }
+</style>
 
 {% schema %}
 {
