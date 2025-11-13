@@ -110,6 +110,8 @@
     <ul class="inline large-only">
     {%- comment -%} Main Menu {%- endcomment -%}
     {%- for link in linklists[linklist].links -%}
+        {%- assign normalized_title = link.title | strip | downcase -%}
+        {%- if normalized_title == 'home' -%}{% continue %}{%- endif -%}{%- comment -%} Filter out 'Home' since logo links to homepage {%- endcomment -%}
         <li>
         {% if link.links == blank %}
             <a href="{{ link.url }}" class="no-style" data-name="{{- link.title | escape -}}">{{ link.title }}</a>
@@ -161,6 +163,9 @@
         {% endif %}
         </li>
     {%- endfor -%}
+    <li>
+        <a href="/pages/store-locator" class="no-style" data-name="Store Locator">STORE LOCATOR</a>
+    </li>
     </ul>
     </nav>
     {%- if section.settings.openOnHover -%}
