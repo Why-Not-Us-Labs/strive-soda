@@ -798,12 +798,12 @@ coretex-cart[empty="true"] .empty { text-align: center; margin: var(--padding) }
         width: 100%;
         max-width: 100%;
     }
-    coretex-cart cart-item > * { outline: var(--globalBorder); padding: 1rem 1.25rem }
-    coretex-cart .actions { padding: 1rem 1.25rem }
+    coretex-cart cart-item > * { outline: var(--globalBorder); padding: clamp(1.25rem, 2vw, 1.5rem) clamp(1.25rem, 2vw, 1.5rem) } /* Increased mobile padding */
+    coretex-cart .actions { padding: clamp(0.75rem, 1.5vw, 1rem) clamp(1rem, 2vw, 1.25rem) } /* Increased mobile actions padding */
 
     /* Mobile cart drawer padding fix */
     coretex-dialog#cartBox[cart-layout="drawer-side"] main {
-        padding: 0 0.75rem;
+        padding: clamp(1rem, 2vw, 1.25rem) clamp(1rem, 2vw, 1.25rem); /* Increased mobile padding for more spacious feel */
     }
 
     /* Mobile Empty Cart */
