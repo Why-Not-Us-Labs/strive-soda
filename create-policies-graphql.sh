@@ -3,7 +3,23 @@
 # Create Shopify Policies using GraphQL Admin API
 # This is the recommended approach for Shopify Admin API 2025-10
 
-ACCESS_TOKEN="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"
+# Load credentials from .env.shopify file
+# Create .env.shopify with: SHOPIFY_ACCESS_TOKEN=shpat_...
+if [ -f .env.shopify ]; then
+    source .env.shopify
+else
+    echo "❌ Error: .env.shopify file not found"
+    echo "   Create .env.shopify with: SHOPIFY_ACCESS_TOKEN=shpat_..."
+    exit 1
+fi
+
+# Validate token is set
+if [ -z "$SHOPIFY_ACCESS_TOKEN" ]; then
+    echo "❌ Error: SHOPIFY_ACCESS_TOKEN not set in .env.shopify"
+    exit 1
+fi
+
+ACCESS_TOKEN="$SHOPIFY_ACCESS_TOKEN"
 SHOP_DOMAIN="ab6dae-bb.myshopify.com"
 API_VERSION="2025-10"
 

@@ -6,9 +6,26 @@ Update Shopify policy pages with properly formatted HTML and CSS styling
 import re
 import json
 import subprocess
+import os
+from pathlib import Path
 
-# Shopify API credentials
-TOKEN = "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"
+# Load credentials from .env.shopify file
+# Create .env.shopify with: SHOPIFY_ACCESS_TOKEN=shpat_...
+env_file = Path('.env.shopify')
+if env_file.exists():
+    with open(env_file) as f:
+        for line in f:
+            if line.strip() and not line.startswith('#'):
+                key, value = line.strip().split('=', 1)
+                os.environ[key] = value
+
+# Get token from environment
+TOKEN = os.getenv('SHOPIFY_ACCESS_TOKEN')
+if not TOKEN:
+    print("❌ Error: SHOPIFY_ACCESS_TOKEN not set")
+    print("   Create .env.shopify with: SHOPIFY_ACCESS_TOKEN=shpat_...")
+    exit(1)
+
 SHOP = "ab6dae-bb.myshopify.com"
 API_VERSION = "2025-10"
 GRAPHQL_URL = f"https://{SHOP}/admin/api/{API_VERSION}/graphql.json"

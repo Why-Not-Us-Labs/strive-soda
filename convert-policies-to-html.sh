@@ -1,6 +1,22 @@
 #!/bin/bash
 
-TOKEN="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"
+# Load credentials from .env.shopify file
+# Create .env.shopify with: SHOPIFY_ACCESS_TOKEN=shpat_...
+if [ -f .env.shopify ]; then
+    source .env.shopify
+else
+    echo "❌ Error: .env.shopify file not found"
+    echo "   Create .env.shopify with: SHOPIFY_ACCESS_TOKEN=shpat_..."
+    exit 1
+fi
+
+# Validate token is set
+if [ -z "$SHOPIFY_ACCESS_TOKEN" ]; then
+    echo "❌ Error: SHOPIFY_ACCESS_TOKEN not set in .env.shopify"
+    exit 1
+fi
+
+TOKEN="$SHOPIFY_ACCESS_TOKEN"
 SHOP="ab6dae-bb.myshopify.com"
 API_VERSION="2025-10"
 GRAPHQL_URL="https://${SHOP}/admin/api/${API_VERSION}/graphql.json"
@@ -76,10 +92,12 @@ PYEOF
 }
 
 # This is complex - let me use a simpler approach with sed
-python3 << 'PYEOF'
+python3 << PYEOF
 import re
 import json
 import subprocess
+import os
+import sys
 
 def markdown_to_html(md_file):
     with open(md_file, 'r') as f:
@@ -144,7 +162,12 @@ policies = [
     ('POLICY-CONTENT-REFUND-POLICY.md', 'REFUND_POLICY')
 ]
 
-token = "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"
+# Load token from environment (set by bash script above)
+token = os.getenv('SHOPIFY_ACCESS_TOKEN')
+if not token:
+    print("❌ Error: SHOPIFY_ACCESS_TOKEN not set")
+    print("   Create .env.shopify with: SHOPIFY_ACCESS_TOKEN=shpat_...")
+    sys.exit(1)
 shop = "ab6dae-bb.myshopify.com"
 api_version = "2025-10"
 url = f"https://{shop}/admin/api/{api_version}/graphql.json"

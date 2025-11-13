@@ -79,7 +79,7 @@ User manually updated footer menu in Shopify admin:
 ### API Credentials
 ```bash
 SHOPIFY_STORE_DOMAIN=ab6dae-bb.myshopify.com
-SHOPIFY_ACCESS_TOKEN=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
+SHOPIFY_ACCESS_TOKEN=shpat_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 API_VERSION=2025-10
 ```
 

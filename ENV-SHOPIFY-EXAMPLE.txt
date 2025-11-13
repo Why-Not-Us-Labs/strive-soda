@@ -1,0 +1,12 @@
+# Shopify API Credentials Example
+# Copy this content to .env.shopify and add your actual access token
+# 
+# To get your access token:
+# 1. Go to: https://ab6dae-bb.myshopify.com/admin/settings/apps/development
+# 2. Create or select a custom app
+# 3. Scroll to "Admin API access token"
+# 4. Click "Reveal token once" and copy the token (starts with shpat_)
+#
+# IMPORTANT: Never commit .env.shopify to version control!
+
+SHOPIFY_ACCESS_TOKEN=shpat_XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX

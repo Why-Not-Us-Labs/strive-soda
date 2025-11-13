@@ -5,7 +5,23 @@
 
 set -e
 
-TOKEN="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"
+# Load credentials from .env.shopify file
+# Create .env.shopify with: SHOPIFY_ACCESS_TOKEN=shpat_...
+if [ -f .env.shopify ]; then
+    source .env.shopify
+else
+    echo "❌ Error: .env.shopify file not found"
+    echo "   Create .env.shopify with: SHOPIFY_ACCESS_TOKEN=shpat_..."
+    exit 1
+fi
+
+# Validate token is set
+if [ -z "$SHOPIFY_ACCESS_TOKEN" ]; then
+    echo "❌ Error: SHOPIFY_ACCESS_TOKEN not set in .env.shopify"
+    exit 1
+fi
+
+TOKEN="$SHOPIFY_ACCESS_TOKEN"
 SHOP="ab6dae-bb.myshopify.com"
 API_VERSION="2025-10"
 GRAPHQL_URL="https://${SHOP}/admin/api/${API_VERSION}/graphql.json"
