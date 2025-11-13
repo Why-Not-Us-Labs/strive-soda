@@ -588,16 +588,6 @@
 
   /* ===== DESKTOP (>=1280px): full-bleed horizontal split ===== */
   @media (min-width: 1280px){
-    /* CRITICAL: Override global app.css .hero .meta rules */
-    .hero[sid="{{ section.id }}"] .meta {
-      display: flex !important;
-      align-items: center !important;
-      justify-content: center !important;
-      position: static !important; /* Override app.css absolute positioning */
-      top: auto !important;
-      left: auto !important;
-    }
-
     /* Section wrapper - ensure it sits below header with NO GAPS and fills viewport */
     #shopify-section-{{ section.id }} {
       position: relative;
@@ -675,25 +665,28 @@
     }
     
     /* Container 1: CTA Buttons - Left half, fills viewport */
+    /* CRITICAL: Override global app.css .hero .meta rules for grid layout */
     .hero[sid="{{ section.id }}"] .meta{
-      position: static !important;
-      grid-column: 1 / 2; 
-      grid-row: 1 / 2;
-      background: var(--tiffany-blue);
-      color: #fff;
+      position: relative !important; /* Override app.css absolute, but allow grid positioning */
+      top: auto !important;
+      left: auto !important;
+      grid-column: 1 / 2 !important; 
+      grid-row: 1 / 2 !important;
+      background: var(--tiffany-blue) !important;
+      color: #fff !important;
       border-radius: 0 !important;
-      height: 100%;
-      min-height: 100%;
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      display: flex; 
-      align-items: center; 
-      justify-content: center;
-      pointer-events: auto;
-      box-sizing: border-box;
-      z-index: 1;
-      overflow: hidden;
+      height: 100% !important;
+      min-height: 100% !important;
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      display: flex !important; 
+      align-items: center !important; 
+      justify-content: center !important;
+      pointer-events: auto !important;
+      box-sizing: border-box !important;
+      z-index: 2 !important; /* Higher than video z-index: 1 */
+      overflow: visible !important; /* Don't clip content */
     }
     
     .hero[sid="{{ section.id }}"] .content-wrapper{
