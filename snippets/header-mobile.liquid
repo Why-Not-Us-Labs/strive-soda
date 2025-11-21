@@ -41,6 +41,7 @@
 {%- for link in linklists[linklist].links -%}
     {%- assign normalized_title = link.title | strip | downcase -%}
     {%- if normalized_title == 'home' or normalized_title == 'about us' -%}{% continue %}{%- endif -%}
+    {%- if normalized_title contains 'store' and normalized_title contains 'locator' -%}{% continue %}{%- endif -%}
 	<x-cell>
 	<ul class="no-style">
 	{% if link.links == blank %}
@@ -88,11 +89,14 @@
 	</ul>
 	</x-cell>
 {%- endfor -%}
+{%- comment -%} Store Locator temporarily hidden {%- endcomment -%}
+{%- comment -%}
 <x-cell>
 	<ul class="no-style">
 		<li><a href="/pages/store-locator" class="no-style lv1l" data-name="Store Locator">STORE LOCATOR</a></li>
 	</ul>
 </x-cell>
+{%- endcomment -%}
 </x-grid>
 </nav>
 </div>

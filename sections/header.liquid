@@ -111,7 +111,9 @@
     {%- comment -%} Main Menu {%- endcomment -%}
     {%- for link in linklists[linklist].links -%}
         {%- assign normalized_title = link.title | strip | downcase -%}
-        {%- if normalized_title == 'home' -%}{% continue %}{%- endif -%}{%- comment -%} Filter out 'Home' since logo links to homepage {%- endcomment -%}
+        {%- if normalized_title == 'home' -%}{% continue %}{%- endif -%}
+        {%- if normalized_title contains 'store' and normalized_title contains 'locator' -%}{% continue %}{%- endif -%}
+        {%- comment -%} Filter out 'Home' since logo links to homepage, and 'Store Locator' temporarily hidden {%- endcomment -%}
         <li>
         {% if link.links == blank %}
             <a href="{{ link.url }}" class="no-style" data-name="{{- link.title | escape -}}">{{ link.title }}</a>
@@ -163,9 +165,12 @@
         {% endif %}
         </li>
     {%- endfor -%}
+    {%- comment -%} Store Locator temporarily hidden {%- endcomment -%}
+    {%- comment -%}
     <li>
         <a href="/pages/store-locator" class="no-style" data-name="Store Locator">STORE LOCATOR</a>
     </li>
+    {%- endcomment -%}
     </ul>
     </nav>
     {%- if section.settings.openOnHover -%}
