@@ -65,7 +65,7 @@
                         <x-flex class="f-links" jc="{{ block.settings.alignment }}" jc-s="{{ block.settings.alignmentMobile }}">
                             <x-cell>
                             <ul class="no-style">
-                                {%- if block.settings.legalMenu != null -%}
+                                {%- if block.settings.legalMenu != blank -%}
                                     {%- assign linklist = block.settings.legalMenu -%}
                                     {%- for link in linklists[linklist].links -%}
                                         <li><a href="{{ link.url }}" class="no-style">{{ link.title }}</a></li>

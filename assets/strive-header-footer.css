@@ -8,7 +8,7 @@
 /* Clean, horizontal JuneShine-style navigation */
 
 .main-header {
-    font-family: var(--font-headings, var(--fontFamily));
+    font-family: var(--fontFamily, var(--font-primary, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif));
     box-shadow: none;
 }
 
@@ -48,6 +48,7 @@ body[layout-boxed="true"] .main-header {
 }
 
 .main-header .menulink a.no-style {
+    font-family: var(--fontFamily, var(--font-primary, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif));
     font-weight: 400;
     font-size: clamp(13px, 1.2vw, 16px);
     letter-spacing: 0.3px;

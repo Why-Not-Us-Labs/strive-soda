@@ -44,7 +44,11 @@
   };
 
   function applyBrandStyling() {
-    var fontFamily = getComputedStyle(document.documentElement).getPropertyValue('--fontFamily').trim();
+    // Try multiple font variable sources for maximum compatibility
+    var fontFamily = getComputedStyle(document.documentElement).getPropertyValue('--fontFamily').trim() ||
+                     getComputedStyle(document.documentElement).getPropertyValue('--font-primary').trim() ||
+                     "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif";
+    
     if (!fontFamily) return; // CSS variables will handle styling
 
     // Apply to all text elements as fallback
@@ -87,15 +91,17 @@
   }
 
   .store-locator-widget__heading {
-    font-family: var(--hFontFamily);
+    font-family: var(--hFontFamily, var(--font-headings, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif)) !important;
     font-size: clamp(24px, 4vw, 40px);
-    font-weight: var(--hWeight, 400);
+    font-weight: 500 !important;
     color: #111;
     margin: 0 0 12px;
+    text-transform: none !important;
+    letter-spacing: -0.01em;
   }
 
   .store-locator-widget__description {
-    font-family: var(--fontFamily);
+    font-family: var(--fontFamily, var(--font-primary, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif)) !important;
     font-size: clamp(14px, 1.5vw, 18px);
     line-height: 1.5;
     color: #333;
@@ -126,7 +132,7 @@
 
   /* Store names */
   #storepoint-widget .storepoint-name {
-    font-family: var(--fontFamily) !important;
+    font-family: var(--fontFamily, var(--font-primary, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif)) !important;
     font-weight: 600 !important;
     font-size: 15px !important;
     letter-spacing: 0 !important;
@@ -134,7 +140,7 @@
 
   /* Address text */
   #storepoint-widget .storepoint-address {
-    font-family: var(--fontFamily) !important;
+    font-family: var(--fontFamily, var(--font-primary, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif)) !important;
     font-weight: 400 !important;
     font-size: 13px !important;
     line-height: 1.4 !important;
@@ -143,7 +149,7 @@
 
   /* Description/zip code */
   #storepoint-widget .storepoint-description {
-    font-family: var(--fontFamily) !important;
+    font-family: var(--fontFamily, var(--font-primary, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif)) !important;
     font-weight: 400 !important;
     font-size: 12px !important;
     color: #888 !important;
@@ -152,7 +158,7 @@
   /* Get Directions button */
   #storepoint-widget .storepoint-button,
   #storepoint-widget .storepoint-directions-button {
-    font-family: var(--fontFamily) !important;
+    font-family: var(--fontFamily, var(--font-primary, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif)) !important;
     font-weight: 600 !important;
     font-size: 11px !important;
     letter-spacing: 0.5px !important;
@@ -174,13 +180,13 @@
 
   /* Button label inside the button */
   #storepoint-widget .storepoint-button-label {
-    font-family: var(--fontFamily) !important;
+    font-family: var(--fontFamily, var(--font-primary, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif)) !important;
   }
 
   /* Search input */
   #storepoint-widget .mapboxgl-ctrl-geocoder--input,
   #storepoint-widget input[type="text"] {
-    font-family: var(--fontFamily) !important;
+    font-family: var(--fontFamily, var(--font-primary, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif)) !important;
     font-size: 14px !important;
   }
 
@@ -188,7 +194,7 @@
   #storepoint-widget .storepoint-dropdown-target,
   #storepoint-widget .storepoint-dropdown-target span,
   #storepoint-widget .storepoint-dropdown-option {
-    font-family: var(--fontFamily) !important;
+    font-family: var(--fontFamily, var(--font-primary, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif)) !important;
     font-size: 14px !important;
   }
 
@@ -205,7 +211,7 @@
 
   /* Location card content */
   #storepoint-widget .storepoint-location-info {
-    font-family: var(--fontFamily) !important;
+    font-family: var(--fontFamily, var(--font-primary, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif)) !important;
   }
 
   /* Scrollbar styling */

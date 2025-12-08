@@ -1,7 +1,7 @@
 <section class="store-locator-hero">
   <div class="store-locator-hero__container">
-    <h1 class="store-locator-hero__heading">{{ section.settings.heading | default: 'Find Strive Near You' }}</h1>
-    <p class="store-locator-hero__subheading">{{ section.settings.subheading | default: 'Discover where to buy Strive Soda at stores near you.' }}</p>
+    <h1 class="store-locator-hero__heading" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;">{{ section.settings.heading | default: 'Find Strive Near You' }}</h1>
+    <p class="store-locator-hero__subheading" style="font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;">{{ section.settings.subheading | default: 'Discover where to buy Strive Soda at stores near you.' }}</p>
   </div>
 </section>
 
@@ -35,21 +35,21 @@
   }
 
   .store-locator-hero__heading {
-    font-family: var(--hFontFamily);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
     font-size: clamp(42px, 7vw, 72px);
-    font-weight: var(--hWeight, 400);
+    font-weight: 500 !important;
     line-height: 1.05;
     color: #fff;
     margin: 0 0 20px;
-    text-transform: var(--hTxTransform, none);
+    text-transform: none !important;
     letter-spacing: -0.01em;
     text-shadow: 0 2px 20px rgba(0,0,0,0.1);
   }
 
   .store-locator-hero__subheading {
-    font-family: var(--fontFamily);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif !important;
     font-size: clamp(16px, 2vw, 22px);
-    font-weight: var(--fontWeight, 400);
+    font-weight: 400;
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.95);
     margin: 0;
