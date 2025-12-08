@@ -8,7 +8,9 @@
   min-height: 100dvh; /* Dynamic viewport height for mobile Safari */
   width: 100%;
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* Changed from hidden to allow content to flow naturally */
+  z-index: 1; /* Explicit stacking context */
+  isolation: isolate; /* Prevent z-index bleed from children */
 }
 
 /* Container using CSS Grid for 50/50 split */

@@ -483,6 +483,30 @@
 
 ## OUTSTANDING TICKETS
 
+### Epic: Science Page Bug Fixes (P0 - URGENT)
+
+#### STRIVE-072: Fix Science page section overlap issue
+**Status:** In Progress
+**Estimate:** 1h
+**Priority:** P0 - URGENT
+**Assigned:** Gavin McNamara
+**Description:** Jack reported: "The science page is kind of having some overlapping issues. That pink kind of background where What is the Hydration Soda is overlapping with the Shop Flavors CTA." Need to investigate and fix CSS positioning/z-index issues causing section overlap, likely on mobile.
+**Files:** `sections/science-electrolytes.liquid`, `sections/science-checkerboard-fold.liquid`, `assets/science-page.css`
+**Notes:** "What is Hydration Soda?" heading is in the electrolytes section. Need to check for margin/padding collapse, z-index issues, or positioning problems especially on mobile viewports.
+
+---
+
+#### STRIVE-073: Fix electrolyte flip cards showing blank on hover
+**Status:** In Progress
+**Estimate:** 2h
+**Priority:** P0 - URGENT
+**Assigned:** Gavin McNamara
+**Description:** Jack reported: "The yellow, blue and orange boxes... when you highlight over it just goes blank like a yellow blank box." The electrolyte cards (Sodium/Potassium/Magnesium) flip animation is broken - back of card shows blank instead of content. Jack wants hover to show descriptive text like "replenishes what you sweat out to keep fluids balanced" for Sodium.
+**Files:** `sections/science-electrolytes.liquid`
+**Notes:** Current implementation uses CSS 3D transforms for flip effect. Issue could be: 1) backface-visibility not working in all browsers, 2) transform-style: preserve-3d failing, 3) card-back content not rendering. Consider simplifying to fade/slide animation instead of 3D flip.
+
+---
+
 ### Epic: Homepage Content Updates (P0 - Critical)
 
 #### STRIVE-049: Update homepage hero CTAs
@@ -716,9 +740,10 @@
 ## SUMMARY
 
 ### Completed: 51 tickets
-### Outstanding: 19 tickets
+### Outstanding: 21 tickets
 
 ### Outstanding by Priority:
+- **P0 (URGENT):** 2 tickets (Science page bugs - IN PROGRESS)
 - **P0 (Critical):** 3 tickets
 - **P1 (High):** 7 tickets (Store Locator complete!)
 - **P2 (Medium):** 6 tickets
