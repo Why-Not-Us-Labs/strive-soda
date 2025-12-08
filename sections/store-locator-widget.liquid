@@ -44,9 +44,10 @@
   };
 
   function applyBrandStyling() {
-    var fontFamily = getComputedStyle(document.documentElement).getPropertyValue('--fontFamily') || "'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif";
+    var fontFamily = getComputedStyle(document.documentElement).getPropertyValue('--fontFamily').trim();
+    if (!fontFamily) return; // CSS variables will handle styling
 
-    // Apply to all text elements
+    // Apply to all text elements as fallback
     var elements = document.querySelectorAll('#storepoint-widget .storepoint-name, #storepoint-widget .storepoint-address, #storepoint-widget .storepoint-description, #storepoint-widget .storepoint-button-label, #storepoint-widget input, #storepoint-widget .storepoint-dropdown-target span');
 
     elements.forEach(function(el) {
@@ -86,15 +87,15 @@
   }
 
   .store-locator-widget__heading {
-    font-family: var(--hFontFamily, var(--font-headings)), 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--hFontFamily);
     font-size: clamp(24px, 4vw, 40px);
-    font-weight: 500;
+    font-weight: var(--hWeight, 400);
     color: #111;
     margin: 0 0 12px;
   }
 
   .store-locator-widget__description {
-    font-family: var(--fontFamily, var(--font-primary)), 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--fontFamily);
     font-size: clamp(14px, 1.5vw, 18px);
     line-height: 1.5;
     color: #333;
@@ -125,7 +126,7 @@
 
   /* Store names */
   #storepoint-widget .storepoint-name {
-    font-family: var(--fontFamily), 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-family: var(--fontFamily) !important;
     font-weight: 600 !important;
     font-size: 15px !important;
     letter-spacing: 0 !important;
@@ -133,7 +134,7 @@
 
   /* Address text */
   #storepoint-widget .storepoint-address {
-    font-family: var(--fontFamily), 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-family: var(--fontFamily) !important;
     font-weight: 400 !important;
     font-size: 13px !important;
     line-height: 1.4 !important;
@@ -142,7 +143,7 @@
 
   /* Description/zip code */
   #storepoint-widget .storepoint-description {
-    font-family: var(--fontFamily), 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-family: var(--fontFamily) !important;
     font-weight: 400 !important;
     font-size: 12px !important;
     color: #888 !important;
@@ -151,7 +152,7 @@
   /* Get Directions button */
   #storepoint-widget .storepoint-button,
   #storepoint-widget .storepoint-directions-button {
-    font-family: var(--fontFamily), 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-family: var(--fontFamily) !important;
     font-weight: 600 !important;
     font-size: 11px !important;
     letter-spacing: 0.5px !important;
@@ -159,7 +160,7 @@
     background: #111 !important;
     color: #fff !important;
     border: 2px solid #111 !important;
-    border-radius: 6px !important;
+    border-radius: var(--buttonRadius, 8px) !important;
     padding: 8px 14px !important;
     transition: all 0.2s ease !important;
     text-decoration: none !important;
@@ -173,13 +174,13 @@
 
   /* Button label inside the button */
   #storepoint-widget .storepoint-button-label {
-    font-family: var(--fontFamily), 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-family: var(--fontFamily) !important;
   }
 
   /* Search input */
   #storepoint-widget .mapboxgl-ctrl-geocoder--input,
   #storepoint-widget input[type="text"] {
-    font-family: var(--fontFamily), 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-family: var(--fontFamily) !important;
     font-size: 14px !important;
   }
 
@@ -187,7 +188,7 @@
   #storepoint-widget .storepoint-dropdown-target,
   #storepoint-widget .storepoint-dropdown-target span,
   #storepoint-widget .storepoint-dropdown-option {
-    font-family: var(--fontFamily), 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-family: var(--fontFamily) !important;
     font-size: 14px !important;
   }
 
@@ -204,7 +205,7 @@
 
   /* Location card content */
   #storepoint-widget .storepoint-location-info {
-    font-family: var(--fontFamily), 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-family: var(--fontFamily) !important;
   }
 
   /* Scrollbar styling */

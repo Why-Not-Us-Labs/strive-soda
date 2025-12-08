@@ -29,16 +29,16 @@
   }
 
   .store-locator-cta__heading {
-    font-family: 'Polysans Standard', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--hFontFamily);
     font-size: clamp(28px, 4vw, 44px);
-    font-weight: 800;
+    font-weight: var(--hWeight, 400);
     line-height: 1.15;
     color: #fff;
     margin: 0 0 16px;
   }
 
   .store-locator-cta__description {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--fontFamily);
     font-size: clamp(14px, 1.5vw, 18px);
     line-height: 1.5;
     color: rgba(255, 255, 255, 0.8);
@@ -55,13 +55,14 @@
     padding: 16px 36px;
     background: var(--strive-orange, #FF7A00);
     color: #fff !important;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-family: var(--fontFamily);
     font-size: 13px;
-    font-weight: 800;
+    font-weight: var(--buttonWeight, 500);
     letter-spacing: 1.2px;
     text-transform: uppercase;
     text-decoration: none;
     border: 2px solid var(--strive-orange, #FF7A00);
+    border-radius: var(--buttonRadius, 8px);
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
