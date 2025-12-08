@@ -429,6 +429,16 @@
 
 ---
 
+#### STRIVE-071: Fix Store Locator page font inconsistency
+**Status:** Done
+**Estimate:** 2h
+**Completed:** Dec 8, 2025
+**Description:** Fix font inconsistency where Store Locator page showed Times serif font instead of Inter sans-serif used across the rest of the site. Root cause: CSS variables (--hFontFamily, --fontFamily) resolving to serif on Store Locator page specifically.
+**Files:** `assets/strive-header-footer.css`, `sections/store-locator-hero.liquid`, `sections/store-locator-widget.liquid`, `sections/store-locator-cta.liquid`
+**Notes:** Added inline styles with !important to hero/CTA headings and descriptions. Updated header nav links with explicit Inter font fallback. Changed all Store Locator section CSS to use Inter as primary fallback.
+
+---
+
 ### Epic: Security & Maintenance
 
 #### STRIVE-045: Remove hardcoded API tokens from scripts
@@ -564,32 +574,34 @@
 ### Epic: Store Locator (P1 - High Priority)
 
 #### STRIVE-058: Create Store Locator page
-**Status:** To Do
+**Status:** Done
 **Estimate:** 3h
+**Completed:** Dec 8, 2025
 **Priority:** P1
 **Description:** Build store locator page with Storepoint embed, future-proof for retail expansion (currently San Diego only, will scale to Target/Whole Foods)
-**Files:** `templates/page.store-locator.json` (create new), Shopify admin page creation
-**Blocked by:** Store locator data from Chris
+**Files:** `templates/page.store-locator.json`, `sections/store-locator-hero.liquid`, `sections/store-locator-widget.liquid`, `sections/store-locator-cta.liquid`
+**Notes:** Integrated Storepoint.co widget (ID: 168f803b457043), created 3 custom sections: Tiffany Blue hero, widget container with brand styling, and dark CTA section
 
 ---
 
 #### STRIVE-059: Add Store Locator to header navigation
-**Status:** To Do
+**Status:** Done
 **Estimate:** 1h
+**Completed:** Dec 8, 2025
 **Priority:** P1
 **Description:** Add "Find Us" or Store Locator to main navigation. Option 1: About Us dropdown (Our Story, Store Locator). Option 2: Standalone nav item.
-**Files:** Shopify admin navigation, possibly `sections/header.liquid`
-**Blocked by:** STRIVE-058
+**Files:** `sections/header.liquid`, `snippets/header-mobile.liquid`
+**Notes:** Added "STORE LOCATOR" link to both desktop and mobile navigation
 
 ---
 
 #### STRIVE-060: Add Store Locator CTAs across site
-**Status:** To Do
+**Status:** In Progress
 **Estimate:** 1h
 **Priority:** P1
 **Description:** Add "Find Strive Near You" CTA to: Homepage (under products), Product pages, About Us, Science page, Shop page
 **Files:** Multiple section files
-**Blocked by:** STRIVE-058
+**Notes:** CTA section created on Store Locator page. Remaining: Add CTAs to homepage, product pages, about us, science page
 
 ---
 
@@ -703,27 +715,26 @@
 
 ## SUMMARY
 
-### Completed: 48 tickets
-### Outstanding: 22 tickets
+### Completed: 51 tickets
+### Outstanding: 19 tickets
 
 ### Outstanding by Priority:
 - **P0 (Critical):** 3 tickets
-- **P1 (High):** 9 tickets
+- **P1 (High):** 7 tickets (Store Locator complete!)
 - **P2 (Medium):** 6 tickets
 - **P3 (Nice to Have):** 4 tickets
 
 ### Blockers:
-1. **Store Locator data from Chris** - Blocks STRIVE-058, 059, 060
-2. **Subscription page URL** - Blocks STRIVE-049
-3. **New hero imagery** - Blocks STRIVE-062
-4. **Poly Sans Mono font files** - Blocks STRIVE-063
+1. **Subscription page URL** - Blocks STRIVE-049
+2. **New hero imagery** - Blocks STRIVE-062
+3. **Poly Sans Mono font files** - Blocks STRIVE-063
 
 ### Estimated Remaining Hours:
 - **P0:** ~4 hours
-- **P1:** ~19 hours
+- **P1:** ~15 hours
 - **P2:** ~13 hours
 - **P3:** ~16 hours
-- **Total:** ~52 hours (if all features implemented)
+- **Total:** ~48 hours (if all features implemented)
 
 ---
 
@@ -750,4 +761,4 @@ Apply this messaging hierarchy to all content tickets:
 
 ---
 
-**Last Updated:** December 1, 2025
+**Last Updated:** December 8, 2025
