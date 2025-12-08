@@ -1,0 +1,136 @@
+<section class="store-locator-cta">
+  <div class="store-locator-cta__container">
+    {%- if section.settings.heading != blank -%}
+      <h2 class="store-locator-cta__heading">{{ section.settings.heading }}</h2>
+    {%- endif -%}
+
+    {%- if section.settings.description != blank -%}
+      <p class="store-locator-cta__description">{{ section.settings.description }}</p>
+    {%- endif -%}
+
+    {%- if section.settings.button_text != blank -%}
+      <a href="{{ section.settings.button_link }}" class="store-locator-cta__button">
+        {{ section.settings.button_text }}
+      </a>
+    {%- endif -%}
+  </div>
+</section>
+
+<style>
+  .store-locator-cta {
+    background: #111;
+    padding: clamp(60px, 8vw, 100px) clamp(20px, 4vw, 60px);
+    text-align: center;
+  }
+
+  .store-locator-cta__container {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .store-locator-cta__heading {
+    font-family: 'Polysans Standard', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800;
+    line-height: 1.15;
+    color: #fff;
+    margin: 0 0 16px;
+  }
+
+  .store-locator-cta__description {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(14px, 1.5vw, 18px);
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+    margin: 0 0 32px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .store-locator-cta__button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 16px 36px;
+    background: var(--strive-orange, #FF7A00);
+    color: #fff !important;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 2px solid var(--strive-orange, #FF7A00);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .store-locator-cta__button:hover {
+    background: var(--tiffany-blue, #0ABAB5);
+    border-color: var(--tiffany-blue, #0ABAB5);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(10, 186, 181, 0.3);
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .store-locator-cta {
+      padding: 48px 20px;
+    }
+
+    .store-locator-cta__heading {
+      font-size: 24px;
+      margin-bottom: 12px;
+    }
+
+    .store-locator-cta__description {
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+
+    .store-locator-cta__button {
+      padding: 14px 28px;
+      font-size: 12px;
+      width: 100%;
+      max-width: 280px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Store Locator CTA",
+  "tag": "section",
+  "class": "store-locator-cta-section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Can't Find Strive Near You?"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Shop online and get Strive delivered right to your door."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Shop Online"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Store Locator CTA"
+    }
+  ]
+}
+{% endschema %}

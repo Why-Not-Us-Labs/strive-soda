@@ -1,0 +1,241 @@
+/**
+ * Strive Soda - Footer Enhancements
+ * Ensures consistent brand fonts and modern styling
+ * Brand Colors: Tiffany Blue (#0ABAB5), Orange (#FF7A00)
+ * Brand Font: Polysans Standard / Inter fallback, weight 800 for headings
+ */
+
+/* ===========================
+   FONT CONSISTENCY OVERRIDES
+   =========================== */
+
+/* Force sans-serif on all footer elements */
+footer,
+footer *,
+sub-footer,
+sub-footer *,
+.main-footer,
+.main-footer *,
+.sub-footer,
+.sub-footer * {
+  font-family: var(--fontFamily, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif) !important;
+}
+
+/* Footer links - ensure clean sans-serif */
+footer a,
+footer li,
+footer p,
+sub-footer a,
+sub-footer li,
+sub-footer p {
+  font-family: var(--fontFamily, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif) !important;
+  letter-spacing: -0.01em;
+}
+
+/* ===========================
+   FOOTER STYLING ENHANCEMENTS
+   =========================== */
+
+/* Main footer container */
+footer {
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+/* Footer links - modern, clean styling */
+footer a.no-style {
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+}
+
+footer a.no-style:hover {
+  color: #0ABAB5; /* Tiffany Blue on hover */
+  transform: translateX(2px);
+}
+
+/* Footer menu items */
+#f-links ul.no-style li {
+  margin-bottom: 16px;
+  line-height: 1.6;
+}
+
+#f-links ul.no-style li a {
+  display: inline-block;
+  padding: 4px 0;
+}
+
+/* Subtle underline effect on hover */
+#f-links ul.no-style li a::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #0ABAB5; /* Tiffany Blue */
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+#f-links ul.no-style li a:hover::after {
+  width: 100%;
+}
+
+/* Newsletter section */
+#f-newsletter {
+  font-weight: 400;
+}
+
+#f-newsletter p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+#f-newsletter input[type="email"] {
+  font-family: var(--fontFamily, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif) !important;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+/* Social media icons */
+.foosocial li a {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.foosocial li a:hover {
+  transform: translateY(-2px);
+  opacity: 0.8;
+}
+
+/* Sub-footer (bottom bar) */
+sub-footer {
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+sub-footer .copyright {
+  font-weight: 400;
+}
+
+sub-footer .copyright a {
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+sub-footer .copyright a:hover {
+  color: #0ABAB5; /* Tiffany Blue */
+}
+
+/* ===========================
+   PAGE TEMPLATE FONT FIXES
+   =========================== */
+
+/* Ensure all page templates use sans-serif */
+.general-page,
+.contact-page,
+.page-template,
+.page-content,
+.rte,
+.rte * {
+  font-family: var(--fontFamily, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif) !important;
+}
+
+/* Headings on pages */
+.general-page h1,
+.general-page h2,
+.general-page h3,
+.general-page h4,
+.general-page h5,
+.general-page h6,
+.contact-page h1,
+.contact-page h2,
+.contact-page h3 {
+  font-family: var(--hFontFamily, var(--fontFamily, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif)) !important;
+  font-weight: 800; /* Brand-specific bold weight */
+  letter-spacing: -0.02em;
+}
+
+/* Page body text */
+.general-page p,
+.general-page li,
+.general-page a,
+.contact-page p,
+.contact-page li,
+.contact-page label {
+  font-family: var(--fontFamily, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif) !important;
+}
+
+/* Contact form elements */
+.contact-page input,
+.contact-page textarea,
+.contact-page button {
+  font-family: var(--fontFamily, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif) !important;
+  font-weight: 400;
+}
+
+/* RTE (Rich Text Editor) content - common issue for serif fonts */
+.rte,
+.rte p,
+.rte li,
+.rte h1,
+.rte h2,
+.rte h3,
+.rte h4,
+.rte h5,
+.rte h6 {
+  font-family: var(--fontFamily, 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif) !important;
+}
+
+/* ===========================
+   MOBILE OPTIMIZATIONS
+   =========================== */
+
+@media (max-width: 777px) {
+  footer a.no-style {
+    font-size: 14px;
+  }
+
+  #f-links ul.no-style li {
+    margin-bottom: 14px;
+  }
+
+  sub-footer {
+    font-size: 12px;
+  }
+}
+
+/* ===========================
+   ACCESSIBILITY & POLISH
+   =========================== */
+
+/* Focus states */
+footer a:focus,
+footer button:focus,
+sub-footer a:focus {
+  outline: 2px solid #0ABAB5; /* Tiffany Blue */
+  outline-offset: 2px;
+}
+
+/* Ensure link color is readable */
+footer a {
+  color: inherit;
+}
+
+footer a:hover {
+  color: #0ABAB5; /* Tiffany Blue */
+}
+
+/* Clean transitions */
+footer *,
+sub-footer * {
+  transition: color 0.2s ease,
+              background-color 0.2s ease,
+              transform 0.2s ease;
+}

@@ -1,0 +1,37 @@
+{
+  "sections": {
+    "wholesale-styles": {
+      "type": "wholesale-form-styles",
+      "settings": {}
+    },
+    "main": {
+      "type": "t-page",
+      "settings": {
+        "pageType": "col-1-center",
+        "showHeading": true
+      }
+    },
+    "17298832210b967294": {
+      "type": "apps",
+      "blocks": {
+        "bss_b2b_solution_form_aPw6Um": {
+          "type": "shopify://apps/bss-b2b-solution/blocks/form/451233f2-9631-4c49-8b6f-057e4ebcde7f",
+          "settings": {
+            "form_id": "27260"
+          }
+        }
+      },
+      "block_order": [
+        "bss_b2b_solution_form_aPw6Um"
+      ],
+      "settings": {
+        "width": "container-wrap"
+      }
+    }
+  },
+  "order": [
+    "wholesale-styles",
+    "main",
+    "17298832210b967294"
+  ]
+}

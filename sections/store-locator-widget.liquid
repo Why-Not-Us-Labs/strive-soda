@@ -1,0 +1,298 @@
+<section class="store-locator-widget" data-section-id="{{ section.id }}">
+  <div class="store-locator-widget__container">
+    {%- if section.settings.show_heading -%}
+      <div class="store-locator-widget__header">
+        {%- if section.settings.heading != blank -%}
+          <h2 class="store-locator-widget__heading">{{ section.settings.heading }}</h2>
+        {%- endif -%}
+        {%- if section.settings.description != blank -%}
+          <p class="store-locator-widget__description">{{ section.settings.description }}</p>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+
+    <!-- Storepoint Widget Container -->
+    <div class="store-locator-widget__map">
+      <div id="storepoint-widget"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Storepoint Widget Script -->
+<script>
+  window.loadStorepoint = function() {
+    var storepoint = new StorepointWidget(
+      '168f803b457043',
+      '#storepoint-widget',
+      {}
+    );
+
+    // Apply brand font styling after widget loads
+    setTimeout(function() {
+      applyBrandStyling();
+    }, 500);
+
+    // Also observe for dynamic content changes
+    var observer = new MutationObserver(function() {
+      applyBrandStyling();
+    });
+
+    var widgetEl = document.getElementById('storepoint-widget');
+    if (widgetEl) {
+      observer.observe(widgetEl, { childList: true, subtree: true });
+    }
+  };
+
+  function applyBrandStyling() {
+    var fontFamily = getComputedStyle(document.documentElement).getPropertyValue('--fontFamily') || "'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif";
+
+    // Apply to all text elements
+    var elements = document.querySelectorAll('#storepoint-widget .storepoint-name, #storepoint-widget .storepoint-address, #storepoint-widget .storepoint-description, #storepoint-widget .storepoint-button-label, #storepoint-widget input, #storepoint-widget .storepoint-dropdown-target span');
+
+    elements.forEach(function(el) {
+      el.style.fontFamily = fontFamily;
+    });
+  }
+
+  !function() {
+    var t = document.createElement("script");
+    t.type = "text/javascript";
+    t.async = true;
+    t.src = "https://widget.storepoint.co/embed.js";
+    t.onload = function() {
+      if (typeof window.loadStorepoint === 'function') {
+        window.loadStorepoint();
+      }
+    };
+    document.head.appendChild(t);
+  }();
+</script>
+
+<style>
+  .store-locator-widget {
+    background: #F5F1E8;
+    padding: clamp(40px, 6vw, 80px) 0;
+  }
+
+  .store-locator-widget__container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 clamp(16px, 4vw, 40px);
+  }
+
+  .store-locator-widget__header {
+    text-align: center;
+    margin-bottom: clamp(24px, 4vw, 48px);
+  }
+
+  .store-locator-widget__heading {
+    font-family: var(--hFontFamily, var(--font-headings)), 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(24px, 4vw, 40px);
+    font-weight: 500;
+    color: #111;
+    margin: 0 0 12px;
+  }
+
+  .store-locator-widget__description {
+    font-family: var(--fontFamily, var(--font-primary)), 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: clamp(14px, 1.5vw, 18px);
+    line-height: 1.5;
+    color: #333;
+    margin: 0;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .store-locator-widget__map {
+    background: #fff;
+    border: 3px solid #111;
+    border-radius: 20px;
+    overflow: hidden;
+    min-height: 550px;
+    box-shadow: 0 8px 40px rgba(0,0,0,0.08);
+  }
+
+  #storepoint-widget {
+    width: 100%;
+    min-height: 550px;
+  }
+
+  /* =====================================================
+     STOREPOINT WIDGET BRAND OVERRIDES
+     Using exact Storepoint class names from their widget
+     ===================================================== */
+
+  /* Store names */
+  #storepoint-widget .storepoint-name {
+    font-family: var(--fontFamily), 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 15px !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* Address text */
+  #storepoint-widget .storepoint-address {
+    font-family: var(--fontFamily), 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    color: #666 !important;
+  }
+
+  /* Description/zip code */
+  #storepoint-widget .storepoint-description {
+    font-family: var(--fontFamily), 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-weight: 400 !important;
+    font-size: 12px !important;
+    color: #888 !important;
+  }
+
+  /* Get Directions button */
+  #storepoint-widget .storepoint-button,
+  #storepoint-widget .storepoint-directions-button {
+    font-family: var(--fontFamily), 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-weight: 600 !important;
+    font-size: 11px !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+    background: #111 !important;
+    color: #fff !important;
+    border: 2px solid #111 !important;
+    border-radius: 6px !important;
+    padding: 8px 14px !important;
+    transition: all 0.2s ease !important;
+    text-decoration: none !important;
+  }
+
+  #storepoint-widget .storepoint-button:hover,
+  #storepoint-widget .storepoint-directions-button:hover {
+    background: #0ABAB5 !important;
+    border-color: #0ABAB5 !important;
+  }
+
+  /* Button label inside the button */
+  #storepoint-widget .storepoint-button-label {
+    font-family: var(--fontFamily), 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  }
+
+  /* Search input */
+  #storepoint-widget .mapboxgl-ctrl-geocoder--input,
+  #storepoint-widget input[type="text"] {
+    font-family: var(--fontFamily), 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-size: 14px !important;
+  }
+
+  /* Dropdown/radius selector */
+  #storepoint-widget .storepoint-dropdown-target,
+  #storepoint-widget .storepoint-dropdown-target span,
+  #storepoint-widget .storepoint-dropdown-option {
+    font-family: var(--fontFamily), 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    font-size: 14px !important;
+  }
+
+  /* Location cards */
+  #storepoint-widget .storepoint-location {
+    border-bottom: 1px solid #eee !important;
+    padding: 16px !important;
+    transition: background 0.15s ease !important;
+  }
+
+  #storepoint-widget .storepoint-location:hover {
+    background: #f9f9f9 !important;
+  }
+
+  /* Location card content */
+  #storepoint-widget .storepoint-location-info {
+    font-family: var(--fontFamily), 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif !important;
+  }
+
+  /* Scrollbar styling */
+  #storepoint-widget .storepoint-results-container::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  #storepoint-widget .storepoint-results-container::-webkit-scrollbar-track {
+    background: #f5f5f5;
+    border-radius: 3px;
+  }
+
+  #storepoint-widget .storepoint-results-container::-webkit-scrollbar-thumb {
+    background: #ccc;
+    border-radius: 3px;
+  }
+
+  #storepoint-widget .storepoint-results-container::-webkit-scrollbar-thumb:hover {
+    background: #0ABAB5;
+  }
+
+  /* Mobile */
+  @media (max-width: 768px) {
+    .store-locator-widget {
+      padding: 24px 0;
+    }
+
+    .store-locator-widget__container {
+      padding: 0 16px;
+    }
+
+    .store-locator-widget__map {
+      min-height: 500px;
+      border-width: 2px;
+      border-radius: 16px;
+    }
+
+    #storepoint-widget {
+      min-height: 500px;
+    }
+
+    #storepoint-widget .storepoint-location {
+      padding: 14px 12px !important;
+    }
+  }
+
+  /* Tablet */
+  @media (min-width: 769px) and (max-width: 1024px) {
+    .store-locator-widget__map {
+      min-height: 500px;
+      border-radius: 18px;
+    }
+
+    #storepoint-widget {
+      min-height: 500px;
+    }
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Store Locator Widget",
+  "tag": "section",
+  "class": "store-locator-widget-section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_heading",
+      "label": "Show heading section",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Store Locator"
+    },
+    {
+      "type": "textarea",
+      "id": "description",
+      "label": "Description",
+      "default": "Use the map below to find Strive Soda at a store near you."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Store Locator Widget"
+    }
+  ]
+}
+{% endschema %}

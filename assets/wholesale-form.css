@@ -1,0 +1,255 @@
+/* Strive Wholesale Form - BSS B2B Solution Styling
+   Brand Colors: Tiffany Blue (#0ABAB5), Orange (#FF7A00)
+   Fonts: Polysans Standard / Inter fallback
+*/
+
+/* Hide page title (already in form) */
+.template-page-wholesale h1,
+.template-page-wholesale .page-title,
+[data-heading="true"] {
+  display: none !important;
+}
+
+/* Hide loading skeleton/placeholder elements */
+.bss-b2b-skeleton-wrapper,
+.bss-b2b-form .loading-skeleton,
+.bss-b2b-form .skeleton,
+.bss-b2b-form [class*="skeleton"],
+.bss-b2b-form [class*="placeholder"],
+.bss-b2b-form .bss-loading,
+.bss-b2b-form .bss-skeleton {
+  display: none !important;
+}
+
+/* Form container styling */
+.bss-b2b-form {
+  font-family: 'Polysans Standard', 'Inter', sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Form labels */
+.bss-b2b-form label {
+  font-family: 'Polysans Standard', 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.875rem;
+  color: #1a1a1a;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Required field indicator */
+.bss-b2b-form label .required,
+.bss-b2b-form label .bss-required {
+  color: #FF7A00;
+}
+
+/* Input fields */
+.bss-b2b-form input[type="text"],
+.bss-b2b-form input[type="email"],
+.bss-b2b-form input[type="password"],
+.bss-b2b-form input[type="tel"],
+.bss-b2b-form input[type="number"],
+.bss-b2b-form textarea,
+.bss-b2b-form select {
+  font-family: 'Polysans Standard', 'Inter', sans-serif;
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fff;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  margin-bottom: 1.25rem;
+  box-sizing: border-box;
+}
+
+/* Input focus state */
+.bss-b2b-form input[type="text"]:focus,
+.bss-b2b-form input[type="email"]:focus,
+.bss-b2b-form input[type="password"]:focus,
+.bss-b2b-form input[type="tel"]:focus,
+.bss-b2b-form input[type="number"]:focus,
+.bss-b2b-form textarea:focus,
+.bss-b2b-form select:focus {
+  outline: none;
+  border-color: #0ABAB5;
+  box-shadow: 0 0 0 3px rgba(10, 186, 181, 0.15);
+}
+
+/* Nice select dropdown styling */
+.bss-b2b-form .bss-nice-select {
+  font-family: 'Polysans Standard', 'Inter', sans-serif;
+  width: 100%;
+  padding: 0.875rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-bottom: 1.25rem;
+}
+
+.bss-b2b-form .bss-nice-select:hover {
+  border-color: #0ABAB5;
+}
+
+.bss-b2b-form .bss-nice-select.open {
+  border-color: #0ABAB5;
+}
+
+/* Checkbox and privacy policy styling */
+.bss-b2b-form input[type="checkbox"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  accent-color: #0ABAB5;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.bss-b2b-form .checkbox-wrapper,
+.bss-b2b-form .privacy-wrapper,
+.bss-b2b-form [class*="checkbox"],
+.bss-b2b-form [class*="privacy"] {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.bss-b2b-form .checkbox-wrapper label,
+.bss-b2b-form .privacy-wrapper label {
+  font-weight: 400;
+  font-size: 0.875rem;
+  color: #666;
+  margin-bottom: 0;
+}
+
+.bss-b2b-form a {
+  color: #0ABAB5;
+  text-decoration: underline;
+}
+
+.bss-b2b-form a:hover {
+  color: #FF7A00;
+}
+
+/* Submit button - Primary CTA */
+.bss-b2b-form .bss-b2b-btn-buyitnow,
+.bss-b2b-form button[type="submit"],
+.bss-b2b-form input[type="submit"],
+.bss-b2b-form .submit-btn,
+.bss-b2b-form .bss-submit {
+  font-family: 'Polysans Standard', 'Inter', sans-serif;
+  width: 100%;
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  background-color: #FF7A00;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.1s ease;
+  margin-top: 1rem;
+}
+
+.bss-b2b-form .bss-b2b-btn-buyitnow:hover,
+.bss-b2b-form button[type="submit"]:hover,
+.bss-b2b-form input[type="submit"]:hover,
+.bss-b2b-form .submit-btn:hover,
+.bss-b2b-form .bss-submit:hover {
+  background-color: #e66e00;
+  transform: translateY(-1px);
+}
+
+.bss-b2b-form .bss-b2b-btn-buyitnow:active,
+.bss-b2b-form button[type="submit"]:active,
+.bss-b2b-form input[type="submit"]:active {
+  transform: translateY(0);
+}
+
+/* Error states */
+.bss-b2b-form .error,
+.bss-b2b-form .bss-error,
+.bss-b2b-form input.error,
+.bss-b2b-form .field-error {
+  border-color: #dc3545 !important;
+}
+
+.bss-b2b-form .error-message,
+.bss-b2b-form .bss-error-message {
+  color: #dc3545;
+  font-size: 0.75rem;
+  margin-top: -1rem;
+  margin-bottom: 1rem;
+}
+
+/* Success messages */
+.bss-b2b-form .success,
+.bss-b2b-form .bss-success {
+  color: #0ABAB5;
+  font-weight: 600;
+}
+
+/* Form section headings */
+.bss-b2b-form h2,
+.bss-b2b-form h3,
+.bss-b2b-form .form-heading {
+  font-family: 'Polysans Standard', 'Inter', sans-serif;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+/* Field groups / rows */
+.bss-b2b-form .field-group,
+.bss-b2b-form .form-row,
+.bss-b2b-form .bss-row {
+  margin-bottom: 0.5rem;
+}
+
+/* Two column layout for name fields */
+@media (min-width: 480px) {
+  .bss-b2b-form .name-row,
+  .bss-b2b-form .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Placeholder text styling */
+.bss-b2b-form input::placeholder,
+.bss-b2b-form textarea::placeholder {
+  color: #999;
+  opacity: 1;
+}
+
+/* Hide any additional skeleton/loading elements that may appear */
+[class*="bss"] .skeleton,
+[class*="bss"] [class*="skeleton"],
+[class*="bss"] .loading,
+[class*="bss"] [class*="loading-placeholder"] {
+  display: none !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .bss-b2b-form {
+    padding: 1rem;
+  }
+
+  .bss-b2b-form input[type="text"],
+  .bss-b2b-form input[type="email"],
+  .bss-b2b-form input[type="password"],
+  .bss-b2b-form input[type="tel"],
+  .bss-b2b-form textarea,
+  .bss-b2b-form select,
+  .bss-b2b-form .bss-nice-select {
+    padding: 0.75rem;
+    font-size: 16px; /* Prevents iOS zoom on focus */
+  }
+}

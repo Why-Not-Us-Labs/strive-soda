@@ -1,0 +1,31 @@
+{
+  "sections": {
+    "store_locator_hero": {
+      "type": "store-locator-hero",
+      "settings": {
+        "heading": "Find Strive Near You",
+        "subheading": "Discover where to buy Strive Soda at stores near you."
+      }
+    },
+    "store_locator_widget": {
+      "type": "store-locator-widget",
+      "settings": {
+        "show_heading": false
+      }
+    },
+    "store_cta": {
+      "type": "store-locator-cta",
+      "settings": {
+        "heading": "Can't Find Strive Near You?",
+        "description": "Shop online and get Strive delivered right to your door.",
+        "button_text": "Shop Online",
+        "button_link": "/collections/all"
+      }
+    }
+  },
+  "order": [
+    "store_locator_hero",
+    "store_locator_widget",
+    "store_cta"
+  ]
+}
