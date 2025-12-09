@@ -429,6 +429,28 @@
 
 ---
 
+### Epic: Store Locator (P1 - High Priority)
+
+#### STRIVE-058: Create Store Locator page
+**Status:** Done
+**Estimate:** 3h
+**Completed:** Dec 8, 2025
+**Description:** Build store locator page with Storepoint embed, future-proof for retail expansion (currently San Diego only, will scale to Target/Whole Foods)
+**Files:** `templates/page.store-locator.json`, `sections/store-locator-hero.liquid`, `sections/store-locator-widget.liquid`, `sections/store-locator-cta.liquid`
+**Notes:** Integrated Storepoint.co widget (ID: 168f803b457043), created 3 custom sections: Tiffany Blue hero, widget container with brand styling, and dark CTA section
+
+---
+
+#### STRIVE-059: Add Store Locator to header navigation
+**Status:** Done
+**Estimate:** 1h
+**Completed:** Dec 8, 2025
+**Description:** Add "Find Us" or Store Locator to main navigation
+**Files:** `sections/header.liquid`, `snippets/header-mobile.liquid`
+**Notes:** Added "STORE LOCATOR" link to both desktop and mobile navigation
+
+---
+
 #### STRIVE-071: Fix Store Locator page font inconsistency
 **Status:** Done
 **Estimate:** 2h
@@ -436,6 +458,28 @@
 **Description:** Fix font inconsistency where Store Locator page showed Times serif font instead of Inter sans-serif used across the rest of the site. Root cause: CSS variables (--hFontFamily, --fontFamily) resolving to serif on Store Locator page specifically.
 **Files:** `assets/strive-header-footer.css`, `sections/store-locator-hero.liquid`, `sections/store-locator-widget.liquid`, `sections/store-locator-cta.liquid`
 **Notes:** Added inline styles with !important to hero/CTA headings and descriptions. Updated header nav links with explicit Inter font fallback. Changed all Store Locator section CSS to use Inter as primary fallback.
+
+---
+
+### Epic: Science Page Bug Fixes
+
+#### STRIVE-072: Fix Science page section overlap issue
+**Status:** Done
+**Estimate:** 1h
+**Completed:** Dec 8, 2025
+**Description:** Jack reported section overlap on Science page where "What is Hydration Soda" was overlapping with "Shop Flavors" CTA section.
+**Files:** `sections/science-electrolytes.liquid`, `sections/science-honey.liquid`, `assets/science-page.css`
+**Notes:** Added explicit z-index stacking (z-index: 1 for checkerboard folds, z-index: 2 for electrolytes/honey sections), added isolation: isolate to create proper stacking contexts, changed overflow from hidden to visible.
+
+---
+
+#### STRIVE-073: Fix electrolyte flip cards showing blank on hover
+**Status:** Done
+**Estimate:** 2h
+**Completed:** Dec 8, 2025
+**Description:** Jack reported the electrolyte cards (Sodium/Potassium/Magnesium) showed blank instead of content on hover. Cards should display benefit descriptions on hover.
+**Files:** `sections/science-electrolytes.liquid`
+**Notes:** Replaced 3D CSS transform flip animation with simpler opacity fade. 3D transforms (rotateY, backface-visibility) were not rendering correctly across browsers. Cards now smoothly fade between front/back content. Improved mobile tap-to-flip detection.
 
 ---
 
@@ -482,30 +526,6 @@
 ---
 
 ## OUTSTANDING TICKETS
-
-### Epic: Science Page Bug Fixes (P0 - URGENT)
-
-#### STRIVE-072: Fix Science page section overlap issue
-**Status:** In Progress
-**Estimate:** 1h
-**Priority:** P0 - URGENT
-**Assigned:** Gavin McNamara
-**Description:** Jack reported: "The science page is kind of having some overlapping issues. That pink kind of background where What is the Hydration Soda is overlapping with the Shop Flavors CTA." Need to investigate and fix CSS positioning/z-index issues causing section overlap, likely on mobile.
-**Files:** `sections/science-electrolytes.liquid`, `sections/science-checkerboard-fold.liquid`, `assets/science-page.css`
-**Notes:** "What is Hydration Soda?" heading is in the electrolytes section. Need to check for margin/padding collapse, z-index issues, or positioning problems especially on mobile viewports.
-
----
-
-#### STRIVE-073: Fix electrolyte flip cards showing blank on hover
-**Status:** In Progress
-**Estimate:** 2h
-**Priority:** P0 - URGENT
-**Assigned:** Gavin McNamara
-**Description:** Jack reported: "The yellow, blue and orange boxes... when you highlight over it just goes blank like a yellow blank box." The electrolyte cards (Sodium/Potassium/Magnesium) flip animation is broken - back of card shows blank instead of content. Jack wants hover to show descriptive text like "replenishes what you sweat out to keep fluids balanced" for Sodium.
-**Files:** `sections/science-electrolytes.liquid`
-**Notes:** Current implementation uses CSS 3D transforms for flip effect. Issue could be: 1) backface-visibility not working in all browsers, 2) transform-style: preserve-3d failing, 3) card-back content not rendering. Consider simplifying to fade/slide animation instead of 3D flip.
-
----
 
 ### Epic: Homepage Content Updates (P0 - Critical)
 
@@ -596,28 +616,6 @@
 ---
 
 ### Epic: Store Locator (P1 - High Priority)
-
-#### STRIVE-058: Create Store Locator page
-**Status:** Done
-**Estimate:** 3h
-**Completed:** Dec 8, 2025
-**Priority:** P1
-**Description:** Build store locator page with Storepoint embed, future-proof for retail expansion (currently San Diego only, will scale to Target/Whole Foods)
-**Files:** `templates/page.store-locator.json`, `sections/store-locator-hero.liquid`, `sections/store-locator-widget.liquid`, `sections/store-locator-cta.liquid`
-**Notes:** Integrated Storepoint.co widget (ID: 168f803b457043), created 3 custom sections: Tiffany Blue hero, widget container with brand styling, and dark CTA section
-
----
-
-#### STRIVE-059: Add Store Locator to header navigation
-**Status:** Done
-**Estimate:** 1h
-**Completed:** Dec 8, 2025
-**Priority:** P1
-**Description:** Add "Find Us" or Store Locator to main navigation. Option 1: About Us dropdown (Our Story, Store Locator). Option 2: Standalone nav item.
-**Files:** `sections/header.liquid`, `snippets/header-mobile.liquid`
-**Notes:** Added "STORE LOCATOR" link to both desktop and mobile navigation
-
----
 
 #### STRIVE-060: Add Store Locator CTAs across site
 **Status:** In Progress
@@ -739,15 +737,21 @@
 
 ## SUMMARY
 
-### Completed: 51 tickets
-### Outstanding: 21 tickets
+### Completed: 56 tickets
+### Outstanding: 16 tickets
 
 ### Outstanding by Priority:
-- **P0 (URGENT):** 2 tickets (Science page bugs - IN PROGRESS)
 - **P0 (Critical):** 3 tickets
-- **P1 (High):** 7 tickets (Store Locator complete!)
+- **P1 (High):** 5 tickets
 - **P2 (Medium):** 6 tickets
 - **P3 (Nice to Have):** 4 tickets
+
+### Recently Completed (Dec 8, 2025):
+- **STRIVE-058:** Store Locator page created with Storepoint widget
+- **STRIVE-059:** Store Locator added to header navigation
+- **STRIVE-071:** Store Locator font consistency fixed
+- **STRIVE-072:** Science page section overlap fixed
+- **STRIVE-073:** Electrolyte flip cards fixed
 
 ### Blockers:
 1. **Subscription page URL** - Blocks STRIVE-049
@@ -756,10 +760,10 @@
 
 ### Estimated Remaining Hours:
 - **P0:** ~4 hours
-- **P1:** ~15 hours
+- **P1:** ~8 hours
 - **P2:** ~13 hours
 - **P3:** ~16 hours
-- **Total:** ~48 hours (if all features implemented)
+- **Total:** ~41 hours (if all features implemented)
 
 ---
 
@@ -769,8 +773,9 @@
 - October 27: 2.24 hours
 - October 28: 1.5 hours
 - October 29: 2.25 hours
-- **Documented total:** ~6 hours
-- **Estimated actual total (including Oct 11-22):** 50-55 hours
+- December 8: Store Locator + Science page fixes
+- **Documented total:** ~10 hours
+- **Estimated actual total (including Oct 11-22):** 55-60 hours
 
 ### Key Dates from Chris (Content Uploads):
 - Per Nov 6 implementation plan: New videos/imagery TBD
