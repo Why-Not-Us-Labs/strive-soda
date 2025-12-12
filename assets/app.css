@@ -1956,6 +1956,7 @@ comments-section .acomment x-flex { margin-top: var(--padding) }
 }
 
 /*** Legal pages */
+/* Base policy container - OVERRIDDEN by policy-pages.css for hero design */
 .shopify-policy__container {
     display: grid;
     min-width: 100%;
@@ -1965,8 +1966,7 @@ comments-section .acomment x-flex { margin-top: var(--padding) }
     grid-template-columns: repeat(2, 1fr);
 }
 .shopify-policy__container > * { width: 100%; text-align: start }
-.shopify-policy__title h1 { padding: var(--padding) }
-.shopify-policy__body { margin: 0 auto; border-inline-start: var(--globalBorder); padding: var(--padding); overflow: hidden }
+/* Title and body styles moved to policy-pages.css for hero design */
 @media (max-width: 777px) { .shopify-policy__container { grid-template-columns: 1fr } .shopify-policy__body { border:0; max-width: 100vw } }
 
 /* Shopify built-in ccpa-opt-out page */
@@ -2414,19 +2414,8 @@ section.faq x-cell:nth-child(3n) {
     width: 100%;
 }
 
-/* Policy page title */
-.shopify-policy__title {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 800;
-    font-size: clamp(32px, 5vw, 48px);
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
-    color: #0ABAB5; /* Tiffany Blue */
-    margin-bottom: clamp(30px, 4vw, 50px);
-    padding-bottom: 20px;
-    border-bottom: 3px solid #0ABAB5;
-    text-align: center;
-}
+/* Policy page title - OVERRIDDEN by policy-pages.css for hero design */
+/* Base styles removed - hero styling handled in policy-pages.css */
 
 /* Policy body content */
 .shopify-policy__body {

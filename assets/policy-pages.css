@@ -11,67 +11,80 @@
     grid-template-columns: 1fr !important;
     min-width: auto !important;
     border: none !important;
-    max-width: 900px;
-    margin: 0 auto !important;
+    max-width: 100% !important;
+    margin: 0 !important;
     padding: 0 !important;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
-/* Hero section - matches FAQ design */
+/* Ensure container doesn't constrain the hero */
+.shopify-policy__container > * {
+    width: 100% !important;
+    max-width: 100% !important;
+}
+
+/* Hero section - matches FAQ design EXACTLY */
 .shopify-policy__title {
-    background: #0ABAB5;
-    padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px);
-    margin: 0 calc(-50vw + 50%);
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-    margin-right: -50vw;
-    text-align: center;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 900;
-    font-size: clamp(36px, 5vw, 64px);
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
-    color: #fff;
-    border: none;
-    padding-bottom: clamp(60px, 8vw, 100px);
+    background: #0ABAB5 !important;
+    padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px) !important;
+    margin: 0 calc(-50vw + 50%) !important;
+    width: 100vw !important;
+    position: relative !important;
+    left: 50% !important;
+    right: 50% !important;
+    margin-left: -50vw !important;
+    margin-right: -50vw !important;
+    text-align: center !important;
+    font-family: var(--hFontFamily, var(--font-headings, 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif)) !important;
+    font-weight: 900 !important;
+    font-size: clamp(36px, 5vw, 64px) !important;
+    text-transform: uppercase !important;
+    letter-spacing: -0.02em !important;
+    color: #fff !important;
+    border: none !important;
+    border-bottom: none !important;
+    padding-bottom: clamp(60px, 8vw, 100px) !important;
+    margin-bottom: 0 !important;
 }
 
-/* Policy title h1 inside .shopify-policy__title */
+/* Policy title h1 inside .shopify-policy__title - matches FAQ h1 exactly */
 .shopify-policy__title h1 {
-    margin: 0 0 12px;
-    padding: 0;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 900;
-    font-size: clamp(36px, 5vw, 64px);
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
-    color: #fff;
+    margin: 0 0 12px !important;
+    padding: 0 !important;
+    font-family: var(--hFontFamily, var(--font-headings, 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif)) !important;
+    font-weight: 900 !important;
+    font-size: clamp(36px, 5vw, 64px) !important;
+    text-transform: uppercase !important;
+    letter-spacing: -0.02em !important;
+    color: #fff !important;
+    border: none !important;
+    border-bottom: none !important;
 }
 
-/* Add subtitle after title to match FAQ */
+/* Add subtitle after title to match FAQ - styled like .faq-subtitle */
 .shopify-policy__title::after {
     content: 'Legal Information';
     display: block;
     font-size: clamp(16px, 1.8vw, 20px);
     line-height: 1.5;
+    margin: 0;
     color: rgba(255, 255, 255, 0.9);
     font-weight: 400;
     text-transform: none;
     letter-spacing: 0;
     margin-top: 12px;
+    font-family: var(--fontFamily, var(--font-primary, 'Poly Sans', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif));
 }
 
-/* Policy body content - professional layout */
+/* Policy body content - professional layout matching FAQ container */
 .shopify-policy__body {
     font-size: clamp(16px, 1.7vw, 18px);
     color: #1a1a1a;
-    max-width: 800px;
-    margin: clamp(50px, 8vw, 80px) auto 0;
-    padding: 0 clamp(20px, 5vw, 40px);
+    max-width: 900px !important;
+    margin: clamp(50px, 8vw, 80px) auto 0 !important;
+    padding: 0 clamp(20px, 5vw, 40px) !important;
     border: none !important;
+    border-inline-start: none !important;
     overflow: visible !important;
     line-height: 1.75;
     text-align: left !important;
