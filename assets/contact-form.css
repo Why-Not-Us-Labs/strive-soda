@@ -1,0 +1,304 @@
+/**
+ * STRIVE SODA - CONTACT FORM STYLING
+ * Beautiful, modern contact form design
+ * Brand colors: Tiffany Blue (#0ABAB5), Orange (#FF7A00)
+ */
+
+/* ========================================
+   FORM CONTAINER
+   ======================================== */
+
+.contact-page .faq-container .meta {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: clamp(40px, 5vw, 60px) 0;
+}
+
+.contact-page form {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(24px, 3vw, 32px);
+}
+
+/* ========================================
+   FORM FIELDS (Labels & Inputs)
+   ======================================== */
+
+.contact-page form p {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.contact-page form label {
+    font-family: var(--hFontFamily, var(--font-headings, 'Poly Sans', 'Inter', sans-serif));
+    font-weight: 600;
+    font-size: clamp(14px, 1.5vw, 16px);
+    color: #1a1a1a;
+    letter-spacing: -0.01em;
+    display: block;
+    margin-bottom: 8px;
+}
+
+/* Input fields - modern, clean design */
+.contact-page form input[type="text"],
+.contact-page form input[type="email"],
+.contact-page form input[type="tel"],
+.contact-page form input[type="url"],
+.contact-page form textarea {
+    width: 100%;
+    padding: clamp(14px, 2vw, 18px) clamp(16px, 2.2vw, 20px);
+    font-family: var(--fontFamily, var(--font-primary, 'Poly Sans', 'Inter', sans-serif));
+    font-size: clamp(15px, 1.6vw, 17px);
+    font-weight: 400;
+    line-height: 1.6;
+    color: #1a1a1a;
+    background: #fff;
+    border: 2px solid #e5e5e5;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.contact-page form input[type="text"]:focus,
+.contact-page form input[type="email"]:focus,
+.contact-page form input[type="tel"]:focus,
+.contact-page form input[type="url"]:focus,
+.contact-page form textarea:focus {
+    border-color: #0ABAB5;
+    background: #fafafa;
+    box-shadow: 0 0 0 4px rgba(10, 186, 181, 0.1);
+}
+
+.contact-page form input[type="text"]:hover,
+.contact-page form input[type="email"]:hover,
+.contact-page form input[type="tel"]:hover,
+.contact-page form input[type="url"]:hover,
+.contact-page form textarea:hover {
+    border-color: #0ABAB5;
+}
+
+/* Placeholder styling */
+.contact-page form input::placeholder,
+.contact-page form textarea::placeholder {
+    color: #999;
+    opacity: 1;
+    font-weight: 400;
+}
+
+/* Textarea specific */
+.contact-page form textarea {
+    min-height: 160px;
+    resize: vertical;
+    font-family: var(--fontFamily, var(--font-primary, 'Poly Sans', 'Inter', sans-serif));
+    line-height: 1.7;
+}
+
+/* ========================================
+   CHECKBOX STYLING
+   ======================================== */
+
+.contact-page form p > div[style*="display:flex"] {
+    display: flex !important;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background: rgba(10, 186, 181, 0.03);
+    border: 2px solid rgba(10, 186, 181, 0.1);
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.contact-page form p > div[style*="display:flex"]:hover {
+    background: rgba(10, 186, 181, 0.05);
+    border-color: rgba(10, 186, 181, 0.2);
+}
+
+.contact-page form input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    margin: 0;
+    cursor: pointer;
+    accent-color: #0ABAB5;
+    border: 2px solid #e5e5e5;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.contact-page form input[type="checkbox"]:checked {
+    background: #0ABAB5;
+    border-color: #0ABAB5;
+}
+
+.contact-page form input[type="checkbox"]:focus {
+    outline: 2px solid rgba(10, 186, 181, 0.3);
+    outline-offset: 2px;
+}
+
+.contact-page form input[type="checkbox"] + label {
+    font-weight: 400;
+    font-size: clamp(14px, 1.5vw, 16px);
+    color: #2a2a2a;
+    line-height: 1.6;
+    cursor: pointer;
+    margin: 0;
+}
+
+/* ========================================
+   SUBMIT BUTTON - Modern & Prominent
+   ======================================== */
+
+.contact-page form button[type="submit"] {
+    width: 100%;
+    padding: clamp(16px, 2.2vw, 20px) clamp(32px, 4vw, 48px);
+    font-family: var(--hFontFamily, var(--font-headings, 'Poly Sans', 'Inter', sans-serif));
+    font-size: clamp(16px, 1.8vw, 18px);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #fff;
+    background: #0ABAB5;
+    border: 2px solid #0ABAB5;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(10, 186, 181, 0.2);
+    margin-top: 8px;
+}
+
+.contact-page form button[type="submit"]:hover {
+    background: #08a39e;
+    border-color: #08a39e;
+    box-shadow: 0 6px 20px rgba(10, 186, 181, 0.3);
+    transform: translateY(-2px);
+}
+
+.contact-page form button[type="submit"]:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(10, 186, 181, 0.2);
+}
+
+.contact-page form button[type="submit"]:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(10, 186, 181, 0.3), 0 4px 12px rgba(10, 186, 181, 0.2);
+}
+
+/* ========================================
+   SUCCESS & ERROR MESSAGES
+   ======================================== */
+
+.contact-page .msg {
+    padding: clamp(16px, 2vw, 20px) clamp(20px, 2.5vw, 24px);
+    border-radius: 8px;
+    font-family: var(--fontFamily, var(--font-primary, 'Poly Sans', 'Inter', sans-serif));
+    font-size: clamp(15px, 1.6vw, 17px);
+    font-weight: 500;
+    line-height: 1.6;
+    margin-bottom: clamp(24px, 3vw, 32px);
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.contact-page .msg.ok {
+    background: rgba(10, 186, 181, 0.1);
+    border: 2px solid #0ABAB5;
+    color: #0ABAB5;
+}
+
+.contact-page .msg.err {
+    background: rgba(255, 122, 0, 0.1);
+    border: 2px solid #FF7A00;
+    color: #FF7A00;
+}
+
+/* ========================================
+   REQUIRED FIELD INDICATOR
+   ======================================== */
+
+.contact-page form label:has(+ input[required]),
+.contact-page form label:has(+ textarea[required]) {
+    position: relative;
+}
+
+.contact-page form label:has(+ input[required])::after,
+.contact-page form label:has(+ textarea[required])::after {
+    content: '*';
+    color: #FF7A00;
+    margin-left: 4px;
+    font-weight: 700;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN
+   ======================================== */
+
+@media (max-width: 777px) {
+    .contact-page .faq-container .meta {
+        padding: 30px 0;
+    }
+
+    .contact-page form {
+        gap: 20px;
+    }
+
+    .contact-page form input[type="text"],
+    .contact-page form input[type="email"],
+    .contact-page form input[type="tel"],
+    .contact-page form input[type="url"],
+    .contact-page form textarea {
+        padding: 14px 16px;
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+
+    .contact-page form textarea {
+        min-height: 140px;
+    }
+
+    .contact-page form button[type="submit"] {
+        padding: 16px 24px;
+        font-size: 16px;
+    }
+}
+
+/* ========================================
+   ACCESSIBILITY
+   ======================================== */
+
+.contact-page form input:focus-visible,
+.contact-page form textarea:focus-visible,
+.contact-page form button:focus-visible {
+    outline: 2px solid #0ABAB5;
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .contact-page form input,
+    .contact-page form textarea {
+        border-width: 3px;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    .contact-page form input,
+    .contact-page form textarea,
+    .contact-page form button,
+    .contact-page .msg {
+        transition: none;
+        animation: none;
+    }
+}

@@ -45,6 +45,9 @@
         if template == 'policy'
             echo 'policy-pages.css' | asset_url | stylesheet_tag
         endif
+
+        # Load contact form styles (scoped to .contact-page class)
+        echo 'contact-form.css' | asset_url | stylesheet_tag
     -%}
     {% # theme-check-disable %}
     {%- if settings.css != blank -%}<style id="bUserCSS">{{ settings.css | replace: '<style>' '' | replace: '</style>' '' }}</style>{%- endif -%}
@@ -77,6 +80,11 @@
 
     {%- # Global -%}
     <script src="{{ 'app.js' | asset_url }}" defer></script>
+
+    {%- # Policy pages accordion enhancement -%}
+    {%- if template == 'policy' -%}
+        <script src="{{ 'policy-accordion.js' | asset_url }}" defer></script>
+    {%- endif -%}
 
     {%- # Instantpage -%}
     <script src="{{ 'm-instantpage.min.js' | asset_url }}" type="module" defer></script>

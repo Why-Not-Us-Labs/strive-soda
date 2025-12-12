@@ -73,7 +73,9 @@
                                 {%- else -%}
                                     {%- for policy in shop.policies -%}
                                     {%- if policy != blank -%}
-                                        <li><a href="{{ policy.url }}" class="no-style">{{ policy.title }}</a></li>
+                                        {%- unless policy.title == 'Privacy Policy' or policy.title == 'Refund Policy' -%}
+                                            <li><a href="{{ policy.url }}" class="no-style">{{ policy.title }}</a></li>
+                                        {%- endunless -%}
                                     {%- endif -%}
                                     {%- endfor -%}
                                 {%- endif -%}

@@ -1,22 +1,18 @@
-{%- liquid 
-    assign colNum = 1
+<div class="general-page contact-page faq-page">
+<section>
+    {%- comment -%} Hero Section matching FAQ design {%- endcomment -%}
+    <div class="faq-hero">
+        <h1>{{ page.title | escape }}</h1>
+        <p class="faq-subtitle">Get in Touch</p>
+    </div>
 
-    if section.settings.show_title
-        assign colNum = colNum | plus: 1
-    endif
+    {%- comment -%} Contact Form Container {%- endcomment -%}
+    <div class="faq-container">
+        {%- if section.settings.show_content -%}
+            <div class="rte" style="margin-bottom: 40px;">{{ page.content }}</div>
+        {%- endif -%}
 
-    if section.settings.show_content 
-        assign colNum = colNum | plus: 1
-    endif
--%}
-
-<div class="general-page contact-page">
-<section class="contact">
-<x-grid columns="{{ colNum }}" columns-s="1">
-    {%- if section.settings.show_title -%}<x-cell><h1>{{ page.title }}</h1></x-cell>{%- endif -%}
-    {%- if section.settings.show_content -%}<x-cell><div class="rte">{{ page.content }}</div></x-cell>{%- endif -%}
-
-    <x-cell class="meta">
+        <div class="meta">
     {%- form 'contact' -%}
     {%- if form.posted_successfully? -%}<div class="msg ok">{{ 'contact.sent' | t }}</div>{%- endif -%}
     {%- if form.errors -%}<div class="msg err">{{ form.errors | default_errors }}</div>{%- endif -%}
@@ -92,8 +88,8 @@
     {%- endcase -%}
     {%- endfor -%}
     {%- endform -%}
-    </x-cell>
-</x-grid>
+        </div>
+    </div>
 </section>
 </div>
 

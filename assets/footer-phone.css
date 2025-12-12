@@ -8,8 +8,8 @@
   position: relative;
   width: clamp(260px, 32vw, 320px);
   aspect-ratio: 360 / 728;
-  display: grid;
-  place-items: center;
+  min-height: 400px;
+  display: block;
   margin-inline: auto;
   box-shadow: none;
 }
@@ -28,11 +28,18 @@
 /* Background Image Area */
 .site-footer__phone-background {
   position: absolute;
-  inset: clamp(16px, 3.5vw, 22px);
+  top: clamp(16px, 3.5vw, 22px);
+  left: clamp(16px, 3.5vw, 22px);
+  right: clamp(16px, 3.5vw, 22px);
+  bottom: clamp(16px, 3.5vw, 22px);
   border-radius: 36px;
   overflow: hidden;
   z-index: 1;
   box-shadow: none;
+  background: #000; /* Fallback background */
+  min-height: 400px;
+  width: calc(100% - clamp(32px, 7vw, 44px));
+  height: calc(100% - clamp(32px, 7vw, 44px));
 }
 
 /* Slideshow Container */
@@ -55,9 +62,15 @@
   left: 0;
   width: 100%;
   height: 100%;
+  min-height: 100%;
   opacity: 0;
   transition: opacity 1s ease-in-out;
   z-index: 1;
+}
+
+.phone-slideshow__slide:first-child {
+  opacity: 1;
+  z-index: 2;
 }
 
 .phone-slideshow__slide.active {
@@ -68,9 +81,11 @@
 .site-footer__phone-background-image {
   width: 100%;
   height: 100%;
+  min-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
 }
 
 .site-footer__phone-background-image img {
@@ -93,6 +108,7 @@
   padding: 60px 16px 24px;
   z-index: 20;
   pointer-events: none;
+  min-height: 400px;
 }
 
 .site-footer__phone-content > * {
@@ -219,10 +235,23 @@
   }
 
   .site-footer__phone-background {
-    width: 100%;
-    max-width: 328px;
-    height: auto;
+    top: 16px !important;
+    left: 16px !important;
+    right: 16px !important;
+    bottom: 16px !important;
+    width: calc(100% - 32px) !important;
+    height: calc(100% - 32px) !important;
+    min-height: 400px !important;
     aspect-ratio: 328 / 705;
+  }
+  
+  .site-footer__phone-background-image {
+    min-height: 100% !important;
+  }
+  
+  .site-footer__phone-background-image img {
+    min-height: 100% !important;
+    object-fit: cover !important;
   }
 
   .site-footer__icons {

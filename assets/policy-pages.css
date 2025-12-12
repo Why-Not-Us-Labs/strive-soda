@@ -1,185 +1,309 @@
 /**
  * STRIVE SODA - POLICY PAGES STYLING
- * Styles for Terms of Service, Privacy Policy, and Refund Policy pages
+ * Professional-grade styling for Terms of Service, Privacy Policy, and Refund Policy pages
+ * Matches FAQ page design with hero section + accordion functionality
  * Brand colors: Tiffany Blue (#0ABAB5), Orange (#FF7A00)
  */
 
-/* Policy page container */
+/* Override default app.css grid layout for policy pages */
 .shopify-policy__container {
+    display: block !important;
+    grid-template-columns: 1fr !important;
+    min-width: auto !important;
+    border: none !important;
     max-width: 900px;
-    margin: 0 auto;
-    padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 40px);
+    margin: 0 auto !important;
+    padding: 0 !important;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    line-height: 1.7;
-    color: #1a1a1a;
 }
 
-/* Policy page title */
+/* Hero section - matches FAQ design */
 .shopify-policy__title {
+    background: #0ABAB5;
+    padding: clamp(60px, 8vw, 100px) clamp(20px, 5vw, 60px);
+    margin: 0 calc(-50vw + 50%);
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    text-align: center;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 800;
-    font-size: clamp(32px, 5vw, 48px);
+    font-weight: 900;
+    font-size: clamp(36px, 5vw, 64px);
     text-transform: uppercase;
     letter-spacing: -0.02em;
-    color: #0ABAB5; /* Tiffany Blue */
-    margin-bottom: clamp(30px, 4vw, 50px);
-    padding-bottom: 20px;
-    border-bottom: 3px solid #0ABAB5;
-    text-align: left;
+    color: #fff;
+    border: none;
+    padding-bottom: clamp(60px, 8vw, 100px);
 }
 
-/* Policy body content */
+/* Policy title h1 inside .shopify-policy__title */
+.shopify-policy__title h1 {
+    margin: 0 0 12px;
+    padding: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-weight: 900;
+    font-size: clamp(36px, 5vw, 64px);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    color: #fff;
+}
+
+/* Add subtitle after title to match FAQ */
+.shopify-policy__title::after {
+    content: 'Legal Information';
+    display: block;
+    font-size: clamp(16px, 1.8vw, 20px);
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+    text-transform: none;
+    letter-spacing: 0;
+    margin-top: 12px;
+}
+
+/* Policy body content - professional layout */
 .shopify-policy__body {
-    font-size: clamp(15px, 1.6vw, 17px);
+    font-size: clamp(16px, 1.7vw, 18px);
     color: #1a1a1a;
+    max-width: 800px;
+    margin: clamp(50px, 8vw, 80px) auto 0;
+    padding: 0 clamp(20px, 5vw, 40px);
+    border: none !important;
+    overflow: visible !important;
+    line-height: 1.75;
+    text-align: left !important;
 }
 
-/* Headings in policy content */
+/* Override app.css center alignment - CRITICAL FIX */
+.shopify-policy__body .rte {
+    text-align: left !important;
+}
+
+.shopify-policy__body .rte > * {
+    text-align: left !important;
+}
+
+/* Professional heading hierarchy - left-aligned */
 .shopify-policy__body h1,
 .shopify-policy__body h2,
 .shopify-policy__body h3,
-.shopify-policy__body h4 {
+.shopify-policy__body h4,
+.shopify-policy__body h5,
+.shopify-policy__body h6 {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    font-weight: 800;
-    text-transform: uppercase;
+    font-weight: 700;
+    text-transform: none;
     letter-spacing: -0.01em;
     color: #0ABAB5;
-    margin-top: clamp(30px, 4vw, 50px);
-    margin-bottom: clamp(15px, 2vw, 20px);
-    line-height: 1.2;
+    margin-top: clamp(40px, 5vw, 60px);
+    margin-bottom: clamp(16px, 2vw, 24px);
+    line-height: 1.3;
+    text-align: left !important;
 }
 
 .shopify-policy__body h1 {
-    font-size: clamp(28px, 4vw, 40px);
-    border-bottom: 2px solid #0ABAB5;
-    padding-bottom: 15px;
+    font-size: clamp(28px, 4vw, 36px);
+    font-weight: 800;
+    border-bottom: 3px solid #0ABAB5;
+    padding-bottom: 16px;
+    margin-top: clamp(50px, 6vw, 70px);
+}
+
+.shopify-policy__body h1:first-of-type {
+    margin-top: 0;
 }
 
 .shopify-policy__body h2 {
-    font-size: clamp(24px, 3.5vw, 32px);
-    color: #FF7A00; /* Orange for h2 */
+    font-size: clamp(24px, 3.5vw, 30px);
+    font-weight: 700;
+    color: #FF7A00;
+    margin-top: clamp(36px, 4.5vw, 52px);
 }
 
 .shopify-policy__body h3 {
-    font-size: clamp(20px, 2.5vw, 26px);
+    font-size: clamp(20px, 2.8vw, 24px);
+    font-weight: 600;
     color: #0ABAB5;
+    margin-top: clamp(32px, 4vw, 44px);
 }
 
 .shopify-policy__body h4 {
-    font-size: clamp(17px, 2vw, 20px);
+    font-size: clamp(18px, 2.2vw, 20px);
+    font-weight: 600;
     color: #1a1a1a;
-    font-weight: 700;
+    margin-top: clamp(28px, 3.5vw, 36px);
 }
 
-/* Paragraphs */
+/* Professional paragraph styling */
 .shopify-policy__body p {
-    margin-bottom: 20px;
+    margin-bottom: clamp(18px, 2.2vw, 24px);
     line-height: 1.8;
+    text-align: left !important;
+    color: #2a2a2a;
+    font-size: clamp(16px, 1.7vw, 18px);
 }
 
-/* Lists */
+/* Effective date / last updated - subtle styling */
+.shopify-policy__body p:first-of-type {
+    font-weight: 500;
+    color: #666;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    margin-bottom: clamp(32px, 4vw, 48px);
+    padding-bottom: clamp(20px, 2.5vw, 28px);
+    border-bottom: 1px solid #e5e5e5;
+}
+
+/* Professional list styling - left-aligned, proper spacing */
 .shopify-policy__body ul,
 .shopify-policy__body ol {
-    margin: 20px 0 20px 30px;
-    line-height: 1.8;
+    margin: clamp(20px, 2.5vw, 28px) 0 clamp(20px, 2.5vw, 28px) 0;
+    padding-left: clamp(24px, 3vw, 32px);
+    line-height: 1.85;
+    text-align: left !important;
+    list-style-position: outside;
 }
 
 .shopify-policy__body li {
-    margin-bottom: 12px;
-    padding-left: 10px;
+    margin-bottom: clamp(10px, 1.2vw, 14px);
+    padding-left: 8px;
+    color: #2a2a2a;
+    font-size: clamp(16px, 1.7vw, 18px);
+    line-height: 1.8;
 }
 
+/* Custom bullet styling - brand colors */
 .shopify-policy__body ul li::marker {
     color: #0ABAB5;
-    font-weight: bold;
+    font-weight: 700;
+    font-size: 1.2em;
 }
 
 .shopify-policy__body ol li::marker {
     color: #0ABAB5;
-    font-weight: bold;
+    font-weight: 700;
 }
 
-/* Strong/bold text */
+/* Nested lists */
+.shopify-policy__body ul ul,
+.shopify-policy__body ol ol,
+.shopify-policy__body ul ol,
+.shopify-policy__body ol ul {
+    margin-top: 12px;
+    margin-bottom: 12px;
+    padding-left: clamp(20px, 2.5vw, 28px);
+}
+
+.shopify-policy__body ul ul li::marker {
+    color: #FF7A00;
+}
+
+/* Strong/bold text - subtle brand accent */
 .shopify-policy__body strong,
 .shopify-policy__body b {
-    font-weight: 700;
-    color: #0ABAB5;
+    font-weight: 600;
+    color: #1a1a1a;
 }
 
-/* Links */
+/* Links - professional styling */
 .shopify-policy__body a {
-    color: #FF7A00; /* Orange for links */
-    text-decoration: underline;
-    transition: color 0.2s ease;
+    color: #FF7A00;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(255, 122, 0, 0.3);
+    transition: all 0.2s ease;
+    font-weight: 500;
 }
 
 .shopify-policy__body a:hover {
     color: #0ABAB5;
-    text-decoration: none;
+    border-bottom-color: #0ABAB5;
 }
 
-/* Horizontal rules */
+/* Horizontal rules - subtle dividers */
 .shopify-policy__body hr {
     border: none;
-    border-top: 2px solid #0ABAB5;
-    margin: clamp(30px, 4vw, 50px) 0;
-    opacity: 0.3;
+    border-top: 1px solid #e5e5e5;
+    margin: clamp(40px, 5vw, 60px) 0;
+    opacity: 1;
 }
 
-/* Blockquotes/callouts */
+/* Blockquotes/callouts - professional highlight boxes */
 .shopify-policy__body blockquote {
     border-left: 4px solid #0ABAB5;
-    background: rgba(10, 186, 181, 0.05);
-    padding: 20px 30px;
-    margin: 30px 0;
-    font-style: italic;
-    color: #1a1a1a;
+    background: rgba(10, 186, 181, 0.04);
+    padding: clamp(20px, 2.5vw, 28px) clamp(24px, 3vw, 32px);
+    margin: clamp(28px, 3.5vw, 40px) 0;
+    font-style: normal;
+    color: #2a2a2a;
+    border-radius: 0 4px 4px 0;
+    font-size: clamp(15px, 1.6vw, 17px);
+    line-height: 1.75;
 }
 
-/* Tables (if any) */
+/* Tables - clean and professional */
 .shopify-policy__body table {
     width: 100%;
     border-collapse: collapse;
-    margin: 30px 0;
+    margin: clamp(32px, 4vw, 48px) 0;
+    font-size: clamp(15px, 1.6vw, 17px);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border-radius: 8px;
+    overflow: hidden;
 }
 
 .shopify-policy__body th {
     background: #0ABAB5;
     color: #fff;
-    font-weight: 700;
+    font-weight: 600;
     text-transform: uppercase;
-    padding: 15px;
+    padding: clamp(14px, 1.8vw, 18px);
     text-align: left;
-    font-size: 14px;
+    font-size: 13px;
     letter-spacing: 0.5px;
 }
 
 .shopify-policy__body td {
-    padding: 15px;
-    border-bottom: 1px solid #e5e5e5;
+    padding: clamp(14px, 1.8vw, 18px);
+    border-bottom: 1px solid #f0f0f0;
+    color: #2a2a2a;
+}
+
+.shopify-policy__body tr:last-child td {
+    border-bottom: none;
 }
 
 .shopify-policy__body tr:nth-child(even) {
-    background: rgba(10, 186, 181, 0.03);
+    background: rgba(10, 186, 181, 0.02);
 }
 
-/* Code blocks (if any) */
+.shopify-policy__body tr:hover {
+    background: rgba(10, 186, 181, 0.05);
+    transition: background 0.2s ease;
+}
+
+/* Code blocks */
 .shopify-policy__body code {
-    background: rgba(10, 186, 181, 0.1);
-    padding: 2px 6px;
-    border-radius: 3px;
-    font-family: 'Courier New', monospace;
+    background: rgba(10, 186, 181, 0.08);
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-family: 'Courier New', 'Monaco', monospace;
     font-size: 0.9em;
     color: #0ABAB5;
+    font-weight: 500;
 }
 
 .shopify-policy__body pre {
     background: #1a1a1a;
     color: #0ABAB5;
-    padding: 20px;
+    padding: clamp(20px, 2.5vw, 28px);
     border-radius: 8px;
     overflow-x: auto;
-    margin: 20px 0;
+    margin: clamp(24px, 3vw, 32px) 0;
+    border: 1px solid #2a2a2a;
 }
 
 .shopify-policy__body pre code {
@@ -188,56 +312,61 @@
     color: #0ABAB5;
 }
 
-/* Effective date / last updated */
-.shopify-policy__body p:first-of-type {
-    font-weight: 600;
-    color: #666;
-    font-size: 14px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 30px;
-}
-
 /* Contact section styling */
 .shopify-policy__body p:has(a[href*="mailto"]),
 .shopify-policy__body p:has(a[href*="contact"]) {
-    background: rgba(255, 122, 0, 0.05);
+    background: rgba(255, 122, 0, 0.04);
     border-left: 4px solid #FF7A00;
-    padding: 20px;
-    margin: 30px 0;
-    border-radius: 4px;
+    padding: clamp(20px, 2.5vw, 28px);
+    margin: clamp(32px, 4vw, 48px) 0;
+    border-radius: 0 4px 4px 0;
 }
 
 /* Responsive adjustments */
 @media (max-width: 777px) {
-    .shopify-policy__container {
-        padding: 30px 20px;
+    .shopify-policy__title {
+        padding: 60px 20px;
     }
 
-    .shopify-policy__title {
-        font-size: 28px;
-        margin-bottom: 30px;
+    .shopify-policy__title h1 {
+        font-size: 36px;
     }
 
     .shopify-policy__body {
-        font-size: 15px;
+        margin-top: 40px;
+        padding: 0 20px;
+        font-size: 16px;
     }
 
     .shopify-policy__body h1 {
-        font-size: 24px;
+        font-size: 26px;
+        margin-top: 40px;
     }
 
     .shopify-policy__body h2 {
-        font-size: 20px;
+        font-size: 22px;
+        margin-top: 32px;
     }
 
     .shopify-policy__body h3 {
+        font-size: 20px;
+        margin-top: 28px;
+    }
+
+    .shopify-policy__body h4 {
         font-size: 18px;
+        margin-top: 24px;
     }
 
     .shopify-policy__body ul,
     .shopify-policy__body ol {
-        margin-left: 20px;
+        padding-left: 24px;
+        margin-left: 0;
+    }
+
+    .shopify-policy__body p {
+        font-size: 16px;
+        margin-bottom: 18px;
     }
 }
 
@@ -251,6 +380,7 @@
     .shopify-policy__title {
         color: #000;
         border-bottom-color: #000;
+        background: #fff !important;
     }
 
     .shopify-policy__body h1,
@@ -270,6 +400,7 @@
 .shopify-policy__body :focus {
     outline: 2px solid #0ABAB5;
     outline-offset: 2px;
+    border-radius: 2px;
 }
 
 /* Selection color */
@@ -281,4 +412,124 @@
 .shopify-policy__body ::-moz-selection {
     background: rgba(10, 186, 181, 0.2);
     color: #1a1a1a;
+}
+
+/* ========================================
+   POLICY ACCORDION STYLING
+   Matches FAQ accordion design
+   ======================================== */
+
+/* Accordion container - matches FAQ styling */
+.policy-accordion-section {
+    margin-bottom: 16px;
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    border-radius: 4px;
+    padding: 24px 28px;
+    transition: all 0.25s ease;
+}
+
+.policy-accordion-section:hover {
+    border-color: #0ABAB5;
+    box-shadow: 0 2px 12px rgba(10, 186, 181, 0.1);
+}
+
+.policy-accordion-section[open] {
+    border-color: #0ABAB5;
+    background: #fafafa;
+}
+
+/* Accordion title/summary - matches FAQ */
+.policy-accordion-title {
+    user-select: none;
+    font-weight: 700;
+    font-size: clamp(15px, 1.8vw, 18px);
+    color: #000;
+    cursor: pointer;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    transition: color 0.2s ease;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.policy-accordion-title::-webkit-details-marker {
+    display: none;
+}
+
+/* Carrot icon - matches FAQ */
+.policy-accordion-title::before {
+    content: '▶';
+    color: #FF7A00;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    transition: all 0.25s ease;
+    flex-shrink: 0;
+}
+
+.policy-accordion-section[open] .policy-accordion-title::before {
+    transform: rotate(90deg);
+    color: #0ABAB5;
+}
+
+.policy-accordion-title:hover {
+    color: #0ABAB5;
+}
+
+/* Accordion content */
+.policy-accordion-content {
+    padding-top: 16px;
+    margin-top: 16px;
+    padding-left: 26px;
+}
+
+.policy-accordion-content p {
+    font-size: clamp(14px, 1.5vw, 16px);
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 10px 0;
+}
+
+.policy-accordion-content ul,
+.policy-accordion-content ol {
+    margin: 16px 0;
+    padding-left: 20px;
+}
+
+.policy-accordion-content li {
+    font-size: clamp(14px, 1.5vw, 17px);
+    line-height: 1.7;
+    color: rgba(0, 0, 0, 0.7);
+    margin: 8px 0;
+}
+
+.policy-accordion-content strong {
+    color: #000;
+    font-weight: 700;
+}
+
+.policy-accordion-content a {
+    color: #0ABAB5;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(10, 186, 181, 0.3);
+    transition: border-color 0.2s ease;
+}
+
+.policy-accordion-content a:hover {
+    border-bottom-color: #0ABAB5;
+}
+
+/* Mobile accordion adjustments */
+@media (max-width: 777px) {
+    .policy-accordion-section {
+        padding: 20px;
+        margin-bottom: 12px;
+    }
+
+    .policy-accordion-content {
+        padding-left: 22px;
+    }
 }

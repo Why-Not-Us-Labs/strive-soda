@@ -2434,13 +2434,13 @@ section.faq x-cell:nth-child(3n) {
     color: #1a1a1a;
 }
 
-/* Override Shopify's .rte class to center all content */
+/* Override Shopify's .rte class - LEFT ALIGN for professional readability */
 .shopify-policy__body .rte {
-    text-align: center !important;
+    text-align: left !important;
 }
 
 .shopify-policy__body .rte > * {
-    text-align: center !important;
+    text-align: left !important;
 }
 
 /* Headings in policy content */
@@ -2456,7 +2456,7 @@ section.faq x-cell:nth-child(3n) {
     margin-top: clamp(30px, 4vw, 50px);
     margin-bottom: clamp(15px, 2vw, 20px);
     line-height: 1.2;
-    text-align: center;
+    text-align: left !important;
 }
 
 .shopify-policy__body h1 {
@@ -2485,7 +2485,7 @@ section.faq x-cell:nth-child(3n) {
 .shopify-policy__body p {
     margin-bottom: 20px;
     line-height: 1.8;
-    text-align: center;
+    text-align: left !important;
 }
 
 /* Lists */
