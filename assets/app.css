@@ -2402,17 +2402,7 @@ section.faq x-cell:nth-child(3n) {
 /* Styles for Terms of Service, Privacy Policy, and Refund Policy pages */
 /* Brand colors: Tiffany Blue (#0ABAB5), Orange (#FF7A00) */
 
-/* Policy page container */
-.shopify-policy__container {
-    max-width: 900px;
-    margin: 0 auto !important;
-    padding: clamp(40px, 6vw, 80px) clamp(20px, 4vw, 40px);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    line-height: 1.7;
-    color: #1a1a1a;
-    display: block;
-    width: 100%;
-}
+/* Policy page container - OVERRIDDEN by policy-pages.css for hero design */
 
 /* Policy page title - OVERRIDDEN by policy-pages.css for hero design */
 /* Base styles removed - hero styling handled in policy-pages.css */
